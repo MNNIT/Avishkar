@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Rajan Jha" />
+    
+    <style>
+    
+    *
+    {
+        font-family: sans-serif,arial;
+    }
+    
+    #introAnimation
+    {
+        position:;
+    }
+    
+    #cover
+    {
+        position: fixed;
+        z-index: 20000;
+        background: #000000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    
+    
+    /* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+html{
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  height: calc(100vh - 8em);
+  padding: 4em;
+  color: rgba(255,255,255,.75);
+  font-family: 'Anonymous Pro', monospace;  
+  background-color: rgb(25,25,25);  
+}
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+
+    .anim-typewriter{
+      animation: typewriter 3s steps(44) 1s 1 normal both,
+                 blinkTextCursor 500ms steps(44) infinite normal;
+    }
+    
+    @keyframes typewriter{
+      from{width: 0;}
+      to{width: 23.5em;}
+    }
+    
+    @keyframes blinkTextCursor{
+      from{border-right-color: rgba(255,255,255,.75);}
+      to{border-right-color: transparent;}
+    }
+    
+    
+    #title
+    {
+        font-family: 'Anonymous Pro', monospace;
+        color: rgba(255,255,255,.75);
+        position: absolute;
+        top: -10%;
+        z-index: 20000;
+        font-size: 150%;
+    }
+    
+    </style>
+
+	<title>Avishkar 2018</title>
+    
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+ 
+ var audio1 = new Audio();
+ audio1.src = "typewriter.mp3";
+ 
+ var audio2 = new Audio();
+ audio2.src = "welcomeSound.mp3";
+ 
+     setTimeout(function()
+    {
+       audio1.play(); 
+    },900);
+$(function()
+{
+    $(document).keypress(function(event){
+	
+	if(event.which == '13'){
+		//alert('You pressed a "enter" key in somewhere');
+        
+        $('#cover').fadeOut();
+        $("#introAnimation").get(0).play();
+        audio2.play();
+        setTimeout(function()
+        {
+            $("#title").animate({
+            top:10+'%'
+            });
+        },6000);
+        	
+	}
+	
+}); 
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="cover">
+<p class="line-1 anim-typewriter">Welcome !! Avishkar 2018. Press Enter to Continue.</p><br />
+</div>
+
+
+<div id="introVideo" style="position: absolute;top: 0;left: 0;">
+<video id="introAnimation" height="100%" width="100%">
+  <source src="animation1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<audio id="audio2">
+  <source src="" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div>
+
+<div id="title">
+#avishkar2018
+</div>
+
+</body>
+</html>
