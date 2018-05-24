@@ -4,7 +4,7 @@ export default () => (
         <div className="events">
             <h2>Events at Avishkar</h2>
             <div className="container">
-                <EventCard src="/static/img/cyberquest.jpg" title="cyberquest" />
+                <EventCard src="static/img/cyberquest.jpg" title="cyberquest" />
                 <EventCard src="static/img/aero.jpg" title="Aerodynamix" />
                 <EventCard src="static/img/electromania.jpg" title="Electromania" />
                 <EventCard src="static/img/genesis.jpg" title="Genesis" />
