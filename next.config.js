@@ -1,5 +1,5 @@
 module.exports = {
-    assetPrefix: "/Avishkar",
+    // assetPrefix: "/Avishkar",
     exportPathMap: function (defaultPathMap) {
         return {
             '/': { page: '/' },
