@@ -20,6 +20,7 @@ export default () => (
                          }
                          .intro h1{
                              font-size:42px;
+                          
                          }
                     `}
         </style>
