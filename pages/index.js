@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Banner from "../components/Banner";
 import Events from "../components/Events";
 import Navbar from "../components/Navbar";
+import Socials from "../components/Socials";
 const Index = () => {
     return (
         <div>
@@ -10,6 +11,7 @@ const Index = () => {
             {/*<Navbar />*/}
             <Banner />
             <Events />
+            <Socials />
             <Footer />
         </div>
 
