@@ -1,0 +1,19 @@
+{
+    "events": [
+        {
+            "name": "survivorseries",
+            "displayName": "Survivor Series",
+            "info": "\"Don't limit your challenges but challenge your limits.\" Or \"Only the fittest will survive.\"At every point in this competition we will challenge you to beat your extremes. So, get ready to enter into the world of puzzles, riddles, mysteries and brain teasers.We present you the most challenging and exciting event of Avishkar:  Survivor Series"
+        },
+        {
+            "name": "venividivici",
+            "displayName": "Veni Vidi Vici",
+            "info": " I came, I saw, I conquered.Now, it’s your time to conquer the world by showcasing your entrepreneurial skills. It is an event where you will come across the challenges in setting up your own venture. In this event you have to setup your own industry and provide all the necessary details required to setup and run the plant. So, let's see who can be the future job creators."
+        },
+        {
+            "name": "blueprint",
+            "displayName": "Blueprint",
+            "info": "\"If you can imagine it you can create it\" -William Arthur ward.Every big project you see today has formed from some abstract idea. Framing and modelling ideas is the most vital step to get clear picture of the project before implementation.This event gives you the platform to bring your imagination to life using various CAD softwares and compete against other designers across the country.In this challenge participants use designing softwares like Solidworks, Catia, etc. to conceptualize, model and Improves its functionality using your imagination."
+        }
+    ]
+}

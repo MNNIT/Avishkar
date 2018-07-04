@@ -1,0 +1,19 @@
+{
+    "events": [
+        {
+            "name": "thegreatwarrior",
+            "displayName": "The Great Warrior",
+            "info": "This event is specially for 1st year to, introduce them about the fundamental of autonomous robotics. In this event they have to design a robot that can difference between white and black and follow the white line."
+        },
+        {
+            "name": "solosumofight",
+            "displayName": "Solo Sumo Fight",
+            "info": "This event is open to all where they have design an autonomous robot that can search and detect object."
+        },
+        {
+            "name": "theroadnottaken",
+            "displayName": "Theroadnottaken",
+            "info":"This event is open to all, this is manual robotics event, to check your skill in field of robotics hardware designing and application of mechanics in robotics. in this event you have to design manual control robot that can perform several task given on arena."
+        }
+    ]
+}
