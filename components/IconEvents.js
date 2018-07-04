@@ -5,14 +5,15 @@ class IconEvents extends Component {
     super();
     this.eventsInfo = [
       "cyberquest",
-      // "aerodynamix",
+      "electromania",
+      "aerodynamix",
       "genesis",
       "mechrocosm",
       "nirmaan",
       "powersurge",
-      "oligopoly",
       "rasayans",
       "robomania",
+      "oligopoly",
       "monopoly"
     ];
   }
@@ -46,7 +47,7 @@ class IconEvents extends Component {
         <style jsx>{`
           section {
             padding: 20px 0px;
-            background-color: #eeeeee;
+            background-color: #f5f5f5;
           }
           h2 {
             text-align: center;
@@ -75,10 +76,7 @@ class IconEvents extends Component {
             padding: 10px 20px;
             transition: all 0.5s;
           }
-          div.card:hover {
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-              0 10px 10px rgba(0, 0, 0, 0.22);
-          }
+
           div.event-element {
             width: 100%;
             height: auto;
@@ -101,6 +99,15 @@ class IconEvents extends Component {
           @media (max-width: 700px) {
             div.container {
               width: 90%;
+            }
+            section {
+              background-color: white;
+            }
+          }
+          @media (min-width: 701px) {
+            div.card:hover {
+              box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
             }
           }
         `}</style>
