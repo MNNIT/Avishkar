@@ -32,7 +32,7 @@ export default () => (
         margin: 0px;
         padding: 50px;
         border-radius: 10px;
-        background-color: #eeeeee;
+        background-color: #f5f5f5;
         box-sizing: border-box;
       }
       h2 {

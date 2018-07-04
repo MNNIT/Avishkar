@@ -1,10 +1,12 @@
 import Image from "./Image";
 export default ({ eventName }) => {
   const img = `/static/backgrounds/${eventName}_edited.jpg`;
+  const heading =
+    eventName === "aerodynamix" ? eventName : `${eventName} events`;
   return (
     <section>
       <div className="event-title">
-        <h2>{eventName} events</h2>
+        <h2>{heading}</h2>
         <div className="img-container">
           {/* <img src={img} alt={`${eventName} background image`} /> */}
           <Image eventName={eventName} />

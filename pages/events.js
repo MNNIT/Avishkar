@@ -8,6 +8,7 @@ import SubEvent from "../components/events/SubEvent";
 import ToggleDisplay from "react-toggle-display";
 import Mask from "../components/Mask";
 import axios from "axios";
+import AerodynamixContent from "../components/events/AerodynamixContent";
 class Page extends Component {
   state = {
     showModal: false,
@@ -51,7 +52,7 @@ class Page extends Component {
   componentWillMount() {
     const { router } = this.props;
     const eventName = router.query.name;
-    if (!eventName || !eventsData[eventName]) {
+    if (!eventName || !eventsData[eventName] || eventName === "aerodynamix") {
       return;
     }
     this.fetchEventData(eventName, function() {});
@@ -68,6 +69,15 @@ class Page extends Component {
     }
     const subEvents = eventsData[eventName]; //array of subevents
 
+    if (eventName === "aerodynamix") {
+      return (
+        <div>
+          <Meta />
+          <EventBanner eventName={eventName} />
+          <AerodynamixContent />
+        </div>
+      );
+    }
     return (
       <div>
         <Meta />

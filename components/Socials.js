@@ -9,7 +9,7 @@ export default () => (
           </a>
         </div>
         <div className="img-container">
-          <a href="https://twitter.com" target="_blank">
+          <a href="https://twitter.com/avishkarMNNIT" target="_blank">
             <img src="static/logo/twitter.png" alt="" />
           </a>
         </div>
@@ -49,6 +49,11 @@ export default () => (
           width: 100%;
           height: 100%;
           cursor: pointer;
+        }
+        @media (max-width: 700px) {
+          section {
+            background-color: #f5f5f5;
+          }
         }
       `}
     </style>

@@ -29,7 +29,7 @@ export default ({ subEventData, show, color, hideModal }) => {
           position: fixed;
           top: 50%;
           left: 50%;
-          transition: transform 0.5s;
+          transition: transform 0.4s;
           box-sizing: border-box;
         }
         div.title-container {
