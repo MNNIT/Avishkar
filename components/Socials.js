@@ -4,7 +4,7 @@ export default () => (
       <h3>Follow us on Socials</h3>
       <div className="container">
         <div className="img-container">
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://www.facebook.com/mnnit.avishkar  " target="_blank">
             <img src="static/logo/facebook.png" alt="" />
           </a>
         </div>
@@ -24,7 +24,6 @@ export default () => (
       {`
         section {
           padding: 10px 0px 30px 0px;
-          background-color: #eeeeee;
         }
         section > div {
           width: 100%;
@@ -33,16 +32,18 @@ export default () => (
         h3 {
           text-align: center;
           font-size: 1.5rem;
+          color: #e91e63;
         }
         .container {
           display: flex;
           justify-content: space-around;
           width: 300px;
           margin: 0 auto;
+          padding: 20px;
         }
         .img-container {
-          width: 64px;
-          height: 64px;
+          width: 50px;
+          height: 50px;
         }
         img {
           width: 100%;
