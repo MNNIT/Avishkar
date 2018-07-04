@@ -24,22 +24,41 @@ export default () => (
       section {
         color: #212121;
         padding: 20px;
+        background-color: #21d4fd;
       }
-      .text-container {
-        width: 80%;
-        margin: 0 auto;
+      div.text-container {
+        width: 100%;
+        /*margin: 0 auto;*/
+        margin: 0px;
         padding: 50px;
         border-radius: 10px;
         background-color: #eeeeee;
+        box-sizing: border-box;
       }
       h2 {
-        color: #3f51b5;
+        color: #e91e63;
       }
       p {
         font-size: 20px;
+        text-align: justify;
       }
       p span {
         font-size: 28px;
+      }
+      @media (max-width: 700px) {
+        p {
+          font-size: 16px;
+        }
+        p span {
+          font-size: 20px;
+        }
+        section {
+          padding: 0px;
+        }
+        div.text-container {
+          border-radius: 0px;
+          padding: 30px;
+        }
       }
     `}</style>
   </section>

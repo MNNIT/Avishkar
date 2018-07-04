@@ -1,13 +1,15 @@
 import React, { Component } from "react";
+import Link from "next/link";
 class IconEvents extends Component {
   constructor() {
     super();
     this.eventsInfo = [
       "cyberquest",
-      "aerodynamix",
+      // "aerodynamix",
       "genesis",
       "mechrocosm",
       "nirmaan",
+      "powersurge",
       "oligopoly",
       "rasayans",
       "robomania",
@@ -22,14 +24,21 @@ class IconEvents extends Component {
           {this.eventsInfo.map(function(event) {
             return (
               <div className="card">
-                <div className="element" style={{ cursor: "pointer" }}>
-                  <div className="img-container">
-                    <img src={`static/icon/${event}.png`} />
-                  </div>
-                  <div className="event-title">
-                    <p>{event}</p>
-                  </div>
-                </div>
+                <Link as={`/events/${event}`} href={`/events?name=${event}`}>
+                  <a>
+                    <div
+                      className="event-element"
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="img-container">
+                        <img src={`static/icon/${event}.png`} />
+                      </div>
+                      <div className="event-title">
+                        <p>{event}</p>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
               </div>
             );
           })}
@@ -37,11 +46,13 @@ class IconEvents extends Component {
         <style jsx>{`
           section {
             padding: 20px 0px;
+            background-color: #eeeeee;
           }
           h2 {
             text-align: center;
+            color: #e91e63;
           }
-          .container {
+          div.container {
             display: flex;
             width: 80%;
             height: auto;
@@ -51,9 +62,9 @@ class IconEvents extends Component {
             box-sizing: border-box;
           }
           div.card {
-            width: 12%;
+            width: 140px;
             height: auto;
-            background: #eeeeee;
+            background-color: white;
             z-index: 10;
             transition: transform 0.6s;
             margin: 5px;
@@ -62,12 +73,17 @@ class IconEvents extends Component {
             border-radius: 4px;
             box-sizing: border-box;
             padding: 10px 20px;
+            transition: all 0.5s;
           }
-          .element {
+          div.card:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+              0 10px 10px rgba(0, 0, 0, 0.22);
+          }
+          div.event-element {
             width: 100%;
             height: auto;
           }
-          .img-container {
+          div.img-container {
             width: 100%;
             height: auto;
           }
@@ -77,6 +93,15 @@ class IconEvents extends Component {
           }
           .event-title {
             text-align: center;
+          }
+          a {
+            text-decoration: none;
+            color: black;
+          }
+          @media (max-width: 700px) {
+            div.container {
+              width: 90%;
+            }
           }
         `}</style>
       </section>
