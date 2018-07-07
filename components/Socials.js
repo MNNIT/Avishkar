@@ -42,8 +42,8 @@ export default () => (
           padding: 20px;
         }
         .img-container {
-          width: 50px;
-          height: 50px;
+          width: 46px;
+          height: 46px;
         }
         img {
           width: 100%;
@@ -53,6 +53,13 @@ export default () => (
         @media (max-width: 700px) {
           section {
             background-color: #f5f5f5;
+          }
+          .img-container {
+            width: 40px;
+            height: 40px;
+          }
+          .container {
+            width: 240px;
           }
         }
       `}

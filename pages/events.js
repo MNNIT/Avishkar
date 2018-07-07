@@ -1,4 +1,4 @@
-import Meta from "../components/Meta";
+import Meta from "../components/events/Meta";
 import EventBanner from "../components/events/EventBanner";
 import SubEvents from "../components/events/SubEvents";
 import { withRouter } from "next/router";
@@ -10,6 +10,19 @@ import Mask from "../components/Mask";
 import axios from "axios";
 import AerodynamixContent from "../components/events/AerodynamixContent";
 class Page extends Component {
+  color = {
+    cyberquest: "#1F3C68",
+    electromania: "#D8B689",
+    aerodynamix: "#D17F4D",
+    genesis: "#3696BC",
+    mechrocosm: "#212121",
+    nirmaan: "#212121",
+    powersurge: "#D89C78",
+    robomania: "#CD751B",
+    oligopoly: "#795548",
+    rasayans: "#212121",
+    monopoly: "#212121"
+  };
   state = {
     showModal: false,
     subEvents: [],
@@ -72,7 +85,7 @@ class Page extends Component {
     if (eventName === "aerodynamix") {
       return (
         <div>
-          <Meta />
+          <Meta color={this.color[eventName]} />
           <EventBanner eventName={eventName} />
           <AerodynamixContent />
         </div>
@@ -80,7 +93,7 @@ class Page extends Component {
     }
     return (
       <div>
-        <Meta />
+        <Meta color={this.color[eventName]} />
         <EventBanner eventName={eventName} />
         <SubEvents showEventModal={this.showEventModal} subEvents={subEvents} />
         {/* <ToggleDisplay show={this.state.showModal}> */}

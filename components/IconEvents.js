@@ -34,9 +34,9 @@ class IconEvents extends Component {
                       <div className="img-container">
                         <img src={`static/icon/${event}.png`} />
                       </div>
-                      <div className="event-title">
-                        <p>{event}</p>
-                      </div>
+                    </div>
+                    <div className="event-title">
+                      <p>{event}</p>
                     </div>
                   </a>
                 </Link>
@@ -63,23 +63,25 @@ class IconEvents extends Component {
             box-sizing: border-box;
           }
           div.card {
-            width: 140px;
+            width: 125px;
             height: auto;
             background-color: white;
             z-index: 10;
             transition: transform 0.6s;
-            margin: 5px;
+            margin: 6px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
               0 1px 2px rgba(0, 0, 0, 0.24);
             border-radius: 4px;
             box-sizing: border-box;
-            padding: 10px 20px;
+
             transition: all 0.5s;
           }
 
           div.event-element {
             width: 100%;
             height: auto;
+            padding: 20px;
+            box-sizing: border-box;
           }
           div.img-container {
             width: 100%;
@@ -89,8 +91,9 @@ class IconEvents extends Component {
             width: 100%;
             height: auto;
           }
-          .event-title {
+          .event-title p {
             text-align: center;
+            margin: 0px 0px 10px 0px;
           }
           a {
             text-decoration: none;
@@ -98,10 +101,13 @@ class IconEvents extends Component {
           }
           @media (max-width: 700px) {
             div.container {
-              width: 90%;
+              width: 100%;
             }
             section {
               background-color: white;
+            }
+            div.card {
+              margin: 10px;
             }
           }
           @media (min-width: 701px) {
