@@ -51,7 +51,7 @@ export default () => (
         }
         @media (max-width: 700px) {
           footer {
-            padding: 30px;
+            padding: 30px 15px;
           }
         }
       `}

@@ -1,5 +1,5 @@
 import Image from "./Image";
-import GoHome from "./GoHome";
+//import GoHome from "./GoHome";
 export default ({ eventName }) => {
   const img = `/static/backgrounds/${eventName}_edited.jpg`;
   const heading =
@@ -7,7 +7,7 @@ export default ({ eventName }) => {
   return (
     <section>
       <div className="event-title">
-        <GoHome />
+        {/* <GoHome /> */}
         <h2>{heading}</h2>
         <div className="img-container">
           {/* <img src={img} alt={`${eventName} background image`} /> */}

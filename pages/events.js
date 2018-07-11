@@ -9,6 +9,8 @@ import ToggleDisplay from "react-toggle-display";
 import Mask from "../components/Mask";
 import axios from "axios";
 import AerodynamixContent from "../components/events/AerodynamixContent";
+import NavBar from "../components/Navbar";
+import IconEvents from "../components/IconEvents";
 class Page extends Component {
   color = {
     cyberquest: "#1F3C68",
@@ -78,7 +80,13 @@ class Page extends Component {
     const { router } = this.props;
     const eventName = router.query.name;
     if (!eventName || !eventsData[eventName]) {
-      return <h1>Invalid query params</h1>;
+      return (
+        <>
+          <Meta color="black" />
+          <NavBar path={router.pathname} />
+          <IconEvents />
+        </>
+      );
     }
     const subEvents = eventsData[eventName]; //array of subevents
 
@@ -86,6 +94,7 @@ class Page extends Component {
       return (
         <div>
           <Meta color={this.color[eventName]} />
+          <NavBar path={router.pathname} />
           <EventBanner eventName={eventName} />
           <AerodynamixContent />
         </div>
@@ -94,6 +103,7 @@ class Page extends Component {
     return (
       <div>
         <Meta color={this.color[eventName]} />
+        <NavBar path={router.pathname} />
         <EventBanner eventName={eventName} />
         <SubEvents showEventModal={this.showEventModal} subEvents={subEvents} />
         {/* <ToggleDisplay show={this.state.showModal}> */}
