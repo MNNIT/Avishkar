@@ -3,16 +3,17 @@ import Footer from "../components/Footer";
 //import Banner from "../components/Banner";
 import AboutAvishkar from "../components/AboutAvishkar";
 //import Events from "../components/Events";
-//import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Socials from "../components/Socials";
 //import CanvasBanner from "../components/CanvasBanner";
 import IconEvents from "../components/IconEvents";
 import ParticlesBanner from "../components/ParticlesBanner";
-const Index = () => {
+import { withRouter } from "next/router";
+const Index = props => {
   return (
     <div>
       <Meta />
-      {/*<Navbar />*/}
+      <Navbar path={props.router.pathname} />
       {/* <CanvasBanner /> */}
       <ParticlesBanner />
       {/* <Banner /> */}
@@ -25,4 +26,4 @@ const Index = () => {
   );
 };
 // You can experiment with the commented components
-export default Index;
+export default withRouter(Index);

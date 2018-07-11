@@ -1,9 +1,10 @@
 module.exports = {
   // assetPrefix: "/Avishkar",
-  exportPathMap: function (defaultPathMap) {
+  exportPathMap: function(defaultPathMap) {
     return {
       "/": { page: "/" },
-      "/event": { page: "event" }
+      "/team": { page: "/team" },
+      "/events": { page: "/events" }
     };
   }
 };
