@@ -25,6 +25,7 @@ class Person extends Component {
         <div className="event-element" style={{ cursor: "pointer" }}>
           <div className="img-container">
             <img src={person.img} />
+            <div id="image-layer" />
           </div>
         </div>
         <div
@@ -59,6 +60,14 @@ class Person extends Component {
             width: 100%;
             transition: all 0.5s;
             padding-top: 10px;
+          }
+          div#image-layer {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
           }
           section {
             padding: 20px 0px;

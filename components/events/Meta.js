@@ -20,6 +20,11 @@ export default ({ color }) => {
           /*font-family: "Bfont";
         font-weight: 100;*/
         }
+        @media (max-width: 700px) {
+          body {
+            padding-top: 44px;
+          }
+        }
       `}</style>
     </div>
   );
