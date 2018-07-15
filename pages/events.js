@@ -10,6 +10,7 @@ import Mask from "../components/Mask";
 import axios from "axios";
 import AerodynamixContent from "../components/events/AerodynamixContent";
 import NavBar from "../components/Navbar";
+import MobileNav from "../components/MobileNav";
 import IconEvents from "../components/IconEvents";
 class Page extends Component {
   color = {
@@ -82,8 +83,10 @@ class Page extends Component {
     if (!eventName || !eventsData[eventName]) {
       return (
         <>
-          <Meta color="black" />
-          <NavBar path={router.pathname} />
+          <Meta color="#212121" />
+          <NavBar path={router.pathname} color={"#212121"} />
+          <MobileNav path={router.pathname} color={"#212121"} />
+          <div className="mobile-margin"> </div>
           <IconEvents />
         </>
       );
@@ -93,8 +96,9 @@ class Page extends Component {
     if (eventName === "aerodynamix") {
       return (
         <div>
-          <Meta color={this.color[eventName]} />
-          <NavBar path={router.pathname} />
+          <Meta color={"#212121"} />
+          <NavBar path={router.pathname} color={"#212121"} />
+          <MobileNav path={router.pathname} color={"#212121"} />
           <EventBanner eventName={eventName} />
           <AerodynamixContent />
         </div>
@@ -102,8 +106,9 @@ class Page extends Component {
     }
     return (
       <div>
-        <Meta color={this.color[eventName]} />
-        <NavBar path={router.pathname} />
+        <Meta color={"#212121"} />
+        <NavBar path={router.pathname} color={"#212121"} />
+        <MobileNav path={router.pathname} color={"#212121"} />
         <EventBanner eventName={eventName} />
         <SubEvents showEventModal={this.showEventModal} subEvents={subEvents} />
         {/* <ToggleDisplay show={this.state.showModal}> */}
@@ -115,6 +120,19 @@ class Page extends Component {
         />
         {/* </ToggleDisplay> */}
         <Mask show={this.state.showModal} hideModal={this.hideModal} />
+        <style jsx>
+          {`
+            .mobile-margin {
+              display: none;
+            }
+            @media (max-width: 700px) {
+              .mobile-margin {
+                width: 100vw;
+                height: 300px;
+              }
+            }
+          `}
+        </style>
       </div>
     );
   }

@@ -9,11 +9,13 @@ import Socials from "../components/Socials";
 import IconEvents from "../components/IconEvents";
 import ParticlesBanner from "../components/ParticlesBanner";
 import { withRouter } from "next/router";
+import MobileNav from "../components/MobileNav";
 const Index = props => {
   return (
     <div>
       <Meta />
       <Navbar path={props.router.pathname} />
+      <MobileNav path={props.router.pathname} />
       {/* <CanvasBanner /> */}
       <ParticlesBanner />
       {/* <Banner /> */}
