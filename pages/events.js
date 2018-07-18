@@ -5,13 +5,13 @@ import { withRouter } from "next/router";
 import eventsData from "../data/global";
 import React, { Component } from "react";
 import SubEvent from "../components/events/SubEvent";
-import ToggleDisplay from "react-toggle-display";
 import Mask from "../components/Mask";
-import axios from "axios";
 import AerodynamixContent from "../components/events/AerodynamixContent";
 import NavBar from "../components/Navbar";
 import MobileNav from "../components/MobileNav";
 import IconEvents from "../components/IconEvents";
+import fetch from "isomorphic-unfetch";
+
 class Page extends Component {
   color = {
     cyberquest: "#1F3C68",
@@ -32,46 +32,40 @@ class Page extends Component {
     subEventData: [],
     color: "black"
   };
+  static async getInitialProps(context) {
+    let eventName = context.query.name;
+    if (eventsData[eventName] && eventName !== "aerodynamix") {
+      const res = await fetch(
+        `http://localhost:3000/static/data/${eventName}.json`
+      );
+      const data = await res.json();
+      return { data };
+    }
+    return { data: null };
+  }
   showEventModal = (event, color) => {
-    const subEventData = this.state.subEvents.find(function(element) {
+    const subEventData = this.props.data.events.find(function(element) {
       return element.name == event;
     });
     console.log(subEventData);
-    if (this.state.subEvents.length == 0) {
-      this.fetchEventData(function() {
-        this.setState({
-          color,
-          showModal: true,
-          subEventData: [subEventData]
-        });
-      });
-    } else {
-      this.setState({
-        color,
-        showModal: true,
-        subEventData: [subEventData]
-      });
-    }
+    this.setState({
+      color,
+      showModal: true,
+      subEventData: [subEventData]
+    });
   };
   hideModal = () => {
     this.setState({
       showModal: false
     });
   };
-  fetchEventData = (eventName, cb) => {
-    axios.get(`/static/data/${eventName}.json`).then(res => {
-      const eventData = res.data;
-      console.log(eventData.events);
-      this.setState({ subEvents: eventData.events }, cb);
-    });
-  };
+
   componentWillMount() {
     const { router } = this.props;
     const eventName = router.query.name;
     if (!eventName || !eventsData[eventName] || eventName === "aerodynamix") {
       return;
     }
-    this.fetchEventData(eventName, function() {});
 
     // import("../data/nirmaan.js").then(data => {
     //   this.setState({ subEvents: data.default.nirmaan.events });
@@ -86,7 +80,6 @@ class Page extends Component {
           <Meta color="#212121" />
           <NavBar path={router.pathname} color={"#212121"} />
           <MobileNav path={router.pathname} color={"#212121"} />
-          <div className="mobile-margin"> </div>
           <IconEvents />
         </>
       );
@@ -110,7 +103,10 @@ class Page extends Component {
         <NavBar path={router.pathname} color={"#212121"} />
         <MobileNav path={router.pathname} color={"#212121"} />
         <EventBanner eventName={eventName} />
-        <SubEvents showEventModal={this.showEventModal} subEvents={subEvents} />
+        <SubEvents
+          showEventModal={this.showEventModal}
+          subEvents={this.props.data.events}
+        />
         {/* <ToggleDisplay show={this.state.showModal}> */}
         <SubEvent
           subEventData={this.state.subEventData}
@@ -118,21 +114,7 @@ class Page extends Component {
           color={this.state.color}
           hideModal={this.hideModal}
         />
-        {/* </ToggleDisplay> */}
         <Mask show={this.state.showModal} hideModal={this.hideModal} />
-        <style jsx>
-          {`
-            .mobile-margin {
-              display: none;
-            }
-            @media (max-width: 700px) {
-              .mobile-margin {
-                width: 100vw;
-                height: 300px;
-              }
-            }
-          `}
-        </style>
       </div>
     );
   }

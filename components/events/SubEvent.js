@@ -58,7 +58,7 @@ export default ({ subEventData, show, color, hideModal }) => {
         .animate {
           transform: translate(-50%, -50%) scale(1);
           opacity: 1;
-          z-index: 100;
+          z-index: 10000000;
         }
         .preanimate {
           transform: translate(-50%, -50%) scale(0.9);

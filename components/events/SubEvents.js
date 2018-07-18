@@ -1,20 +1,19 @@
-export default props => {
-  const events = ["webster", "droidrush", "tuxwars", "machine learning"];
+export default ({ subEvents, showEventModal }) => {
   const colors = ["#E91E63", "#673ab7", "#2196F3", "#ff5722", "#009688"];
   return (
     <section>
       <div className="container">
-        {props.subEvents.map(function(event, i) {
+        {subEvents.map(function(event, i) {
           const color = colors[i % colors.length];
           return (
             <div
               style={{ backgroundColor: color }}
               key={i}
               onClick={() => {
-                props.showEventModal(event, color);
+                showEventModal(event.name, color);
               }}
             >
-              {event}
+              {event.displayName}
             </div>
           );
         })}
