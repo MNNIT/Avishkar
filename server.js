@@ -11,9 +11,9 @@ app
   .then(() => {
     const server = express();
 
-    server.get("/events/:event", (req, res) => {
+    server.get("/events/:name", (req, res) => {
       const actualPage = "/events";
-      const queryParams = { name: req.params.event };
+      const queryParams = { name: req.params.name };
       app.render(req, res, actualPage, queryParams);
     });
 
