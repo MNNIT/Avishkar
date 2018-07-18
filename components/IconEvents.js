@@ -4,17 +4,17 @@ class IconEvents extends Component {
   constructor() {
     super();
     this.eventsInfo = [
-      "cyberquest",
-      "electromania",
-      "aerodynamix",
-      "genesis",
-      "mechrocosm",
-      "nirmaan",
-      "powersurge",
-      "rasayans",
-      "robomania",
-      "oligopoly",
-      "monopoly"
+      "Cyberquest",
+      "Electromania",
+      "Aerodynamix",
+      "Genesis",
+      "Mechrocosm",
+      "Nirmaan",
+      "Powersurge",
+      "Rasayans",
+      "Robomania",
+      "Oligopoly",
+      "Monopoly"
     ];
   }
   render() {
@@ -23,16 +23,20 @@ class IconEvents extends Component {
         <h2>Events at Avishkar</h2>
         <div className="container">
           {this.eventsInfo.map(function(event) {
+            const lowerCaseEvent = lowerCaseEvent;
             return (
               <div className="card">
-                <Link as={`/events/${event}`} href={`/events?name=${event}`}>
+                <Link
+                  as={`/events/${lowerCaseEvent}`}
+                  href={`/events?name=${lowerCaseEvent}`}
+                >
                   <a>
                     <div
                       className="event-element"
                       style={{ cursor: "pointer" }}
                     >
                       <div className="img-container">
-                        <img src={`/static/icon/${event}.png`} />
+                        <img src={`/static/icon/${lowerCaseEvent}.png`} />
                       </div>
                     </div>
                     <div className="event-title">
