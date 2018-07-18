@@ -23,7 +23,7 @@ class IconEvents extends Component {
         <h2>Events at Avishkar</h2>
         <div className="container">
           {this.eventsInfo.map(function(event) {
-            const lowerCaseEvent = lowerCaseEvent;
+            const lowerCaseEvent = event.toLowerCase();
             return (
               <div className="card">
                 <Link
