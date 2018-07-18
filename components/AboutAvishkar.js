@@ -41,6 +41,7 @@ export default () => (
       p {
         font-size: 20px;
         text-align: justify;
+        line-height: 1.8rem;
       }
       p span {
         font-size: 28px;
@@ -48,6 +49,7 @@ export default () => (
       @media (max-width: 700px) {
         p {
           font-size: 16px;
+          line-height: 1.6rem;
         }
         p span {
           font-size: 20px;
