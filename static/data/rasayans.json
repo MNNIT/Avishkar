@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "name": "aquarochetta",
+      "displayName": "Aqua Rocchetta",
+      "info": "Ever dreamt of having a mini-rocket of your own? If yes, Rasayans’18 brings to you a thrilling opportunity to make your own water rockets and see them fly high! It’s a high time to design and construct your water propelled rocket pressurized with air and compete with surging excitement in AQUA-ROCCHETTA, the water rocket event of Avishkar.                Let’s keep the momentum high and give thrust to our innovation to take a lead in this event!"
+    },
+
+    {
+      "name": "chem-e-dexterous",
+      "displayName": "Chem E Dexterous",
+      "info": "Sell me this pen. Jordan Belfort famously asked this question to some salesmen in order to know how dexterous they are in selling something as simple as a pen.So come and show us how dexterous you are..how different you are than the rest.   Get to know your own strengths,switch your thinking,say you are good without actually saying you are good. Chemical department presents 'Chem-e-Dextrous'- an event where we will see how you can represent yourselves in Campus Interview.So come and explore the sea of knowledge within yourselves."
+    },
+    {
+      "name": "quimico",
+      "displayName": "Quimico",
+      "info": "The collaborative relationship between industrial design,academically and professionally, is a pivotal relationship in the development of new ideas.The main objective of this event is to develop a better understanding of the processes in relevance  to the designing of chemical industry."  
+    },
+    {
+      "name": "quiziosity",
+      "displayName": "Quiziosity",
+      "info":"Diddle, diddle, diddle! Time for a riddle. All you need to do is keep your eyes on the prize that you can get with the strategies you device. Questions are ready and so are we, and we know we would get the most curious of thee."
+    },
+    {
+      "name": "simulazione",
+      "displayName": "Simulazione",
+      "info": "Knowledge without application is like a book that is never read!Prove your worth by solving compulsive industrial problems using your skilled knowledge in simulation and modelling."   },
+    {
+      "name": "vision",
+      "displayName": "Vision",
+      "info": "From designing processes to calibrating equipments, chemical engineer form the backbone of every industrial setup.It is a pretty standard task to start afresh on a blank sheet, but here comes the twist ! How well can you detect a flaw in an already established and designed industry? The latest addition to Rasayans ,Vision brings you the exciting opportunity to study a given industry,diagnose its deficiencies and come up with an apt solution,all with a clock hanging around your neck! Every Chemical Engineer worth his or her salt is invited to take up this challenge, which is a test of sheer common sense, temperament and analytical ability."
+    }
+  ]
+}

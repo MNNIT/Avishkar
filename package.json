@@ -1,0 +1,32 @@
+{
+  "name": "avishkar",
+  "version": "0.1.0",
+  "description": "The website of Avishkar 2018",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MNNIT/Avishkar.git"
+  },
+  "author": "contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MNNIT/Avishkar/issues"
+  },
+  "homepage": "https://github.com/MNNIT/Avishkar#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^6.0.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-toggle-display": "^2.2.0"
+  }
+}

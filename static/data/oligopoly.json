@@ -1,0 +1,14 @@
+{
+    "events": [
+        {
+            "name": "netritva",
+            "displayName": "Netritva",
+            "info": "Leadership hunt “A leader is one who knows the way, goes the way and shows the way.”"
+        },
+        {
+            "name": "tradingstrategist",
+            "displayName": "Trading Strategist",
+            "info": "Marketing bonanza event"
+        }
+    ]
+}
