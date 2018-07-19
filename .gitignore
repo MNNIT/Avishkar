@@ -59,6 +59,7 @@ typings/
 
 # ignore .next folder
 .next
+
 # ignore out folder
-out
+out/
 
