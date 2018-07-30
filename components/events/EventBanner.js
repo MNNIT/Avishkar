@@ -2,11 +2,12 @@ import Image from "./Image";
 //import GoHome from "./GoHome";
 export default ({ eventName }) => {
   const img = `/static/backgrounds/${eventName}_edited.jpg`;
+  const capitalizedEventName = eventName[0].toUpperCase() + eventName.slice(1);
   return (
     <section>
       <div className="event-title">
         {/* <GoHome /> */}
-        <h2>{eventName}</h2>
+        <h2>{capitalizedEventName}</h2>
         <div className="img-container">
           {/* <img src={img} alt={`${eventName} background image`} /> */}
           <Image eventName={eventName} />
