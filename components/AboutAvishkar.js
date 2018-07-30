@@ -1,5 +1,5 @@
 export default () => (
-  <section>
+  <section className="primary-bg-color">
     <div className="text-container">
       <h2>About</h2>
       <p>
@@ -22,17 +22,16 @@ export default () => (
     </div>
     <style jsx>{`
       section {
-        color: #212121;
-        padding: 20px;
-        background-color: #21d4fd;
+        color: #424242;
+        padding: 20px 36px;
       }
       div.text-container {
         width: 100%;
         /*margin: 0 auto;*/
         margin: 0px;
-        padding: 50px;
+        padding: 30px 50px;
         border-radius: 10px;
-        background-color: #f5f5f5;
+        background-color: white;
         box-sizing: border-box;
       }
       h2 {
@@ -41,7 +40,7 @@ export default () => (
       p {
         font-size: 20px;
         text-align: justify;
-        line-height: 1.8rem;
+        line-height: 1.9rem;
       }
       p span {
         font-size: 28px;

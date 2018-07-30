@@ -13,7 +13,10 @@ class MobileNav extends Component {
   render() {
     //const className = this.props.path === "/" ? "none" : "shadow";
     return (
-      <section style={{ backgroundColor: this.props.color }}>
+      <section
+        className="primary-bg-color"
+        style={{ backgroundColor: this.props.color }}
+      >
         <nav>
           <div id="icon-container" onClick={this.toggleMenu}>
             <img src="/static/icon/menu.png" alt="Menu" />
@@ -53,7 +56,6 @@ class MobileNav extends Component {
               left: 0;
               width: 100vw;
               height: 44px;
-              background-color: #21d4fd;
               box-sizing: border-box;
               z-index: 100001;
             }

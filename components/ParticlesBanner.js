@@ -4,7 +4,11 @@ class ParticlesBanner extends Component {
   render() {
     return (
       <section>
-        <div id="particles-banner" style={{ fontSize: "0px" }}>
+        <div
+          id="particles-banner"
+          className="primary-bg-color"
+          style={{ fontSize: "0px" }}
+        >
           a
         </div>
         <div className="intro">
@@ -16,7 +20,6 @@ class ParticlesBanner extends Component {
             #particles-banner {
               width: 100vw;
               height: 100vh;
-              background-color: #21d4fd;
             }
             .intro {
               width: 100%;

@@ -32,12 +32,11 @@ class Page extends Component {
     subEventData: [],
     color: "black"
   };
-  static async getInitialProps(context) {
-    let eventName = context.query.name;
+  static async getInitialProps({ query, req }) {
+    let eventName = query.name;
     if (eventsData[eventName] && eventName !== "aerodynamix") {
-      const res = await fetch(
-        `http://localhost:3000/static/data/${eventName}.json`
-      );
+      const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+      const res = await fetch(`${baseUrl}/static/data/${eventName}.json`);
       const data = await res.json();
       return { data };
     }
@@ -47,7 +46,6 @@ class Page extends Component {
     const subEventData = this.props.data.events.find(function(element) {
       return element.name == event;
     });
-    console.log(subEventData);
     this.setState({
       color,
       showModal: true,

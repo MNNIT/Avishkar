@@ -24,6 +24,12 @@ export default () => (
       {`
         section {
           padding: 10px 0px 30px 0px;
+          background-color: black;
+        }
+
+        a {
+          color: white;
+          font-size: 34px;
         }
         section > div {
           width: 100%;
@@ -33,6 +39,7 @@ export default () => (
           text-align: center;
           font-size: 1.5rem;
           color: #e91e63;
+          /*color: white;*/
         }
         .container {
           display: flex;
@@ -51,9 +58,6 @@ export default () => (
           cursor: pointer;
         }
         @media (max-width: 700px) {
-          section {
-            background-color: #f5f5f5;
-          }
           .img-container {
             width: 40px;
             height: 40px;

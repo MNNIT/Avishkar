@@ -5,7 +5,7 @@ const data = [["/", "Home"], ["/events", "Events"], ["/team", "Team"]];
 export default ({ path, color }) => {
   // const className = path === "/" ? "none" : "shadow";
   return (
-    <section style={{ backgroundColor: color }}>
+    <section className="primary-bg-color" style={{ backgroundColor: color }}>
       <nav>
         <div className="navbar">
           <div className="wrapper">
@@ -29,7 +29,6 @@ export default ({ path, color }) => {
             width: 100vw;
             height: 56px;
             position: relative;
-            background-color: #21d4fd;
             z-index: 1000;
           }
           .shadow {
