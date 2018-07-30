@@ -10,7 +10,7 @@
 
 This project mainly uses
 * [Reactjs](https://reactjs.org/) - A JavaScript library for building user interfaces.
-* [Nextjs](https://github.com/zeit/next.js/) - Next.js is a lightweight framework for static and server‑rendered React applications.
+* [Nextjs](http://nextjs.org) - Next.js is a lightweight framework for static and server‑rendered React applications.
 
 ## Contributing
 
