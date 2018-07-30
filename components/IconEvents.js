@@ -51,7 +51,7 @@ class IconEvents extends Component {
         <style jsx>{`
           section {
             padding: 20px 0px;
-            background-color: #f5f5f5;
+            /*background-color: #f5f5f5;*/
           }
           h2 {
             text-align: center;
@@ -67,17 +67,17 @@ class IconEvents extends Component {
             box-sizing: border-box;
           }
           div.card {
-            width: 125px;
+            width: 170px;
             height: auto;
             background-color: white;
             z-index: 10;
             transition: transform 0.6s;
-            margin: 6px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-              0 1px 2px rgba(0, 0, 0, 0.24);
+            margin: 10px;
+            padding: 10px 20px;
+            /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+              0 1px 2px rgba(0, 0, 0, 0.24);*/
             border-radius: 4px;
             box-sizing: border-box;
-
             transition: all 0.5s;
           }
 
