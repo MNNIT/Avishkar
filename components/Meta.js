@@ -9,10 +9,11 @@ export default () => (
         name="description"
         content="Avishkar (2018) is the annual techfest of MNNIT,Allahabad,India"
       />
+      <link rel="stylesheet" href="/static/styles/theme.css" />
       <link
         rel="preload"
         href="https://fonts.googleapis.com/css?family=Open+Sans"
-        as="style"
+        as="font"
       />
       <script
         defer
