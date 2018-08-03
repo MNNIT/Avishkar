@@ -1,4 +1,4 @@
-# Web Application for Avishkar
+# Frontend Web Application for Avishkar
 
 "Avishkar”, is the annual techno-management extravaganza of Motilal Nehru National Institute of Technology (MNNIT), Allahabad.
 
