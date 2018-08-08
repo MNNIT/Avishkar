@@ -10,7 +10,7 @@ import AerodynamixContent from "../components/events/AerodynamixContent";
 import NavBar from "../components/Navbar";
 import MobileNav from "../components/MobileNav";
 import IconEvents from "../components/IconEvents";
-import fetch from "isomorphic-unfetch";
+import axios from "axios";
 
 class Page extends Component {
   color = {
@@ -32,18 +32,33 @@ class Page extends Component {
     subEventData: [],
     color: "black"
   };
-  static async getInitialProps({ query, req }) {
-    let eventName = query.name;
+  componentDidMount() {
+    const { router } = this.props;
+    const eventName = router.query.name;
     if (eventsData[eventName] && eventName !== "aerodynamix") {
-      const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-      const res = await fetch(`${baseUrl}/static/data/${eventName}.json`);
-      const data = await res.json();
-      return { data };
+      axios
+        .get(`/static/data/${eventName}.json`)
+        .then(res => {
+          const subEvents = res.data.events;
+          this.setState({ subEvents });
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     }
-    return { data: null };
   }
+  // static async getInitialProps({ query, req }) {
+  //   let eventName = query.name;
+  //   if (eventsData[eventName] && eventName !== "aerodynamix") {
+  //     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+  //     const res = await fetch(`${baseUrl}/static/data/${eventName}.json`);
+  //     const data = await res.json();
+  //     return { data };
+  //   }
+  //   return { data: null };
+  // }
   showEventModal = (event, color) => {
-    const subEventData = this.props.data.events.find(function(element) {
+    const subEventData = this.state.subEvents.find(function(element) {
       return element.name == event;
     });
     this.setState({
@@ -58,17 +73,6 @@ class Page extends Component {
     });
   };
 
-  componentWillMount() {
-    const { router } = this.props;
-    const eventName = router.query.name;
-    if (!eventName || !eventsData[eventName] || eventName === "aerodynamix") {
-      return;
-    }
-
-    // import("../data/nirmaan.js").then(data => {
-    //   this.setState({ subEvents: data.default.nirmaan.events });
-    // });
-  }
   render() {
     const { router } = this.props;
     const eventName = router.query.name;
@@ -103,7 +107,7 @@ class Page extends Component {
         <EventBanner eventName={eventName} />
         <SubEvents
           showEventModal={this.showEventModal}
-          subEvents={this.props.data.events}
+          subEvents={this.state.subEvents}
         />
         {/* <ToggleDisplay show={this.state.showModal}> */}
         <SubEvent
