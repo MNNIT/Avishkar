@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 100,
+      "value": 20,
       "density": {
         "enable": true,
         "value_area": 800
@@ -11,7 +11,7 @@
       "value": "#fff"
     },
     "shape": {
-      "type": "circle",
+      "type": "triangle",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -55,11 +55,11 @@
     "move": {
       "enable": true,
       "speed": 2,
-      "direction": "bottom",
-      "random": false,
+      "direction": "top",
+      "random": true,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": true,
       "attract": {
         "enable": false,
         "rotateX": 600,
@@ -72,7 +72,7 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,

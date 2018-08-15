@@ -11,7 +11,7 @@ class ParticlesBanner extends Component {
         >
           a
         </div>
-        <div className="intro">
+        <div className="intro" style={{ fontFamily: "rustico" }}>
           <h1>Avishkar 2018</h1>
           <h2>The annual techfest of MNNIT Allahabad</h2>
         </div>
@@ -20,7 +20,10 @@ class ParticlesBanner extends Component {
             #particles-banner {
               width: 100vw;
               height: 100vh;
+              background-image: url("/static/backgrounds/cover.jpeg");
+              background-size: 100vw 100vh;
             }
+
             .intro {
               width: 100%;
               height: 300px;
@@ -37,17 +40,21 @@ class ParticlesBanner extends Component {
               font-weight: 400;
             }
             h1 {
-              font-size: 50px;
+              font-size: 60px;
+              color: #e91e63;
+              color: white;
             }
             h2 {
-              font-size: 28px;
+              font-size: 32px;
+              color: #2196f3;
+              color: white;
             }
             @media (max-width: 700px) {
               h1 {
-                font-size: 30px;
+                font-size: 34px;
               }
               h2 {
-                font-size: 20px;
+                font-size: 24px;
               }
             }
           `}
