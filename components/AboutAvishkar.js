@@ -1,13 +1,14 @@
 export default () => (
-  <section className="primary-bg-color">
+  <section>
     <div className="text-container">
       <h2>About</h2>
       <p>
-        <span>T</span>he end of September will corroborate another confluence in
-        the city of Sangam- a conflux of every field of technology and quizzing
-        arenas along with inspirational talks from people representing different
-        walks of life . This is the concoction level of Avishkar that inspires
-        every brain out there to ideate ,innovate and create. Whether it's about
+        <span>T</span>
+        he end of September will corroborate another confluence in the city of
+        Sangam- a conflux of every field of technology and quizzing arenas along
+        with inspirational talks from people representing different walks of
+        life . This is the concoction level of Avishkar that inspires every
+        brain out there to ideate ,innovate and create. Whether it's about
         quenching your thirst of exploring the cyber world or your mania of
         electronics, your idea of building the world or the surge of power that
         leads this world, Another Sophia or Jarvis or maybe your own Mendel's
@@ -23,7 +24,18 @@ export default () => (
     <style jsx>{`
       section {
         color: #424242;
-        padding: 20px 36px;
+        padding: 20px 50px;
+        background: #ba5370; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f4e2d8,
+          #ba5370
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f4e2d8,
+          #ba5370
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
       div.text-container {
         width: 100%;
@@ -31,7 +43,6 @@ export default () => (
         margin: 0px;
         padding: 30px 50px;
         border-radius: 10px;
-        background-color: white;
         box-sizing: border-box;
       }
       h2 {
