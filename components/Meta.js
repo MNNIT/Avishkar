@@ -15,6 +15,10 @@ export default () => (
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
         rel="stylesheet"
       />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
       <script
         defer
         src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"

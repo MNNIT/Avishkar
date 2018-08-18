@@ -8,15 +8,15 @@ class Events extends Component {
       modalEnabled: false,
       display: [true, true, true, true, true, true, true, true, true],
       images: [
-        "static/img/cyberquest.jpg",
-        "static/img/aerodynamix.jpg",
-        "static/img/electromania.jpg",
-        "static/img/genesis.jpg",
-        "static/img/mechrocosm.jpg",
-        "static/img/nirmaan.jpg",
-        "static/img/cyberquest.jpg",
-        "static/img/aerodynamix.jpg",
-        "static/img/electromania.jpg"
+        "/static/img/cyberquest.jpg",
+        "/static/img/aerodynamix.jpg",
+        "/static/img/electromania.jpg",
+        "/static/img/genesis.jpg",
+        "/static/img/mechrocosm.jpg",
+        "/static/img/nirmaan.jpg",
+        "/static/img/cyberquest.jpg",
+        "/static/img/aerodynamix.jpg",
+        "/static/img/electromania.jpg"
       ],
       titles: [
         "cyberquest",
