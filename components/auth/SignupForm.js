@@ -3,6 +3,7 @@ import axios from "axios";
 import Router from "next/router";
 import url from "../../config";
 axios.defaults.baseURL = url;
+axios.defaults.withCredentials = true;
 
 export default class extends Component {
   state = {
