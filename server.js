@@ -5,15 +5,18 @@ const next = require("next");
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const isDev = process.env.NODE_ENV !== "production";
 
 app
   .prepare()
   .then(() => {
     const server = express();
-    server.use(
-      "/api",
-      proxy({ target: "http://localhost:3001", changeOrigin: true })
-    );
+    if (isDev) {
+      server.use(
+        "/api",
+        proxy({ target: "http://localhost:3001", changeOrigin: true })
+      );
+    }
     server.get("/events/:name", (req, res) => {
       const actualPage = "/events";
       const queryParams = { name: req.params.name };

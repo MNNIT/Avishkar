@@ -14,7 +14,9 @@ const events = [
 const routes = {
   "/": { page: "/" },
   "/team": { page: "/team" },
-  "/events": { page: "/events" }
+  "/events": { page: "/events" },
+  "/auth": { page: "/auth" },
+  "/dashboard": { page: "/dashboard" }
 };
 events.forEach(function(event) {
   const path = "/events/" + event;
