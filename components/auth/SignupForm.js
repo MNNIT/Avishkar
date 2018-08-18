@@ -51,8 +51,8 @@ export default class extends Component {
       .then(res => {
         console.log(res.data);
         if (res.data.success) {
-          //redirect to /profile
-          Router.push("/dashboard");
+          //redirect to /dashboard
+          window.location.replace("/dashboard");
         }
       })
       .catch(err => {
