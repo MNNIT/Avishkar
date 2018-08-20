@@ -4,7 +4,7 @@ import url from "../config";
 axios.defaults.baseURL = url;
 axios.defaults.withCredentials = true;
 import ToggleDisplay from "react-toggle-display";
-import Profile from "../components/dashboard/Profile";
+import Profile from "../components/dashboard/profile";
 import Register from "../components/dashboard/Register.js";
 import Router from "next/router";
 import Meta from "../components/Meta";
