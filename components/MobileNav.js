@@ -40,6 +40,11 @@ class MobileNav extends Component {
                 <a href="/team">Team</a>
               </Link>
             </h2>
+            <h2>
+              <Link href="/dashboard">
+                <a href="/dashboard">Dashboard</a>
+              </Link>
+            </h2>
           </div>
         </nav>
         <Mask show={this.state.showMenu} hideModal={this.toggleMenu} />

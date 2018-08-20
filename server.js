@@ -11,15 +11,18 @@ app
   .prepare()
   .then(() => {
     const server = express();
-    if (isDev) {
-      server.use(
-        "/api",
-        proxy({ target: "http://localhost:3001", changeOrigin: true })
-      );
-    }
+    server.use(
+      "/api",
+      proxy({ target: "http://localhost:3001", changeOrigin: true })
+    );
     server.get("/events/:name", (req, res) => {
       const actualPage = "/events";
       const queryParams = { name: req.params.name };
+      app.render(req, res, actualPage, queryParams);
+    });
+    server.get("/dashboard/:tab", (req, res) => {
+      const actualPage = "/dashboard";
+      const queryParams = { tab: req.params.tab };
       app.render(req, res, actualPage, queryParams);
     });
 

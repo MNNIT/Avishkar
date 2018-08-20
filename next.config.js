@@ -11,6 +11,7 @@ const events = [
   "oligopoly",
   "monopoly"
 ];
+const tabs = ["dashboard", "profile", "register", "solo events", "team events"];
 const routes = {
   "/": { page: "/" },
   "/team": { page: "/team" },
@@ -21,6 +22,10 @@ const routes = {
 events.forEach(function(event) {
   const path = "/events/" + event;
   routes[path] = { page: "/events", query: { name: event } };
+});
+tabs.forEach(function(tab) {
+  const path = "/dashboard/" + tab;
+  routes[path] = { page: "/dashboard", query: { tab: tab } };
 });
 module.exports = {
   exportPathMap() {
