@@ -15,7 +15,7 @@ export default ({ registeredEvents, loading }) => {
         return (
           <List>
             <ListItem>
-              <ListItemText primary={event} />
+              <ListItemText primary={event.name} />
             </ListItem>
             <Divider />
           </List>

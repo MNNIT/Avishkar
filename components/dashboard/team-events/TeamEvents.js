@@ -6,7 +6,6 @@ import axios from "axios";
 export default class extends Component {
   state = {
     // ##TODO## fetch registered Team-Events
-    registeredEvents: ["webster", "droidrush"],
     createdTeams: [],
     pendingTeams: [],
     teamRequests: []
@@ -47,6 +46,7 @@ export default class extends Component {
         }
       });
   };
+
   render() {
     return (
       <div>
@@ -64,10 +64,7 @@ export default class extends Component {
           createdTeams={this.state.createdTeams}
           acceptButton={false}
         />
-        <Info
-          registeredEvents={this.state.registeredEvents}
-          fetchTeams={this.fetchTeams.bind(this)}
-        />
+        <Info fetchTeams={this.fetchTeams.bind(this)} />
       </div>
     );
   }

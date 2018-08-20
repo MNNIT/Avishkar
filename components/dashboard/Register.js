@@ -9,67 +9,68 @@ import Button from "@material-ui/core/Button";
 import match from "autosuggest-highlight/match";
 import parse from "autosuggest-highlight/parse";
 import axios from "axios";
+import EventInfoCard from "./EventInfoCard";
 
-const suggestions = [
-  { label: "Softablitz" },
-  { label: "Insomnia" },
-  { label: "Softathalon" },
-  { label: "Webster" },
-  { label: "Droidrush" },
-  { label: "Code of the Day" },
-  { label: "Operaomnia" },
-  { label: "Revengg" },
-  { label: "Tuxwars" },
-  { label: "OpenSource" },
-  { label: "Sphinx" },
-  { label: "Logical Rhythm" },
-  { label: "Inception" },
-  { label: "Code Warriors" },
-  { label: "Quintathlon" },
-  { label: "Circuit of the Day" },
-  { label: "Quintathlon (software) " },
-  { label: "Codotron" },
-  { label: "Embedded Design" },
-  { label: "Impromptu" },
-  { label: "Operaomnia (Electromania)" },
-  { label: "Innodev" },
-  { label: "Combo Magic" },
-  { label: "FPGA" },
-  { label: "Robomania" },
-  { label: "Palladin" },
-  { label: "Central Dogma" },
-  { label: "Cluequest" },
-  { label: "Survivor Series" },
-  { label: "Veni Vidi Vici" },
-  { label: "Blueprint" },
-  { label: "Ziggurare" },
-  { label: "Shutter Up" },
-  { label: "Linkidge" },
-  { label: "Concube" },
-  { label: "Terraquiz" },
-  { label: "Cognizance" },
-  { label: "War of Currents" },
-  { label: "Preddefined" },
-  { label: "Codesparks" },
-  { label: "Pentathlon" },
-  { label: "Circuit Bizz" },
-  { label: "Aqua Rocchetta" },
-  { label: "Chem E Dexterous" },
-  { label: "Quimico" },
-  { label: "Quiziosity" },
-  { label: "Simulazione" },
-  { label: "Vision" },
-  { label: "The Great Warrior" },
-  { label: "Solo Sumo Fight" },
-  { label: "The Road not taken" },
-  { label: "Netritva (Oligopoly)" },
-  { label: "Trading Strategist" },
-  { label: "Chanakya Neeti" },
-  { label: "Netritva (Monopoly)" },
-  { label: "Stallmart" },
-  { label: "Aerodynamics" }
-];
-
+// const suggestions = [
+//   { displayName: "Softablitz" },
+//   { displayName: "Insomnia" },
+//   { displayName: "Softathalon" },
+//   { displayName: "Webster" },
+//   { displayName: "Droidrush" },
+//   { displayName: "Code of the Day" },
+//   { displayName: "Operaomnia" },
+//   { displayName: "Revengg" },
+//   { displayName: "Tuxwars" },
+//   { displayName: "OpenSource" },
+//   { displayName: "Sphinx" },
+//   { displayName: "Logical Rhythm" },
+//   { displayName: "Inception" },
+//   { displayName: "Code Warriors" },
+//   { displayName: "Quintathlon" },
+//   { displayName: "Circuit of the Day" },
+//   { displayName: "Quintathlon (software) " },
+//   { displayName: "Codotron" },
+//   { displayName: "Embedded Design" },
+//   { displayName: "Impromptu" },
+//   { displayName: "Operaomnia (Electromania)" },
+//   { displayName: "Innodev" },
+//   { displayName: "Combo Magic" },
+//   { displayName: "FPGA" },
+//   { displayName: "Robomania" },
+//   { displayName: "Palladin" },
+//   { displayName: "Central Dogma" },
+//   { displayName: "Cluequest" },
+//   { displayName: "Survivor Series" },
+//   { displayName: "Veni Vidi Vici" },
+//   { displayName: "Blueprint" },
+//   { displayName: "Ziggurare" },
+//   { displayName: "Shutter Up" },
+//   { displayName: "Linkidge" },
+//   { displayName: "Concube" },
+//   { displayName: "Terraquiz" },
+//   { displayName: "Cognizance" },
+//   { displayName: "War of Currents" },
+//   { displayName: "Preddefined" },
+//   { displayName: "Codesparks" },
+//   { displayName: "Pentathlon" },
+//   { displayName: "Circuit Bizz" },
+//   { displayName: "Aqua Rocchetta" },
+//   { displayName: "Chem E Dexterous" },
+//   { displayName: "Quimico" },
+//   { displayName: "Quiziosity" },
+//   { displayName: "Simulazione" },
+//   { displayName: "Vision" },
+//   { displayName: "The Great Warrior" },
+//   { displayName: "Solo Sumo Fight" },
+//   { displayName: "The Road not taken" },
+//   { displayName: "Netritva (Oligopoly)" },
+//   { displayName: "Trading Strategist" },
+//   { displayName: "Chanakya Neeti" },
+//   { displayName: "Netritva (Monopoly)" },
+//   { displayName: "Stallmart" },
+//   { displayName: "Aerodynamics" }
+// ];
+let suggestions = [];
 function renderInputComponent(inputProps) {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
 
@@ -91,8 +92,8 @@ function renderInputComponent(inputProps) {
 }
 
 function renderSuggestion(suggestion, { query, isHighlighted }) {
-  const matches = match(suggestion.label, query);
-  const parts = parse(suggestion.label, matches);
+  const matches = match(suggestion.displayName, query);
+  const parts = parse(suggestion.displayName, matches);
 
   return (
     <MenuItem selected={isHighlighted} component="div">
@@ -123,7 +124,8 @@ function getSuggestions(value) {
     : suggestions.filter(suggestion => {
         const keep =
           count < 5 &&
-          suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
+          suggestion.displayName.toLowerCase().slice(0, inputLength) ===
+            inputValue;
 
         if (keep) {
           count += 1;
@@ -134,7 +136,7 @@ function getSuggestions(value) {
 }
 
 function getSuggestionValue(suggestion) {
-  return suggestion.label;
+  return suggestion.displayName;
 }
 const styles = theme => ({
   root: {
@@ -172,14 +174,46 @@ class Register extends Component {
   state = {
     single: "",
     suggestions: [],
-    success: false
+    success: false,
+    inputError: false,
+    inpuErrorMsg: "",
+    selectedEventInfo: { displayName: "" }
   };
+  componentDidMount() {
+    axios.get("/api/all-events").then(res => {
+      if (res.data.success) {
+        suggestions = res.data.events;
+      }
+    });
+  }
   register = () => {
     axios
-      .post("/api/register-event", { eventName: this.state.single })
+      .post("/api/register-event", {
+        eventName: this.state.selectedEventInfo.name
+      })
       .then(res => {
         if (res.data.success) {
           this.setState({ success: true });
+        }
+      })
+      .catch(err => {
+        if (err.response.status === 401) {
+          window.location.replace("/auth");
+        }
+      });
+  };
+  fetchSelectedEventInfo = () => {
+    axios
+      .post("/api/fetch-event-info", { eventDisplayName: this.state.single })
+      .then(res => {
+        const { data } = res;
+        if (data.success) {
+          this.setState({ selectedEventInfo: data.event });
+        } else {
+          this.setState({
+            inputError: true,
+            inpuErrorMsg: "Event Not available"
+          });
         }
       })
       .catch(err => {
@@ -207,6 +241,7 @@ class Register extends Component {
   };
 
   handleSuggestionsClearRequested = () => {
+    this.fetchSelectedEventInfo();
     this.setState({
       suggestions: []
     });
@@ -231,7 +266,9 @@ class Register extends Component {
             classes,
             placeholder: "Enter Event Name",
             value: this.state.single,
-            onChange: this.handleChange("single")
+            onChange: this.handleChange("single"),
+            error: this.state.inputError,
+            helperText: this.state.inputErrorMsg
           }}
           theme={{
             container: classes.container,
@@ -245,6 +282,9 @@ class Register extends Component {
             </Paper>
           )}
         />
+        <div className="row center-xs center-md center-lg">
+          <EventInfoCard event={this.state.selectedEventInfo} />
+        </div>
         <div className="row center-xs center-md center-lg">
           <Button
             variant="contained"

@@ -78,7 +78,23 @@ class CreateTeam extends Component {
     const state = this.state;
     const invitedEmails = state.members;
     const eventName = state.formData.eventName;
-    const teamName = state.formData.name;
+    const teamName = state.formData.name.trim();
+    if (invitedEmails.length === 0 || eventName === "" || teamName === "") {
+      const newState = JSON.parse(JSON.stringify(this.state));
+      if (teamName === "") {
+        newState.error.name = true;
+        newState.errorMsg.name = "Please Enter a Valid Event Name";
+      }
+      if (invitedEmails.length === 0) {
+        newState.error.email = true;
+        newState.errorMsg.email = "Enter atleast one member to create a team";
+      }
+      if (eventName === "") {
+        newState.error.event = true;
+      }
+      this.setState(newState);
+      return;
+    }
     axios
       .post("/api/create-team", { invitedEmails, eventName, teamName })
       .then(res => {
@@ -100,6 +116,7 @@ class CreateTeam extends Component {
             },
             errorMsg: {
               name: "",
+              event: "",
               email: ""
             }
           };
@@ -118,7 +135,7 @@ class CreateTeam extends Component {
       });
   };
   handleChange = name => e => {
-    const { formData, members } = this.state;
+    const { formData, members, errorMsg, error } = this.state;
     const prevEventName = formData[name];
     const currentEventName = e.target.value;
     formData[name] = currentEventName;
@@ -127,15 +144,37 @@ class CreateTeam extends Component {
         this.fetchTeamSize(formData[name]);
         this.onEventSwitch(currentEventName);
       }
-    } else {
+    } else if (name === "teammate") {
+      error.email = false;
+      errorMsg.email = "";
       this.setState({
-        formData
+        formData,
+        error,
+        errorMsg
+      });
+    } else if (name === "name") {
+      error.name = false;
+      errorMsg.name = "";
+      this.setState({
+        formData,
+        error,
+        errorMsg
       });
     }
   };
   handleAddTeammate = () => {
-    const email = this.state.formData.teammate.trim();
+    const { formData, error, errorMsg } = this.state;
+    if (formData.eventName === "") {
+      error.event = true;
+      errorMsg.event = "Please Select an Event Name first";
+      this.setState({ error, errorMsg });
+      return;
+    }
+    const email = formData.teammate.trim();
     if (email.length === 0) {
+      error.email = true;
+      errorMsg.email = "Enter a Valid EmailId";
+      this.setState({ error, errorMsg });
       return;
     }
     const members = [...this.state.members];
@@ -190,9 +229,7 @@ class CreateTeam extends Component {
         >
           <InputLabel>Name</InputLabel>
           <Input value={formData.name} onChange={this.handleChange("name")} />
-          <FormHelperText>
-            {error.name ? "Someone already took this name" : ""}
-          </FormHelperText>
+          <FormHelperText>{error.name ? errorMsg.name : ""}</FormHelperText>
         </FormControl>
         <TextField
           id="select-currency"
@@ -200,9 +237,12 @@ class CreateTeam extends Component {
           select
           label="Select an Event"
           value={formData.eventName}
+          error={error.event}
+          helperText={errorMsg.event}
           onChange={this.handleChange("eventName")}
           margin="normal"
           fullWidth
+          required
         >
           {this.props.registeredEvents.map(eventName => (
             <MenuItem key={eventName} value={eventName}>
@@ -235,7 +275,7 @@ class CreateTeam extends Component {
           variant="outlined"
           onClick={this.handleCreateTeam}
         >
-          CREATE TEAM
+          CREATE
         </Button>
       </div>
     );
