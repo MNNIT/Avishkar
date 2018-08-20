@@ -9,8 +9,14 @@ import Router from "next/router";
 import Meta from "../components/Meta";
 import SideBar from "../components/dashboard/sideBar";
 import { withRouter } from "next/router";
+import NavBar from "../components/Navbar";
+import MobileNav from "../components/MobileNav";
+import Socials from "../components/Socials";
+import Footer from "../components/Footer";
+import Dash from "../components/dashboard/Dash";
 import Link from "next/link";
 import RegisterdEvents from "../components/dashboard/RegisteredEvents";
+import TeamEvents from "../components/dashboard/team-events/TeamEvents";
 // import NavList from "../com";
 export default withRouter(
   class extends Component {
@@ -21,17 +27,11 @@ export default withRouter(
         phone: "",
         college: "",
         loading: true
-      },
-      events: {
-        registeredEvents: [],
-        loading: true
       }
     };
-    componentWillMount() {}
-    // componentDidMount() {
-    //   this.fetchUserProfile();
-    //   this.fetchRegisteredEvents();
-    // }
+    componentDidMount() {
+      this.fetchUserProfile();
+    }
     fetchUserProfile = () => {
       axios
         .get("/api/profile")
@@ -51,46 +51,36 @@ export default withRouter(
           }
         });
     };
-    fetchRegisteredEvents = () => {
-      axios
-        .get("/api/registered-events")
-        .then(res => {
-          if (res.data.success) {
-            const { registeredEvents } = res.data;
-            this.setState({
-              events: {
-                registeredEvents,
-                loading: false
-              }
-            });
-          }
-        })
-        .catch(function(err) {
-          if (err.response.status == 401) {
-            Router.push("/auth");
-          }
-        });
-    };
+
     componentCheck(tab) {
-      if (tab === "profile" || tab === undefined) {
+      if (tab === undefined || tab === "dashboard") {
+        return <Dash />;
+      }
+      if (tab === "profile") {
         return (
           <Profile
-            name={this.props.name}
-            email={this.props.email}
-            phone={this.props.phone}
-            college={this.props.college}
+            name={this.state.profile.name}
+            email={this.state.profile.email}
+            phone={this.state.profile.phone}
+            college={this.state.profile.college}
           />
         );
       }
       if (tab === "register") {
         return <Register />;
       }
+      if (tab === "team events") {
+        return <TeamEvents />;
+      }
     }
     render() {
-      const tab = this.props.router.query.tab;
+      const { router } = this.props;
+      const tab = router.query.tab;
       return (
         <>
           <Meta />
+          <NavBar path={router.pathname} color={"#212121"} />
+          <MobileNav path={router.pathname} />
           <div className="row">
             <div className="col-md-2 col-xs-12">
               <SideBar />
@@ -99,16 +89,16 @@ export default withRouter(
               {this.componentCheck(tab)}
             </div>
           </div>
+          <Footer />
           <style jsx>
             {`
               div.container {
                 width: 100%;
-                height: 90vh;
+                min-height: 60vh;
                 box-sizing: border-box;
-                border-radius: 4px;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-                  0 3px 6px rgba(0, 0, 0, 0.23);
+                background-color: #eeeeee;
                 padding: 20px;
+                padding-bottom: 50px;
                 justify-content: center;
               }
             `}

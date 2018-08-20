@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-const data = [["/", "Home"], ["/events", "Events"], ["/team", "Team"]];
+const data = [
+  ["/", "Home"],
+  ["/events", "Events"],
+  ["/team", "Team"],
+  ["/dashboard", "Dashboard"]
+];
 
 export default ({ path, color }) => {
   // const className = path === "/" ? "none" : "shadow";

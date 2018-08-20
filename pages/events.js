@@ -32,7 +32,7 @@ class Page extends Component {
     subEventData: [],
     color: "black"
   };
-  componentDidMount() {
+  fetchSubEvents = () => {
     const { router } = this.props;
     const eventName = router.query.name;
     if (eventsData[eventName] && eventName !== "aerodynamix") {
@@ -46,7 +46,11 @@ class Page extends Component {
           console.log(err);
         });
     }
+  };
+  componentDidMount() {
+    this.fetchSubEvents();
   }
+
   // static async getInitialProps({ query, req }) {
   //   let eventName = query.name;
   //   if (eventsData[eventName] && eventName !== "aerodynamix") {

@@ -11,12 +11,10 @@ app
   .prepare()
   .then(() => {
     const server = express();
-    if (isDev) {
-      server.use(
-        "/api",
-        proxy({ target: "http://localhost:3001", changeOrigin: true })
-      );
-    }
+    server.use(
+      "/api",
+      proxy({ target: "http://localhost:3001", changeOrigin: true })
+    );
     server.get("/events/:name", (req, res) => {
       const actualPage = "/events";
       const queryParams = { name: req.params.name };
@@ -32,9 +30,9 @@ app
       return handle(req, res);
     });
 
-    server.listen(3030, err => {
+    server.listen(3000, err => {
       if (err) throw err;
-      console.log("> Ready on http://localhost:3030");
+      console.log("> Ready on http://localhost:3000");
     });
   })
   .catch(ex => {
