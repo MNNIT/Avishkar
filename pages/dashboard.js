@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "../axios";
+// import axios from "../axios";
 import ToggleDisplay from "react-toggle-display";
 import Profile from "../components/dashboard/profile";
 import Register from "../components/dashboard/Register.js";
@@ -15,6 +15,10 @@ import Dash from "../components/dashboard/Dash";
 import Link from "next/link";
 import RegisterdEvents from "../components/dashboard/RegisteredEvents";
 import TeamEvents from "../components/dashboard/team-events/TeamEvents";
+import axios from "axios";
+import baseURL from "../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 // import NavList from "../com";
 export default withRouter(
   class extends Component {

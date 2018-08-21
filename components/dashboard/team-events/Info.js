@@ -5,7 +5,12 @@ import DialogContent from "@material-ui/core/DialogContent";
 import Slide from "@material-ui/core/Slide";
 import CreateTeam from "./CreateTeam";
 import { Component } from "react";
-import axios from "../../../axios";
+// import axios from "../../../axios";
+import axios from "axios";
+import baseURL from "../../../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
+
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }

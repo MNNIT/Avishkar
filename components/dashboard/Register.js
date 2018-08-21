@@ -8,8 +8,12 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import match from "autosuggest-highlight/match";
 import parse from "autosuggest-highlight/parse";
-import axios from "../../axios";
+// import axios from "../../axios";
 import EventInfoCard from "./EventInfoCard";
+import axios from "axios";
+import baseURL from "../../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 
 // const suggestions = [
 //   { displayName: "Softablitz" },

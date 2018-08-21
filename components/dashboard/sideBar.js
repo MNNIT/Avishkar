@@ -33,12 +33,13 @@ export default withRouter(
       ];
       return (
         <List>
-          {tabs.map(obj => {
+          {tabs.map((obj, index) => {
             const lowerCaseName = obj.name.toLowerCase();
             return (
               <Link
                 as={`/dashboard/${lowerCaseName}`}
                 href={`/dashboard?tab=${lowerCaseName}`}
+                key={index}
               >
                 <ListItem button>
                   <ListItemIcon>

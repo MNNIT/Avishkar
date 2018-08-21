@@ -4,10 +4,17 @@ export default () => (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
+      <title>Avishkar 2018 | MNNIT Allahabad </title>
       <meta name="theme-color" content="#21d4fd" />
       <meta
         name="description"
-        content="Avishkar (2018) is the annual techfest of MNNIT,Allahabad,India"
+        content="Avishkar (2018) is the annual techfest of MNNIT, Allahabad.This is the concoction level of Avishkar that inspires every
+        brain out there to ideate ,innovate and create. Step up and get ready for this extravaganza!!"
+      />
+
+      <meta
+        name="keywords"
+        content="Avishkar, 2k18, 2018, avishkar 2k18,technology,motilal nehru,motilal nehru national institude of technology, avishkar 2018, annual techfest,MNNIT Allahabad, NIT Allahabad, NIT,India,cyberquest,gnosomania,gnotalks,allahabad"
       />
 
       <link rel="stylesheet" href="/static/styles/theme.css" />

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import RegisteredEvents from "./RegisteredEvents";
-import axios from "../../axios";
+// import axios from "../../axios";
+import axios from "axios";
+import baseURL from "../../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 
 class Dash extends Component {
   constructor(props) {

@@ -25,17 +25,14 @@ export default () => (
       section {
         color: #424242;
         padding: 20px 50px;
-        background: #ba5370; /* fallback for old browsers */
-        background: -webkit-linear-gradient(
-          to right,
-          #f4e2d8,
-          #ba5370
-        ); /* Chrome 10-25, Safari 5.1-6 */
+
+        background: rgb(253, 253, 255);
         background: linear-gradient(
-          to right,
-          #f4e2d8,
-          #ba5370
-        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          0deg,
+          rgba(253, 253, 255, 1) 5%,
+          rgba(179, 179, 181, 1) 62%,
+          rgba(0, 0, 0, 1) 100%
+        );
       }
       div.text-container {
         width: 100%;
@@ -46,7 +43,7 @@ export default () => (
         box-sizing: border-box;
       }
       h2 {
-        color: #e91e63;
+        color: #d2cfcf;
       }
       p {
         font-size: 20px;
