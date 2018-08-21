@@ -7,7 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import AddedTeammates from "./AddedTeammates";
-import axios from "axios";
+import axios from "../../../axios";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({

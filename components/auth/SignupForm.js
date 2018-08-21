@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Router from "next/router";
-import url from "../../config";
-axios.defaults.baseURL = url;
-axios.defaults.withCredentials = true;
+import axios from "../../axios";
 
 export default class extends Component {
   state = {

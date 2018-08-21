@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import url from "../config";
-axios.defaults.baseURL = url;
-axios.defaults.withCredentials = true;
+import axios from "../axios";
 import ToggleDisplay from "react-toggle-display";
 import Profile from "../components/dashboard/profile";
 import Register from "../components/dashboard/Register.js";

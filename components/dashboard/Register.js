@@ -8,7 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import match from "autosuggest-highlight/match";
 import parse from "autosuggest-highlight/parse";
-import axios from "axios";
+import axios from "../../axios";
 import EventInfoCard from "./EventInfoCard";
 
 // const suggestions = [
@@ -194,6 +194,8 @@ class Register extends Component {
       .then(res => {
         if (res.data.success) {
           this.setState({ success: true });
+        } else {
+          alert(res.data.message);
         }
       })
       .catch(err => {

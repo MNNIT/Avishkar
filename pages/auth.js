@@ -10,8 +10,10 @@ export default class extends Component {
         <Meta />
         <NavBar />
         <MobileNav />
-        <div className="container">
-          <Forms />
+        <div className="row ">
+          <div className="col-md-4 col-xs-10 container">
+            <Forms />
+          </div>
         </div>
         <section id="background" />
         <style jsx>
@@ -33,12 +35,13 @@ export default class extends Component {
             div.container {
               margin: 0 auto;
               margin-top: 50px;
-              width: 540px;
+              // width: 540px;
               box-sizing: border-box;
               border-radius: 4px;
               box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
                 0 3px 6px rgba(0, 0, 0, 0.23);
               background-color: white;
+              padding: 0;
             }
           `}
         </style>
