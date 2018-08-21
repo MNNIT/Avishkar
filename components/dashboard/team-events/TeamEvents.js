@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Info from "./Info";
 import Teams from "./Teams";
-import axios from "axios";
+import axios from "../../../axios";
 
 export default class extends Component {
   state = {

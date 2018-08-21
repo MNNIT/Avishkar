@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import RegisteredEvents from "./RegisteredEvents";
-import axios from "axios";
+import axios from "../../axios";
 
 class Dash extends Component {
   constructor(props) {
