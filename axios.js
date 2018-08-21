@@ -1,5 +1,7 @@
 import axios from "axios";
-import url from "./config";
-axios.defaults.baseURL = url;
-axios.defaults.withCredentials = true;
-export default axios;
+import baseURL from "./config";
+const instance = axios.create({
+  baseURL,
+  withCredentials: true
+});
+export default instance;
