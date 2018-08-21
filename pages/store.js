@@ -502,14 +502,6 @@ const data = [
       "Platform to pitch your best startup idea. Everyone has ideas. They may be too busy or lack the confidence or technical knowledge to carry them out. But we want to carry them out. Its a matter of getting up and doing it."
   },
   {
-    name: "pitchers",
-    displayName: "Pitchers",
-    size: 3,
-    category: "oligopoly",
-    info:
-      "Platform to pitch your best startup idea. Everyone has ideas. They may be too busy or lack the confidence or technical knowledge to carry them out. But we want to carry them out. Its a matter of getting up and doing it."
-  },
-  {
     name: "nfs",
     displayName: "NFS Most Wanted",
     size: 1,

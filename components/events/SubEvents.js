@@ -51,7 +51,7 @@ export default class extends Component {
     return (
       <section>
         <div className="container">
-          {subEvents.map(function(event, i) {
+          {subEvents.map((event, i) => {
             const color = colors[i % colors.length];
             return (
               <div
