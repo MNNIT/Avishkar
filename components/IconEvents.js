@@ -25,7 +25,7 @@ class IconEvents extends Component {
           {this.eventsInfo.map(function(event) {
             const lowerCaseEvent = event.toLowerCase();
             return (
-              <div className="card">
+              <div className="card" key={event}>
                 <Link
                   as={`/events/${lowerCaseEvent}`}
                   href={`/events?name=${lowerCaseEvent}`}
@@ -55,7 +55,7 @@ class IconEvents extends Component {
           }
           h2 {
             text-align: center;
-            color: #e91e63;
+            color: black;
           }
           div.container {
             display: flex;

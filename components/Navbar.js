@@ -14,11 +14,11 @@ export default ({ path, color }) => {
       <nav>
         <div className="navbar">
           <div className="wrapper">
-            {data.map(function(item) {
+            {data.map(function(item, index) {
               const className =
                 item[0] === path ? "link-container active" : "link-container";
               return (
-                <div className="link-container">
+                <div className="link-container" key={index}>
                   <Link href={item[0]}>
                     <a href={item[0]}>{item[1]}</a>
                   </Link>

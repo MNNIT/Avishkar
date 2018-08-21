@@ -7,8 +7,12 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import AddedTeammates from "./AddedTeammates";
-import axios from "../../../axios";
+// import axios from "../../../axios";
 import { withStyles } from "@material-ui/core/styles";
+import axios from "axios";
+import baseURL from "../../../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 
 const styles = theme => ({
   button: {

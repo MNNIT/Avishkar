@@ -43,7 +43,7 @@ class ParticlesBanner extends Component {
               box-sizing: border-box;
               text-align: center;
               position: absolute;
-              top: 50%;
+              top: 30%;
               left: 50%;
               transform: translate(-50%, -50%);
             }
@@ -56,6 +56,8 @@ class ParticlesBanner extends Component {
               color: white;
             }
             h2 {
+              position: relative;
+              top: 45%;
               font-size: 32px;
               color: #2196f3;
               color: white;
@@ -65,6 +67,8 @@ class ParticlesBanner extends Component {
                 font-size: 34px;
               }
               h2 {
+                position: relative;
+                top: 40vh;
                 font-size: 24px;
               }
             }
