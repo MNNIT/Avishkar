@@ -46,6 +46,7 @@ class CreateTeam extends Component {
     },
     errorMsg: {
       name: "",
+      event: "",
       email: ""
     }
   };
@@ -99,8 +100,15 @@ class CreateTeam extends Component {
       this.setState(newState);
       return;
     }
+    const index = this.props.registeredEvents.findIndex(function(e) {
+      return eventName === e;
+    });
     axios
-      .post("/api/create-team", { invitedEmails, eventName, teamName })
+      .post("/api/create-team", {
+        invitedEmails,
+        eventName: this.props.registeredEventsName[index],
+        teamName
+      })
       .then(res => {
         const { data } = res;
         if (data.success) {
@@ -187,10 +195,15 @@ class CreateTeam extends Component {
       return;
     }
     //check if request can be sent
+    const arr = this.props.registeredEvents;
+    const event = this.state.formData.eventName;
+    const EventDisplayNameIndex = arr.findIndex(function(element) {
+      return element === event;
+    });
     axios
       .post("/api/check-user-availability", {
         email,
-        eventName: this.state.formData.eventName
+        eventName: this.props.registeredEventsName[EventDisplayNameIndex]
       })
       .then(res => {
         const { data } = res;
@@ -223,7 +236,7 @@ class CreateTeam extends Component {
   };
   render() {
     const { formData, members, error, errorMsg } = this.state;
-    const { classes } = this.props;
+    const { classes, registeredEventsName, registeredEvents } = this.props;
     return (
       <div>
         <FormControl

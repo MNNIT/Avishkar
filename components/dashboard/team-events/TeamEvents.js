@@ -20,7 +20,6 @@ export default class extends Component {
       .then(res => {
         const { data } = res;
         if (data.success) {
-          console.log(data.teams);
           this.setState({
             teamRequests: data.teams
           });
@@ -32,7 +31,21 @@ export default class extends Component {
         }
       });
   };
-  fetchPendingTeams = () => {};
+  fetchPendingTeams = () => {
+    axios
+      .get("/api/pending-request")
+      .then(res => {
+        const { data } = res;
+        if (data.success) {
+          this.setState({ pendingTeams: data.pendingTeams });
+        }
+      })
+      .catch(err => {
+        if (err.response.status === 401) {
+          window.location.replace("/auth");
+        }
+      });
+  };
   fetchTeams = () => {
     axios
       .get("/api/teams")
@@ -55,7 +68,11 @@ export default class extends Component {
     return (
       <div>
         <h1>Pending Teams</h1>
-        {/* pending teams */}
+        <Teams
+          fetchTeams={this.fetchPendingTeams.bind(this)}
+          createdTeams={this.state.pendingTeams}
+          acceptButton={false}
+        />
         <h1>Team Requests</h1>
         <Teams
           fetchTeams={this.fetchTeamRequests.bind(this)}
