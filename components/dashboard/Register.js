@@ -230,7 +230,7 @@ class Register extends Component {
   };
   checkRegisterStatus = () => {
     if (this.state.success === false) {
-      return <p> Event Not available </p>;
+      return <p> Enter an Event Name to register </p>;
     } else {
       return <p> Event Registered Successfully </p>;
     }

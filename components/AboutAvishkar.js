@@ -25,14 +25,7 @@ export default () => (
       section {
         color: #424242;
         padding: 20px 50px;
-
         background: rgb(253, 253, 255);
-        background: linear-gradient(
-          0deg,
-          rgba(253, 253, 255, 1) 5%,
-          rgba(179, 179, 181, 1) 62%,
-          rgba(0, 0, 0, 1) 100%
-        );
       }
       div.text-container {
         width: 100%;

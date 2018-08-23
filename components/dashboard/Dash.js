@@ -27,7 +27,7 @@ class Dash extends Component {
       .then(res => {
         if (res.data.success) {
           const { registeredEvents } = res.data;
-          console.log(registeredEvents);
+          console.log("yahoo", registeredEvents);
           this.setState({
             events: {
               registeredEvents,

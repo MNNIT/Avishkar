@@ -18,7 +18,6 @@ export default withStyles(styles)(
     render() {
       const { classes } = this.props;
       const data = this.props.event;
-      console.log({ data });
       if (data.displayName === "") {
         return <div />;
       } else {
