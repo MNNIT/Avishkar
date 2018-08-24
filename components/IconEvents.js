@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Link from "next/link";
+import axios from "axios";
 class IconEvents extends Component {
   constructor() {
     super();
+    this.state = {
+      categories: []
+    };
     this.eventsInfo = [
       "Cyberquest",
       "Electromania",
@@ -17,12 +21,24 @@ class IconEvents extends Component {
       "Monopoly"
     ];
   }
+  componentDidMount() {
+    axios
+      .get("/api/event-categories")
+      .then(res => {
+        if (res.data.success) {
+          this.setState({ categories: res.data.categories });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   render() {
     return (
       <section>
         <h2>Events at Avishkar</h2>
         <div className="container">
-          {this.eventsInfo.map(function(event) {
+          {this.state.categories.map(function(event) {
             const lowerCaseEvent = event.toLowerCase();
             return (
               <div className="card" key={event}>
@@ -98,6 +114,7 @@ class IconEvents extends Component {
           .event-title p {
             text-align: center;
             margin: 0px 0px 10px 0px;
+            text-transform: capitalize;
           }
           a {
             text-decoration: none;

@@ -19,7 +19,8 @@ class Info extends Component {
   state = {
     open: false,
     registeredEvents: [],
-    registeredEventsName: []
+    registeredEventsName: [],
+    teamSize: []
   };
   // {registered events} - {created teams}
   componentDidMount() {
@@ -39,10 +40,14 @@ class Info extends Component {
           const { teams } = res2.data;
           let registeredEventsDisplayName = [],
             registeredEventsName = [],
-            teamEvents = [];
+            teamEvents = [],
+            teamSize = [];
           registeredEvents.forEach(element => {
-            registeredEventsDisplayName.push(element.displayName);
-            registeredEventsName.push(element.name);
+            if (element.size > 1) {
+              registeredEventsDisplayName.push(element.displayName);
+              registeredEventsName.push(element.name);
+              teamSize.push(element.size);
+            }
           });
           if (teams.length > 0) {
             teams.forEach(e => {
@@ -55,16 +60,19 @@ class Info extends Component {
               if (i > 0) {
                 registeredEventsName.splice(i, 1);
                 registeredEventsDisplayName.splice(i, 1);
+                teamSize.splice(i, 1);
               }
             });
             this.setState({
               registeredEvents: registeredEventsDisplayName,
-              registeredEventsName
+              registeredEventsName,
+              teamSize
             });
           } else {
             this.setState({
               registeredEvents: registeredEventsDisplayName,
-              registeredEventsName
+              registeredEventsName,
+              teamSize
             });
           }
         }
@@ -80,7 +88,7 @@ class Info extends Component {
     this.setState({ open: false });
   };
   render() {
-    const { registeredEvents, registeredEventsName } = this.state;
+    const { registeredEvents, registeredEventsName, teamSize } = this.state;
     if (registeredEvents.length === 0) {
       return <p>You have not registered for any events</p>;
     }
@@ -107,6 +115,7 @@ class Info extends Component {
             <CreateTeam
               registeredEvents={registeredEvents}
               registeredEventsName={registeredEventsName}
+              teamSize={teamSize}
               fetchTeams={this.props.fetchTeams}
               handleDialogClose={this.handleClose.bind(this)}
             />

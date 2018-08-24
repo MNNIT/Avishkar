@@ -33,12 +33,14 @@ export default class extends Component {
   fetchSubEvents = () => {
     const { router } = this.props;
     const eventName = router.query.name;
-    if (eventsData[eventName] && eventName !== "aerodynamix") {
+    if (eventName !== "aerodynamix") {
       axios
-        .get(`/static/data/${eventName}.json`)
+        .post(`/api/fetch-category-events`, { category: eventName })
         .then(res => {
-          const subEvents = res.data.events;
-          this.setState({ subEvents });
+          if (res.data.success) {
+            const subEvents = res.data.subEvents;
+            this.setState({ subEvents });
+          }
         })
         .catch(function(err) {
           console.log(err);

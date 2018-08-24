@@ -21,6 +21,9 @@ export default class extends Component {
       password: false,
       email: false
     },
+    errorMsg: {
+      email: ""
+    },
     referral: { message: "", color: "" },
     loading: false
   };
@@ -47,19 +50,30 @@ export default class extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     const formData = { ...this.state.formData };
-    axios
-      .post("/api/signup", formData)
-      .then(res => {
-        console.log(res.data);
-        if (res.data.success) {
-          //redirect to /dashboard
-          window.location.replace("/dashboard");
-        }
-      })
-      .catch(err => {
-        this.setState({ loading: false });
-        alert("something went wrong!");
+    const match = formData.email.match(
+      "^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,} ?$"
+    );
+    if (match) {
+      axios
+        .post("/api/signup", formData)
+        .then(res => {
+          if (res.data.success) {
+            //redirect to /dashboard
+            window.location.replace("/dashboard");
+          } else if (!res.data.success) {
+            alert(res.data.message);
+          }
+        })
+        .catch(err => {
+          this.setState({ loading: false });
+          alert("something went wrong!");
+        });
+    } else {
+      this.setState({
+        errors: { password: this.state.errors.password, email: true },
+        errorMsg: { email: "Email is Not Valid" }
       });
+    }
   };
   onBlur = field => {
     const { formData } = this.state;
@@ -70,6 +84,17 @@ export default class extends Component {
         this.removeFieldError(field);
       }
     } else if (field === "email") {
+      const formData = { ...this.state.formData };
+      const match = formData.email.match(
+        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,} ?$/gim
+      );
+      console.log("test", match);
+      if (!match) {
+        this.setState({ errorMsg: { email: "Email is not Valid" } });
+      } else {
+        this.setState({ errorMsg: { email: "" } });
+      }
+      this.displayFieldError(field);
     }
   };
   isEmailTaken = () => {
@@ -98,7 +123,7 @@ export default class extends Component {
       });
   };
   render() {
-    const { formData, errors, referral } = this.state;
+    const { formData, errors, referral, errorMsg } = this.state;
     return (
       <div className="form-container">
         <form action="">
@@ -114,7 +139,7 @@ export default class extends Component {
             }}
             required
           />
-          <p>{errors.email ? "This email is already taken!" : " "}</p>
+          <p>{errors.email ? errorMsg.email : " "}</p>
           <label>FULL NAME</label>
           <input
             type="text"
@@ -142,7 +167,7 @@ export default class extends Component {
           </p>
           <label>PHONE</label>
           <input
-            type="text"
+            type="number"
             value={formData.phone}
             onChange={e => {
               this.updateField(e, "phone");
@@ -172,7 +197,7 @@ export default class extends Component {
           <p> </p>
           <label>YEAR</label>
           <input
-            type="text"
+            type="number"
             value={formData.year}
             onChange={e => {
               this.updateField(e, "year");
@@ -180,7 +205,7 @@ export default class extends Component {
             required
           />
           <p> </p>
-          <label>REFERRAL CODE (OPTIONAL)</label>
+          {/* <label>REFERRAL CODE (OPTIONAL)</label>
           <input
             type="text"
             value={formData.code}
@@ -190,7 +215,7 @@ export default class extends Component {
             onBlur={this.checkReferralCode}
             required
           />
-          <p style={{ color: referral.color }}>{referral.message}</p>
+          <p style={{ color: referral.color }}>{referral.message}</p> */}
           <button
             type="submit"
             onClick={this.submitForm}
