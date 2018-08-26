@@ -16,7 +16,6 @@ const Index = props => {
       <MobileNav path={props.router.pathname} />
       <ParticlesBanner />
       <AboutAvishkar />
-      <IconEvents />
       <Socials />
       <Footer />
     </div>

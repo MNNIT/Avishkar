@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import SubEvent from "./SubEvent";
 import Mask from "../../components/Mask";
-import eventsData from "../../data/global";
 const colors = ["#E91E63", "#673ab7", "#2196F3", "#ff5722", "#009688"];
 
 export default class extends Component {

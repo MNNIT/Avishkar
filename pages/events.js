@@ -9,19 +9,19 @@ import NavBar from "../components/Navbar";
 import MobileNav from "../components/MobileNav";
 import IconEvents from "../components/IconEvents";
 class Page extends Component {
-  color = {
-    cyberquest: "#1F3C68",
-    electromania: "#D8B689",
-    aerodynamix: "#D17F4D",
-    genesis: "#3696BC",
-    mechrocosm: "#212121",
-    nirmaan: "#212121",
-    powersurge: "#D89C78",
-    robomania: "#CD751B",
-    oligopoly: "#795548",
-    rasayans: "#212121",
-    monopoly: "#212121"
-  };
+  // color = {
+  //   cyberquest: "#1F3C68",
+  //   electromania: "#D8B689",
+  //   aerodynamix: "#D17F4D",
+  //   genesis: "#3696BC",
+  //   mechrocosm: "#212121",
+  //   nirmaan: "#212121",
+  //   powersurge: "#D89C78",
+  //   robomania: "#CD751B",
+  //   oligopoly: "#795548",
+  //   rasayans: "#212121",
+  //   monopoly: "#212121"
+  // };
   // state = {
   //   showModal: false,
   //   //subEvents: [],

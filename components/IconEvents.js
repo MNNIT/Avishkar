@@ -7,19 +7,19 @@ class IconEvents extends Component {
     this.state = {
       categories: []
     };
-    this.eventsInfo = [
-      "Cyberquest",
-      "Electromania",
-      "Aerodynamix",
-      "Genesis",
-      "Mechrocosm",
-      "Nirmaan",
-      "Powersurge",
-      "Rasayans",
-      "Robomania",
-      "Oligopoly",
-      "Monopoly"
-    ];
+    // this.eventsInfo = [
+    //   "Cyberquest",
+    //   "Electromania",
+    //   "Aerodynamix",
+    //   "Genesis",
+    //   "Mechrocosm",
+    //   "Nirmaan",
+    //   "Powersurge",
+    //   "Rasayans",
+    //   "Robomania",
+    //   "Oligopoly",
+    //   "Monopoly"
+    // ];
   }
   componentDidMount() {
     axios
@@ -39,20 +39,19 @@ class IconEvents extends Component {
         <h2>Events at Avishkar</h2>
         <div className="container">
           {this.state.categories.map(function(event) {
-            const lowerCaseEvent = event.toLowerCase();
+            {
+              /* const event = event.toLowerCase(); */
+            }
             return (
               <div className="card" key={event}>
-                <Link
-                  as={`/events/${lowerCaseEvent}`}
-                  href={`/events?name=${lowerCaseEvent}`}
-                >
+                <Link as={`/events/${event}`} href={`/events?name=${event}`}>
                   <a>
                     <div
                       className="event-element"
                       style={{ cursor: "pointer" }}
                     >
                       <div className="img-container">
-                        <img src={`/static/icon/${lowerCaseEvent}.png`} />
+                        <img src={`/static/icon/${event}.png`} />
                       </div>
                     </div>
                     <div className="event-title">
