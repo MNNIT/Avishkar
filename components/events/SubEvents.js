@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import SubEvent from "./SubEvent";
 import Mask from "../../components/Mask";
-import eventsData from "../../data/global";
 const colors = ["#E91E63", "#673ab7", "#2196F3", "#ff5722", "#009688"];
 
 export default class extends Component {
@@ -33,12 +32,14 @@ export default class extends Component {
   fetchSubEvents = () => {
     const { router } = this.props;
     const eventName = router.query.name;
-    if (eventsData[eventName] && eventName !== "aerodynamix") {
+    if (eventName !== "aerodynamix") {
       axios
-        .get(`/static/data/${eventName}.json`)
+        .post(`/api/fetch-category-events`, { category: eventName })
         .then(res => {
-          const subEvents = res.data.events;
-          this.setState({ subEvents });
+          if (res.data.success) {
+            const subEvents = res.data.subEvents;
+            this.setState({ subEvents });
+          }
         })
         .catch(function(err) {
           console.log(err);

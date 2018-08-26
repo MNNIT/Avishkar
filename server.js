@@ -20,9 +20,9 @@ app
       const queryParams = { name: req.params.name };
       app.render(req, res, actualPage, queryParams);
     });
-    server.get("/dashboard/:tab", (req, res) => {
+    server.get("/dashboard/:tab/:subtab", (req, res) => {
       const actualPage = "/dashboard";
-      const queryParams = { tab: req.params.tab };
+      const queryParams = { tab: req.params.tab, event: req.params.subtab };
       app.render(req, res, actualPage, queryParams);
     });
 

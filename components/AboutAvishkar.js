@@ -25,7 +25,10 @@ export default () => (
       section {
         color: #424242;
         padding: 20px 50px;
-        background: rgb(253, 253, 255);
+         {
+          /* background-image: url("../static/img/aerodynamix.jpg"); */
+        }
+        background-color: rgba(253, 153, 155, 0.5);
       }
       div.text-container {
         width: 100%;

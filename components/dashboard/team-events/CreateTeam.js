@@ -57,7 +57,10 @@ class CreateTeam extends Component {
   };
   fetchTeamSize = eventName => {
     ///fetch team size ##TODO##
-    const teamSize = 4;
+    const index = this.props.registeredEventsName.findIndex(e => {
+      return e === eventName;
+    });
+    const teamSize = this.props.teamSize[index];
     this.setState({
       teamSize
     });

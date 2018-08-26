@@ -9,7 +9,8 @@ const events = [
   "rasayans",
   "robomania",
   "oligopoly",
-  "monopoly"
+  "monopoly",
+  "kreedomania"
 ];
 const tabs = ["dashboard", "profile", "register", "solo events", "team events"];
 const routes = {

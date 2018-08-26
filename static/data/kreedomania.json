@@ -1,0 +1,29 @@
+{
+    "events": [
+        {
+            "name": "warofcurrents",
+            "displayName": "War of Currents",
+            "info": "No description provided"
+        },
+        {
+            "name": "preddefined",
+            "displayName": "Preddefined",
+            "info": "“You have to learn the rules of the game and then you have to play better than anyone else.” This event is a fun filled and pragmatic approach to real life problems, making use of the concepts of Embedded Systems. It provides a platform to learn and enhance a student's perspicuous perspective towards automation, which is the near future. Merge the concepts of microcontrollers, Power Electronics, Software and Hardware based design, Simulations and control; implement in real time and upgrade yourself to higher levels of day to day technical solutions. "
+        },
+        {
+            "name": "codesparks",
+            "displayName": "Codesparks",
+            "info": "It's going to help the students of electrical to get to know about the procedure of software company placement rounds. It's going to follow the same pattern as of any placement rounds. All those students gonna benifit who are pursuing for software companies and all those other, who are thinking of giving coding a chance."
+        },
+        {
+            "name": "pentathlon",
+            "displayName": "Pentathlon",
+            "info": "\"Contest entailing 5 distinct types of Competition\".With this introduction, we bring forward the Flagship event of Electrical Branch PENTATHLON.This event will put your core knowledge , aptitude as well as communication skills to test.As the name suggests this event will consist of 5 events where your various skillsets will be tested.In short , this is the best opportunity to have experience of placements without actually feeling the stress of it. So guys PARTICIPATE , LEARN and WIN.P"
+        },
+        {
+            "name": "circuitbizz",
+            "displayName": "Circuit Bizz",
+            "info": "This event will take you through the rollercoaster of core electrical.If you want to put your core  knowledge to test,then this is the place.This event has three rounds which will test your theoretical knowledge as well as your tuning with circuits It will be a wonderful learning experience.So PARTICIPATE , LEARN and WIN."
+        }
+    ]
+}
