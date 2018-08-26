@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import axios from "../axios";
 import ToggleDisplay from "react-toggle-display";
-import Profile from "../components/dashboard/profile";
+import ProfileSection from "../components/dashboard/profile/Index";
 import Register from "../components/dashboard/Register.js";
 import Router from "next/router";
 import Meta from "../components/Meta";
@@ -22,51 +22,12 @@ axios.defaults.withCredentials = true;
 // import NavList from "../com";
 export default withRouter(
   class extends Component {
-    state = {
-      profile: {
-        name: "",
-        email: "",
-        phone: "",
-        college: "",
-        loading: true
-      }
-    };
-    componentDidMount() {
-      this.fetchUserProfile();
-    }
-    fetchUserProfile = () => {
-      axios
-        .get("/api/profile")
-        .then(res => {
-          console.log("data", res.data);
-          if (res.status == 200) {
-            const { profile } = res.data;
-            this.setState({
-              loading: false,
-              profile
-            });
-          }
-        })
-        .catch(function(err) {
-          if (err.response.status == 401) {
-            Router.push("/auth");
-          }
-        });
-    };
-
     componentCheck(tab) {
       if (tab === undefined || tab === "dashboard") {
         return <Dash />;
       }
       if (tab === "profile") {
-        return (
-          <Profile
-            name={this.state.profile.name}
-            email={this.state.profile.email}
-            phone={this.state.profile.phone}
-            college={this.state.profile.college}
-          />
-        );
+        return <ProfileSection />;
       }
       if (tab === "register") {
         return <Register />;
