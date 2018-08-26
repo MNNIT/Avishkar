@@ -22,7 +22,7 @@ axios.defaults.withCredentials = true;
 // import NavList from "../com";
 export default withRouter(
   class extends Component {
-    componentCheck(tab) {
+    componentCheck(tab, event) {
       if (tab === undefined || tab === "dashboard") {
         return <Dash />;
       }
