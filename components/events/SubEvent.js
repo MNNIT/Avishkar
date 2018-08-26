@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default ({ subEventData, show, color, hideModal }) => {
   let className = show ? "animate" : "preanimate";
   return (
@@ -14,6 +16,12 @@ export default ({ subEventData, show, color, hideModal }) => {
             </div>
             <div>
               {/* <h3 style={{ color }}>Rounds</h3> */}
+              <Link
+                as={`/dashboard/register/${data.displayName}`}
+                href={`/dashboard?tab=register&event=${data.displayName}`}
+              >
+                <button>Register</button>
+              </Link>
               <p />
             </div>
           </div>
