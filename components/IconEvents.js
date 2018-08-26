@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import axios from "axios";
+import baseURL from "../config";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 class IconEvents extends Component {
   constructor() {
     super();

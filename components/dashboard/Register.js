@@ -194,9 +194,11 @@ class Register extends Component {
     });
   }
   static getDerivedStateFromProps = (props, state) => {
+    const newState = { ...state };
     if (props.event) {
-      return { single: props.event };
+      return (newState.single = props.event);
     }
+    return newState;
   };
   // componentDidUpdate (prevProps, prevState) {
   //   if(prevState.single === prevProps.event){

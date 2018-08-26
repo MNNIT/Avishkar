@@ -3,6 +3,7 @@ import ToggleDisplay from "react-toggle-display";
 import SigninForm from "./SigninForm";
 import SignupForm from "./SignupForm";
 import FormHeading from "./FormHeading";
+import SocialAuth from "./SocialAuth";
 export default class extends Component {
   state = {
     showSigninForm: true
@@ -23,9 +24,11 @@ export default class extends Component {
         />
         <ToggleDisplay show={this.state.showSigninForm}>
           <SigninForm />
+          <SocialAuth />
         </ToggleDisplay>
         <ToggleDisplay show={!this.state.showSigninForm}>
           <SignupForm />
+          <SocialAuth />
         </ToggleDisplay>
       </div>
     );
