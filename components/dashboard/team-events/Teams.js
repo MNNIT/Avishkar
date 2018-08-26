@@ -26,7 +26,12 @@ export default class extends Component {
     return (
       <div>
         {this.props.createdTeams.map((team, index) => {
-          return <Team team={team} acceptButton={this.props.acceptButton} />;
+          return (
+            <>
+              <Team team={team} acceptButton={this.props.acceptButton} />
+              <br />
+            </>
+          );
         })}
       </div>
     );

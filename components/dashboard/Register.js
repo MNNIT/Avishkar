@@ -188,8 +188,22 @@ class Register extends Component {
       if (res.data.success) {
         suggestions = res.data.events;
       }
+      if (this.state.single) {
+        this.fetchSelectedEventInfo();
+      }
     });
   }
+  static getDerivedStateFromProps = (props, state) => {
+    if (props.event) {
+      return { single: props.event };
+    }
+  };
+  // componentDidUpdate (prevProps, prevState) {
+  //   if(prevState.single === prevProps.event){
+
+  //   }
+  // }
+
   register = () => {
     axios
       .post("/api/register-event", {
@@ -230,7 +244,7 @@ class Register extends Component {
   };
   checkRegisterStatus = () => {
     if (this.state.success === false) {
-      return <p> Event Not available </p>;
+      return <p> Enter an Event Name to register </p>;
     } else {
       return <p> Event Registered Successfully </p>;
     }
@@ -254,7 +268,6 @@ class Register extends Component {
   };
   render() {
     const { classes } = this.props;
-
     const autosuggestProps = {
       renderInputComponent,
       suggestions: this.state.suggestions,

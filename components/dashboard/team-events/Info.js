@@ -18,15 +18,64 @@ function Transition(props) {
 class Info extends Component {
   state = {
     open: false,
-    registeredEvents: ["webster"]
+    registeredEvents: [],
+    registeredEventsName: [],
+    teamSize: []
   };
   // {registered events} - {created teams}
+  componentDidMount() {
+    this.fetchRegisteredNoTeamEvents();
+  }
   fetchRegisteredNoTeamEvents = () => {
     const req1 = axios.get("/api/registered-events");
     const req2 = axios.get("/api/get-all-teams");
     axios.all([req1, req2]).then(
-      axios.spread(function(res1, res2) {
-        console.log(res1.data, res2.data);
+      axios.spread((res1, res2) => {
+        if (
+          res1.data.success &&
+          res2.data.success &&
+          res1.data.registeredEvents.length > 0
+        ) {
+          const { registeredEvents } = res1.data;
+          const { teams } = res2.data;
+          let registeredEventsDisplayName = [],
+            registeredEventsName = [],
+            teamEvents = [],
+            teamSize = [];
+          registeredEvents.forEach(element => {
+            if (element.size > 1) {
+              registeredEventsDisplayName.push(element.displayName);
+              registeredEventsName.push(element.name);
+              teamSize.push(element.size);
+            }
+          });
+          if (teams.length > 0) {
+            teams.forEach(e => {
+              teamEvents.push(e.event);
+            });
+            teamEvents.forEach(e => {
+              let i = registeredEventsName.findIndex(event => {
+                return event === e;
+              });
+              if (i > 0) {
+                registeredEventsName.splice(i, 1);
+                registeredEventsDisplayName.splice(i, 1);
+                teamSize.splice(i, 1);
+              }
+            });
+            this.setState({
+              registeredEvents: registeredEventsDisplayName,
+              registeredEventsName,
+              teamSize
+            });
+          } else {
+            this.setState({
+              registeredEvents: registeredEventsDisplayName,
+              registeredEventsName,
+              teamSize
+            });
+          }
+        }
       })
     );
   };
@@ -39,7 +88,7 @@ class Info extends Component {
     this.setState({ open: false });
   };
   render() {
-    const { registeredEvents } = this.state;
+    const { registeredEvents, registeredEventsName, teamSize } = this.state;
     if (registeredEvents.length === 0) {
       return <p>You have not registered for any events</p>;
     }
@@ -47,9 +96,11 @@ class Info extends Component {
       <div>
         <p>
           Create team(s) now for{" "}
-          {registeredEvents.map(function(event, i) {
-            return event;
-          })}
+          <b>
+            {registeredEvents.map(function(event, i) {
+              return event + "  ";
+            })}
+          </b>
         </p>
         <Button variant="outlined" onClick={this.handleClickOpen}>
           CREATE TEAM
@@ -63,6 +114,8 @@ class Info extends Component {
           <DialogContent>
             <CreateTeam
               registeredEvents={registeredEvents}
+              registeredEventsName={registeredEventsName}
+              teamSize={teamSize}
               fetchTeams={this.props.fetchTeams}
               handleDialogClose={this.handleClose.bind(this)}
             />

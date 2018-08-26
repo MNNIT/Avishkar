@@ -30,7 +30,7 @@ export default withRouter(
         return <ProfileSection />;
       }
       if (tab === "register") {
-        return <Register />;
+        return <Register event={event} />;
       }
       if (tab === "team events") {
         return <TeamEvents />;
@@ -38,7 +38,7 @@ export default withRouter(
     }
     render() {
       const { router } = this.props;
-      const tab = router.query.tab;
+      const { tab, event } = router.query;
       return (
         <>
           <Meta />
@@ -49,7 +49,7 @@ export default withRouter(
               <SideBar />
             </div>
             <div className="col-md-10 col-xs-12 container">
-              {this.componentCheck(tab)}
+              {this.componentCheck(tab, event)}
             </div>
           </div>
           <Footer />
