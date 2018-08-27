@@ -1,32 +1,21 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import axios from "axios";
+import CustomLoader from "./CustomLoader";
 class IconEvents extends Component {
   constructor() {
     super();
     this.state = {
-      categories: []
+      categories: [],
+      blocking: true
     };
-    // this.eventsInfo = [
-    //   "Cyberquest",
-    //   "Electromania",
-    //   "Aerodynamix",
-    //   "Genesis",
-    //   "Mechrocosm",
-    //   "Nirmaan",
-    //   "Powersurge",
-    //   "Rasayans",
-    //   "Robomania",
-    //   "Oligopoly",
-    //   "Monopoly"
-    // ];
   }
   componentDidMount() {
     axios
       .get("/api/event-categories")
       .then(res => {
         if (res.data.success) {
-          this.setState({ categories: res.data.categories });
+          this.setState({ categories: res.data.categories, blocking: false });
         }
       })
       .catch(err => {
@@ -36,34 +25,47 @@ class IconEvents extends Component {
   render() {
     return (
       <section>
-        <h2>Events at Avishkar</h2>
-        <div className="container">
-          {this.state.categories.map(function(event) {
-            {
-              /* const event = event.toLowerCase(); */
-            }
-            return (
-              <div className="card" key={event}>
-                <Link as={`/events/${event}`} href={`/events?name=${event}`}>
-                  <a>
-                    <div
-                      className="event-element"
-                      style={{ cursor: "pointer" }}
+        {this.state.blocking ? (
+          <div className="loader-container">
+            <CustomLoader />
+          </div>
+        ) : (
+          <>
+            <h2>Events at Avishkar</h2>
+            <div className="container">
+              {this.state.categories.map(function(event) {
+                return (
+                  <div className="card" key={event}>
+                    <Link
+                      as={`/events/${event}`}
+                      href={`/events?name=${event}`}
                     >
-                      <div className="img-container">
-                        <img src={`/static/icon/${event}.png`} />
-                      </div>
-                    </div>
-                    <div className="event-title">
-                      <p>{event}</p>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+                      <a>
+                        <div
+                          className="event-element"
+                          style={{ cursor: "pointer" }}
+                        >
+                          <div className="img-container">
+                            <img src={`/static/icon/${event}.png`} />
+                          </div>
+                        </div>
+                        <div className="event-title">
+                          <p>{event}</p>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
         <style jsx>{`
+          .loader-container {
+            display: inline-block;
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+          }
           section {
             padding: 20px 0px;
             /*background-color: #f5f5f5;*/

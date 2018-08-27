@@ -92,7 +92,7 @@ export default withRouter(
             </div>
           </div>
           <Footer />
-          <style jsx>
+          <style>
             {`
               div.container {
                 width: 100%;
@@ -102,6 +102,11 @@ export default withRouter(
                 padding: 20px;
                 padding-bottom: 50px;
                 justify-content: center;
+              }
+              @media (max-width: 700px){
+                div.row{
+                  margin-top: 40px;
+                }
               }
             `}
           </style>
