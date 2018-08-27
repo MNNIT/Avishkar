@@ -1,63 +1,49 @@
 import React, { Component } from "react";
-// import axios from "../../axios";
 import ToggleDisplay from "react-toggle-display";
-import Router from "next/router";
-import Link from "next/link";
+// import Link from "next/link";
 import axios from "axios";
 import baseURL from "../../config";
+import Router from "next/router";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
 export default class extends Component {
   state = {
     formData: {
-      email: "",
-      password: ""
+      email: ""
     },
     showEmailError: false,
     loading: false
   };
-
   updateField = (e, field) => {
     const formData = { ...this.state.formData };
     formData[field] = e.target.value;
     this.setState({ formData });
   };
-  checkEmail = () => {
-    const { email } = this.state.formData;
-    if (email.trim().length === 0) {
-      this.setState({ showEmailError: false });
-      return;
-    }
-    axios.post("/api/is-email-taken", { email }).then(res => {
-      const { data } = res;
-      console.log(data);
-      if (!data.success) {
-        this.setState({ showEmailError: false });
-      } else {
-        this.setState({ showEmailError: true });
-      }
-    });
-  };
   submitForm = e => {
     e.preventDefault();
+    const { formData } = { ...this.state };
+    formData.email = formData.email.trim();
+    if (formData.length === 0) {
+      alert("email is empty");
+      return;
+    }
     this.setState({ loading: true });
-    const { formData } = this.state;
+    //send forgot password
     axios
-      .post("/api/signin", formData)
+      .post("/api/forgot-password", formData)
       .then(res => {
-        console.log(res.data);
         if (res.data.success) {
-          //redirect to /dashboard
-          Router.push("/dashboard");
+          Router.push("/reset-password/code");
         } else {
+          this.setState({ loading: true });
           alert(res.data.message);
-          this.setState({ loading: false });
         }
       })
       .catch(err => {
-        this.setState({ loading: false });
-        alert("something went wrong!");
+        this.setState({ loading: true });
+        alert("something went wrong");
+        console.log(err);
       });
   };
   render() {
@@ -78,22 +64,11 @@ export default class extends Component {
           <ToggleDisplay tag="p" show={this.state.showEmailError}>
             This email doesn't exist! Register now
           </ToggleDisplay>
-          <label>PASSWORD</label>
-          <input
-            type="password"
-            value={formData.password}
-            onChange={e => {
-              this.updateField(e, "password");
-            }}
-            required
-          />
           <button type="submit" onClick={this.submitForm}>
-            {this.state.loading ? "SUBMITTING" : "SIGN IN"}
+            {this.state.loading ? "SUBMITTING" : "RESET PASSWORD"}
           </button>
         </form>
-        <Link>
-          <a href="/reset-password">Forgot password?</a>
-        </Link>
+
         <style jsx>
           {`
             div.form-container {
