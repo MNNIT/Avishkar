@@ -19,7 +19,10 @@ const routes = {
   "/events": { page: "/events" },
   "/auth": { page: "/auth" },
   "/dashboard": { page: "/dashboard" },
-  "/store": { page: "/store" }
+  "/store": { page: "/store" },
+  "/reset-password": { page: "/reset-password" },
+  "/reset-password/email": { page: "/reset-password", query: { tab: "email" } },
+  "/reset-password/code": { page: "/reset-password", query: { tab: "code" } }
 };
 events.forEach(function(event) {
   const path = "/events/" + event;
