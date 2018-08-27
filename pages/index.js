@@ -16,22 +16,7 @@ const Index = props => {
       <ParticlesBanner />
       <AboutAvishkar />
       <Socials />
-      <p>
-        This site is still in development and is not meant for actual users!
-      </p>
       <Footer />
-      <style jsx>{`
-        p {
-          color: white;
-          background-color: #f44336;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          text-align: center;
-          margin: 0;
-        }
-      `}</style>
     </div>
   );
 };
