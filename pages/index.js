@@ -2,7 +2,7 @@ import Meta from "../components/Meta";
 import Footer from "../components/Footer";
 import AboutAvishkar from "../components/AboutAvishkar";
 import Navbar from "../components/Navbar";
-import MobileNav from "../components/MobileNav";
+//import MobileNav from "../components/MobileNav";
 import Socials from "../components/Socials";
 import IconEvents from "../components/IconEvents";
 import ParticlesBanner from "../components/ParticlesBanner";
@@ -13,7 +13,6 @@ const Index = props => {
     <div>
       <Meta />
       <Navbar path={props.router.pathname} />
-      <MobileNav path={props.router.pathname} />
       <ParticlesBanner />
       <AboutAvishkar />
       <Socials />
