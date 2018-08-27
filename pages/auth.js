@@ -9,7 +9,6 @@ export default class extends Component {
       <>
         <Meta />
         <NavBar />
-        <MobileNav />
         <div className="row ">
           <div className="col-md-4 col-xs-10 container">
             <Forms />

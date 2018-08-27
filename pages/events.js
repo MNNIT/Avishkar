@@ -82,7 +82,6 @@ class Page extends Component {
         <>
           <Meta color="#212121" />
           <NavBar path={router.pathname} color={"#212121"} />
-          <MobileNav path={router.pathname} color={"#212121"} />
           <IconEvents />
         </>
       );
@@ -94,7 +93,6 @@ class Page extends Component {
         <div>
           <Meta color={"#212121"} />
           <NavBar path={router.pathname} color={"#212121"} />
-          <MobileNav path={router.pathname} color={"#212121"} />
           <EventBanner eventName={eventName} />
           <AerodynamixContent />
         </div>
@@ -103,8 +101,7 @@ class Page extends Component {
     return (
       <div>
         <Meta color={"#212121"} />
-        <NavBar path={router.pathname} color={"#212121"} />
-        <MobileNav path={router.pathname} color={"#212121"} />
+        <NavBar path={router.pathname} />
         <EventBanner eventName={eventName} router={this.props.router} />
         <SubEvents router={this.props.router} />
         {/* <ToggleDisplay show={this.state.showModal}> */}
