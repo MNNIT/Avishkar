@@ -52,6 +52,7 @@ const data = {
   oligopoly: ["netritva", "adhole", "ptchers", "tradingstrategist"],
   genesis: ["palladin", "centraldogma", "cluequest"],
   aerodynamix: [],
-  robomania: ["thegreatwarrior", "solosumofight", "theroadnottaken"]
+  robomania: ["thegreatwarrior", "solosumofight", "theroadnottaken"],
+  kreedomania: []
 };
 export default data;
