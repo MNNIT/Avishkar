@@ -25,6 +25,11 @@ app
       const queryParams = { tab: req.params.tab, event: req.params.subtab };
       app.render(req, res, actualPage, queryParams);
     });
+    server.get("/reset-password/:tab", (req, res) => {
+      const actualPage = "/reset-password";
+      const queryParams = { tab: req.params.tab };
+      app.render(req, res, actualPage, queryParams);
+    });
 
     server.get("*", (req, res) => {
       return handle(req, res);
