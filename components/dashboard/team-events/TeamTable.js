@@ -23,7 +23,6 @@ function SimpleTable({ classes, users }) {
     <Table className={classes.table}>
       <TableHead>
         <TableRow>
-          <TableCell>Name</TableCell>
           <TableCell>Email</TableCell>
           <TableCell>Status</TableCell>
         </TableRow>
@@ -32,9 +31,6 @@ function SimpleTable({ classes, users }) {
         {users.map(user => {
           return (
             <TableRow key={user.email}>
-              <TableCell component="th" scope="row">
-                {user.name}
-              </TableCell>
               <TableCell component="th" scope="row">
                 {user.email}
               </TableCell>

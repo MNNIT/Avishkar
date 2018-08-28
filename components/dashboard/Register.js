@@ -12,6 +12,7 @@ import parse from "autosuggest-highlight/parse";
 import EventInfoCard from "./EventInfoCard";
 import axios from "axios";
 import baseURL from "../../config";
+import ToggleDisplay from "react-toggle-display";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
@@ -181,7 +182,8 @@ class Register extends Component {
     success: false,
     inputError: false,
     inpuErrorMsg: "",
-    selectedEventInfo: { displayName: "" }
+    selectedEventInfo: { displayName: "" },
+    showRegisterButton: false
   };
   componentDidMount() {
     axios.get("/api/all-events").then(res => {
@@ -230,11 +232,15 @@ class Register extends Component {
       .then(res => {
         const { data } = res;
         if (data.success) {
-          this.setState({ selectedEventInfo: data.event });
+          this.setState({
+            selectedEventInfo: data.event,
+            showRegisterButton: true
+          });
         } else {
           this.setState({
             inputError: true,
-            inpuErrorMsg: "Event Not available"
+            inpuErrorMsg: "Event Not available",
+            showRegisterButton: false
           });
         }
       })
@@ -248,7 +254,11 @@ class Register extends Component {
     if (this.state.success === false) {
       return <p> Enter an Event Name to register </p>;
     } else {
-      return <p> Event Registered Successfully </p>;
+      return (
+        <b>
+          <p> Event Registered Successfully </p>
+        </b>
+      );
     }
   };
   handleChange = name => (event, { newValue }) => {
@@ -307,13 +317,15 @@ class Register extends Component {
           <EventInfoCard event={this.state.selectedEventInfo} />
         </div>
         <div className="row center-xs center-md center-lg">
-          <Button
-            variant="contained"
-            className={classes.button}
-            onClick={this.register}
-          >
-            Register
-          </Button>
+          <ToggleDisplay show={this.state.showRegisterButton}>
+            <Button
+              variant="contained"
+              className={classes.button}
+              onClick={this.register}
+            >
+              Register
+            </Button>
+          </ToggleDisplay>
         </div>
       </>
     );

@@ -29,9 +29,7 @@ class IconEvents extends Component {
     return (
       <section>
         {this.state.blocking ? (
-          <div className="loader-container">
-            <CustomLoader />
-          </div>
+          <CustomLoader />
         ) : (
           <>
             <h2>Events at Avishkar</h2>
@@ -64,11 +62,6 @@ class IconEvents extends Component {
           </>
         )}
         <style jsx>{`
-          .loader-container {
-            display: inline-block;
-            margin-left: 50%;
-            transform: translate(-50%, 0);
-          }
           section {
             padding: 20px 0px;
             /*background-color: #f5f5f5;*/

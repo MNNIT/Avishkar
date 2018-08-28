@@ -34,7 +34,7 @@ export default withRouter(
       return (
         <List>
           {tabs.map((obj, index) => {
-            const lowerCaseName = obj.name.toLowerCase();
+            const lowerCaseName = obj.name.toLowerCase().replace(/ /g, "");
             return (
               <Link
                 as={`/dashboard/${lowerCaseName}`}

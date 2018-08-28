@@ -2,12 +2,17 @@ import Loader from "react-loader-spinner";
 
 export default (function() {
   return (
-    <Loader
-      type="Rings"
-      color="#00BFFF"
-      height="60"
-      width="60"
-      className="loader"
-    />
+    <div className="loader-container">
+      <Loader type="ThreeDots" color="black" height="50" width="60" />
+      <style jsx>
+        {`
+          .loader-container {
+            display: inline-block;
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+          }
+        `}
+      </style>
+    </div>
   );
 });

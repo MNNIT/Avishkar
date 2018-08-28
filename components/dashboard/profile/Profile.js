@@ -25,26 +25,23 @@ export default withStyles(styles)(function({
       <div className="data">
         <Paper className={classes.root} elevation={1}>
           <p>
-            Name:
+            Name :&nbsp;
             {profile.name}
           </p>
           <p>
-            Email:
+            Email :&nbsp;
             {profile.email}
           </p>
           <p>
-            Gender:
+            Gender :&nbsp;
             {profile.gender}
           </p>
           <p>
-            Phone:
-            {profile.phone}
-          </p>
-          <p>
-            College:
+            College :&nbsp;
             {profile.college}
           </p>
         </Paper>
+        <br />
         <ToggleDisplay hide={profile.updatedProfile}>
           <Button
             color="primary"

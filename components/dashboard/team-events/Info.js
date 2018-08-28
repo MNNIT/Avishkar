@@ -8,6 +8,7 @@ import { Component } from "react";
 // import axios from "../../../axios";
 import axios from "axios";
 import baseURL from "../../../config";
+import CustomLoader from "../../CustomLoader";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
@@ -20,7 +21,8 @@ class Info extends Component {
     open: false,
     registeredEvents: [],
     registeredEventsName: [],
-    teamSize: []
+    teamSize: [],
+    loading: true
   };
   // {registered events} - {created teams}
   componentDidMount() {
@@ -57,7 +59,7 @@ class Info extends Component {
               let i = registeredEventsName.findIndex(event => {
                 return event === e;
               });
-              if (i > 0) {
+              if (i > -1) {
                 registeredEventsName.splice(i, 1);
                 registeredEventsDisplayName.splice(i, 1);
                 teamSize.splice(i, 1);
@@ -66,13 +68,15 @@ class Info extends Component {
             this.setState({
               registeredEvents: registeredEventsDisplayName,
               registeredEventsName,
-              teamSize
+              teamSize,
+              loading: false
             });
           } else {
             this.setState({
               registeredEvents: registeredEventsDisplayName,
               registeredEventsName,
-              teamSize
+              teamSize,
+              loading: false
             });
           }
         }
@@ -88,9 +92,16 @@ class Info extends Component {
     this.setState({ open: false });
   };
   render() {
-    const { registeredEvents, registeredEventsName, teamSize } = this.state;
-    if (registeredEvents.length === 0) {
-      return <p>You have not registered for any events</p>;
+    const {
+      registeredEvents,
+      registeredEventsName,
+      teamSize,
+      loading
+    } = this.state;
+    if (loading) {
+      return <CustomLoader />;
+    } else if (registeredEvents.length === 0) {
+      return <p>You have not registered for any (new) events</p>;
     }
     return (
       <div>

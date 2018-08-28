@@ -17,11 +17,33 @@ import RegisterdEvents from "../components/dashboard/RegisteredEvents";
 import TeamEvents from "../components/dashboard/team-events/TeamEvents";
 import axios from "axios";
 import baseURL from "../config";
+import CustomLoader from "../components/CustomLoader";
+import SoloEvents from "../components/dashboard/SoloEvents";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 // import NavList from "../com";
 export default withRouter(
   class extends Component {
+    state = {
+      loading: true
+    };
+    componentDidMount() {
+      axios
+        .get("/api/check-state")
+        .then(res => {
+          if (res.data.success) {
+            this.setState({ loading: false });
+          } else {
+            this.setState({ loading: true });
+            Router.push("/auth");
+          }
+        })
+        .catch(err => {
+          if (err.response.status == 401) {
+            Router.push("/auth");
+          }
+        });
+    }
     componentCheck(tab, event) {
       if (tab === undefined || tab === "dashboard") {
         return <Dash />;
@@ -32,8 +54,11 @@ export default withRouter(
       if (tab === "register") {
         return <Register event={event} />;
       }
-      if (tab === "team events") {
+      if (tab === "teamevents") {
         return <TeamEvents />;
+      }
+      if ((tab = "soloevents")) {
+        return <SoloEvents />;
       }
     }
     render() {
@@ -43,14 +68,20 @@ export default withRouter(
         <>
           <Meta />
           <NavBar path={router.pathname} color={"#212121"} />
-          <div className="row">
-            <div className="col-md-2 col-xs-12">
-              <SideBar />
+          {this.state.loading ? (
+            <div className="loader">
+              <CustomLoader />
             </div>
-            <div className="col-md-10 col-xs-12 container">
-              {this.componentCheck(tab, event)}
+          ) : (
+            <div className="row">
+              <div className="col-md-2 col-xs-12">
+                <SideBar />
+              </div>
+              <div className="col-md-10 col-xs-12 container">
+                {this.componentCheck(tab, event)}
+              </div>
             </div>
-          </div>
+          )}
           <Footer />
           <style>
             {`
@@ -62,6 +93,9 @@ export default withRouter(
                 padding: 20px;
                 padding-bottom: 50px;
                 justify-content: center;
+              }
+              div.loader{
+                min-height: 70vh;
               }
               @media (max-width: 700px){
                 div.row{

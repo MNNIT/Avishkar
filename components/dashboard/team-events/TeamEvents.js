@@ -4,6 +4,7 @@ import Teams from "./Teams";
 // import axios from "../../../axios";
 import axios from "axios";
 import baseURL from "../../../config";
+import CustomLoader from "../../CustomLoader";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
@@ -12,7 +13,13 @@ export default class extends Component {
     // ##TODO## fetch registered Team-Events
     createdTeams: [],
     pendingTeams: [],
-    teamRequests: []
+    teamRequests: [],
+    loading: true
+  };
+  fetchTeamsData = () => {
+    this.fetchPendingTeams();
+    this.fetchTeamRequests();
+    this.fetchTeams();
   };
   fetchTeamRequests = () => {
     axios
@@ -53,7 +60,8 @@ export default class extends Component {
         const { data } = res;
         if (data.success) {
           this.setState({
-            createdTeams: data.teams
+            createdTeams: data.teams,
+            loading: false
           });
         }
       })
@@ -63,30 +71,71 @@ export default class extends Component {
         }
       });
   };
+  componentDidMount() {
+    this.fetchTeamsData();
+  }
 
   render() {
-    return (
-      <div>
-        <h1>Pending Teams</h1>
-        <Teams
-          fetchTeams={this.fetchPendingTeams.bind(this)}
-          createdTeams={this.state.pendingTeams}
-          acceptButton={false}
-        />
-        <h1>Team Requests</h1>
-        <Teams
-          fetchTeams={this.fetchTeamRequests.bind(this)}
-          createdTeams={this.state.teamRequests}
-          acceptButton={true}
-        />
-        <h1>Created Teams</h1>
-        <Teams
-          fetchTeams={this.fetchTeams.bind(this)}
-          createdTeams={this.state.createdTeams}
-          acceptButton={false}
-        />
-        <Info fetchTeams={this.fetchTeams.bind(this)} />
-      </div>
-    );
+    const { createdTeams, pendingTeams, teamRequests, loading } = this.state;
+    if (loading) {
+      return <CustomLoader />;
+    } else {
+      return (
+        <div>
+          <Info fetchTeams={this.fetchTeamsData.bind(this)} />
+          {(() => {
+            if (pendingTeams.length > 0) {
+              return (
+                <>
+                  <h1>Pending Teams</h1>
+                  <Teams
+                    fetchTeams={this.fetchPendingTeams.bind(this)}
+                    fetchTeamsData={this.fetchTeamsData.bind(this)}
+                    createdTeams={pendingTeams}
+                    acceptButton={false}
+                  />
+                </>
+              );
+            } else {
+              return <div />;
+            }
+          })()}
+          {(() => {
+            if (teamRequests.length > 0) {
+              return (
+                <>
+                  <h1>Team Requests</h1>
+                  <Teams
+                    fetchTeams={this.fetchTeamRequests.bind(this)}
+                    fetchTeamsData={this.fetchTeamsData.bind(this)}
+                    createdTeams={teamRequests}
+                    acceptButton={true}
+                  />
+                </>
+              );
+            } else {
+              return <div />;
+            }
+          })()}
+          {(() => {
+            if (createdTeams.length > 0) {
+              return (
+                <>
+                  <h1>Created Teams</h1>
+                  <Teams
+                    fetchTeams={this.fetchTeams.bind(this)}
+                    fetchTeamsData={this.fetchTeamsData.bind(this)}
+                    createdTeams={createdTeams}
+                    acceptButton={false}
+                  />
+                </>
+              );
+            } else {
+              return <div />;
+            }
+          })()}
+        </div>
+      );
+    }
   }
 }
