@@ -87,7 +87,7 @@ export default withRouter(
             {`
               div.container {
                 width: 100%;
-                min-height: 60vh;
+                min-height: 70vh;
                 box-sizing: border-box;
                 background-color: #eeeeee;
                 padding: 20px;

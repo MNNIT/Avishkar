@@ -36,9 +36,9 @@ const styles = theme => ({
 function SimpleCard(props) {
   const { classes, team, acceptButton } = props;
   const bull = <span className={classes.bullet}>•</span>;
-  let acceptTeamRequest = id => {
+  let acceptTeamRequest = (id, action) => {
     axios
-      .post("/api/accept-request", { teamId: id })
+      .post("/api/accept-request", { teamId: id, action })
       .then(res => {
         if (res.data.success) {
           props.fetchTeamsData();
@@ -58,10 +58,19 @@ function SimpleCard(props) {
             variant="contained"
             className={classes.button}
             onClick={e => {
-              acceptTeamRequest(team._id);
+              acceptTeamRequest(team._id, "accept");
             }}
           >
             Accept
+          </Button>
+          <Button
+            variant="contained"
+            className={classes.button}
+            onClick={e => {
+              acceptTeamRequest(team._id, "reject");
+            }}
+          >
+            Decline
           </Button>
         </div>
       );

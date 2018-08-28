@@ -9,6 +9,39 @@ export default () => (
         equipment to this venue. The arena will be an open ground. There will be
         two rounds of the competition.
       </p>
+      <h2>Events</h2>
+      <ol>
+        <p>
+          <li>
+            Aerial Vehicle Design &nbsp;
+            <a
+              href="../../static/pdf/Aerial_Vehicle_Design.pdf"
+              style={{ height: "18px" }}
+              target="_blank"
+            >
+              <img
+                src="../../static/icon/paperclip.svg"
+                style={{ height: "18px" }}
+              />
+            </a>
+          </li>
+        </p>
+        <p>
+          <li>
+            Pushpak Vimaan &nbsp;
+            <a
+              href="../../static/pdf/Pusphak_Vimaan_Problem_Statement.pdf"
+              style={{ height: "18px" }}
+              target="_blank"
+            >
+              <img
+                src="../../static/icon/paperclip.svg"
+                style={{ height: "18px" }}
+              />
+            </a>
+          </li>
+        </p>
+      </ol>
       <h2>Rounds</h2>
       <div>
         <h3>A. Qualifier Round</h3>
