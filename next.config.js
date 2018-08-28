@@ -1,3 +1,4 @@
+const withCSS = require("@zeit/next-css");
 const events = [
   "cyberquest",
   "electromania",
