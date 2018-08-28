@@ -10,6 +10,7 @@ import match from "autosuggest-highlight/match";
 import parse from "autosuggest-highlight/parse";
 // import axios from "../../axios";
 import EventInfoCard from "./EventInfoCard";
+import SnackBar from "../SnackBar";
 import axios from "axios";
 import baseURL from "../../config";
 import ToggleDisplay from "react-toggle-display";
@@ -183,7 +184,10 @@ class Register extends Component {
     inputError: false,
     inpuErrorMsg: "",
     selectedEventInfo: { displayName: "" },
-    showRegisterButton: false
+    showRegisterButton: false,
+    showSnackBar: false,
+    snackVariant: "",
+    snackMessage: ""
   };
   componentDidMount() {
     axios.get("/api/all-events").then(res => {
@@ -215,9 +219,18 @@ class Register extends Component {
       })
       .then(res => {
         if (res.data.success) {
-          this.setState({ success: true });
+          this.setState({
+            success: true,
+            showSnackBar: true,
+            snackVariant: "success",
+            snackMessage: "Successfully registered for the event"
+          });
         } else {
-          alert(res.data.message);
+          this.setState({
+            showSnackBar: true,
+            snackVariant: "error",
+            snackMessage: res.data.message
+          });
         }
       })
       .catch(err => {
@@ -278,6 +291,17 @@ class Register extends Component {
       suggestions: []
     });
   };
+  handleSnackClick = () => {
+    this.setState({ showSnackBar: true });
+  };
+
+  handleSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    this.setState({ showSnackBar: false });
+  };
   render() {
     const { classes } = this.props;
     const autosuggestProps = {
@@ -327,6 +351,13 @@ class Register extends Component {
             </Button>
           </ToggleDisplay>
         </div>
+        <SnackBar
+          showSnackBar={this.state.showSnackBar}
+          handleClose={this.handleSnackClose.bind(this)}
+          handleClick={this.handleSnackClick.bind(this)}
+          variant={this.state.snackVariant}
+          message={this.state.snackMessage}
+        />
       </>
     );
   }

@@ -57,7 +57,7 @@ class CreateTeam extends Component {
   };
   fetchTeamSize = eventName => {
     ///fetch team size ##TODO##
-    const index = this.props.registeredEventsName.findIndex(e => {
+    const index = this.props.registeredEvents.findIndex(e => {
       return e === eventName;
     });
     const teamSize = this.props.teamSize[index];
@@ -114,7 +114,6 @@ class CreateTeam extends Component {
       })
       .then(res => {
         const { data } = res;
-        console.log(data);
         if (data.success) {
           // const newState = JSON.parse(JSON.stringify(this.state));
           const newState = {
@@ -157,8 +156,8 @@ class CreateTeam extends Component {
     formData[name] = currentEventName;
     if (name == "eventName") {
       if (prevEventName !== currentEventName) {
-        this.fetchTeamSize(formData[name]);
         this.onEventSwitch(currentEventName);
+        this.fetchTeamSize(formData[name]);
       }
     } else if (name === "teammate") {
       error.email = false;
@@ -179,7 +178,7 @@ class CreateTeam extends Component {
     }
   };
   handleAddTeammate = () => {
-    const { formData, error, errorMsg } = this.state;
+    const { formData, error, errorMsg, teamSize } = this.state;
     if (formData.eventName === "") {
       error.event = true;
       errorMsg.event = "Please Select an Event Name first";
@@ -195,7 +194,15 @@ class CreateTeam extends Component {
     }
     const members = [...this.state.members];
     if (members.includes(email)) {
-      alert("This email is already added!");
+      error.email = true;
+      errorMsg.email = "This email is already added!";
+      this.setState({ error, errorMsg });
+      return;
+    }
+    if (members.length >= teamSize - 1) {
+      error.email = true;
+      errorMsg.email = `You can add a maximum of ${teamSize} members`;
+      this.setState({ error, errorMsg });
       return;
     }
     //check if request can be sent
@@ -243,7 +250,7 @@ class CreateTeam extends Component {
     const { classes, registeredEventsName, registeredEvents } = this.props;
     return (
       <div>
-        <FormControl
+        {/* <FormControl
           className={classes.formControl}
           error={error.name}
           fullWidth
@@ -251,7 +258,17 @@ class CreateTeam extends Component {
           <InputLabel>Name</InputLabel>
           <Input value={formData.name} onChange={this.handleChange("name")} />
           <FormHelperText>{error.name ? errorMsg.name : ""}</FormHelperText>
-        </FormControl>
+        </FormControl> */}
+        <TextField
+          className={classes.TextField}
+          label="Team Name"
+          value={formData.name}
+          error={error.name}
+          helperText={errorMsg.name}
+          onChange={this.handleChange("name")}
+          margin="normal"
+          fullWidth
+        />
         <TextField
           id="select-currency"
           className={classes.TextField}

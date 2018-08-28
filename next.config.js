@@ -1,4 +1,3 @@
-const withCSS = require("@zeit/next-css");
 const events = [
   "cyberquest",
   "electromania",
@@ -38,7 +37,3 @@ module.exports = {
     return routes;
   }
 };
-
-module.exports = withCSS({
-  cssModules: true
-});
