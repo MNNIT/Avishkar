@@ -43,7 +43,6 @@ export default withRouter(
         <>
           <Meta />
           <NavBar path={router.pathname} color={"#212121"} />
-          <MobileNav path={router.pathname} />
           <div className="row">
             <div className="col-md-2 col-xs-12">
               <SideBar />

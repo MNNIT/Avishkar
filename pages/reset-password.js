@@ -36,7 +36,6 @@ class ResetPassword extends Component {
       <>
         <Meta />
         <NavBar />
-        <MobileNav />
         <div className="row ">
           <div className="col-md-4 col-xs-10 container">
             {this.renderSubComponent(tab)}

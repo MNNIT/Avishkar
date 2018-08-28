@@ -12,11 +12,9 @@ class MobileNav extends Component {
   };
   render() {
     //const className = this.props.path === "/" ? "none" : "shadow";
+    const { color, links } = this.props;
     return (
-      <section
-        className="primary-bg-color"
-        style={{ backgroundColor: this.props.color }}
-      >
+      <section className="primary-bg-color" style={{ backgroundColor: color }}>
         <nav>
           <div id="icon-container" onClick={this.toggleMenu}>
             <img src="/static/icon/menu.png" alt="Menu" />
@@ -25,26 +23,15 @@ class MobileNav extends Component {
             id="menu"
             className={this.state.showMenu ? "menu-show" : "menu-hide"}
           >
-            <h2>
-              <Link href="/">
-                <a href="/">Home</a>
-              </Link>
-            </h2>
-            <h2>
-              <Link href="/events">
-                <a href="/events">Events</a>
-              </Link>
-            </h2>
-            <h2>
-              <Link href="/team">
-                <a href="/team">Team</a>
-              </Link>
-            </h2>
-            <h2>
-              <Link href="/dashboard">
-                <a href="/dashboard">Dashboard</a>
-              </Link>
-            </h2>
+            {links.map(link => {
+              return (
+                <h2 key={link[1]}>
+                  <Link href={link[0]}>
+                    <a href={link[0]}>{link[1]}</a>
+                  </Link>
+                </h2>
+              );
+            })}
           </div>
         </nav>
         <Mask show={this.state.showMenu} hideModal={this.toggleMenu} />
