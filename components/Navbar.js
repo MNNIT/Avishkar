@@ -24,12 +24,11 @@ export default class extends Component {
     });
   }
   render() {
-    const { path } = this.props;
     const { links } = this.state;
     return (
       <>
-        <DesktopNav path={path} links={links} />
-        <MobileNav path={path} links={links} />
+        <DesktopNav links={links} />
+        <MobileNav links={links} />
       </>
     );
   }

@@ -67,7 +67,6 @@ export default withRouter(
       return (
         <>
           <Meta />
-          <NavBar path={router.pathname} color={"#212121"} />
           {this.state.loading ? (
             <div className="loader">
               <CustomLoader />

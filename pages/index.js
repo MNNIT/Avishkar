@@ -10,14 +10,13 @@ import { withRouter } from "next/router";
 
 const Index = props => {
   return (
-    <div>
+    <>
       <Meta />
-      <Navbar path={props.router.pathname} />
       <ParticlesBanner />
       <AboutAvishkar />
       <Socials />
       <Footer />
-    </div>
+    </>
   );
 };
 export default withRouter(Index);

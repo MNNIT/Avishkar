@@ -9,7 +9,7 @@ export default () => (
         name="google-site-verification"
         content="zSLbvACdG_0nQfnNcQon7CA0tuYxAy5dLjQpeVgFAcc"
       />
-      <meta name="theme-color" content="#21d4fd" />
+      <meta name="theme-color" content="black" />
       <meta
         name="description"
         content="Avishkar (2018) is the annual techfest of MNNIT, Allahabad.This is the concoction level of Avishkar that inspires every

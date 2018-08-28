@@ -11,9 +11,8 @@ class TeamPage extends Component {
   }
   render() {
     return (
-      <section>
+      <>
         <Meta color="#212121" />
-        <Navbar path={this.props.router.pathname} color="#212121" />
         <h1>Meet the Avishkar's Team</h1>
         <Team people={teamData.faculty} heading="Faculty" />
         <Team people={teamData.studentcoreteam} heading="Student Core Team" />
@@ -35,7 +34,7 @@ class TeamPage extends Component {
             }
           `}
         </style>
-      </section>
+      </>
     );
   }
 }
