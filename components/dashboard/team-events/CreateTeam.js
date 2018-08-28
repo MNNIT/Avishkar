@@ -91,7 +91,7 @@ class CreateTeam extends Component {
       const newState = JSON.parse(JSON.stringify(this.state));
       if (teamName === "") {
         newState.error.name = true;
-        newState.errorMsg.name = "Please Enter a Valid Event Name";
+        newState.errorMsg.name = "Please Enter a Valid Team Name";
       }
       if (invitedEmails.length === 0) {
         newState.error.email = true;
@@ -114,9 +114,10 @@ class CreateTeam extends Component {
       })
       .then(res => {
         const { data } = res;
+        console.log(data);
         if (data.success) {
-          const newState = JSON.parse(JSON.stringify(this.state));
-          newState = {
+          // const newState = JSON.parse(JSON.stringify(this.state));
+          const newState = {
             formData: {
               name: "",
               eventName: "",

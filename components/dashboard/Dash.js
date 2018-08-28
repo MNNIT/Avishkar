@@ -27,7 +27,6 @@ class Dash extends Component {
       .then(res => {
         if (res.data.success) {
           const { registeredEvents } = res.data;
-          console.log("yahoo", registeredEvents);
           this.setState({
             events: {
               registeredEvents,
@@ -44,19 +43,23 @@ class Dash extends Component {
   };
   //   registeredEvents = ["oligopoly", "cyberquest"];
   render() {
+    const { events, loading } = this.state;
     return (
       <div>
         <Card>
-          <CardContent>Payment Status :</CardContent>
+          <CardContent>Payment Status : Pending</CardContent>
         </Card>
         <br />
         <Card>
-          <CardContent>Number of Events Registered :</CardContent>
+          <CardContent>
+            Number of Events Registered : &nbsp;
+            {events.registeredEvents.length}
+          </CardContent>
         </Card>
         <h1>Registered Events</h1>
         <RegisteredEvents
-          registeredEvents={this.state.events.registeredEvents}
-          loading={this.state.events.loading}
+          registeredEvents={events.registeredEvents}
+          loading={events.loading}
         />
       </div>
     );

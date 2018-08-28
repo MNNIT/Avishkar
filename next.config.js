@@ -1,3 +1,4 @@
+const withCSS = require("@zeit/next-css");
 const events = [
   "cyberquest",
   "electromania",
@@ -12,7 +13,7 @@ const events = [
   "monopoly",
   "kreedomania"
 ];
-const tabs = ["dashboard", "profile", "register", "solo events", "team events"];
+const tabs = ["dashboard", "profile", "register", "soloevents", "teamevents"];
 const routes = {
   "/": { page: "/" },
   "/team": { page: "/team" },
@@ -37,3 +38,7 @@ module.exports = {
     return routes;
   }
 };
+
+module.exports = withCSS({
+  cssModules: true
+});

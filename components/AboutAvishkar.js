@@ -39,7 +39,7 @@ export default () => (
         box-sizing: border-box;
       }
       h2 {
-        color: #d2cfcf;
+        color: black;
       }
       p {
         font-size: 20px;

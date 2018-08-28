@@ -4,6 +4,7 @@ import UpdateProfile from "./UpdateProfile";
 import ToggleDisplay from "react-toggle-display";
 import axios from "axios";
 import baseURL from "../../../config";
+import CustomLoader from "../../CustomLoader";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 export default class extends Component {
@@ -15,7 +16,8 @@ export default class extends Component {
       college: "",
       UpdateProfile: false
     },
-    profileEditable: false
+    profileEditable: false,
+    loading: true
   };
   componentDidMount() {
     this.fetchUserProfile();
@@ -28,7 +30,8 @@ export default class extends Component {
         if (res.status == 200) {
           const { profile } = res.data;
           this.setState({
-            profile
+            profile,
+            loading: false
           });
         }
       })
@@ -44,23 +47,27 @@ export default class extends Component {
     }));
   };
   render() {
-    const { profile, profileEditable } = this.state;
-    return (
-      <>
-        <ToggleDisplay hide={this.state.profileEditable}>
-          <Profile
-            profile={profile}
-            toggleProfileForm={this.toggleProfileForm}
-          />
-        </ToggleDisplay>
-        <ToggleDisplay show={profileEditable}>
-          <UpdateProfile
-            profile={profile}
-            toggleProfileForm={this.toggleProfileForm}
-            fetchUserProfile={this.fetchUserProfile}
-          />
-        </ToggleDisplay>
-      </>
-    );
+    const { profile, profileEditable, loading } = this.state;
+    if (loading) {
+      return <CustomLoader />;
+    } else {
+      return (
+        <>
+          <ToggleDisplay hide={this.state.profileEditable}>
+            <Profile
+              profile={profile}
+              toggleProfileForm={this.toggleProfileForm}
+            />
+          </ToggleDisplay>
+          <ToggleDisplay show={profileEditable}>
+            <UpdateProfile
+              profile={profile}
+              toggleProfileForm={this.toggleProfileForm}
+              fetchUserProfile={this.fetchUserProfile}
+            />
+          </ToggleDisplay>
+        </>
+      );
+    }
   }
 }
