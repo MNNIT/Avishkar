@@ -41,7 +41,7 @@ function SimpleCard(props) {
       .post("/api/accept-request", { teamId: id })
       .then(res => {
         if (res.data.success) {
-          alert("success");
+          props.fetchTeamsData();
         }
       })
       .catch(err => {
@@ -53,15 +53,17 @@ function SimpleCard(props) {
   let checkAcceptButton = () => {
     if (acceptButton) {
       return (
-        <Button
-          variant="contained"
-          className={classes.button}
-          onClick={e => {
-            acceptTeamRequest(team._id);
-          }}
-        >
-          Accept
-        </Button>
+        <div>
+          <Button
+            variant="contained"
+            className={classes.button}
+            onClick={e => {
+              acceptTeamRequest(team._id);
+            }}
+          >
+            Accept
+          </Button>
+        </div>
       );
     } else {
       return;
@@ -75,7 +77,7 @@ function SimpleCard(props) {
             Event: {team.event}
           </Typography>
           <Typography variant="headline" component="h2">
-            Team : {team.name}
+            Team Name : {team.name}
           </Typography>
           <TeamTable users={team.users} />
         </CardContent>

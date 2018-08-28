@@ -24,6 +24,11 @@ const styles = theme => ({
   },
   menu: {
     width: 200
+  },
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
   }
 });
 class UpdateProfile extends Component {
@@ -65,9 +70,9 @@ class UpdateProfile extends Component {
     return (
       <div className="row center-md center-xs center-lg">
         <div className="col-md-6">
-          <Paper>
-            <p style={{ textAlign: "center" }}>
-              These fields must be filled and can only be updated once
+          <Paper className={classes.root} elevation={1}>
+            <p style={{ textAlign: "center", color: "red" }}>
+              * These fields must be filled and can only be updated once
             </p>
             <form className={classes.container} noValidate autoComplete="off">
               <TextField
