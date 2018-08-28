@@ -81,7 +81,6 @@ class Page extends Component {
       return (
         <>
           <Meta color="#212121" />
-          <NavBar path={router.pathname} color={"#212121"} />
           <IconEvents />
         </>
       );
@@ -90,18 +89,16 @@ class Page extends Component {
 
     if (eventName === "aerodynamix") {
       return (
-        <div>
+        <>
           <Meta color={"#212121"} />
-          <NavBar path={router.pathname} color={"#212121"} />
           <EventBanner eventName={eventName} />
           <AerodynamixContent />
-        </div>
+        </>
       );
     }
     return (
-      <div>
+      <>
         <Meta color={"#212121"} />
-        <NavBar path={router.pathname} />
         <EventBanner eventName={eventName} router={this.props.router} />
         <SubEvents router={this.props.router} />
         {/* <ToggleDisplay show={this.state.showModal}> */}
@@ -112,7 +109,7 @@ class Page extends Component {
           hideModal={this.hideModal}
         />
         <Mask show={this.state.showModal} hideModal={this.hideModal} /> */}
-      </div>
+      </>
     );
   }
 }

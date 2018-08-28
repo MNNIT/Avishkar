@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 export default class extends Component {
   render() {
-    const { color, path, links } = this.props;
+    const { links } = this.props;
     return (
       <section
         className="primary-bg-color"
@@ -13,8 +13,8 @@ export default class extends Component {
           <div className="navbar">
             <div className="wrapper">
               {links.map(function(link) {
-                const className =
-                  link[0] === path ? "link-container active" : "link-container";
+                // const className =
+                //   link[0] === path ? "link-container active" : "link-container";
                 return (
                   <div className="link-container" key={link[1]}>
                     <Link href={link[0]}>
