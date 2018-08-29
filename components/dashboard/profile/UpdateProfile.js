@@ -7,6 +7,7 @@ import axios from "axios";
 import baseURL from "../../../config";
 import MenuItem from "@material-ui/core/MenuItem";
 import { Menu } from "@material-ui/core";
+import AutocompleteField from "./Autocomplete";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
@@ -36,8 +37,11 @@ class UpdateProfile extends Component {
     name: "",
     gender: "",
     city: "",
-    college: ""
+    college: "",
+    cities: [],
+    colleges: []
   };
+
   static getDerivedStateFromProps(props, state) {
     let newState = { ...state };
     if (props.profile) {
@@ -45,6 +49,28 @@ class UpdateProfile extends Component {
     }
     return newState;
   }
+  componentDidMount() {
+    this.fetchAllCities();
+  }
+  fetchAllCities = () => {
+    axios
+      .get("/api/all-cities")
+      .then(res => {
+        console.log(res.data);
+        const { cities } = res.data;
+        this.setState({ cities });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  fetchCollegesInCity = city => {
+    axios.get(`/api/colleges/${city}`).then(res => {
+      const { colleges } = res.data;
+      console.log({ colleges });
+      this.setState({ colleges });
+    });
+  };
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value
@@ -64,6 +90,20 @@ class UpdateProfile extends Component {
       .catch(err => {
         console.log(err);
       });
+  };
+  handleAutocompleteChange = name => (event, { newValue }) => {
+    this.setState({
+      [name]: newValue
+    });
+  };
+  attemptCollegesFetch = cities => {
+    // alert("called");
+    // const shouldFetch = cities.some(function(city) {
+    //   return city._id === this.state.city.trim();
+    // });
+    //if (shouldFetch) {
+    this.fetchCollegesInCity(this.state.city);
+    //}
   };
   render() {
     const { classes } = this.props;
@@ -102,7 +142,7 @@ class UpdateProfile extends Component {
                 <MenuItem value={"female"}>Female</MenuItem>
                 <MenuItem value={"others"}>Others</MenuItem>
               </TextField>
-              <TextField
+              {/* <TextField
                 id="city"
                 label="City"
                 className={classes.textField}
@@ -111,16 +151,21 @@ class UpdateProfile extends Component {
                 margin="normal"
                 fullWidth
                 required
+              /> */}
+              <AutocompleteField
+                placeholder="Enter your city"
+                suggestions={this.state.cities}
+                label={"_id"}
+                value={this.state.city}
+                handleChange={this.handleAutocompleteChange("city")}
+                attemptCollegesFetch={this.attemptCollegesFetch}
               />
-              <TextField
-                id="college"
-                label="College"
-                className={classes.textField}
+              <AutocompleteField
+                placeholder="Enter your college"
+                suggestions={this.state.colleges}
+                label={"college"}
                 value={this.state.college}
-                onChange={this.handleChange("college")}
-                margin="normal"
-                fullWidth
-                required
+                handleChange={this.handleAutocompleteChange("college")}
               />
               <Button
                 color="primary"
