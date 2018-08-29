@@ -18,6 +18,7 @@ export default class extends Component {
                 team={team}
                 acceptButton={this.props.acceptButton}
                 fetchTeamsData={this.props.fetchTeamsData}
+                showSnackBar={this.props.showSnackBar}
               />
               <br />
             </>

@@ -25,7 +25,8 @@ export default class extends Component {
     const { formData } = { ...this.state };
     formData.email = formData.email.trim();
     if (formData.length === 0) {
-      alert("email is empty");
+      this.props.showSnackBar("Email field is Empty!", "error");
+      // alert("email is empty");
       return;
     }
     this.setState({ loading: true });
@@ -34,16 +35,18 @@ export default class extends Component {
       .post("/api/forgot-password", formData)
       .then(res => {
         if (res.data.success) {
+          this.props.showSnackBar(res.data.message, "success");
           Router.push("/reset-password/code");
         } else {
           this.setState({ loading: true });
-          alert(res.data.message);
+          // alert(res.data.message);
+          this.props.showSnackBar(res.data.message, "error");
         }
       })
       .catch(err => {
+        this.props.showSnackBar("something went wrong", "error");
+        // console.log(err);
         this.setState({ loading: true });
-        alert("something went wrong");
-        console.log(err);
       });
   };
   render() {

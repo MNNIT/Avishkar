@@ -98,6 +98,7 @@ class Info extends Component {
       teamSize,
       loading
     } = this.state;
+    const EventsLength = registeredEvents.length;
     if (loading) {
       return <CustomLoader />;
     } else if (registeredEvents.length === 0) {
@@ -109,7 +110,7 @@ class Info extends Component {
           Create team(s) now for{" "}
           <b>
             {registeredEvents.map(function(event, i) {
-              return event + "  ";
+              return event + (EventsLength - 1 === i ? "." : " , ");
             })}
           </b>
         </p>

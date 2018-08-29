@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Info from "./Info";
 import Teams from "./Teams";
+import SnackBar from "../../SnackBar";
 // import axios from "../../../axios";
 import axios from "axios";
 import baseURL from "../../../config";
@@ -14,7 +15,24 @@ export default class extends Component {
     createdTeams: [],
     pendingTeams: [],
     teamRequests: [],
-    loading: true
+    loading: true,
+    snackBar: {
+      open: false,
+      variant: "",
+      message: ""
+    }
+  };
+  handleSnackBarClose = () => {
+    const { snackBar } = this.state;
+    snackBar.open = false;
+    this.setState({ snackBar });
+  };
+  showSnackBar = (message, variant) => {
+    const { snackBar } = this.state;
+    snackBar.open = true;
+    snackBar.message = message;
+    snackBar.variant = variant;
+    this.setState({ snackBar });
   };
   fetchTeamsData = () => {
     this.fetchPendingTeams();
@@ -76,7 +94,13 @@ export default class extends Component {
   }
 
   render() {
-    const { createdTeams, pendingTeams, teamRequests, loading } = this.state;
+    const {
+      createdTeams,
+      pendingTeams,
+      teamRequests,
+      loading,
+      snackBar
+    } = this.state;
     if (loading) {
       return <CustomLoader />;
     } else {
@@ -93,6 +117,7 @@ export default class extends Component {
                     fetchTeamsData={this.fetchTeamsData.bind(this)}
                     createdTeams={pendingTeams}
                     acceptButton={false}
+                    showSnackBar={this.showSnackBar}
                   />
                 </>
               );
@@ -110,6 +135,8 @@ export default class extends Component {
                     fetchTeamsData={this.fetchTeamsData.bind(this)}
                     createdTeams={teamRequests}
                     acceptButton={true}
+                    showSnackBar={this.showSnackBar}
+                    //handleSnackBarClose = {this.handleSnackBarClose}
                   />
                 </>
               );
@@ -127,6 +154,7 @@ export default class extends Component {
                     fetchTeamsData={this.fetchTeamsData.bind(this)}
                     createdTeams={createdTeams}
                     acceptButton={false}
+                    showSnackBar={this.showSnackBar}
                   />
                 </>
               );
@@ -134,6 +162,12 @@ export default class extends Component {
               return <div />;
             }
           })()}
+          <SnackBar
+            showSnackBar={snackBar.open}
+            handleClose={this.handleSnackBarClose}
+            variant={snackBar.variant}
+            message={snackBar.message}
+          />
         </div>
       );
     }

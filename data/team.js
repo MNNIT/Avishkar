@@ -4,7 +4,7 @@ const team = {
       name: "Dr.VR.Komma",
       position: "convenor",
       department: "MED",
-      email: "kvroa@mnnit.ac.in",
+      email: "kvrao@mnnit.ac.in",
       img: "/static/team/dr-vr-komma.jpg"
     },
     {
@@ -27,7 +27,7 @@ const team = {
       position: "Member",
       department: "MED",
       email: "dkshukla@mnnit.ac.in",
-      img: "/static/team/person.png"
+      img: "/static/team/dks.jpg"
     }
   ],
   studentcoreteam: [

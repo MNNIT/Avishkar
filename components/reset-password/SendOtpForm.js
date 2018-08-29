@@ -73,7 +73,8 @@ export default class extends Component {
   submitForm = e => {
     e.preventDefault();
     if (this.isErrorInForm()) {
-      alert("errors in form");
+      // alert("errors in form");
+      this.props.showSnackBar("Error in form!", "error");
       return;
     }
     const { resetToken, password } = this.state.formData;
@@ -81,20 +82,25 @@ export default class extends Component {
       resetToken: resetToken.trim(),
       password: password.trim()
     };
-    console.log("sending req");
+    // console.log("sending req");
     axios
       .post("/api/new-password", formData)
       .then(res => {
         if (res.data.success) {
-          alert("password updated successfully");
-          Router.push("/auth");
+          // alert("password updated successfully");
+          this.props.showSnackBar("Password updated Successfully", "success");
+          setTimeout(() => {
+            Router.push("/auth");
+          }, 3000);
         } else {
-          alert(res.data.message);
+          // alert(res.data.message);
+          this.props.showSnackBar(res.data.message, "error");
         }
       })
       .catch(err => {
-        console.log(err);
-        alert("something went wrong");
+        // console.log(err);
+        // alert("something went wrong");
+        this.props.showSnackBar("Something went wrong!", "error");
       });
   };
   render() {
