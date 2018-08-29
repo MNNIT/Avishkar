@@ -26,7 +26,6 @@ export default class extends Component {
     axios
       .get("/api/profile")
       .then(res => {
-        console.log("data", res.data);
         if (res.status == 200) {
           const { profile } = res.data;
           this.setState({

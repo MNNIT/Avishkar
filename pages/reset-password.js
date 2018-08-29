@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Meta from "../components/Meta";
 import NavBar from "../components/Navbar";
 import MobileNav from "../components/MobileNav";
+import SnackBar from "../components/SnackBar";
 import { withRouter } from "next/router";
 import SendEmailForm from "../components/reset-password/SendEmailForm";
 import SendOtpForm from "../components/reset-password/SendOtpForm";
@@ -14,6 +15,25 @@ axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
 class ResetPassword extends Component {
+  state = {
+    snackBar: {
+      open: false,
+      message: "",
+      variant: ""
+    }
+  };
+  showSnackBar = (message, variant) => {
+    const { snackBar } = this.state;
+    snackBar.open = true;
+    snackBar.message = message;
+    snackBar.variant = variant;
+    this.setState({ snackBar });
+  };
+  handleSnackBarClose = () => {
+    const { snackBar } = this.state;
+    snackBar.open = false;
+    this.setState({ snackBar });
+  };
   renderSubComponent = tab => {
     if (!tab || tab === "email")
       return (
@@ -32,6 +52,7 @@ class ResetPassword extends Component {
 
   render() {
     const { tab } = this.props.router.query;
+    const { snackBar } = this.state;
     return (
       <>
         <Meta />
@@ -40,6 +61,12 @@ class ResetPassword extends Component {
             {this.renderSubComponent(tab)}
           </div>
         </div>
+        <SnackBar
+          showSnackBar={snackBar.open}
+          handleClose={this.handleSnackBarClose}
+          variant={snackBar.variant}
+          message={snackBar.message}
+        />
         <style jsx>
           {`
             div.container {

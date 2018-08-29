@@ -3,8 +3,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import AlertDialog from "../../AlertDialog";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import TeamTable from "./TeamTable";
 // import axios from "../../../axios";
 import axios from "axios";
@@ -13,35 +13,50 @@ axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
 const styles = theme => ({
-  card: {
-    minWidth: 275
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
-  },
-  title: {
-    marginBottom: 16,
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
-  },
   button: {
     margin: theme.spacing.unit
   }
 });
 
-function SimpleCard(props) {
-  const { classes, team, acceptButton } = props;
-  const bull = <span className={classes.bullet}>•</span>;
-  let acceptTeamRequest = (id, action) => {
+class SimpleCard extends React.Component {
+  state = {
+    dialog: {
+      open: false,
+      title: "",
+      content: "",
+      teamId: "",
+      action: ""
+    }
+  };
+  handleAlertOpen = (title, content, id, action) => {
+    const dialog = this.state.dialog;
+    dialog.open = true;
+    dialog.title = title;
+    dialog.content = content;
+    dialog.teamId = id;
+    dialog.action = action;
+    this.setState({ dialog });
+  };
+  handleAlertClose = () => {
+    const dialog = this.state.dialog;
+    dialog.open = false;
+    this.setState({ dialog });
+  };
+  respondToTeamRequest = (id, action) => {
     axios
-      .post("/api/accept-request", { teamId: id, action })
+      .post("/api/respond-to-request", { teamId: id, action })
       .then(res => {
         if (res.data.success) {
-          props.fetchTeamsData();
+          const { dialog } = this.state;
+          //fetch teams
+          this.props.fetchTeamsData();
+          //close dialog
+          dialog.open = false;
+          //snackBar response
+          this.props.showSnackBar("Response Successfully recorded", "info");
+          this.setState({ dialog });
+        } else {
+          this.props.showSnackBar("Response failed, try again!", "error");
         }
       })
       .catch(err => {
@@ -50,7 +65,7 @@ function SimpleCard(props) {
         }
       });
   };
-  let checkAcceptButton = () => {
+  checkAcceptButton = (acceptButton, classes, team) => {
     if (acceptButton) {
       return (
         <div>
@@ -58,7 +73,12 @@ function SimpleCard(props) {
             variant="contained"
             className={classes.button}
             onClick={e => {
-              acceptTeamRequest(team._id, "accept");
+              this.handleAlertOpen(
+                `Do you want to be in the team "${team.name}" ?`,
+                "Once you accept, changes are permanent.",
+                team._id,
+                "accept"
+              );
             }}
           >
             Accept
@@ -67,7 +87,12 @@ function SimpleCard(props) {
             variant="contained"
             className={classes.button}
             onClick={e => {
-              acceptTeamRequest(team._id, "reject");
+              this.handleAlertOpen(
+                `Do you want to reject "${team.name}" ?`,
+                "Once you reject, changes are permanent.",
+                team._id,
+                "reject"
+              );
             }}
           >
             Decline
@@ -78,22 +103,27 @@ function SimpleCard(props) {
       return;
     }
   };
-  return (
-    <div>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-            Event: {team.event}
-          </Typography>
-          <Typography variant="headline" component="h2">
-            Team Name : {team.name}
-          </Typography>
-          <TeamTable users={team.users} />
-        </CardContent>
-        {checkAcceptButton()}
-      </Card>
-    </div>
-  );
+  render() {
+    const { classes, team, acceptButton } = this.props;
+    const { title, open, content, teamId, action } = this.state.dialog;
+    return (
+      <div>
+        <TeamTable team={team} />
+        {this.checkAcceptButton(acceptButton, classes, team)}
+        <AlertDialog
+          title={title}
+          content={content}
+          handleClose={() => {
+            this.handleAlertClose();
+          }}
+          handleAgree={() => {
+            this.respondToTeamRequest(teamId, action);
+          }}
+          open={open}
+        />
+      </div>
+    );
+  }
 }
 
 export default withStyles(styles)(SimpleCard);
