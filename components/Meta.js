@@ -40,6 +40,15 @@ export default () => (
         href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
         type="text/css"
       />
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-68290407-2"
+      />
+      <script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'UA-68290407-2');
+      </script>
     </Head>
     <style jsx global>{`
       @font-face {
