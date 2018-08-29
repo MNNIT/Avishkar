@@ -44,11 +44,7 @@ export default () => (
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-68290407-2"
       />
-      <script>
-        window.dataLayer = window.dataLayer || []; function gtag()
-        {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'UA-68290407-2');
-      </script>
+      <script async src="/static/a.js" />
     </Head>
     <style jsx global>{`
       @font-face {
