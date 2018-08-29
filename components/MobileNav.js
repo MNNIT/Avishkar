@@ -65,6 +65,7 @@ class MobileNav extends Component {
               padding: 0px 30px;
             }
             #icon-container {
+              display: inline-block;
               padding-top: 5px;
               height: 34px;
               width: auto;
@@ -81,7 +82,7 @@ class MobileNav extends Component {
               top: 0px;
               left: 0px;
               background-color: #eeeeee;
-              transition: transform 0.4s;
+              transition: transform 0.4s, opacity 0.45s;
               padding-top: 50px;
             }
             .menu-show {

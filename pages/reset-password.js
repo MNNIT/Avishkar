@@ -38,13 +38,13 @@ class ResetPassword extends Component {
     if (!tab || tab === "email")
       return (
         <div>
-          <SendEmailForm />
+          <SendEmailForm showSnackBar={this.showSnackBar} />
         </div>
       );
     else if (tab === "code")
       return (
         <div>
-          <SendOtpForm />
+          <SendOtpForm showSnackBar={this.showSnackBar} />
         </div>
       );
     else return "404 error";

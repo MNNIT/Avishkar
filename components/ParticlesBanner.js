@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Link from "next/link";
 class ParticlesBanner extends Component {
   render() {
     return (
@@ -22,7 +22,13 @@ class ParticlesBanner extends Component {
         </div>
         <div className="intro" style={{ fontFamily: "rustico" }}>
           <h1>Avishkar 2018</h1>
-          <h2>The annual techfest of MNNIT Allahabad</h2>
+          <div className="downdiv">
+            <h2>The annual techfest of MNNIT Allahabad</h2>
+            <h4>26 to 29 of September</h4>
+            <Link as="/dashboard/register" href="/dashboard?tab=register">
+              <a>REGISTER</a>
+            </Link>
+          </div>
         </div>
         <style jsx>
           {`
@@ -55,9 +61,37 @@ class ParticlesBanner extends Component {
               color: #e91e63;
               color: white;
             }
-            h2 {
+            .downdiv {
               position: relative;
               top: 45%;
+            }
+            .downdiv a {
+              color: whitesmoke;
+              text-align: center;
+              margin: 0px;
+              font-weight: 400;
+              box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 80px;
+               {
+                /* background: linear-gradient(
+                45deg,
+                rgb(108, 174, 221),
+                rgb(57, 145, 208)
+              ); */
+              }
+              background: linear-gradient(
+                45deg,
+                rgb(173, 120, 220),
+                rgb(142, 68, 207)
+              );
+              border-radius: 4px;
+              text-decoration: none;
+              padding: 0.75em 2.5em;
+              border-style: none;
+              font-size: 1.175rem;
+              font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
+            }
+            h2,
+            h4 {
               font-size: 32px;
               color: #2196f3;
               color: white;
@@ -66,10 +100,15 @@ class ParticlesBanner extends Component {
               h1 {
                 font-size: 34px;
               }
-              h2 {
+              .downdiv {
                 position: relative;
-                top: 40vh;
-                font-size: 24px;
+                top: 35vh;
+              }
+              .downdiv h2 {
+                font-size: 22px;
+              }
+              .downdiv h4 {
+                font-size: 18px;
               }
             }
             .title {
