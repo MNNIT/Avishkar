@@ -36,8 +36,12 @@ class UpdateProfile extends Component {
   state = {
     name: "",
     gender: "",
+    phone: "",
     city: "",
     college: "",
+    regNum: "",
+    course: "",
+    courseYear: "",
     cities: [],
     colleges: []
   };
@@ -46,6 +50,9 @@ class UpdateProfile extends Component {
     let newState = { ...state };
     if (props.profile) {
       newState.name = props.profile.name;
+      if (props.profile.gender) {
+        newState.gender = props.profile.gender;
+      }
     }
     return newState;
   }
@@ -77,7 +84,10 @@ class UpdateProfile extends Component {
     });
   };
   updateProfile = () => {
+    //TODO validate formdata
     const formData = { ...this.state };
+    delete formData.colleges;
+    delete formData.cities;
     axios
       .post("/api/update-profile", formData)
       .then(res => {
@@ -152,6 +162,16 @@ class UpdateProfile extends Component {
                 fullWidth
                 required
               /> */}
+              <TextField
+                id="phone"
+                label="10 digit phone number"
+                className={classes.textField}
+                value={this.state.phone}
+                onChange={this.handleChange("phone")}
+                margin="normal"
+                fullWidth
+                required
+              />
               <AutocompleteField
                 placeholder="Enter your city"
                 suggestions={this.state.cities}
@@ -166,6 +186,41 @@ class UpdateProfile extends Component {
                 label={"college"}
                 value={this.state.college}
                 handleChange={this.handleAutocompleteChange("college")}
+              />
+              <TextField
+                id="regNum"
+                label="registration number "
+                className={classes.textField}
+                value={this.state.regNum}
+                onChange={this.handleChange("regNum")}
+                margin="normal"
+                fullWidth
+                required
+              />
+              <TextField
+                select
+                id="course"
+                label="Course"
+                className={classes.textField}
+                value={this.state.course}
+                onChange={this.handleChange("course")}
+                margin="normal"
+                fullWidth
+                required
+              >
+                <MenuItem value={"btech"}>BTECH</MenuItem>
+                <MenuItem value={"mca"}>MCA</MenuItem>
+                <MenuItem value={"mba"}>MBA</MenuItem>
+              </TextField>
+              <TextField
+                id="year"
+                label="Year of course"
+                className={classes.textField}
+                value={this.state.courseYear}
+                onChange={this.handleChange("courseYear")}
+                margin="normal"
+                fullWidth
+                required
               />
               <Button
                 color="primary"
