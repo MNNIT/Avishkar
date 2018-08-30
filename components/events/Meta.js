@@ -11,6 +11,8 @@ export default ({ color }) => {
           href="https://fonts.googleapis.com/css?family=Open+Sans"
           rel="stylesheet"
         />
+        <script src="/static/nprogress.js" />
+        <link rel="stylesheet" href="/static/styles/nprogress.css" />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-68290407-2"
