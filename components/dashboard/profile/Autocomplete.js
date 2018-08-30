@@ -11,7 +11,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    height: 250,
+    minHeight: 10,
     flexGrow: 1
   },
   container: {
@@ -64,7 +64,6 @@ class IntegrationAutosuggest extends React.Component {
         fullWidth
         required
         autoComplete="off"
-        type="text"
       />
     );
   };
