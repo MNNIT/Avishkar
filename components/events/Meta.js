@@ -11,6 +11,8 @@ export default ({ color }) => {
           href="https://fonts.googleapis.com/css?family=Open+Sans"
           rel="stylesheet"
         />
+        <script src="/static/nprogress.js" />
+        <link rel="stylesheet" href="/static/styles/nprogress.css" />
       </Head>
       <style jsx global>{`
         body {

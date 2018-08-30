@@ -28,11 +28,13 @@ class MobileNav extends Component {
           >
             {links.map(link => {
               return (
-                <h2 key={link[1]}>
-                  <Link href={link[0]}>
-                    <a href={link[0]}>{link[1]}</a>
-                  </Link>
-                </h2>
+                <div onClick={this.toggleMenu} key={link[1]}>
+                  <h2>
+                    <Link href={link[0]}>
+                      <a href={link[0]}>{link[1]}</a>
+                    </Link>
+                  </h2>
+                </div>
               );
             })}
           </div>
