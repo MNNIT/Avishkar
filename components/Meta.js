@@ -26,6 +26,8 @@ export default () => (
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
         rel="stylesheet"
       />
+      <script src="/static/nprogress.js" />
+      <link rel="stylesheet" href="/static/styles/nprogress.css" />
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
