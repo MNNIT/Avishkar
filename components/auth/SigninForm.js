@@ -49,7 +49,7 @@ export default class extends Component {
         console.log(res.data);
         if (res.data.success) {
           //redirect to /dashboard
-          Router.push("/dashboard");
+          window.location.replace("/dashboard");
         } else {
           alert(res.data.message);
           this.setState({ loading: false });
