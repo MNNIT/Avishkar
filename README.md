@@ -1,6 +1,4 @@
-# Frontend Web Application for Avishkar
 
-"Avishkar”, is the annual techno-management extravaganza of Motilal Nehru National Institute of Technology (MNNIT), Allahabad.
 
 [![Join discord server](https://img.shields.io/badge/Join-Discord%20server-%236a7fcb.svg)](https://discord.gg/jVQhkWB)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)

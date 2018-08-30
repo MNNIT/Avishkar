@@ -13,6 +13,11 @@ export default ({ color }) => {
         />
         <script src="/static/nprogress.js" />
         <link rel="stylesheet" href="/static/styles/nprogress.css" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-68290407-2"
+        />
+        <script async src="/static/a.js" />
       </Head>
       <style jsx global>{`
         body {

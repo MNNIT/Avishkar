@@ -71,18 +71,18 @@ class ParticlesBanner extends Component {
               margin: 0px;
               font-weight: 400;
               box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 80px;
-               {
-                /* background: linear-gradient(
+               
+                background: linear-gradient(
                 45deg,
                 rgb(108, 174, 221),
                 rgb(57, 145, 208)
-              ); */
-              }
-              background: linear-gradient(
+              ); 
+              
+              /*background: linear-gradient(
                 45deg,
                 rgb(173, 120, 220),
                 rgb(142, 68, 207)
-              );
+              );*/
               border-radius: 4px;
               text-decoration: none;
               padding: 0.75em 2.5em;

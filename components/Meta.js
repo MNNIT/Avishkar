@@ -42,6 +42,11 @@ export default () => (
         href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
         type="text/css"
       />
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-68290407-2"
+      />
+      <script async src="/static/a.js" />
     </Head>
     <style jsx global>{`
       @font-face {
