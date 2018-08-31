@@ -27,27 +27,28 @@ const styles = theme => ({
     minWidth: 700
   },
   title: {
-    margin: 16,
+    marginLeft: 18,
     fontSize: 16
   },
   teamName: {
-    marginTop: 16,
-    marginLeft: 16
+    marginTop: 12,
+    marginLeft: 18,
+    fontSize: 20
   }
 });
 
 function SimpleTable({ classes, team }) {
   return (
     <Paper className={classes.root}>
-      <Typography className={classes.title} color="textSecondary">
-        Event : {team.event}
-      </Typography>
       <Typography
         variant="headline"
         component="h2"
         className={classes.teamName}
       >
         Team Name : {team.name}
+      </Typography>
+      <Typography className={classes.title} color="textSecondary">
+        Event : {team.event}
       </Typography>
       <Table className={classes.table}>
         <TableHead>

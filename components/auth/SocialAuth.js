@@ -5,14 +5,19 @@ axios.defaults.withCredentials = true;
 export default class extends Component {
   componentDidMount() {
     window.addEventListener("message", function(event) {
-      console.log({ event });
+      // console.log({ event });
       //console.log(event.data);
       if (
         (event.origin === "http://localhost:3000" ||
           "https://api.avishkarmnnit.in") &&
         event.data === "loginsuccess"
       ) {
-        window.location.replace("/dashboard");
+        this.props.showSnackBar("Redirecting to dashboard", "basic");
+        this.setTimeout(() => {
+          window.location.replace("/dashboard");
+        }, 3000);
+      } else {
+        this.props.showSnackBar("Something went wrong!", "error");
       }
     });
   }
@@ -26,7 +31,7 @@ export default class extends Component {
       googleLoginWindow.document.write("Loading preview...");
       const res = await axios.post("/api/glogin");
       if (res.data.flag === 1) {
-        console.log(res.data.msg);
+        // console.log(res.data.msg);
         googleLoginWindow.location.href = res.data.msg;
       }
     } catch (err) {
@@ -55,7 +60,7 @@ export default class extends Component {
     return (
       <div className="container">
         <div onClick={this.handleGoogleAuth} className="gbtn-wrapper btn">
-          <img src="/static/img/gsignin-btn.png" alt="" />
+          <img src="/static/img/gbtn.png" alt="" />
         </div>
         {/* <div onClick={this.handleFacebookAuth} className="fbtn-wrapper btn">
           <img src="/static/img/fsignin-btn.png" alt="" />
@@ -63,6 +68,9 @@ export default class extends Component {
         <style jsx>
           {`
             div.container {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0 0 15px 0;
               width: 100%;
               display: flex;
               justify-content: center;
@@ -71,8 +79,6 @@ export default class extends Component {
               cursor: pointer;
               width: 220px;
               height: auto;
-            }
-            .gbtn-wrapper {
             }
             img {
               width: 100%;

@@ -63,7 +63,10 @@ export default class extends Component {
     } else {
       return (
         <div>
-          <Info fetchTeams={this.fetchTeamsData.bind(this)} />
+          <Info
+            fetchTeams={this.fetchTeamsData.bind(this)}
+            showSnackBar={this.showSnackBar}
+          />
           {(() => {
             if (teams.pending) {
               if (teams.pending.length > 0) {
