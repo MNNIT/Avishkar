@@ -63,7 +63,7 @@ class UpdateProfile extends Component {
     axios
       .get("/api/all-cities")
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         const { cities } = res.data;
         this.setState({ cities });
       })
@@ -74,7 +74,7 @@ class UpdateProfile extends Component {
   fetchCollegesInCity = city => {
     axios.get(`/api/colleges/${city}`).then(res => {
       const { colleges } = res.data;
-      console.log({ colleges });
+      // console.log({ colleges });
       this.setState({ colleges });
     });
   };
@@ -92,13 +92,15 @@ class UpdateProfile extends Component {
       .post("/api/update-profile", formData)
       .then(res => {
         if (res.data.success) {
-          alert("sucess");
+          // alert("sucess");
+          this.props.showSnackBar("Profile updated Successfully", "success");
           this.props.fetchUserProfile();
           this.props.toggleProfileForm();
         }
       })
       .catch(err => {
         console.log(err);
+        this.props.showSnackBar("Error occured !", "error");
       });
   };
   handleAutocompleteChange = name => (event, { newValue }) => {

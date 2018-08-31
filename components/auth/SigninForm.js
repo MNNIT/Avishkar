@@ -60,7 +60,7 @@ export default class extends Component {
       })
       .catch(err => {
         this.setState({ loading: false });
-        this.props.showSnackBar("something went worng!", "error");
+        this.props.showSnackBar("something went worng !", "error");
       });
   };
   render() {
@@ -94,12 +94,11 @@ export default class extends Component {
             {this.state.loading ? "SUBMITTING" : "SIGN IN"}
           </button>
         </form>
-        <Link>
+        <Link href="/reset-password">
           <a
             style={{
               color: "black"
             }}
-            href="/reset-password"
           >
             Forgot password?
           </a>

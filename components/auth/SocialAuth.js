@@ -4,6 +4,7 @@ axios.defaults.withCredentials = true;
 
 export default class extends Component {
   componentDidMount() {
+    const { showSnackBar } = this.props;
     window.addEventListener("message", function(event) {
       // console.log({ event });
       //console.log(event.data);
@@ -12,12 +13,12 @@ export default class extends Component {
           "https://api.avishkarmnnit.in") &&
         event.data === "loginsuccess"
       ) {
-        this.props.showSnackBar("Redirecting to dashboard", "basic");
         this.setTimeout(() => {
           window.location.replace("/dashboard");
         }, 3000);
+        showSnackBar("Redirecting to dashboard ...", "basic");
       } else {
-        this.props.showSnackBar("Something went wrong!", "error");
+        // showSnackBar("Something went wrongg!", "error");
       }
     });
   }
