@@ -21,10 +21,10 @@ class ParticlesBanner extends Component {
           </div>
         </div>
         <div className="intro" style={{ fontFamily: "rustico" }}>
-          <h1>Avishkar 2018</h1>
+          <h1>Avishkar</h1>
           <div className="downdiv">
-            <h2>The annual techfest of MNNIT Allahabad</h2>
-            <h4>26 to 29 of September</h4>
+            <h2>The annual techno management fest of MNNIT Allahabad</h2>
+            <h4>26 to 29 of September 2018</h4>
             <Link as="/dashboard/register" href="/dashboard?tab=register">
               <a>REGISTER</a>
             </Link>
@@ -71,13 +71,13 @@ class ParticlesBanner extends Component {
               margin: 0px;
               font-weight: 400;
               box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 80px;
-               
-                background: linear-gradient(
+
+              background: linear-gradient(
                 45deg,
                 rgb(108, 174, 221),
                 rgb(57, 145, 208)
-              ); 
-              
+              );
+
               /*background: linear-gradient(
                 45deg,
                 rgb(173, 120, 220),

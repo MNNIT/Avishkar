@@ -17,40 +17,40 @@ export default withStyles(styles)(function({
 }) {
   return (
     <div className="profile-container">
-      <div className="row center-md center-xs center-lg">
-        <div className="img-container">
-          <img src="/static/icon/male.png" alt="Profile Image" />
-        </div>
-      </div>
       <div className="data">
         <Paper className={classes.root} elevation={1}>
-          <p>
+          <div className="row center-md center-xs center-lg">
+            <div className="img-container">
+              <img src="/static/icon/male.png" alt="Profile Image" />
+            </div>
+          </div>
+          <h2>
             Name :&nbsp;
             {profile.name}
-          </p>
+          </h2>
           <p>
-            Email :&nbsp;
+            <b>Email</b> :&nbsp;
             {profile.email}
           </p>
           <p>
-            Gender :&nbsp;
+            <b>Gender</b> :&nbsp;
             {profile.gender}
           </p>
           <p>
-            College :&nbsp;
+            <b>College</b> :&nbsp;
             {profile.college}
           </p>
+          <ToggleDisplay hide={profile.updatedProfile}>
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={toggleProfileForm}
+              style={{ margin: "auto" }}
+            >
+              UPDATE PROFILE
+            </Button>
+          </ToggleDisplay>
         </Paper>
-        <br />
-        <ToggleDisplay hide={profile.updatedProfile}>
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={toggleProfileForm}
-          >
-            UPDATE PROFILE
-          </Button>
-        </ToggleDisplay>
       </div>
 
       <style jsx>
@@ -69,11 +69,15 @@ export default withStyles(styles)(function({
             margin: auto;
             margin-top: 100px;
             box-sizing: border-box;
-            border-radius: 4px;
+             {
+              /* border-radius: 4px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-              0 3px 6px rgba(0, 0, 0, 0.23);
+              0 3px 6px rgba(0, 0, 0, 0.23); */
+            }
             padding: 20px;
-            background-color: tomato;
+             {
+              /* background-color: tomato; */
+            }
           }
           div.data {
             padding: 10px 20px 10px 20px;

@@ -132,7 +132,7 @@ class IntegrationAutosuggest extends React.Component {
     this.setState({
       suggestions: []
     });
-    console.log("insanely beautiful thing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    // console.log("insanely beautiful thing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   };
 
   handleChange = name => (event, { newValue }) => {
@@ -174,6 +174,7 @@ class IntegrationAutosuggest extends React.Component {
               {options.children}
             </Paper>
           )}
+          fullWidth
         />
       </div>
     );
