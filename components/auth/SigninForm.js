@@ -53,6 +53,8 @@ export default class extends Component {
         } else {
           alert(res.data.message);
           this.setState({ loading: false });
+          if (res.data.type === "v") {
+          }
         }
       })
       .catch(err => {
@@ -92,8 +94,18 @@ export default class extends Component {
           </button>
         </form>
         <Link>
-          <a href="/reset-password">Forgot password?</a>
+          <a
+            style={{
+              color: "black"
+            }}
+            href="/reset-password"
+          >
+            Forgot password?
+          </a>
         </Link>
+        {/* <Link>
+          <a href="/verify-email">verify email</a>
+        </Link> */}
         <style jsx>
           {`
             div.form-container {

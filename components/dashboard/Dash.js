@@ -47,7 +47,7 @@ class Dash extends Component {
     return (
       <div>
         <Card>
-          <CardContent>Payment Status : Pending</CardContent>
+          <CardContent>Payment Status : Currently unavailable</CardContent>
         </Card>
         <br />
         <Card>
