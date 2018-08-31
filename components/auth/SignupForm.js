@@ -27,6 +27,7 @@ export default class extends Component {
     referral: { message: "", color: "" },
     loading: false
   };
+  emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,} ?$/gim;
   displayFieldError = field => {
     const { errors } = this.state;
     errors[field] = true;
@@ -50,16 +51,17 @@ export default class extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     const formData = { ...this.state.formData };
-    const match = formData.email.match(
-      "^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,} ?$"
-    );
+    const match = formData.email.match(this.emailRegex);
     if (match) {
       axios
         .post("/api/signup", formData)
         .then(res => {
+          this.setState({ loading: false });
           if (res.data.success) {
+            //email is sent to user on server
+            alert(res.data.message);
             //redirect to /dashboard
-            window.location.replace("/dashboard");
+            // window.location.replace("/dashboard");
           } else if (!res.data.success) {
             alert(res.data.message);
           }
@@ -85,9 +87,7 @@ export default class extends Component {
       }
     } else if (field === "email") {
       const formData = { ...this.state.formData };
-      const match = formData.email.match(
-        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,} ?$/gim
-      );
+      const match = formData.email.match(this.emailRegex);
       console.log("test", match);
       if (!match) {
         this.setState({ errorMsg: { email: "Email is not Valid" } });
@@ -101,32 +101,12 @@ export default class extends Component {
     const { email } = this.state.formData;
     axios.get(`/`);
   };
-  checkReferralCode = () => {
-    const { code } = this.state.formData;
-    if (code.trim().length === 0) {
-      this.setState({ referral: { message: "", color: "" } });
-    }
-    axios
-      .get(`/api/referral/${code}`)
-      .then(res => {
-        const { data } = res;
-        if (data.success) {
-          this.setState({
-            referral: { message: data.message, color: "green" }
-          });
-        } else {
-          this.setState({ referral: { message: data.message, color: "red" } });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+
   render() {
     const { formData, errors, referral, errorMsg } = this.state;
     return (
       <div className="form-container">
-        <form action="">
+        <form>
           <label>EMAIL</label>
           <input
             type="email"
@@ -140,7 +120,7 @@ export default class extends Component {
             required
           />
           <p>{errors.email ? errorMsg.email : " "}</p>
-          <label>FULL NAME</label>
+          <label>NAME</label>
           <input
             type="text"
             value={formData.name}
@@ -165,57 +145,7 @@ export default class extends Component {
           <p>
             {errors.password ? "Password should contain min 6 characters" : " "}
           </p>
-          <label>PHONE</label>
-          <input
-            type="number"
-            value={formData.phone}
-            onChange={e => {
-              this.updateField(e, "phone");
-            }}
-            required
-          />
-          <p> </p>
-          <label>COLLEGE</label>
-          <input
-            type="text"
-            value={formData.college}
-            onChange={e => {
-              this.updateField(e, "college");
-            }}
-            required
-          />
-          <p> </p>
-          <label>CITY</label>
-          <input
-            type="text"
-            value={formData.city}
-            onChange={e => {
-              this.updateField(e, "city");
-            }}
-            required
-          />
-          <p> </p>
-          <label>YEAR</label>
-          <input
-            type="number"
-            value={formData.year}
-            onChange={e => {
-              this.updateField(e, "year");
-            }}
-            required
-          />
-          <p> </p>
-          {/* <label>REFERRAL CODE (OPTIONAL)</label>
-          <input
-            type="text"
-            value={formData.code}
-            onChange={e => {
-              this.updateField(e, "code");
-            }}
-            onBlur={this.checkReferralCode}
-            required
-          />
-          <p style={{ color: referral.color }}>{referral.message}</p> */}
+
           <button
             type="submit"
             onClick={this.submitForm}
