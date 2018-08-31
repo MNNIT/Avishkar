@@ -123,7 +123,7 @@ class Register extends Component {
     suggestions: [],
     success: false,
     inputError: false,
-    inpuErrorMsg: "",
+    inputErrorMsg: "",
     selectedEventInfo: { displayName: "" },
     showRegisterButton: false,
     showSnackBar: false,
@@ -143,7 +143,7 @@ class Register extends Component {
   static getDerivedStateFromProps = (props, state) => {
     const newState = { ...state };
     if (props.event) {
-      return (newState.single = props.event);
+      newState.single = props.event;
     }
     return newState;
   };
@@ -187,13 +187,15 @@ class Register extends Component {
         const { data } = res;
         if (data.success) {
           this.setState({
+            inputError: false,
+            inputErrorMsg: "",
             selectedEventInfo: data.event,
             showRegisterButton: true
           });
         } else {
           this.setState({
             inputError: true,
-            inpuErrorMsg: "Event Not available",
+            inputErrorMsg: "Event Not available",
             showRegisterButton: false
           });
         }
@@ -253,6 +255,7 @@ class Register extends Component {
       getSuggestionValue,
       renderSuggestion
     };
+    const { single, inputError, inputErrorMsg } = this.state;
     return (
       <>
         {this.checkRegisterStatus()}
@@ -261,10 +264,10 @@ class Register extends Component {
           inputProps={{
             classes,
             placeholder: "Enter Event Name",
-            value: this.state.single,
+            value: single,
             onChange: this.handleChange("single"),
-            error: this.state.inputError,
-            helperText: this.state.inputErrorMsg
+            error: inputError && (single.length > 0 ? true : false),
+            helperText: inputErrorMsg && (single.length > 0 ? true : false)
           }}
           theme={{
             container: classes.container,

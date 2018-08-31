@@ -171,6 +171,7 @@ class UpdateProfile extends Component {
                 margin="normal"
                 fullWidth
                 required
+                autoComplete={false}
               />
               <AutocompleteField
                 placeholder="Enter your city"

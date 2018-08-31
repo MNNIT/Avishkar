@@ -11,10 +11,8 @@ axios.defaults.withCredentials = true;
 
 export default class extends Component {
   state = {
-    // ##TODO## fetch registered Team-Events
-    createdTeams: [],
-    pendingTeams: [],
-    teamRequests: [],
+    email: "",
+    teams: {},
     loading: true,
     snackBar: {
       open: false,
@@ -35,52 +33,17 @@ export default class extends Component {
     this.setState({ snackBar });
   };
   fetchTeamsData = () => {
-    this.fetchPendingTeams();
-    this.fetchTeamRequests();
-    this.fetchTeams();
-  };
-  fetchTeamRequests = () => {
     axios
-      .get("/api/team-requests")
+      .get("/api/all-user-teams")
       .then(res => {
         const { data } = res;
         if (data.success) {
-          this.setState({
-            teamRequests: data.teams
+          const teamCategories = data.teams;
+          let teams = {};
+          teamCategories.forEach(category => {
+            teams[category._id] = category.teams;
           });
-        }
-      })
-      .catch(err => {
-        if (err.response.status === 401) {
-          window.location.replace("/auth");
-        }
-      });
-  };
-  fetchPendingTeams = () => {
-    axios
-      .get("/api/pending-request")
-      .then(res => {
-        const { data } = res;
-        if (data.success) {
-          this.setState({ pendingTeams: data.pendingTeams });
-        }
-      })
-      .catch(err => {
-        if (err.response.status === 401) {
-          window.location.replace("/auth");
-        }
-      });
-  };
-  fetchTeams = () => {
-    axios
-      .get("/api/teams")
-      .then(res => {
-        const { data } = res;
-        if (data.success) {
-          this.setState({
-            createdTeams: data.teams,
-            loading: false
-          });
+          this.setState({ teams, loading: false, email: data.requestBy });
         }
       })
       .catch(err => {
@@ -94,13 +57,7 @@ export default class extends Component {
   }
 
   render() {
-    const {
-      createdTeams,
-      pendingTeams,
-      teamRequests,
-      loading,
-      snackBar
-    } = this.state;
+    const { teams, loading, snackBar, email } = this.state;
     if (loading) {
       return <CustomLoader />;
     } else {
@@ -108,56 +65,103 @@ export default class extends Component {
         <div>
           <Info fetchTeams={this.fetchTeamsData.bind(this)} />
           {(() => {
-            if (pendingTeams.length > 0) {
-              return (
-                <>
-                  <h1>Pending Teams</h1>
-                  <Teams
-                    fetchTeams={this.fetchPendingTeams.bind(this)}
-                    fetchTeamsData={this.fetchTeamsData.bind(this)}
-                    createdTeams={pendingTeams}
-                    acceptButton={false}
-                    showSnackBar={this.showSnackBar}
-                  />
-                </>
-              );
+            if (teams.pending) {
+              if (teams.pending.length > 0) {
+                let pendingteams = teams.pending.filter(team => {
+                  let condition = false;
+                  team.users.forEach(user => {
+                    if (user.email === email && user.status !== "pending") {
+                      condition = true;
+                    }
+                  });
+                  return condition;
+                });
+                if (pendingteams.length > 0) {
+                  return (
+                    <>
+                      <h1>Pending Teams</h1>
+                      <Teams
+                        fetchTeamsData={this.fetchTeamsData.bind(this)}
+                        createdTeams={pendingteams}
+                        acceptButton={false}
+                        showSnackBar={this.showSnackBar}
+                      />
+                    </>
+                  );
+                } else {
+                  return <div />;
+                }
+              }
             } else {
               return <div />;
             }
           })()}
           {(() => {
-            if (teamRequests.length > 0) {
-              return (
-                <>
-                  <h1>Team Requests</h1>
-                  <Teams
-                    fetchTeams={this.fetchTeamRequests.bind(this)}
-                    fetchTeamsData={this.fetchTeamsData.bind(this)}
-                    createdTeams={teamRequests}
-                    acceptButton={true}
-                    showSnackBar={this.showSnackBar}
-                    //handleSnackBarClose = {this.handleSnackBarClose}
-                  />
-                </>
-              );
+            if (teams.pending) {
+              if (teams.pending.length > 0) {
+                let teamRequests = teams.pending.filter(team => {
+                  let condition = false;
+                  team.users.forEach(user => {
+                    if (user.email === email && user.status === "pending") {
+                      condition = true;
+                    }
+                  });
+                  return condition;
+                });
+                if (teamRequests.length > 0) {
+                  return (
+                    <>
+                      <h1>Team Requests</h1>
+                      <Teams
+                        fetchTeamsData={this.fetchTeamsData.bind(this)}
+                        createdTeams={teamRequests}
+                        acceptButton={true}
+                        showSnackBar={this.showSnackBar}
+                      />
+                    </>
+                  );
+                } else {
+                  return <div />;
+                }
+              }
             } else {
               return <div />;
             }
           })()}
           {(() => {
-            if (createdTeams.length > 0) {
-              return (
-                <>
-                  <h1>Created Teams</h1>
-                  <Teams
-                    fetchTeams={this.fetchTeams.bind(this)}
-                    fetchTeamsData={this.fetchTeamsData.bind(this)}
-                    createdTeams={createdTeams}
-                    acceptButton={false}
-                    showSnackBar={this.showSnackBar}
-                  />
-                </>
-              );
+            if (teams.created) {
+              if (teams.created.length > 0) {
+                return (
+                  <>
+                    <h1>Created Teams</h1>
+                    <Teams
+                      fetchTeamsData={this.fetchTeamsData.bind(this)}
+                      createdTeams={teams.created}
+                      acceptButton={false}
+                      showSnackBar={this.showSnackBar}
+                    />
+                  </>
+                );
+              }
+            } else {
+              return <div />;
+            }
+          })()}
+          {(() => {
+            if (teams.rejected) {
+              if (teams.rejected.length > 0) {
+                return (
+                  <>
+                    <h1>Rejected Teams</h1>
+                    <Teams
+                      fetchTeamsData={this.fetchTeamsData.bind(this)}
+                      createdTeams={teams.rejected}
+                      acceptButton={false}
+                      showSnackBar={this.showSnackBar}
+                    />
+                  </>
+                );
+              }
             } else {
               return <div />;
             }

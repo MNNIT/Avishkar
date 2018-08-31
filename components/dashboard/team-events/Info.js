@@ -53,7 +53,7 @@ class Info extends Component {
           });
           if (teams.length > 0) {
             teams.forEach(e => {
-              teamEvents.push(e.event);
+              if (e.status !== "rejected") teamEvents.push(e.event);
             });
             teamEvents.forEach(e => {
               let i = registeredEventsName.findIndex(event => {
