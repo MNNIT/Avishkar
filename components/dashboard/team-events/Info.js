@@ -35,11 +35,7 @@ class Info extends Component {
       .all([req1, req2])
       .then(
         axios.spread((res1, res2) => {
-          if (
-            res1.data.success &&
-            res2.data.success &&
-            res1.data.registeredEvents.length > 0
-          ) {
+          if (res1.data.success && res2.data.success) {
             const { registeredEvents } = res1.data;
             const { teams } = res2.data;
             let registeredEventsDisplayName = [],
