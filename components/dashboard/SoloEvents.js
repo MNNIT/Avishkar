@@ -3,6 +3,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+import Icon from "@material-ui/core/Icon";
 import axios from "axios";
 import baseURL from "../../config";
 import CustomLoader from "../CustomLoader";
@@ -21,7 +22,6 @@ class SoloEvents extends Component {
         if (res.data.success) {
           const { registeredEvents } = res.data;
           const soloEvents = registeredEvents.filter(event => event.size === 1);
-          console.log(soloEvents);
           this.setState({
             soloEvents,
             loading: false
@@ -55,7 +55,27 @@ class SoloEvents extends Component {
         </>
       );
     } else {
-      return <div>You haven't registered for any Solo Events</div>;
+      return (
+        <div className="icon">
+          <Icon style={{ color: "grey", fontSize: 64 }}>weekend</Icon>
+          <p>You haven't registered for any Solo Events</p>
+          <style jsx>
+            {`
+              .icon {
+                margin-top: 10%;
+                transform: translateY(-50%);
+                display: block;
+                text-align: center;
+              }
+              @media (max-width: 700px) {
+                .icon {
+                  margin-top: 40%;
+                }
+              }
+            `}
+          </style>
+        </div>
+      );
     }
   }
 }

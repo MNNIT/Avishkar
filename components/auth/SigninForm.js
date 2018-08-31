@@ -31,7 +31,6 @@ export default class extends Component {
     }
     axios.post("/api/is-email-taken", { email }).then(res => {
       const { data } = res;
-      console.log(data);
       if (!data.success) {
         this.setState({ showEmailError: false });
       } else {
@@ -46,12 +45,14 @@ export default class extends Component {
     axios
       .post("/api/signin", formData)
       .then(res => {
-        console.log(res.data);
         if (res.data.success) {
+          this.props.showSnackBar("Redirecting to dashboard", "basic");
           //redirect to /dashboard
-          window.location.replace("/dashboard");
+          setTimeout(() => {
+            window.location.replace("/dashboard");
+          }, 3000);
         } else {
-          alert(res.data.message);
+          this.props.showSnackBar(res.data.message, "error");
           this.setState({ loading: false });
           if (res.data.type === "v") {
           }
@@ -59,7 +60,7 @@ export default class extends Component {
       })
       .catch(err => {
         this.setState({ loading: false });
-        alert("something went wrong!");
+        this.props.showSnackBar("something went worng!", "error");
       });
   };
   render() {

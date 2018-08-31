@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import AddedTeammates from "./AddedTeammates";
+import AlertDialog from "../../AlertDialog";
 // import axios from "../../../axios";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
@@ -28,6 +29,11 @@ const styles = theme => ({
   },
   formControl: {
     margin: theme.spacing.unit
+  },
+  alertDialog: {
+    open: false,
+    title: "",
+    content: ""
   }
 });
 class CreateTeam extends Component {
@@ -48,6 +54,11 @@ class CreateTeam extends Component {
       name: "",
       event: "",
       email: ""
+    },
+    alertDialog: {
+      open: false,
+      title: "",
+      content: ""
     }
   };
   deleteMember = index => {
@@ -87,16 +98,16 @@ class CreateTeam extends Component {
     const invitedEmails = state.members;
     const eventName = state.formData.eventName;
     const teamName = state.formData.name.trim();
-    if (invitedEmails.length === 0 || eventName === "" || teamName === "") {
+    if (eventName === "" || teamName === "") {
       const newState = JSON.parse(JSON.stringify(this.state));
       if (teamName === "") {
         newState.error.name = true;
         newState.errorMsg.name = "Please Enter a Valid Team Name";
       }
-      if (invitedEmails.length === 0) {
-        newState.error.email = true;
-        newState.errorMsg.email = "Enter atleast one member to create a team";
-      }
+      // if (invitedEmails.length === 0) {
+      //   newState.error.email = true;
+      //   newState.errorMsg.email = "Enter atleast one member to create a team";
+      // }
       if (eventName === "") {
         newState.error.event = true;
       }
@@ -133,6 +144,11 @@ class CreateTeam extends Component {
               name: "",
               event: "",
               email: ""
+            },
+            alertDialog: {
+              open: false,
+              title: "",
+              content: ""
             }
           };
           //empty state on create-team success
@@ -141,12 +157,23 @@ class CreateTeam extends Component {
           this.props.fetchTeams();
           //close dialog
           this.props.handleDialogClose();
+          //show success snackBar
+          this.props.showSnackBar("Team Created Successfully", "success");
+          //fetch events to create team
+          this.props.fetchRegisteredNoTeamEvents();
         } else {
-          alert(data.message);
+          //close dialog
+          this.props.handleDialogClose();
+          //show snack error
+          this.props.showSnackBar("Failed to create team, try agian", "error");
         }
       })
       .catch(err => {
         //handle error
+        this.props.showSnackBar("Error occured at our end!", "error");
+        if (err.response.status === 401) {
+          window.location.replace("/auth");
+        }
       });
   };
   handleChange = name => e => {
@@ -245,8 +272,27 @@ class CreateTeam extends Component {
         }
       });
   };
+  handleAlertOpen = () => {
+    const { alertDialog, formData } = this.state;
+    alertDialog.open = true;
+    alertDialog.title = `Do you want create team "${formData.name}"?`;
+    alertDialog.content =
+      "Once team is created, changes are permanent and you can not edit!";
+    this.setState({ alertDialog });
+  };
+  handleAlertClose = () => {
+    const { alertDialog } = this.state;
+    alertDialog.open = false;
+    this.setState({ alertDialog });
+  };
+  handleAlertAgree = () => {
+    this.handleCreateTeam();
+    const { alertDialog } = this.state;
+    alertDialog.open = false;
+    this.setState({ alertDialog });
+  };
   render() {
-    const { formData, members, error, errorMsg } = this.state;
+    const { formData, members, error, errorMsg, alertDialog } = this.state;
     const { classes, registeredEventsName, registeredEvents } = this.props;
     return (
       <div>
@@ -311,10 +357,17 @@ class CreateTeam extends Component {
         <Button
           className={classes.button}
           variant="outlined"
-          onClick={this.handleCreateTeam}
+          onClick={this.handleAlertOpen}
         >
           CREATE
         </Button>
+        <AlertDialog
+          open={alertDialog.open}
+          title={alertDialog.title}
+          content={alertDialog.content}
+          handleAgree={this.handleAlertAgree}
+          handleClose={this.handleAlertClose}
+        />
       </div>
     );
   }

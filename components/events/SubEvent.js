@@ -21,7 +21,7 @@ export default ({ subEventData, show, color, hideModal }) => {
                 as={`/dashboard/register/${data.displayName}`}
                 href={`/dashboard?tab=register&event=${data.displayName}`}
               >
-                <a>Register to the Event</a>
+                <button>Register for Event</button>
               </Link>
             </div>
           </div>
@@ -45,13 +45,13 @@ export default ({ subEventData, show, color, hideModal }) => {
           margin-left: 49%;
           transform: translateX(-50%);
         }
-        div.register-btn a {
+        div.register-btn button {
           color: whitesmoke;
           text-align: center;
           margin: 0px;
           font-weight: 400;
           box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 10px;
-
+          cursor: pointer;
           background: linear-gradient(
             45deg,
             rgb(108, 174, 221),

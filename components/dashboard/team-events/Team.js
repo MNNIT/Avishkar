@@ -75,7 +75,7 @@ class SimpleCard extends React.Component {
             onClick={e => {
               this.handleAlertOpen(
                 `Do you want to be in the team "${team.name}" ?`,
-                "Once you accept, changes are permanent.",
+                "Once you ACCEPT, changes are permanent.",
                 team._id,
                 "accept"
               );
@@ -88,8 +88,8 @@ class SimpleCard extends React.Component {
             className={classes.button}
             onClick={e => {
               this.handleAlertOpen(
-                `Do you want to reject "${team.name}" ?`,
-                "Once you reject, changes are permanent.",
+                `Do you want to reject the team request "${team.name}" ?`,
+                "Once you REJECT, changes are permanent.",
                 team._id,
                 "reject"
               );

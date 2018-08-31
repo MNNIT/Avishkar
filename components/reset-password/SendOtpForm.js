@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ToggleDisplay from "react-toggle-display";
 // import Link from "next/link";
-import { withRouter } from "next/router";
+import Router from "next/router";
 import axios from "axios";
 import baseURL from "../../config";
 axios.defaults.baseURL = baseURL;
@@ -91,7 +91,7 @@ export default class extends Component {
           this.props.showSnackBar("Password updated Successfully", "success");
           setTimeout(() => {
             Router.push("/auth");
-          }, 3000);
+          }, 2500);
         } else {
           // alert(res.data.message);
           this.props.showSnackBar(res.data.message, "error");

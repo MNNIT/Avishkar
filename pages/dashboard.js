@@ -19,6 +19,7 @@ import axios from "axios";
 import baseURL from "../config";
 import CustomLoader from "../components/CustomLoader";
 import SoloEvents from "../components/dashboard/SoloEvents";
+import Faq from "../components/dashboard/Faq";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 // import NavList from "../com";
@@ -57,8 +58,11 @@ export default withRouter(
       if (tab === "teamevents") {
         return <TeamEvents />;
       }
-      if ((tab = "soloevents")) {
+      if (tab === "soloevents") {
         return <SoloEvents />;
+      }
+      if (tab === "faq") {
+        return <Faq />;
       }
     }
     render() {
@@ -74,7 +78,7 @@ export default withRouter(
           ) : (
             <div className="row">
               <div className="col-md-2 col-xs-12">
-                <SideBar />
+                <SideBar tab={tab} />
               </div>
               <div className="col-md-10 col-xs-12 container">
                 {this.componentCheck(tab, event)}
@@ -95,6 +99,9 @@ export default withRouter(
               }
               div.loader{
                 min-height: 70vh;
+              }
+              div.col-md-2{
+                padding: 0;
               }
               @media (max-width: 700px){
                 div.row{

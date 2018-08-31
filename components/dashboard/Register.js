@@ -16,7 +16,8 @@ import baseURL from "../../config";
 import ToggleDisplay from "react-toggle-display";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
-
+import AlertDialog from "../AlertDialog";
+import CustomLoader from "../CustomLoader";
 let suggestions = [];
 function renderInputComponent(inputProps) {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
@@ -128,12 +129,19 @@ class Register extends Component {
     showRegisterButton: false,
     showSnackBar: false,
     snackVariant: "",
-    snackMessage: ""
+    snackMessage: "",
+    alertDialog: {
+      open: false,
+      title: "",
+      content: ""
+    },
+    loading: true
   };
   componentDidMount() {
     axios.get("/api/all-events").then(res => {
       if (res.data.success) {
         suggestions = res.data.events;
+        this.setState({ loading: false });
       }
       if (this.state.single) {
         this.fetchSelectedEventInfo();
@@ -245,7 +253,38 @@ class Register extends Component {
 
     this.setState({ showSnackBar: false });
   };
+  handleAlertOpen = () => {
+    const { alertDialog } = this.state;
+    alertDialog.open = true;
+    alertDialog.title = `Are you Sure you want to register to the Event ${
+      this.state.single
+    }?`;
+    alertDialog.content =
+      "Once registered, changes are permanent and you can not edit!";
+    this.setState({ alertDialog });
+  };
+  handleAlertClose = () => {
+    const { alertDialog } = this.state;
+    alertDialog.open = false;
+    this.setState({ alertDialog });
+  };
+  handleAlertAgree = () => {
+    this.register();
+    const { alertDialog } = this.state;
+    alertDialog.open = false;
+    this.setState({ alertDialog });
+  };
   render() {
+    const {
+      single,
+      inputError,
+      inputErrorMsg,
+      alertDialog,
+      loading
+    } = this.state;
+    if (loading) {
+      return <CustomLoader />;
+    }
     const { classes } = this.props;
     const autosuggestProps = {
       renderInputComponent,
@@ -255,7 +294,6 @@ class Register extends Component {
       getSuggestionValue,
       renderSuggestion
     };
-    const { single, inputError, inputErrorMsg } = this.state;
     return (
       <>
         {this.checkRegisterStatus()}
@@ -267,7 +305,7 @@ class Register extends Component {
             value: single,
             onChange: this.handleChange("single"),
             error: inputError && (single.length > 0 ? true : false),
-            helperText: inputErrorMsg && (single.length > 0 ? true : false)
+            helperText: single.length > 0 ? inputErrorMsg : ""
           }}
           theme={{
             container: classes.container,
@@ -289,12 +327,19 @@ class Register extends Component {
             <Button
               variant="contained"
               className={classes.button}
-              onClick={this.register}
+              onClick={this.handleAlertOpen}
             >
               Register
             </Button>
           </ToggleDisplay>
         </div>
+        <AlertDialog
+          open={alertDialog.open}
+          title={alertDialog.title}
+          content={alertDialog.content}
+          handleAgree={this.handleAlertAgree}
+          handleClose={this.handleAlertClose}
+        />
         <SnackBar
           showSnackBar={this.state.showSnackBar}
           handleClose={this.handleSnackClose.bind(this)}
