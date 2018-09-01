@@ -52,10 +52,14 @@ export default class extends Component {
             window.location.replace("/dashboard");
           }, 3000);
         } else {
-          this.props.showSnackBar(res.data.message, "error");
-          this.setState({ loading: false });
-          if (res.data.type === "v") {
+          const { message } = res.data;
+          if (message === "Please check your inbox & verify now") {
+            // alert("hello");
+            this.props.showSnackBar(message, "basic");
+          } else {
+            this.props.showSnackBar(message, "error");
           }
+          this.setState({ loading: false });
         }
       })
       .catch(err => {
