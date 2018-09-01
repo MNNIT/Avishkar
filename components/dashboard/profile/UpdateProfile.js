@@ -175,21 +175,25 @@ class UpdateProfile extends Component {
                 required
                 autoComplete={false}
               />
-              <AutocompleteField
-                placeholder="Enter your city"
-                suggestions={this.state.cities}
-                label={"_id"}
-                value={this.state.city}
-                handleChange={this.handleAutocompleteChange("city")}
-                attemptCollegesFetch={this.attemptCollegesFetch}
-              />
-              <AutocompleteField
-                placeholder="Enter your college"
-                suggestions={this.state.colleges}
-                label={"college"}
-                value={this.state.college}
-                handleChange={this.handleAutocompleteChange("college")}
-              />
+              <div style={{ width: "100%", marginTop: "10px" }}>
+                <AutocompleteField
+                  placeholder="Enter your city"
+                  suggestions={this.state.cities}
+                  label={"_id"}
+                  value={this.state.city}
+                  handleChange={this.handleAutocompleteChange("city")}
+                  attemptCollegesFetch={this.attemptCollegesFetch}
+                />
+              </div>
+              <div style={{ width: "100%", marginTop: "10px" }}>
+                <AutocompleteField
+                  placeholder="Enter your college"
+                  suggestions={this.state.colleges}
+                  label={"college"}
+                  value={this.state.college}
+                  handleChange={this.handleAutocompleteChange("college")}
+                />
+              </div>
               <TextField
                 id="regNum"
                 label="registration number "
