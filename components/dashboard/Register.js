@@ -189,30 +189,32 @@ class Register extends Component {
       });
   };
   fetchSelectedEventInfo = () => {
-    axios
-      .post("/api/fetch-event-info", { eventDisplayName: this.state.single })
-      .then(res => {
-        const { data } = res;
-        if (data.success) {
-          this.setState({
-            inputError: false,
-            inputErrorMsg: "",
-            selectedEventInfo: data.event,
-            showRegisterButton: true
-          });
-        } else {
-          this.setState({
-            inputError: true,
-            inputErrorMsg: "Event Not available",
-            showRegisterButton: false
-          });
-        }
-      })
-      .catch(err => {
-        if (err.response.status === 401) {
-          window.location.replace("/auth");
-        }
-      });
+    if (this.state.single.trim() !== "") {
+      axios
+        .post("/api/fetch-event-info", { eventDisplayName: this.state.single })
+        .then(res => {
+          const { data } = res;
+          if (data.success) {
+            this.setState({
+              inputError: false,
+              inputErrorMsg: "",
+              selectedEventInfo: data.event,
+              showRegisterButton: true
+            });
+          } else {
+            this.setState({
+              inputError: true,
+              inputErrorMsg: "Event Not available",
+              showRegisterButton: false
+            });
+          }
+        })
+        .catch(err => {
+          if (err.response.status === 401) {
+            window.location.replace("/auth");
+          }
+        });
+    }
   };
   checkRegisterStatus = () => {
     if (this.state.success === false) {
@@ -227,7 +229,9 @@ class Register extends Component {
   };
   handleChange = name => (event, { newValue }) => {
     this.setState({
-      [name]: newValue
+      [name]: newValue,
+      inputError: false,
+      inputErrorMsg: ""
     });
   };
   handleSuggestionsFetchRequested = ({ value }) => {
@@ -237,10 +241,14 @@ class Register extends Component {
   };
 
   handleSuggestionsClearRequested = () => {
-    this.fetchSelectedEventInfo();
-    this.setState({
-      suggestions: []
-    });
+    this.setState(
+      {
+        suggestions: []
+      },
+      () => {
+        this.fetchSelectedEventInfo();
+      }
+    );
   };
   handleSnackClick = () => {
     this.setState({ showSnackBar: true });
@@ -304,8 +312,8 @@ class Register extends Component {
             placeholder: "Enter Event Name",
             value: single,
             onChange: this.handleChange("single"),
-            error: inputError && (single.length > 0 ? true : false),
-            helperText: single.length > 0 ? inputErrorMsg : ""
+            error: inputError,
+            helperText: inputErrorMsg
           }}
           theme={{
             container: classes.container,
@@ -319,6 +327,11 @@ class Register extends Component {
             </Paper>
           )}
         />
+        <div className="row center-xs center-md center-lg">
+          <Button variant="contained" className={classes.button}>
+            Search
+          </Button>
+        </div>
         <div className="row center-xs center-md center-lg">
           <EventInfoCard event={this.state.selectedEventInfo} />
         </div>
