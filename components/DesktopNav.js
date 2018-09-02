@@ -1,7 +1,29 @@
 import Link from "next/link";
 import React, { Component } from "react";
+import baseURL from "../config";
+import axios from "axios";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 
 export default class extends Component {
+  state = {
+    logoutClick: false
+  };
+  logout = () => {
+    this.setState({ logoutClick: true });
+    axios
+      .get("/api/logout")
+      .then(res => {
+        this.props.showSnackBar("Redirecting...", "basic");
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 2000);
+      })
+      .catch(err => {
+        this.props.showSnackBar("Failed!", "error");
+        console.log(err);
+      });
+  };
   render() {
     const { links } = this.props;
     return (
@@ -23,6 +45,18 @@ export default class extends Component {
                   </div>
                 );
               })}
+              {this.props.login ? (
+                <div className="link-container">
+                  <a
+                    onClick={this.logout}
+                    style={{ cursor: "pointer", paddingLeft: "30px" }}
+                  >
+                    {this.state.logoutClick ? "Submitting" : "Logout"}
+                  </a>
+                </div>
+              ) : (
+                <div />
+              )}
             </div>
           </div>
         </nav>

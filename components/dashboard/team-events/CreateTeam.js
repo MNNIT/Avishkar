@@ -268,14 +268,22 @@ class CreateTeam extends Component {
         if (err.response.status === 400) {
           let obj = { ...this.state };
           obj.error.email = true;
+          // console.log(err.response);
+          obj.errorMsg.email = err.response.data.message;
           this.setState(obj);
         }
       });
   };
   handleAlertOpen = () => {
-    const { alertDialog, formData } = this.state;
+    const { alertDialog, formData, members } = this.state;
     alertDialog.open = true;
-    alertDialog.title = `Do you want create team "${formData.name}"?`;
+    if (members.length === 0) {
+      alertDialog.title = `You will be the Only member of the team. Continue?`;
+    } else {
+      alertDialog.title = `Do you want create team "${
+        formData.name
+      }" with "${members.length + 1}" members?`;
+    }
     alertDialog.content =
       "Once team is created, changes are permanent and you can not edit!";
     this.setState({ alertDialog });

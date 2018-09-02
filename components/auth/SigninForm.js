@@ -64,7 +64,15 @@ export default class extends Component {
       })
       .catch(err => {
         this.setState({ loading: false });
-        this.props.showSnackBar("something went worng !", "error");
+        if (err.response.data) {
+          if (err.response.data.message) {
+            this.props.showSnackBar(err.response.data.message, "error");
+          } else {
+            this.props.showSnackBar("Something went wrong!", "error");
+          }
+        } else {
+          this.props.showSnackBar("Response failed", "error");
+        }
       });
   };
   render() {
