@@ -1,14 +1,34 @@
 import React, { Component } from "react";
 import Mask from "../components/Mask";
 import Link from "next/link";
+import baseURL from "../config";
+import axios from "axios";
+axios.defaults.baseURL = baseURL;
+axios.defaults.withCredentials = true;
 class MobileNav extends Component {
   state = {
-    showMenu: false
+    showMenu: false,
+    logoutClick: false
   };
   toggleMenu = () => {
     this.setState({
       showMenu: !this.state.showMenu
     });
+  };
+  logout = () => {
+    this.setState({ logoutClick: true });
+    axios
+      .get("/api/logout")
+      .then(res => {
+        this.props.showSnackBar("Redirecting...", "basic");
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 2000);
+      })
+      .catch(err => {
+        this.props.showSnackBar("Failed!", "error");
+        console.log(err);
+      });
   };
   render() {
     //const className = this.props.path === "/" ? "none" : "shadow";
@@ -37,6 +57,17 @@ class MobileNav extends Component {
                 </div>
               );
             })}
+            {this.props.login ? (
+              <div>
+                <h2>
+                  <a onClick={this.logout} style={{ cursor: "pointer" }}>
+                    {this.state.logoutClick ? "Submitting" : "Logout"}
+                  </a>
+                </h2>
+              </div>
+            ) : (
+              <div />
+            )}
           </div>
         </nav>
         <Mask show={this.state.showMenu} hideModal={this.toggleMenu} />

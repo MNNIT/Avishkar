@@ -100,7 +100,15 @@ class UpdateProfile extends Component {
       })
       .catch(err => {
         console.log(err);
-        this.props.showSnackBar("Error occured !", "error");
+        if (err.response.data) {
+          if (err.response.data.message) {
+            this.props.showSnackBar(err.response.data.message, "error");
+          } else {
+            this.props.showSnackBar("Something went wrong!", "error");
+          }
+        } else {
+          this.props.showSnackBar("Error occured !", "error");
+        }
       });
   };
   handleAutocompleteChange = name => (event, { newValue }) => {
@@ -124,7 +132,7 @@ class UpdateProfile extends Component {
         <div className="col-md-6">
           <Paper className={classes.root} elevation={1}>
             <p style={{ textAlign: "center", color: "red" }}>
-              * These fields must be filled and can only be updated once
+              * These fields must be filled and can only be updated once *
             </p>
             <form className={classes.container} noValidate autoComplete="off">
               <TextField
@@ -229,6 +237,11 @@ class UpdateProfile extends Component {
                 fullWidth
                 required
               />
+              <div>
+                <p style={{ textAlign: "center", color: "red" }}>
+                  * These fields must be filled and can only be updated once *
+                </p>
+              </div>
               <Button
                 color="primary"
                 variant="contained"

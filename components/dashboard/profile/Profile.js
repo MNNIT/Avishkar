@@ -80,8 +80,19 @@ export default withStyles(styles)(function({
                 /* background-color: tomato; */
               }
             }
-            div.data {
+             {
+              /* div.data {
               padding: 10px 20px 10px 20px;
+            } */
+            }
+            @media (max-width: 700px) {
+              div.profile-container {
+                width: 100%;
+                margin-top: 60px;
+              }
+              img {
+                margin-top: -20px;
+              }
             }
           `}
         </style>

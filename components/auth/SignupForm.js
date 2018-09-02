@@ -71,7 +71,15 @@ export default class extends Component {
         .catch(err => {
           this.setState({ loading: false });
           // alert("something went wrong!");
-          this.props.showSnackBar("Something went wrong!", "error");
+          if (err.response.data) {
+            if (err.response.data.message) {
+              this.props.showSnackBar(err.response.data.message, "error");
+            } else {
+              this.props.showSnackBar("Something went wrong!", "error");
+            }
+          } else {
+            this.props.showSnackBar("Response failed", "error");
+          }
         });
     } else {
       this.setState({
