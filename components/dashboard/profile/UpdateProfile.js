@@ -204,7 +204,7 @@ class UpdateProfile extends Component {
               </div>
               <TextField
                 id="regNum"
-                label="registration number "
+                label="registration number (college) "
                 className={classes.textField}
                 value={this.state.regNum}
                 onChange={this.handleChange("regNum")}

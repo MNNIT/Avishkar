@@ -28,7 +28,7 @@ export default () => (
          {
           /* background-image: url("../static/img/aerodynamix.jpg"); */
         }
-        background-color: rgba(253, 153, 155, 0.5);
+        background-color: rgba(180, 175, 175, 0.5);
       }
       div.text-container {
         width: 100%;

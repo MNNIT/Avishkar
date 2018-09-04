@@ -36,6 +36,7 @@
     "react": "^16.3.2",
     "react-autosuggest": "^9.4.0",
     "react-dom": "^16.3.2",
+    "react-google-login": "^3.2.1",
     "react-loader-spinner": "^2.1.0",
     "react-toggle-display": "^2.2.0"
   },
