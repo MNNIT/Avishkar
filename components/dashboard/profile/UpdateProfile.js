@@ -228,6 +228,7 @@ class UpdateProfile extends Component {
                 <MenuItem value={"mba"}>MBA</MenuItem>
               </TextField>
               <TextField
+                select
                 id="year"
                 label="Year of course"
                 className={classes.textField}
@@ -236,7 +237,12 @@ class UpdateProfile extends Component {
                 margin="normal"
                 fullWidth
                 required
-              />
+              >
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
+              </TextField>
               <div>
                 <p style={{ textAlign: "center", color: "red" }}>
                   * These fields must be filled and can only be updated once *

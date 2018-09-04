@@ -22,7 +22,33 @@ export default withStyles(styles)(function({
           <Paper className={classes.root} elevation={1}>
             <div className="row center-md center-xs center-lg">
               <div className="img-container">
-                <img src="/static/icon/male.png" alt="Profile Image" />
+                {/* <img src="/static/icon/male.png" alt="Profile Image" /> */}
+                {(function() {
+                  if (!profile.picture) {
+                    return (
+                      <img src="/static/icon/male.png" alt="Profile Image" />
+                    );
+                  } else {
+                    return (
+                      <div
+                        style={{
+                          height: "120px",
+                          width: "120px",
+                          borderRadius: "50%",
+                          overflow: "hidden"
+                        }}
+                        className="img-cont"
+                      >
+                        <img src={profile.picture} alt="Profile Image" />
+                      </div>
+                    );
+                  }
+                })()}
+                {/* <img
+                  src={profile.photo}
+                  onerror="this.onerror=null;this.src='/static/icon/male.png';"
+                  alt="Profile Image"
+                /> */}
               </div>
             </div>
             <h2>
@@ -58,40 +84,30 @@ export default withStyles(styles)(function({
           {`
             div.img-container {
               width: 120px;
-              height: auto;
+              height: 120px;
+              margin-top: -70px;
             }
             img {
               width: 100%;
               height: auto;
-              margin-top: -80px;
             }
             div.profile-container {
               width: 80%;
               margin: auto;
               margin-top: 100px;
               box-sizing: border-box;
-               {
-                /* border-radius: 4px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-              0 3px 6px rgba(0, 0, 0, 0.23); */
-              }
-              padding: 20px;
-               {
-                /* background-color: tomato; */
-              }
-            }
-             {
-              /* div.data {
-              padding: 10px 20px 10px 20px;
-            } */
             }
             @media (max-width: 700px) {
               div.profile-container {
                 width: 100%;
-                margin-top: 60px;
+                margin: 0;
+                margin-top: 20px;
               }
-              img {
-                margin-top: -20px;
+              div.img-container {
+                margin-top: 0px;
+              }
+              div.row {
+                margin: 0px;
               }
             }
           `}
