@@ -129,7 +129,7 @@ class ControlledExpansionPanels extends React.Component {
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>Atmost you can Register for 5 events.</Typography>
+            <Typography>Atmost you can Register for 15 events.</Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
