@@ -10,7 +10,10 @@ const styles = theme => ({
   },
   title: {
     marginBottom: 16,
-    fontSize: 14
+    fontSize: 17
+  },
+  content: {
+    fontSize: 16
   }
 });
 export default withStyles(styles)(
@@ -27,12 +30,18 @@ export default withStyles(styles)(
             <Card className={classes.card}>
               <CardContent>
                 <Typography variant="headline" component="h2">
-                  Event Name: {data.displayName}
+                  Event Name : {data.displayName}
                 </Typography>
-                <Typography className={classes.title} color="textSecondary">
-                  Category : {data.category} Team Size: {data.size}
+                <Typography className={classes.title}>
+                  <b style={{ color: "tomato" }}>
+                    Category :{" "}
+                    {data.category.charAt(0).toUpperCase() +
+                      data.category.substr(1)}
+                  </b>
+                  &nbsp;&nbsp;&nbsp;
+                  <b style={{ color: "green" }}>Team Size: {data.size}</b>
                 </Typography>
-                <Typography>{data.info}</Typography>
+                <Typography className={classes.content}>{data.info}</Typography>
               </CardContent>
             </Card>
             <br />
