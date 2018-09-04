@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import Link from "next/link";
 class ParticlesBanner extends Component {
+  random=()=>{
+    let min=1,max=5
+    let s=Math.floor(Math.random() * (max - min + 1)) + min;
+    return `/static/img/back/download (${s}).jpg`
+  }
+
   render() {
     return (
       <section>
@@ -9,7 +15,7 @@ class ParticlesBanner extends Component {
           className="primary-bg-color"
           style={{ fontSize: "0px" }}
         >
-          <div className="view">
+          {/*<div className="view">
             <div className="plane main">
               <div className="circle" />
               <div className="circle" />
@@ -17,11 +23,15 @@ class ParticlesBanner extends Component {
               <div className="circle" />
               <div className="circle" />
               <div className="circle" />
-            </div>
-          </div>
+    </div>
+    </div>*/}
+    <canvas id="canvas" data-image={this.random()}></canvas>
         </div>
         <div className="intro" style={{ fontFamily: "rustico" }}>
-          <h1>Avishkar</h1>
+          <h1>AVISHKAR</h1>
+          <div className="middle">
+          <img src="/static/img/logo.png" style={{width:'200px',height:'200px',marginBottom:'-120px',marginTop:'-80px',}}></img>
+          </div>
           <div className="downdiv">
             <h2>The annual techno management fest of MNNIT Allahabad</h2>
             <h4>26 to 29 of September 2018</h4>
@@ -32,11 +42,7 @@ class ParticlesBanner extends Component {
             </Link>
           </div>
         </div>
-        <script
-          defer
-          src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
-        />
-        <script defer src="/static/particlesApp.js" />
+        <script defer src="/static/new1.js" />
         <style jsx>
           {`
             #particles-banner {
@@ -47,7 +53,13 @@ class ParticlesBanner extends Component {
               }
               background-size: 100vw 95vh;
             }
-
+            @font-face {
+              font-family:'Decovar'; 
+              src:url('static/font/Decovar.ttf');
+            }
+            .middle{
+             position:relative;
+            }
             .intro {
               width: 100%;
               height: 300px;
@@ -64,11 +76,82 @@ class ParticlesBanner extends Component {
               -ms-user-select: none; /* IE 10+ */
               user-select: none;
             }
-            .intro > * {
-              font-weight: 400;
+            h1{
+              margin: 0; 
+              font-size: 90px;
+              letter-spacing: 20px;
+	            color: white; 
+              font-variation-settings: 'SSTR' 1000;
+              font-family: "Decovar"; 
+	            animation: loadin 2s infinite linear forwards;
+            }
+            @keyframes loadin {
+              0% {
+                font-variation-settings: 'SSTR' 1000;
+              }
+              50% {
+                font-variation-settings: 'SSTR' 0;
+              }
             }
             h1 {
-              font-size: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: -50px;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              transform: translateZ(0);
+              backface-visibility: hidden;
+              text-shadow: 
+                -1px -1px 0 rgba(255, 255, 255, .7),
+                1px -1px 0 rgba(255, 255, 255, .7), 
+                -1px 1px 0 rgba(255, 255, 255, .7), 
+                1px 1px 0 rgba(255, 255, 255, .7), 
+                -1px 2px 1px #a0a0a0,
+                -2px 4px 2px #a0a0a0,
+                -3px 6px 3px rgba(#a0a0a0, 0.6),
+                -4px 8px 4px rgba(#a0a0a0, 0.5),
+                -5px 10px 5px rgba(#a0a0a0, 0.4),
+                -6px 12px 6px rgba(#a0a0a0, 0.3), 
+                -7px 13px 7px rgba(#a0a0a0, 0.2),
+                -8px 15px 8px rgba(#a0a0a0, 0.2), 
+                -9px 17px 9px rgba(#a0a0a0, 0.2), 
+                -10px 19px 10px rgba(#a0a0a0, 0.2), 
+                -11px 20px 11px rgba(#a0a0a0, 0.1), 
+                -12px 22px 12px rgba(#a0a0a0, 0.1), 
+                -13px 24px 13px rgba(#a0a0a0, 0.1), 
+                -14px 26px 14px rgba(#a0a0a0, 0.1), 
+                -15px 28px 15px rgba(#a0a0a0, 0.1), 
+                -16px 30px 16px rgba(#a0a0a0, 0.1), 
+                -17px 32px 17px rgba(#a0a0a0, 0.1), 
+                -18px 34px 18px rgba(#a0a0a0, 0.1), 
+                -19px 36px 19px rgba(#a0a0a0, 0.1), 
+                -20px 38px 20px rgba(#a0a0a0, 0.1), 
+                -21px 39px 21px rgba(#a0a0a0, 0.1);
+            }
+            section:before {
+              content: '';
+              background: #7c50bf url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cheap_diagonal_fabric.png);
+              background-blend-mode: multiply;
+              mix-blend-mode: multiply;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              z-index: 10;
+            }
+            canvas {
+              opacity: 0;
+              transition: 1s opacity cubic-bezier(0.55, 0, 0.1, 1);
+            }
+            canvas.ready {
+              opacity: 0.4;
+            }
+            .intro > * {
+              font-weight: 600;
+            }
+            h1 {
               color: #e91e63;
               color: white;
             }
@@ -100,7 +183,144 @@ class ParticlesBanner extends Component {
               border-style: none;
               font-size: 1.175rem;
               font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
+              transition-duration: 0.3s;
+              -webkit-transition-property: -webkit-transform;
+              transition-property: transform;
+              -webkit-transform: translateZ(0);
+              -ms-transform: translateZ(0);
+              transform: translateZ(0);
+             
+              -webkit-transform: translateY(-6px);
+              -ms-transform: translateY(-6px);
+              transform: translateY(-6px);
+              -webkit-animation-name: hover;
+              animation-name: hover;
+              -webkit-animation-duration: 1.5s;
+              animation-duration: 1.5s;
+              -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+              -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+              -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+              -webkit-animation-direction: alternate;
+              animation-direction: alternate;
             }
+            .downdiv button:before{
+              pointer-events: none;
+              position: absolute;
+              z-index: -1;
+              content: '';
+              top: 100%;
+              left: 5%;
+              height: 10px;
+              width: 90%;
+              opacity: 0;
+              background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+              background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: -webkit-transform, opacity;
+              transition-property: transform, opacity;
+              opacity: .4;
+              -webkit-transform: translateY(6px);
+              -ms-transform: translateY(6px);
+              transform: translateY(6px);
+              -webkit-animation-name: hover-shadow;
+              animation-name: hover-shadow;
+              -webkit-animation-duration: 1.5s;
+              animation-duration: 1.5s;
+              -webkit-animation-delay: .3s;
+              animation-delay: .3s;
+              -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+              -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+              -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+            }
+            @keyframes hover {
+              50% {
+                -webkit-transform: translateY(-3px);
+                -ms-transform: translateY(-3px);
+                transform: translateY(-3px);
+              }
+            
+              100% {
+                -webkit-transform: translateY(-6px);
+                -ms-transform: translateY(-6px);
+                transform: translateY(-6px);
+              }
+            }
+            @-webkit-keyframes hover-shadow {
+              0% {
+                -webkit-transform: translateY(6px);
+                transform: translateY(6px);
+                opacity: .4;
+              }
+            
+              50% {
+                -webkit-transform: translateY(3px);
+                transform: translateY(3px);
+                opacity: 1;
+              }
+            
+              100% {
+                -webkit-transform: translateY(6px);
+                transform: translateY(6px);
+                opacity: .4;
+              }
+            }
+            
+            @keyframes hover-shadow {
+              0% {
+                -webkit-transform: translateY(6px);
+                -ms-transform: translateY(6px);
+                transform: translateY(6px);
+                opacity: .4;
+              }
+            
+              50% {
+                -webkit-transform: translateY(3px);
+                -ms-transform: translateY(3px);
+                transform: translateY(3px);
+                opacity: 1;
+              }
+            
+              100% {
+                -webkit-transform: translateY(6px);
+                -ms-transform: translateY(6px);
+                transform: translateY(6px);
+                opacity: .4;
+              }
+            }
+            
+            @-webkit-keyframes hover {
+              50% {
+                -webkit-transform: translateY(-3px);
+                transform: translateY(-3px);
+              }
+            
+              100% {
+                -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+              }
+            }
+            
+            @keyframes hover {
+              50% {
+                -webkit-transform: translateY(-3px);
+                -ms-transform: translateY(-3px);
+                transform: translateY(-3px);
+              }
+            
+              100% {
+                -webkit-transform: translateY(-6px);
+                -ms-transform: translateY(-6px);
+                transform: translateY(-6px);
+              }
+            }
+            
             h2,
             h4 {
               font-size: 32px;
