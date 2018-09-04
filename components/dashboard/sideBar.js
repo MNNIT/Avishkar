@@ -62,12 +62,10 @@ export default withRouter(
                     key={index}
                   >
                     <MenuItem selected={tab === lowerCaseName} button>
-                      <ListItem>
-                        <ListItemIcon>
-                          <Icon>{obj.icon}</Icon>
-                        </ListItemIcon>
-                        <ListItemText inset primary={obj.name} />
-                      </ListItem>
+                      <ListItemIcon>
+                        <Icon>{obj.icon}</Icon>
+                      </ListItemIcon>
+                      <ListItemText inset primary={obj.name} />
                     </MenuItem>
                   </Link>
                 );

@@ -531,7 +531,7 @@ const data = [
   {
     name: "csgo",
     displayName: "Counter Strike",
-    size: 1,
+    size: 5,
     category: "kreedomania",
     info:
       "Counter-Strike: Global Offensive is a multiplayer first-person shooter video game;  The game pits two teams against each other: the Terrorists and the Counter-Terrorists. Both sides are tasked with eliminating the other while also completing separate objectives, the Terrorists, depending on the game mode, must either plant the bomb or defend the hostages, while the Counter-Terrorists must either prevent the bomb from being planted, defuse the bomb, or rescue the hostages."
@@ -539,10 +539,18 @@ const data = [
   {
     name: "dota",
     displayName: "Dota 2",
-    size: 1,
+    size: 5,
     category: "kreedomania",
     info:
       'Dota 2 is a multiplayer online battle arena (MOBA) video game in which two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the "Ancient", whilst defending their own.'
+  },
+  {
+    name: "pubgmobile",
+    displayName: "PUBG Mobile",
+    size: 4,
+    category: "kreedomania",
+    info:
+      "PUBG is a multiplayer game where teams rival against each other to be crowned as the ultimate champions. Winner Winner Chicken Dinner."
   },
   {
     name: "aerodynamix",
