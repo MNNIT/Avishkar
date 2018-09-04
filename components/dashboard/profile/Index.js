@@ -5,6 +5,7 @@ import ToggleDisplay from "react-toggle-display";
 import axios from "axios";
 import baseURL from "../../../config";
 import CustomLoader from "../../CustomLoader";
+import SnackBar from "../../SnackBar";
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 export default class extends Component {
@@ -17,7 +18,24 @@ export default class extends Component {
       UpdateProfile: false
     },
     profileEditable: false,
-    loading: true
+    loading: true,
+    snackBar: {
+      open: false,
+      variant: "",
+      message: ""
+    }
+  };
+  handleSnackBarClose = () => {
+    const { snackBar } = this.state;
+    snackBar.open = false;
+    this.setState({ snackBar });
+  };
+  showSnackBar = (message, variant) => {
+    const { snackBar } = this.state;
+    snackBar.open = true;
+    snackBar.message = message;
+    snackBar.variant = variant;
+    this.setState({ snackBar });
   };
   componentDidMount() {
     this.fetchUserProfile();
@@ -46,7 +64,7 @@ export default class extends Component {
     }));
   };
   render() {
-    const { profile, profileEditable, loading } = this.state;
+    const { profile, profileEditable, loading, snackBar } = this.state;
     if (loading) {
       return <CustomLoader />;
     } else {
@@ -63,8 +81,15 @@ export default class extends Component {
               profile={profile}
               toggleProfileForm={this.toggleProfileForm}
               fetchUserProfile={this.fetchUserProfile}
+              showSnackBar={this.showSnackBar}
             />
           </ToggleDisplay>
+          <SnackBar
+            showSnackBar={snackBar.open}
+            handleClose={this.handleSnackBarClose}
+            variant={snackBar.variant}
+            message={snackBar.message}
+          />
         </>
       );
     }

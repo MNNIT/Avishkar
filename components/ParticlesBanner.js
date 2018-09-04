@@ -26,10 +26,17 @@ class ParticlesBanner extends Component {
             <h2>The annual techno management fest of MNNIT Allahabad</h2>
             <h4>26 to 29 of September 2018</h4>
             <Link as="/dashboard/register" href="/dashboard?tab=register">
-              <a>REGISTER</a>
+              <a>
+                <button>REGISTER</button>
+              </a>
             </Link>
           </div>
         </div>
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+        />
+        <script defer src="/static/particlesApp.js" />
         <style jsx>
           {`
             #particles-banner {
@@ -52,6 +59,10 @@ class ParticlesBanner extends Component {
               top: 30%;
               left: 50%;
               transform: translate(-50%, -50%);
+              -webkit-user-select: none; /* Chrome all / Safari all */
+              -moz-user-select: none; /* Firefox all */
+              -ms-user-select: none; /* IE 10+ */
+              user-select: none;
             }
             .intro > * {
               font-weight: 400;
@@ -65,13 +76,13 @@ class ParticlesBanner extends Component {
               position: relative;
               top: 45%;
             }
-            .downdiv a {
+            .downdiv button {
               color: whitesmoke;
               text-align: center;
               margin: 0px;
               font-weight: 400;
               box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 80px;
-
+              cursor: pointer;
               background: linear-gradient(
                 45deg,
                 rgb(108, 174, 221),

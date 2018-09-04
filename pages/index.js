@@ -14,7 +14,7 @@ const Index = props => {
     <>
       <Meta />
       <ParticlesBanner />
-      <SocialFloat />
+      {/* <SocialFloat /> */}
       <AboutAvishkar />
       <Socials />
       <Footer />

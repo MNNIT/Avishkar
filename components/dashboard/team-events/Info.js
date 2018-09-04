@@ -31,56 +31,62 @@ class Info extends Component {
   fetchRegisteredNoTeamEvents = () => {
     const req1 = axios.get("/api/registered-events");
     const req2 = axios.get("/api/get-all-teams");
-    axios.all([req1, req2]).then(
-      axios.spread((res1, res2) => {
-        if (
-          res1.data.success &&
-          res2.data.success
-        ) {
-          const { registeredEvents } = res1.data;
-          const { teams } = res2.data;
-          let registeredEventsDisplayName = [],
-            registeredEventsName = [],
-            teamEvents = [],
-            teamSize = [];
-          registeredEvents.forEach(element => {
-            if (element.size > 1) {
-              registeredEventsDisplayName.push(element.displayName);
-              registeredEventsName.push(element.name);
-              teamSize.push(element.size);
-            }
-          });
-          if (teams.length > 0) {
-            teams.forEach(e => {
-              if (e.status !== "rejected") teamEvents.push(e.event);
-            });
-            teamEvents.forEach(e => {
-              let i = registeredEventsName.findIndex(event => {
-                return event === e;
-              });
-              if (i > -1) {
-                registeredEventsName.splice(i, 1);
-                registeredEventsDisplayName.splice(i, 1);
-                teamSize.splice(i, 1);
+    axios
+      .all([req1, req2])
+      .then(
+        axios.spread((res1, res2) => {
+          if (res1.data.success && res2.data.success) {
+            const { registeredEvents } = res1.data;
+            const { teams } = res2.data;
+            let registeredEventsDisplayName = [],
+              registeredEventsName = [],
+              teamEvents = [],
+              teamSize = [];
+            registeredEvents.forEach(element => {
+              if (element.size > 1) {
+                registeredEventsDisplayName.push(element.displayName);
+                registeredEventsName.push(element.name);
+                teamSize.push(element.size);
               }
             });
-            this.setState({
-              registeredEvents: registeredEventsDisplayName,
-              registeredEventsName,
-              teamSize,
-              loading: false
-            });
-          } else {
-            this.setState({
-              registeredEvents: registeredEventsDisplayName,
-              registeredEventsName,
-              teamSize,
-              loading: false
-            });
+            if (teams.length > 0) {
+              teams.forEach(e => {
+                if (e.status !== "rejected") teamEvents.push(e.event);
+              });
+              teamEvents.forEach(e => {
+                let i = registeredEventsName.findIndex(event => {
+                  return event === e;
+                });
+                if (i > -1) {
+                  registeredEventsName.splice(i, 1);
+                  registeredEventsDisplayName.splice(i, 1);
+                  teamSize.splice(i, 1);
+                }
+              });
+              this.setState({
+                registeredEvents: registeredEventsDisplayName,
+                registeredEventsName,
+                teamSize,
+                loading: false
+              });
+            } else {
+              this.setState({
+                registeredEvents: registeredEventsDisplayName,
+                registeredEventsName,
+                teamSize,
+                loading: false
+              });
+            }
           }
+        })
+      )
+      .catch(err => {
+        console.log(err);
+        this.props.showSnackBar("Failed to fetch events", "error");
+        if (err.response.status === 401) {
+          window.location.replace("/auth");
         }
-      })
-    );
+      });
   };
   handleClickOpen = () => {
     this.setState({ open: true });
@@ -120,6 +126,7 @@ class Info extends Component {
           open={this.state.open}
           TransitionComponent={Transition}
           onClose={this.handleClose}
+          keepMounted
         >
           <DialogTitle>Create Team</DialogTitle>
           <DialogContent>
@@ -129,6 +136,8 @@ class Info extends Component {
               teamSize={teamSize}
               fetchTeams={this.props.fetchTeams}
               handleDialogClose={this.handleClose.bind(this)}
+              showSnackBar={this.props.showSnackBar}
+              fetchRegisteredNoTeamEvents={this.fetchRegisteredNoTeamEvents}
             />
           </DialogContent>
         </Dialog>

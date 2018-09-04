@@ -59,16 +59,27 @@ export default class extends Component {
           this.setState({ loading: false });
           if (res.data.success) {
             //email is sent to user on server
-            alert(res.data.message);
+            // alert(res.data.message);
+            this.props.showSnackBar(res.data.message, "success");
             //redirect to /dashboard
             // window.location.replace("/dashboard");
           } else if (!res.data.success) {
-            alert(res.data.message);
+            // alert(res.data.message);
+            this.props.showSnackBar(res.data.message, "error");
           }
         })
         .catch(err => {
           this.setState({ loading: false });
-          alert("something went wrong!");
+          // alert("something went wrong!");
+          if (err.response.data) {
+            if (err.response.data.message) {
+              this.props.showSnackBar(err.response.data.message, "error");
+            } else {
+              this.props.showSnackBar("Something went wrong!", "error");
+            }
+          } else {
+            this.props.showSnackBar("Response failed", "error");
+          }
         });
     } else {
       this.setState({

@@ -31,7 +31,6 @@ export default class extends Component {
     }
     axios.post("/api/is-email-taken", { email }).then(res => {
       const { data } = res;
-      console.log(data);
       if (!data.success) {
         this.setState({ showEmailError: false });
       } else {
@@ -46,20 +45,34 @@ export default class extends Component {
     axios
       .post("/api/signin", formData)
       .then(res => {
-        console.log(res.data);
         if (res.data.success) {
+          this.props.showSnackBar("Redirecting to dashboard", "basic");
           //redirect to /dashboard
-          window.location.replace("/dashboard");
+          setTimeout(() => {
+            window.location.replace("/dashboard");
+          }, 3000);
         } else {
-          alert(res.data.message);
-          this.setState({ loading: false });
-          if (res.data.type === "v") {
+          const { message } = res.data;
+          if (message === "Please check your inbox & verify now") {
+            // alert("hello");
+            this.props.showSnackBar(message, "basic");
+          } else {
+            this.props.showSnackBar(message, "error");
           }
+          this.setState({ loading: false });
         }
       })
       .catch(err => {
         this.setState({ loading: false });
-        alert("something went wrong!");
+        if (err.response.data) {
+          if (err.response.data.message) {
+            this.props.showSnackBar(err.response.data.message, "error");
+          } else {
+            this.props.showSnackBar("Something went wrong!", "error");
+          }
+        } else {
+          this.props.showSnackBar("Response failed", "error");
+        }
       });
   };
   render() {
@@ -93,12 +106,11 @@ export default class extends Component {
             {this.state.loading ? "SUBMITTING" : "SIGN IN"}
           </button>
         </form>
-        <Link>
+        <Link href="/reset-password">
           <a
             style={{
               color: "black"
             }}
-            href="/reset-password"
           >
             Forgot password?
           </a>

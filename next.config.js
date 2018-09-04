@@ -12,7 +12,14 @@ const events = [
   "monopoly",
   "kreedomania"
 ];
-const tabs = ["dashboard", "profile", "register", "soloevents", "teamevents"];
+const tabs = [
+  "dashboard",
+  "profile",
+  "register",
+  "soloevents",
+  "teamevents",
+  "faq"
+];
 const routes = {
   "/": { page: "/" },
   "/team": { page: "/team" },

@@ -63,7 +63,7 @@ class UpdateProfile extends Component {
     axios
       .get("/api/all-cities")
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         const { cities } = res.data;
         this.setState({ cities });
       })
@@ -74,7 +74,7 @@ class UpdateProfile extends Component {
   fetchCollegesInCity = city => {
     axios.get(`/api/colleges/${city}`).then(res => {
       const { colleges } = res.data;
-      console.log({ colleges });
+      // console.log({ colleges });
       this.setState({ colleges });
     });
   };
@@ -92,13 +92,23 @@ class UpdateProfile extends Component {
       .post("/api/update-profile", formData)
       .then(res => {
         if (res.data.success) {
-          alert("sucess");
+          // alert("sucess");
+          this.props.showSnackBar("Profile updated Successfully", "success");
           this.props.fetchUserProfile();
           this.props.toggleProfileForm();
         }
       })
       .catch(err => {
         console.log(err);
+        if (err.response.data) {
+          if (err.response.data.message) {
+            this.props.showSnackBar(err.response.data.message, "error");
+          } else {
+            this.props.showSnackBar("Something went wrong!", "error");
+          }
+        } else {
+          this.props.showSnackBar("Error occured !", "error");
+        }
       });
   };
   handleAutocompleteChange = name => (event, { newValue }) => {
@@ -122,7 +132,7 @@ class UpdateProfile extends Component {
         <div className="col-md-6">
           <Paper className={classes.root} elevation={1}>
             <p style={{ textAlign: "center", color: "red" }}>
-              * These fields must be filled and can only be updated once
+              * These fields must be filled and can only be updated once *
             </p>
             <form className={classes.container} noValidate autoComplete="off">
               <TextField
@@ -173,21 +183,25 @@ class UpdateProfile extends Component {
                 required
                 autoComplete={false}
               />
-              <AutocompleteField
-                placeholder="Enter your city"
-                suggestions={this.state.cities}
-                label={"_id"}
-                value={this.state.city}
-                handleChange={this.handleAutocompleteChange("city")}
-                attemptCollegesFetch={this.attemptCollegesFetch}
-              />
-              <AutocompleteField
-                placeholder="Enter your college"
-                suggestions={this.state.colleges}
-                label={"college"}
-                value={this.state.college}
-                handleChange={this.handleAutocompleteChange("college")}
-              />
+              <div style={{ width: "100%", marginTop: "10px" }}>
+                <AutocompleteField
+                  placeholder="Enter your city"
+                  suggestions={this.state.cities}
+                  label={"_id"}
+                  value={this.state.city}
+                  handleChange={this.handleAutocompleteChange("city")}
+                  attemptCollegesFetch={this.attemptCollegesFetch}
+                />
+              </div>
+              <div style={{ width: "100%", marginTop: "10px" }}>
+                <AutocompleteField
+                  placeholder="Enter your college"
+                  suggestions={this.state.colleges}
+                  label={"college"}
+                  value={this.state.college}
+                  handleChange={this.handleAutocompleteChange("college")}
+                />
+              </div>
               <TextField
                 id="regNum"
                 label="registration number "
@@ -223,6 +237,11 @@ class UpdateProfile extends Component {
                 fullWidth
                 required
               />
+              <div>
+                <p style={{ textAlign: "center", color: "red" }}>
+                  * These fields must be filled and can only be updated once *
+                </p>
+              </div>
               <Button
                 color="primary"
                 variant="contained"

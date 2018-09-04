@@ -24,7 +24,7 @@ export default class extends Component {
     e.preventDefault();
     const { formData } = { ...this.state };
     formData.email = formData.email.trim();
-    if (formData.length === 0) {
+    if (formData.email.length === 0) {
       this.props.showSnackBar("Email field is Empty!", "error");
       // alert("email is empty");
       return;
@@ -36,7 +36,9 @@ export default class extends Component {
       .then(res => {
         if (res.data.success) {
           this.props.showSnackBar(res.data.message, "success");
-          Router.push("/reset-password/code");
+          setTimeout(() => {
+            Router.push("/reset-password/code");
+          }, 2500);
         } else {
           this.setState({ loading: true });
           // alert(res.data.message);
