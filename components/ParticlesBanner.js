@@ -133,7 +133,7 @@ class ParticlesBanner extends Component {
             section:before {
               content: "";
               background: #7c50bf
-                url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cheap_diagonal_fabric.png);
+                url(/static/backgrounds/cheap_diagonal_fabric.png);
               background-blend-mode: multiply;
               mix-blend-mode: multiply;
               position: absolute;
