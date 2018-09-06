@@ -156,6 +156,17 @@ const Index = props => {
                 for writing the most number of songs, Sameer has contributed a
                 lot in shaping the music industry. His efforts have been
                 acknowledged with three filmfare awards
+                <br />
+                <br />
+                <div className="img">
+                  <img src="/static/img/gnosis/speaker4.jpg" alt="" />
+                </div>
+                <br />
+                We always ponder over how we can do our bit for the society that
+                we live in. The Robin Hood Army has turned this noble thought to
+                reality. Driving away hunger from the society in a sustainable
+                manner, this organization is making full use of the abilities of
+                the younger force of our nation.
               </CardContent>
             </Card>
           </div>

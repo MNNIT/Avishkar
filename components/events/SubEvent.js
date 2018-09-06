@@ -15,6 +15,69 @@ export default ({ subEventData, show, color, hideModal }) => {
               <p className="info">{data.info}</p>
             </div>
             <br />
+            {(function() {
+              if (data.displayName === "Infinity Crusade") {
+                return (
+                  <div>
+                    <h3 style={{ color, display: "inline" }}>
+                      Problem Statement
+                    </h3>
+                    &nbsp;&nbsp;{" "}
+                    <a
+                      href="../../static/pdf/Infinity Crusade.pdf"
+                      style={{ height: "18px", display: "inline" }}
+                      target="_blank"
+                    >
+                      <img
+                        src="../../static/icon/paperclip.svg"
+                        style={{ height: "18px" }}
+                      />
+                    </a>
+                  </div>
+                );
+              }
+              if (data.displayName === "Fractal Hunt") {
+                return (
+                  <div>
+                    <h3 style={{ color, display: "inline" }}>
+                      Problem Statement
+                    </h3>
+                    &nbsp;&nbsp;{" "}
+                    <a
+                      href="../../static/pdf/Fractal Hunt.pdf"
+                      style={{ height: "18px", display: "inline" }}
+                      target="_blank"
+                    >
+                      <img
+                        src="../../static/icon/paperclip.svg"
+                        style={{ height: "18px" }}
+                      />
+                    </a>
+                  </div>
+                );
+              }
+              if (data.displayName === "The Terrain Trek of Gliese 667C b") {
+                return (
+                  <div>
+                    <h3 style={{ color, display: "inline" }}>
+                      Problem Statement
+                    </h3>
+                    &nbsp;&nbsp;{" "}
+                    <a
+                      href="../../static/pdf/Gliese 667 CB.pdf"
+                      style={{ height: "18px", display: "inline" }}
+                      target="_blank"
+                    >
+                      <img
+                        src="../../static/icon/paperclip.svg"
+                        style={{ height: "18px" }}
+                      />
+                    </a>
+                  </div>
+                );
+              }
+            })()}
+            <br />
             <div className="register-btn">
               {/* <h3 style={{ color }}>Rounds</h3> */}
               <Link
