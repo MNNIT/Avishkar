@@ -175,8 +175,45 @@ class Page extends Component {
       return (
         <>
           <Meta color={"#212121"} />
-          <EventBanner eventName={eventName} />
+          <EventBanner
+            eventName={eventName}
+            router={this.props.router}
+            handleAlertOpen={this.handleAlertOpen}
+          />
           <AerodynamixContent />
+          <div>
+            <Dialog
+              open={open}
+              onClose={this.handleAlertClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                Contact Information
+              </DialogTitle>
+              <div>
+                <List>
+                  {contactInfo[eventName] !== undefined ? (
+                    contactInfo[eventName].map(person => {
+                      return (
+                        <ListItem>
+                          <ListItemText primary={person.name} />
+                          <a
+                            href={"tel:" + String(person.mobile)}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <ListItemText primary={person.mobile} />
+                          </a>
+                        </ListItem>
+                      );
+                    })
+                  ) : (
+                    <></>
+                  )}
+                </List>
+              </div>
+            </Dialog>
+          </div>
         </>
       );
     }
