@@ -127,7 +127,7 @@ the near future.`}
         </div>
         <div className="row new-card">
           <div className="col-md-4 img-container">
-            <img src="/static/img/workshops/matlab.jpg" alt="MATLAB" />
+            <img src="/static/img/workshops/matlab.png" alt="MATLAB" />
           </div>
           <div className="col-md-8 content">
             <h1>MATLAB</h1>
