@@ -3,6 +3,11 @@ export default () => (
     <footer>
       <div className="footer">
         <div>
+          <h2>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdef-jdhL9zvp18KKZvdinwwg-Uig_glljkG3xVMqjLhhuYDw/viewform">
+              Campus Ambassador
+            </a>
+          </h2>
           <p>
             <a href="https://goo.gl/maps/JQb18a3Go4G2" target="_blank">
               MNNIT, Allahabad, India - 211004
