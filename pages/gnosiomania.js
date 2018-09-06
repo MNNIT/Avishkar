@@ -27,53 +27,83 @@ const Index = props => {
     <>
       <Meta />
       <div className="container">
-        <h2>Gnosiomania</h2>
+        <h2>GNOSIOMANIA</h2>
         <div className="row">
           <div className="col-md-6 col-xs-12">
             <Card className={classes.card}>
-              <CardMedia
+              {/* <CardMedia
                 className={classes.media}
                 image="/static/img/gnosis/quiz1.jpg"
                 title="Gnosiomania"
-              />
+              /> */}
+
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
                   Gnosiomania Quizzing
                 </Typography>
+                <div className="img">
+                  <img src="/static/img/gnosis/gnosiomania.jpeg" alt="" />
+                </div>
+                <br />
                 <Typography component="p">
-                  Does magic exist? Our speaker has given newer dimensions to
-                  this question. Not a magician but a psychological illusionist,
-                  Karan Singh Magic is going to bowl the audience over with his
-                  keen mind-reading abilities. Just with the help of a few
-                  simple questions, he would be into one's brain.
+                  Hello everyone!
                   <br />
+                  <br /> Gnosis MNNIT Quiz Club, with immense pride and honour
+                  is happy to announce the 15th edition of Gnosiomania- The
+                  Annual Quizzing Fest of MNNIT Allahabad.
                   <br />
-                  We always ponder over how we can do our bit for the society
-                  that we live in. The Robin Hood Army has turned this noble
-                  thought to reality. Driving away hunger from the society in a
-                  sustainable manner, this organization is making full use of
-                  the abilities of the younger force of our nation.
+                  <br /> -On campus accommodation at nominal charges5 quizzes in
+                  all , we will be kicking things off with the India and General
+                  Quizzes on the 28th hosted by one of the most renowned
+                  quizmasters of the country , Mr. Adittya Nath Mubayi . Then on
+                  the 29th we have the Business , MELA and Sports Quizzes hosted
+                  by another extremely popular and seasoned quizmaster , Mr.
+                  Abhra Das .<br />
                   <br />
-                  <br />A Ramnath Goenka awardee, our speaker is the righteous
-                  example to show how media is indeed a pillar of our democracy.
-                  J. Gopikrishnan, an investigative journalist, has uncovered
-                  the mystery behind the 2G, National Herald and Aircel-Maxis
-                  cases. There is a great chance that the songs that we hum
-                  merrily or melancholically are his creation. With the Guinness
-                  world record for writing the most number of songs, Sameer has
-                  contributed a lot in shaping the music industry. His efforts
-                  have been acknowledged with three filmfare awards
+                  And of course not to forget , there's prize money worth{" "}
+                  <b>Rs. 50000/-</b> at stake.
+                  <ul>
+                    <li>Venue: MNNIT Allahabad</li>
+                    <li>
+                      Online REGISTRATION &nbsp;&nbsp;
+                      <b>
+                        <a
+                          href="https://www.thecollegefever.com/events/avishkar-2k18"
+                          target="_blank"
+                        >
+                          CLICK HERE
+                        </a>
+                      </b>
+                    </li>
+                    <li>Teams of Maximum Three</li>
+                    <li>Teams from same college</li>
+                    <li>
+                      Open to all students of UG and PG Courses, under 25 years
+                      of age.
+                    </li>
+                    <li>
+                      On campus registration fee ₹300 and accomodation ₹100. For
+                      any queries, contact us at any of the mentioned mobile
+                      numbers.
+                    </li>
+                  </ul>
+                  <div className="img">
+                    <img src="/static/img/gnosis/quiz1.jpg" alt="" />
+                  </div>
+                  <div className="img">
+                    <img src="/static/img/gnosis/quiz2.jpg" alt="" />
+                  </div>
                 </Typography>
               </CardContent>
             </Card>
           </div>
           <div className="col-md-6 col-xs-12">
             <Card className={classes.card}>
-              <CardMedia
+              {/* <CardMedia
                 className={classes.media}
                 image="/static/img/gnosis/gnosiomania.jpg"
                 title="Gnosiomania"
-              />
+              /> */}
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
                   GnoTalks
@@ -85,21 +115,47 @@ const Index = props => {
                   illustrious people who have paved their way to glory,
                   exemplifying the notion of inspiration. It showcases unique
                   performances and talks, making the event one of its kind. This
-                  year, we are going to take forward the legacy, greatly created
-                  last year with personalities like Mr. Devendra Jhajharia, The
-                  Indian Jam Project, Mr. Vinay Pathak, Dr. Ananda Shankar
-                  Jayant and Mr. Vivek Patil on the stage
+                  year, we are going to take forward the legacy.
+                  <br />
+                  <br />
+                  <Typography gutterBottom variant="headline" component="h2">
+                    Speakers
+                  </Typography>
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker1.jpeg" alt="" />
+                  </div>
+                  <br />
+                  Does magic exist? Our speaker has given newer dimensions to
+                  this question. Not a magician but a psychological illusionist,
+                  Karan Singh Magic is going to bowl the audience over with his
+                  keen mind-reading abilities. Just with the help of a few
+                  simple questions, he would be into one's brain.
+                  <br />
                 </Typography>
                 <br />
-                <Typography gutterBottom variant="headline" component="h2">
-                  Speakers
-                </Typography>
                 <div className="img">
                   <img src="/static/img/gnosis/speaker2.jpg" alt="" />
                 </div>
+                <br />A Ramnath Goenka awardee, our speaker is the righteous
+                example to show how media is indeed a pillar of our democracy.
+                J. Gopikrishnan, an investigative journalist, has uncovered the
+                mystery behind the 2G, National Herald and Aircel-Maxis cases.
+                There is a great chance that the songs that we hum merrily or
+                melancholically are his creation. With the Guinness world record
+                for writing the most number of songs, Sameer has contributed a
+                lot in shaping the music industry. His efforts have been
+                acknowledged with three filmfare awards
+                <br />
+                <br />
                 <div className="img">
                   <img src="/static/img/gnosis/speaker3.jpeg" alt="" />
                 </div>
+                <br />
+                There is a great chance that the songs that we hum merrily or
+                melancholically are his creation. With the Guinness world record
+                for writing the most number of songs, Sameer has contributed a
+                lot in shaping the music industry. His efforts have been
+                acknowledged with three filmfare awards
               </CardContent>
             </Card>
           </div>
@@ -111,12 +167,18 @@ const Index = props => {
           .container {
             padding: 10px;
           }
+          a {
+            text-decoration: none;
+          }
           .img img {
-            width: 350px;
+            width: 100%;
             margin-left: 50%;
             margin-top: 20px;
             margin-right: 0;
             transform: translateX(-50%);
+          }
+          .container > h2 {
+            text-align: center;
           }
           @media (max-width: 700px) {
             .container {

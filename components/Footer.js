@@ -4,7 +4,10 @@ export default () => (
       <div className="footer">
         <div>
           <h2>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdef-jdhL9zvp18KKZvdinwwg-Uig_glljkG3xVMqjLhhuYDw/viewform">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdef-jdhL9zvp18KKZvdinwwg-Uig_glljkG3xVMqjLhhuYDw/viewform"
+              target="_blank"
+            >
               Campus Ambassador
             </a>
           </h2>

@@ -2,15 +2,52 @@ export default () => (
   <section>
     <div className="text-container">
       <p>
-        The competition requires the participants to design a RC (Remote
-        -Controlled) plane (no Readymade Planes are allowed) and perform a set
-        of maneuvers. The event will be conducted at the ground of MNNIT and
-        participants will need to bring their aircraft and all necessary
-        equipment to this venue. The arena will be an open ground. There will be
-        two rounds of the competition.
+        Avishar 2k18 is finally here! In order to fly, all you need is a vision.
+        AeroClub MNNIT helps to provide this vision, it's own wings of fire.
+        Here you not only learn different aspects of aerodynamics,but also
+        inbuilt the leadership skills, the art of time management and much more.
+        Aerodynamics event conducted under the aegis of AeroClub, MNNIT, are
+        listed below.
+        <br />
+        <br />
+        Come, participate and win exciting prizes!
+        <br />
+        <b>All branches Allowed.</b>
       </p>
-      <h2>Events</h2>
-      <ol>
+      <h2>PUSHPAK VIMAN</h2>
+      <p>
+        In this event,in the nut shell, one must design a glider (an RC Plane).
+        This event consists of 4 rounds, each round even more exciting and
+        thrilling than the previous one. The last round is flying the glider. No
+        round is elimination round but scores of all the rounds will be counted.
+      </p>
+      <h3 style={{ display: "inline" }}>Problem Statement:</h3>
+      &nbsp;&nbsp;{" "}
+      <a
+        href="../../static/pdf/Pusphak_Vimaan_Problem_Statement.pdf"
+        style={{ height: "18px", display: "inline" }}
+        target="_blank"
+      >
+        <img src="../../static/icon/paperclip.svg" style={{ height: "18px" }} />
+      </a>
+      <h2>AERIAL VEHICLE DESIGN</h2>
+      <p>
+        This event is basically aerial robotics. Here, one must design a drone
+        which can perform various tasks. This event consists of two rounds.
+        Round 1 involving maneuvering skills and round 2 to check the
+        communication, detection and functioning of different sensors while
+        flying.
+      </p>
+      <h3 style={{ display: "inline" }}>Problem Statement:</h3>
+      &nbsp;&nbsp;{" "}
+      <a
+        href="../../static/pdf/Aerial_Vehicle_Design.pdf"
+        style={{ height: "18px", display: "inline" }}
+        target="_blank"
+      >
+        <img src="../../static/icon/paperclip.svg" style={{ height: "18px" }} />
+      </a>
+      {/* <ol>
         <p>
           <li>
             Aerial Vehicle Design &nbsp;
@@ -41,27 +78,7 @@ export default () => (
             </a>
           </li>
         </p>
-      </ol>
-      <h2>Rounds</h2>
-      <div>
-        <h3>A. Qualifier Round</h3>
-        <p>
-          {" "}
-          The best measure of the design of an aircraft can be done by climb and
-          gliding time. To examine this, participants have to climb for 30
-          seconds. After this, they need to perform a dead stick flight
-          (throttle=0 or Gliding). The plane however can be maneuvered while its
-          gliding. The teams will be graded based on a) Smooth Climb (35%) b)
-          Glide Time (65%)
-        </p>
-
-        <h3>B. Maneuver Round</h3>
-        <p>
-          {" "}
-          A horizontal eight loop around the 2 vertical poles 25 points per loop
-          (none for incomplete loop)
-        </p>
-      </div>
+      </ol> */}
     </div>
     <style jsx>{`
       section {
