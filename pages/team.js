@@ -13,9 +13,9 @@ class TeamPage extends Component {
     return (
       <>
         <Meta color="#212121" />
-        <h1>Meet the Avishkar's Team</h1>
+        <h1>Avishkar's Team</h1>
         <Team people={teamData.faculty} heading="Faculty" />
-        <Team people={teamData.studentcoreteam} heading="Student Core Team" />
+        <Team people={teamData.studentcoreteam} heading="Festival Secretary" />
         <Team people={teamData.workshopslead} heading="Workshops Lead" />
         <style jsx>
           {`
