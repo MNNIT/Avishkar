@@ -8,75 +8,159 @@ import AerodynamixContent from "../components/events/AerodynamixContent";
 import NavBar from "../components/Navbar";
 import MobileNav from "../components/MobileNav";
 import IconEvents from "../components/IconEvents";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+const contactInfo = {
+  cyberquest: [
+    {
+      name: "Akshay Sharma",
+      mobile: 7599008882,
+      email: "akshay31057@gmail.com"
+    },
+    {
+      name: "Rohan Chabra",
+      mobile: 8601444918,
+      email: "rohan23chabra@gmail.com"
+    },
+    {
+      name: "Yash Chapani",
+      mobile: 7233019252,
+      email: "chapaniyash@gmail.com"
+    }
+  ],
+  electromania: [
+    {
+      name: "Rishabh Ravi",
+      mobile: 8210920062,
+      email: "rishabh18ravi@gmail.com"
+    },
+    {
+      name: "Ayush Kumar Ranjan",
+      mobile: 7800186729,
+      email: "tayn.shanu@gmail.com"
+    },
+    {
+      name: "Shreya Srivastava",
+      mobile: 8545870037,
+      email: "srivastavashreya0108@gmail.com"
+    }
+  ],
+  mechrocosm: [
+    {
+      name: "Apoorv Tyagi",
+      mobile: 7233018828,
+      email: "apoorvtyagi15@gmail.com"
+    },
+    {
+      name: "Rahul Verma",
+      mobile: 7233019509,
+      email: "rahul239verma@gmail.com"
+    },
+    {
+      name: "Shubham Kumar",
+      mobile: 7488053293,
+      email: "shubhamkumar699531@gmail.com"
+    }
+  ],
+  genesis: [
+    {
+      name: "Zeeshan Sabir",
+      mobile: 7705863638,
+      email: "zeeshansabir317@gmail.com"
+    }
+  ],
+  monopoly: [
+    {
+      name: "Sumit Chowdhary",
+      mobile: 8797531050,
+      email: ""
+    }
+  ],
+  nirmaan: [
+    {
+      name: "Abhishek Kumar",
+      mobile: 8789655512,
+      email: "abhi06437@gmail.com"
+    },
+    {
+      name: "Darpan Chaudhary",
+      mobile: 7408390592,
+      email: "darpanchaudhary5741@gmail.com"
+    }
+  ],
+  robomaina: [
+    {
+      name: "Aditya Singh",
+      mobile: 9519043907,
+      email: ""
+    },
+    {
+      name: "Piyush Gupta",
+      mobile: 9455396226,
+      email: ""
+    }
+  ],
+  powersurge: [
+    {
+      name: "Pratiush Singh",
+      mobile: 7070181243,
+      email: "pratiushsingh.ps@gmail.com"
+    }
+  ],
+  rasayans: [
+    {
+      name: "Anubhav Sarmah",
+      mobile: 7905572935,
+      email: "anubhavsarmah97@gmail.com"
+    }
+  ],
+  oligopoly: [
+    {
+      name: "Anirban Mandal",
+      mobile: 7599003356,
+      email: ""
+    }
+  ],
+  kreedomania: [
+    {
+      name: "Chaitanya Kumar",
+      mobile: 7233019203,
+      email: ""
+    }
+  ],
+  aerodynamix: [
+    {
+      name: "Kishan",
+      mobile: 7905461842,
+      email: ""
+    }
+  ]
+};
 class Page extends Component {
-  // color = {
-  //   cyberquest: "#1F3C68",
-  //   electromania: "#D8B689",
-  //   aerodynamix: "#D17F4D",
-  //   genesis: "#3696BC",
-  //   mechrocosm: "#212121",
-  //   nirmaan: "#212121",
-  //   powersurge: "#D89C78",
-  //   robomania: "#CD751B",
-  //   oligopoly: "#795548",
-  //   rasayans: "#212121",
-  //   monopoly: "#212121"
-  // };
-  // state = {
-  //   showModal: false,
-  //   //subEvents: [],
-  //   subEventData: [],
-  //   color: "black"
-  // };
-  // fetchSubEvents = () => {
-  //   const { router } = this.props;
-  //   const eventName = router.query.name;
-  //   if (eventsData[eventName] && eventName !== "aerodynamix") {
-  //     axios
-  //       .get(`/static/data/${eventName}.json`)
-  //       .then(res => {
-  //         const subEvents = res.data.events;
-  //         this.setState({ subEvents });
-  //       })
-  //       .catch(function(err) {
-  //         console.log(err);
-  //       });
-  //   }
-  // };
-  // componentDidMount() {
-  //   this.fetchSubEvents();
-  // }
-
-  // static async getInitialProps({ query, req }) {
-  //   let eventName = query.name;
-  //   if (eventsData[eventName] && eventName !== "aerodynamix") {
-  //     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-  //     const res = await fetch(`${baseUrl}/static/data/${eventName}.json`);
-  //     const data = await res.json();
-  //     return { data };
-  //   }
-  //   return { data: null };
-  // }
-
-  // showEventModal = (event, color) => {
-  //   const subEventData = this.state.subEvents.find(function(element) {
-  //     return element.name == event;
-  //   });
-  //   this.setState({
-  //     color,
-  //     showModal: true,
-  //     subEventData: [subEventData]
-  //   });
-  // };
-  // hideModal = () => {
-  //   this.setState({
-  //     showModal: false
-  //   });
-  // };
-
+  state = {
+    alertDialog: {
+      open: false
+    }
+  };
+  handleAlertOpen = () => {
+    let { alertDialog } = this.state;
+    alertDialog.open = true;
+    this.setState({ alertDialog });
+  };
+  handleAlertClose = () => {
+    let { alertDialog } = this.state;
+    alertDialog.open = false;
+    this.setState({ alertDialog });
+  };
   render() {
     const { router } = this.props;
     const eventName = router.query.name;
+    const { open } = this.state.alertDialog;
     if (!eventName || !eventsData[eventName]) {
       return (
         <>
@@ -99,16 +183,45 @@ class Page extends Component {
     return (
       <>
         <Meta color={"#212121"} />
-        <EventBanner eventName={eventName} router={this.props.router} />
-        <SubEvents router={this.props.router} />
-        {/* <ToggleDisplay show={this.state.showModal}> */}
-        {/* <SubEvent
-          subEventData={this.state.subEventData}
-          show={this.state.showModal}
-          color={this.state.color}
-          hideModal={this.hideModal}
+        <EventBanner
+          eventName={eventName}
+          router={this.props.router}
+          handleAlertOpen={this.handleAlertOpen}
         />
-        <Mask show={this.state.showModal} hideModal={this.hideModal} /> */}
+        <SubEvents router={this.props.router} />
+        <div>
+          <Dialog
+            open={open}
+            onClose={this.handleAlertClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">
+              Contact Information
+            </DialogTitle>
+            <div>
+              <List>
+                {contactInfo[eventName] !== undefined ? (
+                  contactInfo[eventName].map(person => {
+                    return (
+                      <ListItem>
+                        <ListItemText primary={person.name} />
+                        <a
+                          href={"tel:" + String(person.mobile)}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <ListItemText primary={person.mobile} />
+                        </a>
+                      </ListItem>
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
+              </List>
+            </div>
+          </Dialog>
+        </div>
       </>
     );
   }

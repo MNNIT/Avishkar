@@ -9,7 +9,13 @@ axios.defaults.withCredentials = true;
 
 export default class extends Component {
   state = {
-    links: [["/", "Home"], ["/events", "Events"], ["/team", "Team"]],
+    links: [
+      ["/", "Home"],
+      ["/events", "Events"],
+      ["/gnosiomania", "Gnosiomania"],
+      ["/workshops", "Workshops"],
+      ["/team", "Team"]
+    ],
     login: false,
     snackBar: {
       open: false,

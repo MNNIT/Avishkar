@@ -29,7 +29,9 @@ const routes = {
   "/store": { page: "/store" },
   "/reset-password": { page: "/reset-password" },
   "/reset-password/email": { page: "/reset-password", query: { tab: "email" } },
-  "/reset-password/code": { page: "/reset-password", query: { tab: "code" } }
+  "/reset-password/code": { page: "/reset-password", query: { tab: "code" } },
+  "/gnosiomania": { page: "/gnosiomania" },
+  "/workshops": { page: "/workshops" }
 };
 events.forEach(function(event) {
   const path = "/events/" + event;

@@ -553,8 +553,15 @@ const data = [
       "PUBG is a multiplayer game where teams rival against each other to be crowned as the ultimate champions. Winner Winner Chicken Dinner."
   },
   {
-    name: "aerodynamix",
-    displayName: "Aerodynamix",
+    name: "pushpakvimaan",
+    displayName: "Pushpak Vimaan",
+    size: 1,
+    category: "aerodynamix",
+    info: ""
+  },
+  {
+    name: "aerialvehicle",
+    displayName: "Aerial Vehicle Design",
     size: 1,
     category: "aerodynamix",
     info: ""

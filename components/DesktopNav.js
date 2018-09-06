@@ -94,7 +94,6 @@ export default class extends Component {
             }
             div.link-container {
               height: 80%;
-              width: 90px;
               padding: 10px 20px;
               margin: 10px;
               /* border-radius: 6px;*/
