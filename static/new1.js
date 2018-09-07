@@ -72,8 +72,7 @@ fun = () => {
 
   addListeners = function() {
     window.addEventListener("resize", resizeCanvas);
-    return window.addEventListener("pointermove", updateMouse);
-    // return window.addEventListener('touchmove', updateMouse);
+    window.addEventListener("pointermove", updateMouse);
   };
 
   updateMouse = function(e) {
