@@ -115,8 +115,6 @@ export default ({ color }) => {
           margin: 0;
           overflow-x: hidden;
           font-family: "Open Sans", sans-serif;
-          /*font-family: "Bfont";
-        font-weight: 100;*/
         }
         @media (max-width: 700px) {
           body {
