@@ -11,6 +11,7 @@ const data = [
     displayName: "Softablitz",
     size: 3,
     category: "cyberquest",
+    image: "Softablitz.jpg",
     info:
       "Has a software ever made you go insane? Has a software ever fascinated you so much that you fall for it like your beloved? If the above questions have triggered a bulb in your neurons, then you've landed in the right place!! To all the software geeks out there, here's your chance to gear up your enthusiasm and consume your grey matter in developing some fascinating software. Let the \"blitz\" of developing software make you go wild and let IntelliJ IDEA be your life for this Avishkar. Together let's make Softablitz big."
   },
@@ -19,6 +20,7 @@ const data = [
     displayName: "Insomnia",
     size: 3,
     category: "cyberquest",
+    image: "Insomnia.png",
     info:
       "Are you one of those who love brainstorming and problem-solving? Are you one who feels like coding is fun? Are you the one who loves algorithms and data structures? If you find yourself in this league, then this contest is just for you.Insomnia is the flagship competitive coding event of annual technical fest Avishkar of MNNIT, Allahabad. It is an ACM-ICPC style team programming contest. Participants from all over the world can register and no registration fee is required. The team can consist up to maximum 3 members. The event consists of 2 rounds. The first round is an online qualifying round of 3 hrs. and the shortlisted teams will battle in the second round which is an onsite final round of 5 hrs. The problem set in each round promises to be interesting and of varying difficulty level.So, don’t miss the chance of being in an “insomniac” atmosphere of coders. Insomnia gives you a chance to showcase your coding skills in a rigorous and challenging contest and to win exciting prizes."
   },
@@ -27,6 +29,7 @@ const data = [
     displayName: "Softathalon",
     size: 1,
     category: "cyberquest",
+    image: "Softathalon.jpg",
     info:
       "Softathlon is the annual flagship event of MNNIT Allahabad. This is the placement oriented event to put your knowledge to test in different topics related to computer science. It tests you by hosting programming and logical round, group discussion and personal interviews. Come and get insight on how the placements sessions work.“Let the knowledge do the talking.“"
   },
@@ -35,6 +38,7 @@ const data = [
     displayName: "Webster",
     size: 3,
     category: "cyberquest",
+    image: "Webster.jpg",
     info:
       "The web is one of the greatest inventions. Whether it's watching your favorite shows, booking tickets, sharing pictures the web has covered you. Webster is a platform for aspiring web developers to showcase their skills. The registered teams will be given some problem statements on what to build. The event consists of 3 rounds, abstract submission, and onsite coding and final submission. Three winning teams will be chosen based on their performances. Come let's build the web for all."
   },
@@ -43,6 +47,7 @@ const data = [
     displayName: "Droidrush",
     size: 3,
     category: "cyberquest",
+    image: "Droidrush.png",
     info:
       "Android is intended to be customizable, and we welcome innovations. Starting from smartphones, tablets to TVs and wearable’s, Android is one of the most used OS worldwide. Over 1.5 billion people use it regularly. Droidrush is annual android app development event of MNNIT Allahabad. The event helps you grasp in the concepts of android development and provides you with a pool of opportunities. You can also get a chance to publish your application on Play Store itself. “Come, Show your ideas and develop the next revolutionizing app”"
   },
@@ -51,6 +56,7 @@ const data = [
     displayName: "Code of the Day",
     size: 1,
     category: "cyberquest",
+    image: "code_of_the_day.jpeg",
     info:
       "“A code a day keeps boredom away” Ever felt like you can do the problem but want more time to solve, then Code of the Day (COD) is for you. COD is 7 days long programming contest intended for enthusiast programmer which will help them evolve/build their logical thinking. Every day new question will release in increasing level of difficulty, one need to submit the correct solution within 24 hours to get the full score. With each passing day, maximum score for correct submission will decrease linearly."
   },
@@ -59,6 +65,7 @@ const data = [
     displayName: "Operaomnia",
     size: 2,
     category: "cyberquest",
+    image: "Operaomnia.jpg",
     info:
       "An event where your mind will think faster than before. An event where your IQ will be challenged to yet another level, An event where your zeal for mind twisters will be raised to a new high, An event where your brain, with riddles is surely gonna fly. An event where the puzzles will puzzle your mind and heart, as never before.  Behold yourself, as Avishkar presents to you, Operomnia, an event where your mind goes on an adventurous ride with the puzzles and riddles and which will instigate an adrenaline rush in all those puzzle loving minds.Come and see what puzzles can do to you and you to puzzles. "
   },
@@ -67,6 +74,7 @@ const data = [
     displayName: "Revengg",
     size: 2,
     category: "cyberquest",
+    image: "Revengg.jpeg",
     info:
       "“Basically, if reverse engineering is banned, then a lot of open source community is doomed to fail.” ...and today we literally live in the era of open-source. No wonders that with every byte of information we add to our cellphone or laptop, the complicated and never-ending mesh of computers all over the world are affected by us. It is the reverse engineering that the hackers use to pull out the sensitive information from our data and have an inevitable serious impact on us. REVENGG is the event, short for REVerse ENGineering that takes out the playful hacker from inside of the young talents. With a series of events, rounds and games, the participants are tried to be given a hand-on experience of the intricacies of a computer. There shall be “Capture the Flag” events, to expose the real-world hacking and information retrieval to the participants. The winners will be awarded with cool prizes and goodies. And who knows when the next world war will be a Cyber War, you will be on the winning side!"
   },
@@ -75,14 +83,16 @@ const data = [
     displayName: "Tuxwars",
     size: 2,
     category: "cyberquest",
+    image: "Tuxwars.jpg",
     info:
       "The Linux philosophy is ‘Laugh in the face of danger’. Oops. Wrong One. ‘Do it yourself’. Yes, that’s it.” - Linus Torvalds. Linux is the most fascinating operating system and the true-love of all the programmers. Linux is free, secure, flexible, customizable and most widely deployed operating system in the world. Many of the devices we own, let alone Android, digital storage, video recorders, cameras, smart watches and what not run the Linux kernel in their core. That makes everyone, from even a novice or an expert programmer, feel the need to learn about Linux. TUXWARS is the event for all such curious souls out there to learn, apply and play with Linux perks and delve deeper into its bits and bytes. The event focuses on the core concepts and wide variety of applications and perks that the secure Linux kernel provides us. There shall be various rounds for testing and evaluating the performance of the participants, with cool prizes waiting for the winners alongside.After all, ‘Do it yourself’ is the Linux philosophy."
   },
   {
-    name: "opensource",
-    displayName: "OpenSource",
+    name: "contrihub",
+    displayName: "ContriHUB",
     size: 1,
     category: "cyberquest",
+    image: "contriHub.png",
     info:
       "An Open Source Event, which aims to get more people into the world of open source. This event gives a jumpstart to open source development skills. It also serves as a warm up for GSoC and other global open source competitions. This is a month long event, throughout the whole event participants learn different open source tools, solve various issues and compete against one another to be the winner."
   },
@@ -91,6 +101,7 @@ const data = [
     displayName: "Sphinx",
     size: 2,
     category: "cyberquest",
+    image: "Sphinx.jpg",
     info:
       '"Well, if it can be thought, it can be done, a problem can be overcome".Avishkar brings to you a mind-altering enigmatic extravaganza where quick-wit will be your guide, speed will be your weapon, math will be your language and your mind will be blown! Get ready to unleash the genius within you and let\'s see who wins this battle of logic and speed.'
   },
@@ -99,6 +110,7 @@ const data = [
     displayName: "Logical Rhythm",
     size: 3,
     category: "cyberquest",
+    image: "Logical_Rhythm.jpg",
     info:
       "Logical Rhythm, the flagship #AI event of Avishkar, techno-management festival of MNNIT; where, #ML enthusiasts pitch their data skills against themselves to come up with better solutions for classic #ML problems in the industry. The event also serves to induct the fresher’s into the world of #ML and #DL, and give them a firsthand experience of AI development.It has been long hailed that Machine Learning is the electricity of 21st century, but, the reality is, Machine Learning applications are still in their infancy. To harness its full potential and have it diffuse into the masses, like electricity, more minds are needed to be put into its development, which has also been the conclusion of many tech giants in the field.Conceived with the aim to bring AI within the reach of more developers, and AI developers to industry to solve its long standing problems; the event opens its competition platform across colleges, years and streams, witnessing participations from all over India*."
   },
@@ -107,6 +119,7 @@ const data = [
     displayName: "Inception",
     size: 1,
     category: "cyberquest",
+    image: "Inception.jpg",
     info:
       "An event for budding coders/developers (fresher’s) which will introduce them to the world of programming. We intend to induce reasoning and problem solving skills in them with a blend of technical know-how which will help them in taking the first step in the journey of development."
   },
@@ -115,6 +128,7 @@ const data = [
     displayName: "Code Warriors",
     size: 2,
     category: "cyberquest",
+    image: "Code_Warriors.jpg",
     info:
       "CodeWarrior is CyberQuest flagship Artificial Intelligence Challenge. It's one of a kind challenge that will run for 21 days (Tentative). There is only one problem statement in the challenge - the game for which you have to write a bot.You will be given a two-player game and you have to write a bot that will play that game against other bots. Your bot has to adhere to the rules of the game given in the problem statement, and play against the other bot.While the challenge is live, you will have one system generated bot against which you can test your bot. The default bot will be a very basic bot, if you win against that bot it doesn't mean you will win against other players also.Also you can challenge other people who have submitted their bots to play against you. Once the challenge is over, all the bots that have been submitted will be played against other bots in a onsite tournament. The bot that wins the tournament will be declared the winner."
   },
@@ -194,6 +208,7 @@ const data = [
     displayName: "Palladin",
     size: 1,
     category: "genesis",
+    image: "Palladin.jpg",
     info:
       '"Find out what you like doing best and get someone to pay you for doing it." This event will evaluate your Aptitude,communication skills, and confidence needed to fully participate and succeed in the corporate world. Take charge of your career trajectory and unlock your potential to create winning strategies. Finally, this event will include all the processes which are followed during placements.'
   },
@@ -202,6 +217,7 @@ const data = [
     displayName: "Central Dogma",
     size: 3,
     category: "genesis",
+    image: "Central_Dogma.jpg",
     info:
       '"Biotechnology is the third wave in biological science and represents such an interface of basic and applied sciences, where gradual and subtle transformation of science into technology can be witnessed.”“It is beyond expectation on what the biotechnology has accomplished and reached in just a matter of time. Humanity has just start to comprehend and recognized the endless opportunities it has open. As technology assures to provide solution to every frightening problem we face every now and then, so is mankind is expecting a more develop biotechnology in the future. A technology that is more reliable and firm”.“Biotechnology can be a great solution to mankind struggles”.Do you know that in Norway there is a vault for storing seeds in case of Third World War like destruction?Do you know that DNA can be used as data-storage devices?Do you know that there are super-muscled pigs, fast-growing salmon,featherless chicken and see-through frogs?Currently, there is so much going on in the field of biotechnology!We bring you “Central Dogma”, the core event of Genesis, which is highly revered for those inquisitive scientists who wish to achieve breakthrough in biotechnology research.Participate in one of the most challenging event designed for the research-oriented community."Research is what I’m doing when I don’t know what I’m doing." -Wernher von Braun'
   },
@@ -210,6 +226,7 @@ const data = [
     displayName: "Cluequest",
     size: 5,
     category: "genesis",
+    image: "Cluequest.jpg",
     info:
       '"Extraordinary things are always hiding in places people never think to look".Do you have what it takes to uncover the hidden truth and to solve mind boggling puzzles? This event will test your determination and your wits as you will have to dig deeper to win. So, freshen up your wits, tie your shoelaces and get ready for the most exhilarating and thrilling part of Genesis and Avishkar.'
   },
@@ -218,6 +235,7 @@ const data = [
     displayName: "SURVIVOR SERIES",
     size: 2,
     category: "mechrocosm",
+    image: "SURVIVOR_SERIES.jpg",
     info:
       '"Don\'t limit your challenges but challenge your limits." \nAt every point in this competition we will challenge you to beat your extremes. So, get ready to enter into the world of puzzles, riddles, mysteries and brain teasers.\nWe present you the most challenging and exciting event of Avishkar:  Survivor Series'
   },
@@ -226,6 +244,7 @@ const data = [
     displayName: "VENI VIDI VICI",
     size: 3,
     category: "mechrocosm",
+    image: "VENI_VIDI_VICI.jpg",
     info:
       '"I came, I saw, I conquered"\nNow, it’s your time to conquer the world by showcasing your entrepreneurial skills. It is an event where you will come across the challenges in setting up your own venture. In this event you have to setup your own industry and provide all the necessary details required to setup and run the plant.\nSo, let\'s see who can be the future job creators.'
   },
@@ -234,6 +253,7 @@ const data = [
     displayName: "BLUEPRINT",
     size: 2,
     category: "mechrocosm",
+    image: "BLUEPRINT.png",
     info:
       '"If you can imagine it you can create it" -William Arthur ward\nEvery big project you see today has formed from some abstract idea. Framing and modelling ideas is the most vital step to get clear picture of the project before implementation.\nThis event gives you the platform to bring your imagination to life using various CAD softwares and compete against other designers across the country.\nIn this challenge participants use designing softwares like Solidworks, Catia, etc. to conceptualize, model and Improves its functionality using your imagination.'
   },
@@ -242,6 +262,7 @@ const data = [
     displayName: "THEMATICA",
     size: 5,
     category: "mechrocosm",
+    image: "THEMATICA.jpg",
     info:
       "''If the challenge exists, so must the solution''\nThematica is an event in which participants have to find a feasible and cost effective solution for general daily life problem faced by society and present it before a panel of judges. Their ideas will be judged on the basis of Innovation, feasibility and cost effectiveness."
   },
@@ -250,6 +271,7 @@ const data = [
     displayName: "SCRAPHEAP",
     size: 3,
     category: "mechrocosm",
+    image: "SCRAPHEAP.JPG",
     info:
       "''For some people, its junk, for us, it’s Inventory''\nEver thought what could be made out of junks. Go back to your childhood, revisit memories and create something interesting with scrapheap by putting life into scraps for something bigger and better. "
   },
@@ -258,6 +280,7 @@ const data = [
     displayName: "PUMP IT UP",
     size: 3,
     category: "mechrocosm",
+    image: "PUMP_IT_UP.jpg",
     info:
       "Pump it up, as the name suggest would require you to use your strength both mental and physical to pump the rocket made out of a cold Drink bottle to a distance of more than 75m. A rocket fight which would require you to shoot rocket using projectile in the competitors’ den and you need to protect yourself with a shield (a thin steel plate).\nEvent would consist of few amazing rounds and the best team shall win and awarded."
   },
@@ -266,6 +289,7 @@ const data = [
     displayName: "AUTOMAX",
     size: 6,
     category: "mechrocosm",
+    image: "AUTOMAX.jpg",
     info:
       "\"The way I drive, the way I handle a car, is an expression of my inner feelings’’. Now it’s time to express your inner feelings.\nIt is an event where you learn how a masterpiece of engineering, Formula cars works and showcase your technical prowess, skills and hone your knowledge pertaining to real life engineering. It's a never ending battle of making your cars better and also trying to be better yourself.\nFinal stage of the event provides you the chance to race your car among your competitors and conquer it. "
   },
@@ -274,6 +298,7 @@ const data = [
     displayName: "CONTRAPTION",
     size: 5,
     category: "mechrocosm",
+    image: "CONTRAPTION.jpg",
     info:
       "Contraption is one of the most interesting, innovative and unique events of Mechrocosm. It consists of a chain of different ‘energy conversion’ steps, in which one step triggers the next one leading to completion of final task. In this event participants are asked to make a Contraption system which will perform various energy transformations till final task."
   },
@@ -290,6 +315,7 @@ const data = [
     displayName: "Chanakya Neeti",
     size: 2,
     category: "monopoly",
+    image: "Chanakya_neeti.jpg",
     info:
       "We cannot solve a problem with the same level of thinking that created them. Explore the ratiocinative skills in you. Every situation has numerous solutions; the most efficacious one is required. We learn theory, time to apply some of the skills into reality. Chanakya Neeti will put you into the shoes of a world class manager that will help you to take strategic decisions at a spur of the moment. Like Chanakya this event will give you the chance of making the definitive strategies for business scenarios. GRAB THE OPPORTUNITY!"
   },
@@ -298,6 +324,7 @@ const data = [
     displayName: "Netritva (Monopoly)",
     size: 1,
     category: "monopoly",
+    image: "Netritva.png",
     info:
       "Too often, we believe our basic skills and credentials suffice, however, personal presence, self- assurance, and grace under pressure—charisma—differentiate the best leaders from others with similar talents and backgrounds. These qualities improve the ability to make a positive first impression as well as a lasting one, connect quickly and authentically with important people and develop an inner sense of confidence. Netritva is one such event which looks out for such charisma in the participants to bring out the true leaders in this leadership event of Avishkar, through multiple exciting and challenging rounds."
   },
@@ -306,6 +333,7 @@ const data = [
     displayName: "Stallmart",
     size: 4,
     category: "monopoly",
+    image: "Stallmart.jpg",
     info:
       "Hello ENTERPRENUERS!! Ever thought of some innovation? Do u got the urge to make money through your ideas. Then this the best chance you have got! Grab it and earn it. If you ever thought of a start up, then have a demo experience of market from here. Stall mart brings you ‘stall your ideas’. Come up with an innovative business, implement the strategies and reap the benefits. Experience the thrill, stress and excitement of owning a business. Use your ethical ways to earn maximum profits and you may win. It is the time to innovate and implement. It’s an “ALL YOU EARN” event. Show the real entrepreneur inside you."
   },
@@ -314,6 +342,7 @@ const data = [
     displayName: "Navachar",
     size: 3,
     category: "monopoly",
+    image: "Navachar.jpg",
     info:
       "Having an innovative business idea is great but put it to test is the real deal. Come up with your best business ideas and present it like a real manager, convince the audience and grab your deal. Navachar brings you the best platform to present your business idea out in the world and test its feasibility, functionality, and relevance in the real business atmosphere."
   },
@@ -322,6 +351,7 @@ const data = [
     displayName: "Ziggurare",
     size: 4,
     category: "nirmaan",
+    image: "ZIGGURARE.jpg",
     info:
       "Being updated with software skills is very essential professional requirement for a civil engineer. It is just another feather in your cap and gives you an edge over your fellow competitors. In this event imagination capabilities and designing skills of the participants will be tested.Be a part of future development that is awaiting the field of civil engineering in the design area. So come in large numbers and bring out the designer in you."
   },
@@ -330,6 +360,7 @@ const data = [
     displayName: "Shutter Up",
     size: 1,
     category: "nirmaan",
+    image: "SHUTTERUP.jpg",
     info:
       "Do  you  love  to  capture  the  interesting  and  beautiful  scenes  around  you?  Do  you  stay  up  at nights  worrying  about  “composition”?  If  yes,  then  look  no  further.   The  NIRMAAN's  Online  Photography  Contest  'SHUTTER UP'  beckons  you!   Take  out  your  cameras  and  smartphones  and  click  away!  There is something more for you all. “You  don’t  take  a  photograph,  you  make  it.”  ―  Ansel  A"
   },
@@ -338,6 +369,7 @@ const data = [
     displayName: "Linkidge",
     size: 6,
     category: "nirmaan",
+    image: "LINKIDGE.jpg",
     info:
       "They say architecture is music in space, frozen at the spot, an art that calls for intricate design and imagery. Sometimes the best ideas are born out of the simplest of things. So we present to you the very dais to bring out yours.Unlimited ice cream sticks. Five creative minds. One structure. Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it.—Sir Henry Royce, English engineer One of the biggest engineering problems is to connect people, to overcome physical obstructions and topographical boundaries for proper development of our society. Bridges provide the structural solution to all these problems, guaranteeing safest and easiest link between two parts through most adverse conditions like rivers, canopies, oceans, trenches and much more. Bridges are essential to our nation's infrastructural development Here at LINKIDGE event of Avishkar we provide you a platform to showcase your innovation, creativity, knowledge, and ability to tackle practical problems related to connecting to places with a model bridge."
   },
@@ -346,6 +378,7 @@ const data = [
     displayName: "Concube",
     size: 5,
     category: "nirmaan",
+    image: "CONCUBE.jpg",
     info:
       "Civil Engineering is incomplete without knowledge of concrete. All constructions, whether a minor or a major one, require use of concrete. So, here we arrive with Concube 2018 ,the best opportunity to test your knowledge and understanding about concrete and to use theoretical concepts to solve actual field problem. So make a team, cast your concrete cubes and get them tested as per standard criterias. Prove your worth by solving compulsive industrial problems using your skilled knowledge in simulation and modelling."
   },
@@ -354,6 +387,7 @@ const data = [
     displayName: "Terraquiz",
     size: 3,
     category: "nirmaan",
+    image: "TERRAQUIZ.jpeg",
     info:
       "Having an extra knowledge is never bad. Be the jack of all trades and figure out your knowledge and luck in the tri-round event 'terraquiz' . Find your mates and check your aptitude potential, answer general knowledge questions, solve trivias and puzzles with a pinch of civil engineering experience."
   },
@@ -362,6 +396,7 @@ const data = [
     displayName: "Cognizance",
     size: 1,
     category: "nirmaan",
+    image: "COGNIZANCE.jpg",
     info:
       "'Change is the very law of nature . ' Abiding by this statement and keeping pace with the modern day requires technical and soft skills in abundance . So buckle up to test and improve the same and discover hidden aspects of your personality via Cognizance 2k18 . The event involves technical , aptitude , GD and PI rounds resembling both campus placements and the selection process in gate/ese."
   },
@@ -369,6 +404,7 @@ const data = [
     name: "infinitycrusade",
     displayName: "Infinity Crusade",
     category: "robomania",
+    image: "Infinity_crusade.jpg",
     info:
       "This event is specially for 1st year to, introduce them about the fundamental of autonomous robotics. In this event they have to design a robot that can difference between white and black and follow the white line along some standard paths.",
     size: 4
@@ -377,6 +413,7 @@ const data = [
     name: "fractalhunt",
     displayName: "Fractal Hunt",
     category: "robomania",
+    image: "Fractal_Hunt.jpeg",
     info:
       "This event is for 2nd and 3rd year students. The teams here will design a bot which will collect all infinity stones in arena and place it in infinity gauntlet of Thanos.",
     size: 4
@@ -385,6 +422,7 @@ const data = [
     name: "theterraintrekofgliese",
     displayName: "The Terrain Trek of Gliese 667C b",
     category: "robomania",
+    image: "Terrain_Trek.jpeg",
     info:
       "This event is open to all, this is manual robotics event, to check your skill in field of robotics hardware designing and application of mechanics in robotics. in this event you have to design manual control robot that can perform several task given on arena.",
     size: 4
@@ -481,6 +519,7 @@ const data = [
     displayName: "Netritva (Oligopoly)",
     size: 1,
     category: "oligopoly",
+    image: "Netritva.jpeg",
     info:
       "“A leader is one who knows the way, goes the way and shows the way.” This event is for leadership hunt."
   },
@@ -489,6 +528,7 @@ const data = [
     displayName: "Trading Strategist",
     size: 1,
     category: "oligopoly",
+    image: "TradingStrategist.jpeg",
     info: "Marketing bonanza event"
   },
   {
@@ -496,6 +536,7 @@ const data = [
     displayName: "Adhole",
     size: 3,
     category: "oligopoly",
+    image: "Adhole.jpg",
     info: "Advertising event. Do you have it in you to become the next ad guru."
   },
   {
@@ -503,6 +544,7 @@ const data = [
     displayName: "Pitchers",
     size: 3,
     category: "oligopoly",
+    image: "Pithchers.jpeg",
     info:
       "Platform to pitch your best startup idea. Everyone has ideas. They may be too busy or lack the confidence or technical knowledge to carry them out. But we want to carry them out. Its a matter of getting up and doing it."
   },
@@ -511,6 +553,7 @@ const data = [
     displayName: "NFS Most Wanted",
     size: 1,
     category: "kreedomania",
+    image: "NFS_Most_Wanted.jpg",
     info:
       "Can you become the Most Wanted? Need for Speed Most wanted combines the tuner customization of Need for Speed Underground with an expanded take on the police chases of the Need for Speed."
   },
@@ -519,6 +562,7 @@ const data = [
     displayName: "Rubix Cube",
     size: 1,
     category: "kreedomania",
+    image: "Rubix_Cube.jpg",
     info: "How fast can you solve it, double digit or single digit ?"
   },
   {
@@ -526,6 +570,7 @@ const data = [
     displayName: "FIFA 2018",
     size: 1,
     category: "kreedomania",
+    image: "FIFA_18.jpg",
     info: "Lets replay FIFA 2018 with our mindset and find out the results."
   },
   {
@@ -533,6 +578,7 @@ const data = [
     displayName: "Counter Strike",
     size: 5,
     category: "kreedomania",
+    image: "Counter_Striker.jpg",
     info:
       "Counter-Strike: Global Offensive is a multiplayer first-person shooter video game;  The game pits two teams against each other: the Terrorists and the Counter-Terrorists. Both sides are tasked with eliminating the other while also completing separate objectives, the Terrorists, depending on the game mode, must either plant the bomb or defend the hostages, while the Counter-Terrorists must either prevent the bomb from being planted, defuse the bomb, or rescue the hostages."
   },
@@ -541,6 +587,7 @@ const data = [
     displayName: "Dota 2",
     size: 5,
     category: "kreedomania",
+    image: "Dota_2.png",
     info:
       'Dota 2 is a multiplayer online battle arena (MOBA) video game in which two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the "Ancient", whilst defending their own.'
   },
@@ -549,22 +596,25 @@ const data = [
     displayName: "PUBG Mobile",
     size: 4,
     category: "kreedomania",
+    image: "PUBG_Mobile.jpg",
     info:
       "PUBG is a multiplayer game where teams rival against each other to be crowned as the ultimate champions. Winner Winner Chicken Dinner."
   },
   {
     name: "pushpakvimaan",
     displayName: "Pushpak Vimaan",
-    size: 1,
+    size: 5,
     category: "aerodynamix",
-    info: ""
+    info:
+      "In this event,in the nut shell, one must design a glider (an RC Plane). This event consists of 4 rounds, each round even more exciting and thrilling than the previous one. The last round is flying the glider. No round is elimination round but scores of all the rounds will be counted."
   },
   {
     name: "aerialvehicle",
     displayName: "Aerial Vehicle Design",
-    size: 1,
+    size: 5,
     category: "aerodynamix",
-    info: ""
+    info:
+      "This event is basically aerial robotics. Here, one must design a drone which can perform various tasks. This event consists of two rounds. Round 1 involving maneuvering skills and round 2 to check the communication, detection and functioning of different sensors while flying."
   }
 ];
 export default class extends Component {
