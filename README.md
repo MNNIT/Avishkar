@@ -16,8 +16,8 @@ We welcome pull requests from beginners and seasoned JavaScript developers alike
 ## Viewing the project locally
 * You must have Nodejs and NPM installed on your computer.
 * You need to configure proxy for npm - 
-  - npm config set https-proxy http://username:password@proxy_address:port
-  - npm config set proxy http://username:password@proxy_address:port
+  - npm config set https-proxy `http://username:password@proxy_address:port`
+  - npm config set proxy `http://username:password@proxy_address:port`
 * In the project directory run ```npm install``` to install the dependencies.
 * Run ```npm run build``` to build the project files and start the server in development mode.
 * To run the server in production mode set the environment variable ```NODE_ENV=production```
