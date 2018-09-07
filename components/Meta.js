@@ -23,7 +23,7 @@ export default () => (
 
       <link rel="stylesheet" href="/static/styles/theme.css" />
       <link
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+        href="https://fonts.googleapis.com/css?family=Open+Sans"
         rel="stylesheet"
       />
       <script src="/static/nprogress.js" />
@@ -137,10 +137,6 @@ export default () => (
     </Head>
     <style jsx global>{`
       @font-face {
-        font-family: "heading";
-        src: url("/static/font/neon2.ttf") format("truetype");
-      }
-      @font-face {
         font-family: "rustico";
         src: url("/static/font/Rustico-Regular.otf");
       }
@@ -148,6 +144,7 @@ export default () => (
         margin: 0;
         overflow-x: hidden;
         font-family: "Source Sans Pro", sans-serif;
+        font-family: "Open Sans", sans-serif;
       }
     `}</style>
   </div>

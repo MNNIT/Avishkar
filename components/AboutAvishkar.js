@@ -42,7 +42,7 @@ export default () => (
         color: black;
       }
       p {
-        font-size: 20px;
+        font-size: 18px;
         text-align: justify;
         line-height: 1.9rem;
       }
