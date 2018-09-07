@@ -12,6 +12,9 @@ const data = [
     size: 3,
     category: "cyberquest",
     image: "Softablitz.jpg",
+    problemStatements: [
+      "https://docs.google.com/document/d/165jk-EDxtJlhltMAA1ievFmAn8aJHKUuAddnLifUHs4/export?format=pdf"
+    ],
     info:
       "Has a software ever made you go insane? Has a software ever fascinated you so much that you fall for it like your beloved? If the above questions have triggered a bulb in your neurons, then you've landed in the right place!! To all the software geeks out there, here's your chance to gear up your enthusiasm and consume your grey matter in developing some fascinating software. Let the \"blitz\" of developing software make you go wild and let IntelliJ IDEA be your life for this Avishkar. Together let's make Softablitz big."
   },
@@ -39,6 +42,9 @@ const data = [
     size: 3,
     category: "cyberquest",
     image: "Webster.jpg",
+    problemStatements: [
+      "https://docs.google.com/document/d/1AuJpEN0C8UCcHWxslO0JI3u9PS5Gi3pAPH9ycyMMH-k/export?format=pdf"
+    ],
     info:
       "The web is one of the greatest inventions. Whether it's watching your favorite shows, booking tickets, sharing pictures the web has covered you. Webster is a platform for aspiring web developers to showcase their skills. The registered teams will be given some problem statements on what to build. The event consists of 3 rounds, abstract submission, and onsite coding and final submission. Three winning teams will be chosen based on their performances. Come let's build the web for all."
   },
@@ -48,6 +54,9 @@ const data = [
     size: 3,
     category: "cyberquest",
     image: "Droidrush.png",
+    problemStatements: [
+      "https://docs.google.com/document/d/1MK96NhUo3W2aA0bxCLXCohIvplTOHY6-4H_DK5iJgVA/export?format=pdf"
+    ],
     info:
       "Android is intended to be customizable, and we welcome innovations. Starting from smartphones, tablets to TVs and wearable’s, Android is one of the most used OS worldwide. Over 1.5 billion people use it regularly. Droidrush is annual android app development event of MNNIT Allahabad. The event helps you grasp in the concepts of android development and provides you with a pool of opportunities. You can also get a chance to publish your application on Play Store itself. “Come, Show your ideas and develop the next revolutionizing app”"
   },
@@ -111,6 +120,9 @@ const data = [
     size: 3,
     category: "cyberquest",
     image: "Logical_Rhythm.jpg",
+    problemStatements: [
+      "https://docs.google.com/document/d/1nf8PWun80aqGrjOdHFozoQCf9WRMKSsfq2B34W_Y_fo/export?format=pdf"
+    ],
     info:
       "Logical Rhythm, the flagship #AI event of Avishkar, techno-management festival of MNNIT; where, #ML enthusiasts pitch their data skills against themselves to come up with better solutions for classic #ML problems in the industry. The event also serves to induct the fresher’s into the world of #ML and #DL, and give them a firsthand experience of AI development.It has been long hailed that Machine Learning is the electricity of 21st century, but, the reality is, Machine Learning applications are still in their infancy. To harness its full potential and have it diffuse into the masses, like electricity, more minds are needed to be put into its development, which has also been the conclusion of many tech giants in the field.Conceived with the aim to bring AI within the reach of more developers, and AI developers to industry to solve its long standing problems; the event opens its competition platform across colleges, years and streams, witnessing participations from all over India*."
   },
@@ -129,6 +141,9 @@ const data = [
     size: 2,
     category: "cyberquest",
     image: "Code_Warriors.jpg",
+    problemStatements: [
+      "https://docs.google.com/document/d/1om4aiHACifJcHnrIKE-PRGheIFYyPS74--E-wMjR0WE/export?format=pdf"
+    ],
     info:
       "CodeWarrior is CyberQuest flagship Artificial Intelligence Challenge. It's one of a kind challenge that will run for 21 days (Tentative). There is only one problem statement in the challenge - the game for which you have to write a bot.You will be given a two-player game and you have to write a bot that will play that game against other bots. Your bot has to adhere to the rules of the game given in the problem statement, and play against the other bot.While the challenge is live, you will have one system generated bot against which you can test your bot. The default bot will be a very basic bot, if you win against that bot it doesn't mean you will win against other players also.Also you can challenge other people who have submitted their bots to play against you. Once the challenge is over, all the bots that have been submitted will be played against other bots in a onsite tournament. The bot that wins the tournament will be declared the winner."
   },
@@ -168,6 +183,9 @@ const data = [
     displayName: "Embedded Design",
     size: 3,
     category: "electromania",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=165JPlsRUjP8kL7VHV-TJShs5I2FdxLSA"
+    ],
     info:
       "First the problem and design specifications are given to the participants. Problem statement is based on designing real device using 8 bit micro-controller platform.Microcontroller is programmed using IDE and appropriate hardware circuit is interfaced with it.This event is unique as it challenges participants to work in both domain software as well as in hardware circuit design and it's optimization to reduce the overall project cost."
   },
@@ -184,6 +202,9 @@ const data = [
     displayName: "Innodev",
     size: 4,
     category: "electromania",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1juC1YIN8rIw6s4n8rkjWhXkP8xzGzbC2"
+    ],
     info:
       "Software Development is quintessential part for engineering students' skillset, especially those belonging to the circuit branches. The diverse problems that entail from all the circuit branches, often require a combination of technology paradignss to develop the desired h-stic solutions. Innodev aims to provide a platform where developers could develop holistic solutions to the present day problems, using the full spectrum of development tools available to them."
   },
@@ -192,6 +213,10 @@ const data = [
     displayName: "Combo Magic",
     size: 3,
     category: "electromania",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1DmChrQTZn8sBhzI-UilmD2Hb3yX7Fgq-",
+      "https://drive.google.com/uc?export=download&id=1TGtVY5MSNRKHwJ3jV7qDXJA5KPMPi9-_"
+    ],
     info:
       "It is a circuit designing event in which the one who come with a better circuit with less complexity will be winner.This event will enhance the knowledge of reducing circuit complexity and will improve there skills of making circuits.For first year this event will make them familiar with different basic but important components and their uses and they will also learn how to make a combination of different component to make magic and from this comes the name. Giving you one of the event with maximum no of participation....... Combo Magic. P.S.-programmable components are not allowed"
   },
@@ -200,6 +225,9 @@ const data = [
     displayName: "FPGA",
     size: 3,
     category: "electromania",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1ZkdFeJiKYnxkouct_hveU-wCyndrSlFo"
+    ],
     info:
       "FPGA (Design), one of the major hardware events in Electromania, is targeted to the designing of FPGA synthesis solutions with industrial applications in the fields like computer architecture, digital signal processing, cryptography, etc. Verilog HDL (Hardware Description Language) is the hardware description language used for synthesis solutions followed by their behavioral simulation and implementation on FPGA kits available for the academic purpose- ranging from the Spartan 3 family to Artix 7 family."
   },
@@ -209,6 +237,9 @@ const data = [
     size: 1,
     category: "genesis",
     image: "Palladin.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1Mfx_1Dwh6F3Bi2SyvC3Nzi4lR-GQJH8r"
+    ],
     info:
       '"Find out what you like doing best and get someone to pay you for doing it." This event will evaluate your Aptitude,communication skills, and confidence needed to fully participate and succeed in the corporate world. Take charge of your career trajectory and unlock your potential to create winning strategies. Finally, this event will include all the processes which are followed during placements.'
   },
@@ -218,6 +249,9 @@ const data = [
     size: 3,
     category: "genesis",
     image: "Central_Dogma.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1uUq3Bm0L03YqgFvK41eFtcWbweewQ_Ov"
+    ],
     info:
       '"Biotechnology is the third wave in biological science and represents such an interface of basic and applied sciences, where gradual and subtle transformation of science into technology can be witnessed.”“It is beyond expectation on what the biotechnology has accomplished and reached in just a matter of time. Humanity has just start to comprehend and recognized the endless opportunities it has open. As technology assures to provide solution to every frightening problem we face every now and then, so is mankind is expecting a more develop biotechnology in the future. A technology that is more reliable and firm”.“Biotechnology can be a great solution to mankind struggles”.Do you know that in Norway there is a vault for storing seeds in case of Third World War like destruction?Do you know that DNA can be used as data-storage devices?Do you know that there are super-muscled pigs, fast-growing salmon,featherless chicken and see-through frogs?Currently, there is so much going on in the field of biotechnology!We bring you “Central Dogma”, the core event of Genesis, which is highly revered for those inquisitive scientists who wish to achieve breakthrough in biotechnology research.Participate in one of the most challenging event designed for the research-oriented community."Research is what I’m doing when I don’t know what I’m doing." -Wernher von Braun'
   },
@@ -236,6 +270,9 @@ const data = [
     size: 2,
     category: "mechrocosm",
     image: "SURVIVOR_SERIES.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1wQ3EVDnVQlmkh6B3UjZFKUQwbA0ru5OP"
+    ],
     info:
       '"Don\'t limit your challenges but challenge your limits." \nAt every point in this competition we will challenge you to beat your extremes. So, get ready to enter into the world of puzzles, riddles, mysteries and brain teasers.\nWe present you the most challenging and exciting event of Avishkar:  Survivor Series'
   },
@@ -245,6 +282,9 @@ const data = [
     size: 3,
     category: "mechrocosm",
     image: "VENI_VIDI_VICI.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1OWN20eePldVqlxFBKtAXLNvSmWR14xi9"
+    ],
     info:
       '"I came, I saw, I conquered"\nNow, it’s your time to conquer the world by showcasing your entrepreneurial skills. It is an event where you will come across the challenges in setting up your own venture. In this event you have to setup your own industry and provide all the necessary details required to setup and run the plant.\nSo, let\'s see who can be the future job creators.'
   },
@@ -254,6 +294,9 @@ const data = [
     size: 2,
     category: "mechrocosm",
     image: "BLUEPRINT.png",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1vyZDvPA6_ftX5Yg5rG97XOlhacODwuYw"
+    ],
     info:
       '"If you can imagine it you can create it" -William Arthur ward\nEvery big project you see today has formed from some abstract idea. Framing and modelling ideas is the most vital step to get clear picture of the project before implementation.\nThis event gives you the platform to bring your imagination to life using various CAD softwares and compete against other designers across the country.\nIn this challenge participants use designing softwares like Solidworks, Catia, etc. to conceptualize, model and Improves its functionality using your imagination.'
   },
@@ -263,6 +306,9 @@ const data = [
     size: 5,
     category: "mechrocosm",
     image: "THEMATICA.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1Fm8s4ZEpGA3AiXZj4jnQRBJZpDfzAAtp"
+    ],
     info:
       "''If the challenge exists, so must the solution''\nThematica is an event in which participants have to find a feasible and cost effective solution for general daily life problem faced by society and present it before a panel of judges. Their ideas will be judged on the basis of Innovation, feasibility and cost effectiveness."
   },
@@ -272,6 +318,9 @@ const data = [
     size: 3,
     category: "mechrocosm",
     image: "SCRAPHEAP.JPG",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1q9BSIlexVVauEFQtiswRhPT08OWZpBnK"
+    ],
     info:
       "''For some people, its junk, for us, it’s Inventory''\nEver thought what could be made out of junks. Go back to your childhood, revisit memories and create something interesting with scrapheap by putting life into scraps for something bigger and better. "
   },
@@ -299,6 +348,9 @@ const data = [
     size: 5,
     category: "mechrocosm",
     image: "CONTRAPTION.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1yzk2iMMudxbddPxpCwqB4Ic6v65RuJmF"
+    ],
     info:
       "Contraption is one of the most interesting, innovative and unique events of Mechrocosm. It consists of a chain of different ‘energy conversion’ steps, in which one step triggers the next one leading to completion of final task. In this event participants are asked to make a Contraption system which will perform various energy transformations till final task."
   },
@@ -352,6 +404,9 @@ const data = [
     size: 4,
     category: "nirmaan",
     image: "ZIGGURARE.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1SY7XgCRYSrIDjY4kGOVs3WFVfmOhe7yj"
+    ],
     info:
       "Being updated with software skills is very essential professional requirement for a civil engineer. It is just another feather in your cap and gives you an edge over your fellow competitors. In this event imagination capabilities and designing skills of the participants will be tested.Be a part of future development that is awaiting the field of civil engineering in the design area. So come in large numbers and bring out the designer in you."
   },
@@ -361,6 +416,9 @@ const data = [
     size: 1,
     category: "nirmaan",
     image: "SHUTTERUP.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1JBZbvH7O9qAcTrlWiSCl21wkmZFd1OXj"
+    ],
     info:
       "Do  you  love  to  capture  the  interesting  and  beautiful  scenes  around  you?  Do  you  stay  up  at nights  worrying  about  “composition”?  If  yes,  then  look  no  further.   The  NIRMAAN's  Online  Photography  Contest  'SHUTTER UP'  beckons  you!   Take  out  your  cameras  and  smartphones  and  click  away!  There is something more for you all. “You  don’t  take  a  photograph,  you  make  it.”  ―  Ansel  A"
   },
@@ -370,6 +428,9 @@ const data = [
     size: 6,
     category: "nirmaan",
     image: "LINKIDGE.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1_8m9EKTYlp5aqfM1PlHMmMBdmthAF_bi"
+    ],
     info:
       "They say architecture is music in space, frozen at the spot, an art that calls for intricate design and imagery. Sometimes the best ideas are born out of the simplest of things. So we present to you the very dais to bring out yours.Unlimited ice cream sticks. Five creative minds. One structure. Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it.—Sir Henry Royce, English engineer One of the biggest engineering problems is to connect people, to overcome physical obstructions and topographical boundaries for proper development of our society. Bridges provide the structural solution to all these problems, guaranteeing safest and easiest link between two parts through most adverse conditions like rivers, canopies, oceans, trenches and much more. Bridges are essential to our nation's infrastructural development Here at LINKIDGE event of Avishkar we provide you a platform to showcase your innovation, creativity, knowledge, and ability to tackle practical problems related to connecting to places with a model bridge."
   },
@@ -379,6 +440,9 @@ const data = [
     size: 5,
     category: "nirmaan",
     image: "CONCUBE.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1Bwyc1kCvA16BQwgH3cKc2vAZM2h7rCz5"
+    ],
     info:
       "Civil Engineering is incomplete without knowledge of concrete. All constructions, whether a minor or a major one, require use of concrete. So, here we arrive with Concube 2018 ,the best opportunity to test your knowledge and understanding about concrete and to use theoretical concepts to solve actual field problem. So make a team, cast your concrete cubes and get them tested as per standard criterias. Prove your worth by solving compulsive industrial problems using your skilled knowledge in simulation and modelling."
   },
@@ -388,6 +452,9 @@ const data = [
     size: 3,
     category: "nirmaan",
     image: "TERRAQUIZ.jpeg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1f3tct4NzGKBt-foeOCEFgEudMUOVO_5V"
+    ],
     info:
       "Having an extra knowledge is never bad. Be the jack of all trades and figure out your knowledge and luck in the tri-round event 'terraquiz' . Find your mates and check your aptitude potential, answer general knowledge questions, solve trivias and puzzles with a pinch of civil engineering experience."
   },
@@ -397,6 +464,9 @@ const data = [
     size: 1,
     category: "nirmaan",
     image: "COGNIZANCE.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1SQGSU65xfW2W96vUMmjOfxEfCYdRKxkf"
+    ],
     info:
       "'Change is the very law of nature . ' Abiding by this statement and keeping pace with the modern day requires technical and soft skills in abundance . So buckle up to test and improve the same and discover hidden aspects of your personality via Cognizance 2k18 . The event involves technical , aptitude , GD and PI rounds resembling both campus placements and the selection process in gate/ese."
   },
