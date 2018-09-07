@@ -54,17 +54,40 @@ export default class extends Component {
         <div className="container">
           {subEvents.map((event, i) => {
             const color = colors[i % colors.length];
-            return (
-              <div
-                style={{ backgroundColor: color }}
-                key={i}
-                onClick={() => {
-                  this.showEventModal(event.name, color);
-                }}
-              >
-                {event.displayName}
-              </div>
-            );
+            if (event.image) {
+              return (
+                <div
+                  style={{
+                    backgroundImage: `url(/static/img/subEvents/${
+                      event.image
+                    })`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    color: "whitesmoke",
+                    fontWeight: 500,
+                    textShadow: "1px 1px 2px rgba(150, 150, 150, 1)"
+                  }}
+                  key={i}
+                  onClick={() => {
+                    this.showEventModal(event.name, color);
+                  }}
+                >
+                  {event.displayName}
+                </div>
+              );
+            } else {
+              return (
+                <div
+                  style={{ backgroundColor: color }}
+                  key={i}
+                  onClick={() => {
+                    this.showEventModal(event.name, color);
+                  }}
+                >
+                  {event.displayName}
+                </div>
+              );
+            }
           })}
         </div>
         <SubEvent
@@ -102,7 +125,6 @@ export default class extends Component {
               align-items: center;
               justify-content: center;
               border-radius: 6px;
-
               color: white;
               background: teal;
               font-size: 1.2rem;
