@@ -15,7 +15,9 @@ This project mainly uses
 We welcome pull requests from beginners and seasoned JavaScript developers alike! You can work on open issues, fix bugs, file issues etc.. Be sure to read our [contributing guide](https://github.com/MNNIT/Avishkar/blob/master/CONTRIBUTING.md).  Contributions of any kind are welcome.
 ## Viewing the project locally
 * You must have Nodejs and NPM installed on your computer.
+* You need to configure proxy for npm (if your network uses a proxy server) - 
+  - npm config set https-proxy `http://username:password@proxy_address:port`
+  - npm config set proxy `http://username:password@proxy_address:port`
 * In the project directory run ```npm install``` to install the dependencies.
-* Run ```npm run build``` to build the project files and start the server in development mode.
-* To run the server in production mode set the environment variable ```NODE_ENV=production```
-* One way to set the environment variable is to create file named ```.env``` in the root directory of the project and save the content ```NODE_ENV=production``` in that file (This way works as we are using [dotenv](https://www.npmjs.com/package/dotenv) package from npm).
+* Run `npm run dev` to start the development server. 
+* Run `npm run export` to build the static project files in `./out` directory.Run this command before creating any PR to check whether all   files are built properly, although there is an automated build check for every PR.

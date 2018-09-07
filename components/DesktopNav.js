@@ -114,7 +114,7 @@ export default class extends Component {
               text-decoration: none;
               color: white;
               width: 100%;
-              font-size: 20px;
+              font-size: 16px;
             }
             @media (max-width: 700px) {
               section {

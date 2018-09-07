@@ -10,11 +10,11 @@ axios.defaults.withCredentials = true;
 export default class extends Component {
   state = {
     links: [
-      ["/", "Home"],
-      ["/events", "Events"],
-      ["/gnosiomania", "Gnosiomania"],
-      ["/workshops", "Workshops"],
-      ["/team", "Team"]
+      ["/", "HOME"],
+      ["/events", "EVENTS"],
+      ["/gnosiomania", "GNOSIOMANIA"],
+      ["/workshops", "WORKSHOPS"],
+      ["/team", "TEAM"]
     ],
     login: false,
     snackBar: {
@@ -26,11 +26,11 @@ export default class extends Component {
   componentDidMount() {
     axios.get("/api/check-state").then(res => {
       if (res.data.success) {
-        const newLink = ["/dashboard", "Dashboard"];
+        const newLink = ["/dashboard", "DASHBOARD"];
         const links = [...this.state.links, newLink];
         this.setState({ links, login: true });
       } else {
-        const newLink = ["/auth", "Login"];
+        const newLink = ["/auth", "LOGIN"];
         const links = [...this.state.links, newLink];
         this.setState({ links });
       }

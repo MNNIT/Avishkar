@@ -14,7 +14,6 @@ const styles = {
   card: {
     minHeight: 400,
     padding: 10,
-    margin: 25,
     textAlign: "justify"
   },
   media: {

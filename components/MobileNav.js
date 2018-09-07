@@ -129,7 +129,7 @@ class MobileNav extends Component {
             }
             #menu h2 {
               text-align: center;
-              font-size: 20px;
+              font-size: 16px;
               margin: 20px;
             }
             a {
