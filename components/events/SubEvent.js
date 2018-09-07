@@ -25,18 +25,17 @@ export default ({ subEventData, show, color, hideModal }) => {
                     &nbsp;&nbsp;{" "}
                     <a
                       href="../../static/pdf/Infinity Crusade.pdf"
-                      style={{ height: "18px", display: "inline" }}
+                      style={{ height: "24px", display: "inline" }}
                       target="_blank"
                     >
                       <img
-                        src="../../static/icon/paperclip.svg"
-                        style={{ height: "18px" }}
+                        src="../../static/svg/attachment.svg"
+                        style={{ height: "24px", verticalAlign: "middle" }}
                       />
                     </a>
                   </div>
                 );
-              }
-              if (data.displayName === "Fractal Hunt") {
+              } else if (data.displayName === "Fractal Hunt") {
                 return (
                   <div>
                     <h3 style={{ color, display: "inline" }}>
@@ -45,18 +44,19 @@ export default ({ subEventData, show, color, hideModal }) => {
                     &nbsp;&nbsp;{" "}
                     <a
                       href="../../static/pdf/Fractal Hunt.pdf"
-                      style={{ height: "18px", display: "inline" }}
+                      style={{ height: "24px", display: "inline" }}
                       target="_blank"
                     >
                       <img
-                        src="../../static/icon/paperclip.svg"
-                        style={{ height: "18px" }}
+                        src="../../static/svg/attachment.svg"
+                        style={{ height: "24px", verticalAlign: "middle" }}
                       />
                     </a>
                   </div>
                 );
-              }
-              if (data.displayName === "The Terrain Trek of Gliese 667C b") {
+              } else if (
+                data.displayName === "The Terrain Trek of Gliese 667C b"
+              ) {
                 return (
                   <div>
                     <h3 style={{ color, display: "inline" }}>
@@ -65,16 +65,94 @@ export default ({ subEventData, show, color, hideModal }) => {
                     &nbsp;&nbsp;{" "}
                     <a
                       href="../../static/pdf/Gliese 667 CB.pdf"
-                      style={{ height: "18px", display: "inline" }}
+                      style={{ height: "24px", display: "inline" }}
                       target="_blank"
                     >
                       <img
-                        src="../../static/icon/paperclip.svg"
-                        style={{ height: "18px" }}
+                        src="../../static/svg/attachment.svg"
+                        style={{ height: "24px", verticalAlign: "middle" }}
                       />
                     </a>
                   </div>
                 );
+              } else if (data.problemStatements) {
+                if (data.problemStatements.length === 1) {
+                  return (
+                    <div>
+                      <h3 style={{ color, display: "inline" }}>
+                        Problem Statement
+                      </h3>
+                      &nbsp;&nbsp;{" "}
+                      <a
+                        href={data.problemStatements[0]}
+                        style={{ height: "28px", display: "inline" }}
+                        target="_blank"
+                      >
+                        <img
+                          src="../../static/svg/attachment.svg"
+                          style={{
+                            height: "24px",
+                            width: "24px",
+                            verticalAlign: "middle"
+                          }}
+                        />
+                      </a>
+                    </div>
+                  );
+                } else if (data.problemStatements.length === 2) {
+                  return (
+                    <>
+                      <div>
+                        <h3 style={{ color, display: "inline" }}>
+                          Problem Statement for 1st Years
+                        </h3>
+                        &nbsp;&nbsp;{" "}
+                        <a
+                          href={data.problemStatements[0]}
+                          style={{
+                            height: "28px",
+                            display: "inline",
+                            textDecoration: "none"
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            src="../../static/svg/attachment.svg"
+                            style={{
+                              height: "24px",
+                              width: "24px",
+                              verticalAlign: "middle"
+                            }}
+                          />
+                        </a>
+                      </div>
+                      <div>
+                        <h3 style={{ color, display: "inline" }}>
+                          Problem Statement for 2nd Years
+                        </h3>
+                        &nbsp;&nbsp;{" "}
+                        <a
+                          href={data.problemStatements[1]}
+                          style={{
+                            height: "28px",
+                            display: "inline",
+                            textDecoration: "none"
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            src="../../static/svg/attachment.svg"
+                            style={{
+                              height: "24px",
+                              width: "24px",
+                              verticalAlign: "middle"
+                            }}
+                          />
+                        </a>
+                      </div>
+                    </>
+                  );
+                }
               }
             })()}
             <br />
@@ -102,6 +180,8 @@ export default ({ subEventData, show, color, hideModal }) => {
           left: 50%;
           transition: transform 0.4s;
           box-sizing: border-box;
+          max-height: 100vh;
+          overflow-y: auto;
         }
         div.register-btn {
           display: inline-block;

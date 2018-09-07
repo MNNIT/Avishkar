@@ -25,10 +25,13 @@ export default () => (
       &nbsp;&nbsp;{" "}
       <a
         href="../../static/pdf/Pusphak_Vimaan_Problem_Statement.pdf"
-        style={{ height: "18px", display: "inline" }}
+        style={{ height: "24px", display: "inline" }}
         target="_blank"
       >
-        <img src="../../static/icon/paperclip.svg" style={{ height: "18px" }} />
+        <img
+          src="../../static/svg/attachment.svg"
+          style={{ height: "24px", verticalAlign: "middle" }}
+        />
       </a>
       <h2>AERIAL VEHICLE DESIGN</h2>
       <p>
@@ -42,10 +45,13 @@ export default () => (
       &nbsp;&nbsp;{" "}
       <a
         href="../../static/pdf/Aerial_Vehicle_Design.pdf"
-        style={{ height: "18px", display: "inline" }}
+        style={{ height: "24px", display: "inline" }}
         target="_blank"
       >
-        <img src="../../static/icon/paperclip.svg" style={{ height: "18px" }} />
+        <img
+          src="../../static/svg/attachment.svg"
+          style={{ height: "24px", verticalAlign: "middle" }}
+        />
       </a>
       {/* <ol>
         <p>
