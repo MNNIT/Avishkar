@@ -102,7 +102,6 @@ class MobileNav extends Component {
               padding-top: 5px;
               height: 34px;
               width: auto;
-              cursor: pointer;
             }
             #icon-container img {
               height: 100%;

@@ -146,6 +146,7 @@ export default class extends Component {
                 height: 100px;
                 margin: 8px;
                 font-size: 1rem;
+                cursor: initial;
               }
               section {
                 padding: 0px;
