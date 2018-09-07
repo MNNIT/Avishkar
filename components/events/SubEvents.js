@@ -54,7 +54,7 @@ export default class extends Component {
         <div className="container">
           {subEvents.map((event, i) => {
             const color = colors[i % colors.length];
-            if (false) {
+            if (event.image) {
               return (
                 <div
                   style={{
