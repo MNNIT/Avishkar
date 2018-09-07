@@ -58,7 +58,7 @@ export default class extends Component {
               return (
                 <div
                   style={{
-                    backgroundImage: `url(/static/img/subEvents/${
+                    backgroundImage: `url(/static/img/resizeEvents/${
                       event.image
                     })`,
                     backgroundSize: "cover",
