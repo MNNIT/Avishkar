@@ -36,12 +36,12 @@ export default withRouter(
             this.setState({ loading: false });
           } else {
             this.setState({ loading: true });
-            Router.push("/auth");
+            window.location.replace("/auth");
           }
         })
         .catch(err => {
           if (err.response.status == 401) {
-            Router.push("/auth");
+            window.location.replace("/auth");
           }
         });
     }
