@@ -12,13 +12,10 @@ const styles = theme => ({
     width: "100%"
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
-    flexShrink: 0
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
+    fontSize: 15,
+    flexBasis: "85%",
+    flexShrink: 0,
+    fontWeight: 500
   }
 });
 
@@ -50,9 +47,16 @@ class ControlledExpansionPanels extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Go to Register tab and select an Event from the dropdown as you
-              type the Even name. Once Registered, you can not unregister or
-              re-register for an event.
+              <ul>
+                <li>
+                  Go to Register tab and select an Event from the dropdown as
+                  you type the Even name.
+                </li>
+                <li>
+                  Once Registered, you can not unregister or re-register for an
+                  event.
+                </li>
+              </ul>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -115,7 +119,9 @@ class ControlledExpansionPanels extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Any Event with Team Size One is a Solo Event.
+              <ul>
+                <li>Any Event with Team Size One is a Solo Event.</li>
+              </ul>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -129,9 +135,16 @@ class ControlledExpansionPanels extends React.Component {
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>Atmost you can Register for 15 events.</Typography>
+            <Typography>
+              <ul>
+                <li>
+                  Atmost you can Register for <b>15 events</b>.
+                </li>
+              </ul>
+            </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
+        <style>{`ul{margin-top:0px}`}</style>
       </div>
     );
   }
