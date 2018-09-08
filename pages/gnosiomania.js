@@ -143,12 +143,6 @@ const Index = props => {
                   <br />
                 </Typography>
                 <br />
-                <Typography gutterBottom variant="headline">
-                  <div className="update">
-                    <b>New speakers update everyday. Stay tuned.</b>
-                  </div>
-                </Typography>
-                <br />
                 <div className="img">
                   <img src="/static/img/gnosis/speaker2.jpg" alt="" />
                 </div>
@@ -162,6 +156,12 @@ const Index = props => {
                 lot in shaping the music industry. His efforts have been
                 acknowledged with three filmfare awards
                 <br />
+                <br />
+                <Typography gutterBottom variant="headline">
+                  <div className="update">
+                    <b>New speakers update everyday. Stay tuned.</b>
+                  </div>
+                </Typography>
                 <br />
                 {/*
                 <div className="img">
