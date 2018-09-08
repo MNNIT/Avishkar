@@ -148,7 +148,7 @@ const Index = props => {
                     <b>New speakers update everyday. Stay tuned.</b>
                   </div>
                 </Typography>
-                {/* <br />
+                <br />
                 <div className="img">
                   <img src="/static/img/gnosis/speaker2.jpg" alt="" />
                 </div>
@@ -163,6 +163,7 @@ const Index = props => {
                 acknowledged with three filmfare awards
                 <br />
                 <br />
+                {/*
                 <div className="img">
                   <img src="/static/img/gnosis/speaker3.jpeg" alt="" />
                 </div>
