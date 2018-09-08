@@ -35,19 +35,24 @@ const contactInfo = {
   ],
   electromania: [
     {
-      name: "Rishabh Ravi",
-      mobile: 8210920062,
-      email: "rishabh18ravi@gmail.com"
+      name: "Abhinav Singh Rathore",
+      mobile: 9119824114,
+      email: "rathore2015@gmail.com"
     },
     {
-      name: "Ayush Kumar Ranjan",
-      mobile: 7800186729,
-      email: "tayn.shanu@gmail.com"
+      name: "Shashank Gupta",
+      mobile: 8789006557,
+      email: "gshashank9798@gmail.com"
     },
     {
-      name: "Shreya Srivastava",
-      mobile: 8545870037,
-      email: "srivastavashreya0108@gmail.com"
+      name: "Sachin Choudhari",
+      mobile: 7607516049,
+      email: "choudhari2049@gmail.com"
+    },
+    {
+      name: "Shrey",
+      mobile: 9546637589,
+      email: "shreysinh@gmail.com"
     }
   ],
   mechrocosm: [
@@ -93,7 +98,7 @@ const contactInfo = {
       email: "darpanchaudhary5741@gmail.com"
     }
   ],
-  robomaina: [
+  robomania: [
     {
       name: "Aditya Singh",
       mobile: 9519043907,

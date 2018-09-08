@@ -152,6 +152,9 @@ const data = [
     displayName: "Quintathlon (core)",
     size: 1,
     category: "electromania",
+    problemStatements: [
+      "https://docs.google.com/document/d/1YZxWT5_giXOLvCr9Euj8xKzLmHxiXWANsSQksMydfwU/export?format=pdf"
+    ],
     info:
       "An event to accustom an electronics engineer with the company recruitment process and to relinquish the pressure before going through the recruitment process.This will make your mental ability,technical as well as software skills in execution at its best.Commencing with the online test round (technical aptitude and software)followed by interview rounds comprising of software,technical,hr and finally the group discussions.GDs will give you a platform to open up and will test your current affairs knowledge.The online test round will have a cut off and the selected ones move to next round.After this there is no elimination round as such .All candidates get to sit in interviews and GD.The scorecard will be prepared by summing up the marks achieved in every round.And the witty one to get maximum marks will be announced as the winner."
   },
@@ -214,8 +217,8 @@ const data = [
     size: 3,
     category: "electromania",
     problemStatements: [
-      "https://drive.google.com/uc?export=download&id=1DmChrQTZn8sBhzI-UilmD2Hb3yX7Fgq-",
-      "https://drive.google.com/uc?export=download&id=1TGtVY5MSNRKHwJ3jV7qDXJA5KPMPi9-_"
+      "https://drive.google.com/uc?export=download&id=1p3-8MAqHRBvKBCwRpmmS4R8NLsZha2im",
+      "https://drive.google.com/uc?export=download&id=1sijnueKIXq7apUk8M4yx9tJTh74OZD5t"
     ],
     info:
       "It is a circuit designing event in which the one who come with a better circuit with less complexity will be winner.This event will enhance the knowledge of reducing circuit complexity and will improve there skills of making circuits.For first year this event will make them familiar with different basic but important components and their uses and they will also learn how to make a combination of different component to make magic and from this comes the name. Giving you one of the event with maximum no of participation....... Combo Magic. P.S.-programmable components are not allowed"
@@ -261,6 +264,9 @@ const data = [
     size: 5,
     category: "genesis",
     image: "Cluequest.jpg",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1lL6mW-xnNoBKOZDK7o9cP62vI89FYga-"
+    ],
     info:
       '"Extraordinary things are always hiding in places people never think to look".Do you have what it takes to uncover the hidden truth and to solve mind boggling puzzles? This event will test your determination and your wits as you will have to dig deeper to win. So, freshen up your wits, tie your shoelaces and get ready for the most exhilarating and thrilling part of Genesis and Avishkar.'
   },
@@ -509,6 +515,9 @@ const data = [
     displayName: "Predefined Hardware",
     size: 5,
     category: "powersurge",
+    problemStatements: [
+      "https://drive.google.com/file/d/1Efq3M2QbSXmZZmrwov6z6jFEPmPWo1Q4/view"
+    ],
     info:
       "“You have to learn the rules of the game and then you have to play better than anyone else.” This event is a fun filled and pragmatic approach to real life problems, making use of the concepts of Embedded Systems. It provides a platform to learn and enhance a student's perspicuous perspective towards automation, which is the near future. Merge the concepts of microcontrollers, Power Electronics, Software and Hardware based design, Simulations and control; implement in real time and upgrade yourself to higher levels of day to day technical solutions. "
   },
@@ -541,6 +550,9 @@ const data = [
     displayName: "Aqua Rocchetta",
     size: 4,
     category: "rasayans",
+    problemStatements: [
+      "https://drive.google.com/file/d/1OOpLYgZqeJ8wLbP5iNhEhRRESpWbZvEV/view?usp=drivesdk"
+    ],
     info:
       "Ever dreamt of having a mini-rocket of your own? If yes, Rasayans’18 brings to you a thrilling opportunity to make your own water rockets and see them fly high! It’s a high time to design and construct your water propelled rocket pressurized with air and compete with surging excitement in AQUA-ROCCHETTA, the water rocket event of Avishkar.                Let’s keep the momentum high and give thrust to our innovation to take a lead in this event!"
   },
@@ -557,6 +569,9 @@ const data = [
     displayName: "ChemCraft",
     size: 2,
     category: "rasayans",
+    problemStatements: [
+      "https://drive.google.com/folderview?id=1IuQpKE3PMAaUQmxPMp90UzeIDV331bUk"
+    ],
     info:
       "The collaborative relationship between industrial design,academically and professionally, is a pivotal relationship in the development of new ideas.The main objective of this event is to develop a better understanding of the processes in relevance  to the designing of chemical industry."
   },
@@ -573,6 +588,9 @@ const data = [
     displayName: "Simulazione",
     size: 3,
     category: "rasayans",
+    problemStatements: [
+      "https://drive.google.com/uc?export=download&id=1znsuqbF-hX4kG43EF2MM-NfjTIiCWD5s"
+    ],
     info:
       "Knowledge without application is like a book that is never read!Prove your worth by solving compulsive industrial problems using your skilled knowledge in simulation and modelling."
   },
