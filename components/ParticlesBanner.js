@@ -106,7 +106,6 @@ class ParticlesBanner extends Component {
               text-align: center;
               transform: translateZ(0);
               backface-visibility: hidden;
-              
             }
             section:before {
               content: "";
