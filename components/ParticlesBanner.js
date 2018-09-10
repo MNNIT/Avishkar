@@ -106,29 +106,6 @@ class ParticlesBanner extends Component {
               text-align: center;
               transform: translateZ(0);
               backface-visibility: hidden;
-              text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.7),
-                1px -1px 0 rgba(255, 255, 255, 0.7),
-                -1px 1px 0 rgba(255, 255, 255, 0.7),
-                1px 1px 0 rgba(255, 255, 255, 0.7), -1px 2px 1px #a0a0a0,
-                -2px 4px 2px #a0a0a0, -3px 6px 3px rgba(#a0a0a0, 0.6),
-                -4px 8px 4px rgba(#a0a0a0, 0.5),
-                -5px 10px 5px rgba(#a0a0a0, 0.4),
-                -6px 12px 6px rgba(#a0a0a0, 0.3),
-                -7px 13px 7px rgba(#a0a0a0, 0.2),
-                -8px 15px 8px rgba(#a0a0a0, 0.2),
-                -9px 17px 9px rgba(#a0a0a0, 0.2),
-                -10px 19px 10px rgba(#a0a0a0, 0.2),
-                -11px 20px 11px rgba(#a0a0a0, 0.1),
-                -12px 22px 12px rgba(#a0a0a0, 0.1),
-                -13px 24px 13px rgba(#a0a0a0, 0.1),
-                -14px 26px 14px rgba(#a0a0a0, 0.1),
-                -15px 28px 15px rgba(#a0a0a0, 0.1),
-                -16px 30px 16px rgba(#a0a0a0, 0.1),
-                -17px 32px 17px rgba(#a0a0a0, 0.1),
-                -18px 34px 18px rgba(#a0a0a0, 0.1),
-                -19px 36px 19px rgba(#a0a0a0, 0.1),
-                -20px 38px 20px rgba(#a0a0a0, 0.1),
-                -21px 39px 21px rgba(#a0a0a0, 0.1);
             }
             section:before {
               content: "";
