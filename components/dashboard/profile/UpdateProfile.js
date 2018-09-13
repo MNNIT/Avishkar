@@ -226,6 +226,7 @@ class UpdateProfile extends Component {
                 <MenuItem value={"btech"}>BTECH</MenuItem>
                 <MenuItem value={"mca"}>MCA</MenuItem>
                 <MenuItem value={"mba"}>MBA</MenuItem>
+                <MenuItem value={"diploma"}>DIPLOMA</MenuItem>
               </TextField>
               <TextField
                 select
