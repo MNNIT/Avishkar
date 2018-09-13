@@ -19,10 +19,10 @@ class Person extends Component {
     return (
       <div
         className="card"
-        onMouseEnter={this.expandDetails}
-        onMouseLeave={this.hideDetails}
+        // onMouseEnter={this.expandDetails}
+        // onMouseLeave={this.hideDetails}
       >
-        <div className="event-element" style={{ cursor: "pointer" }}>
+        <div className="event-element">
           <div className="img-container">
             <img src={person.img} />
             <div id="image-layer" />
@@ -34,23 +34,20 @@ class Person extends Component {
           }
         >
           <p>{person.name}</p>
-          <ToggleDisplay show={this.state.detailsExpanded}>
+          <div>
             <p>
               <a href={`mailto:${person.email}`}>{person.email}</a>
             </p>
-            <p>
+            {/* <p>
               <a href={`tel:${person.phone}`}>{person.phone}</a>
-            </p>
-          </ToggleDisplay>
+            </p> */}
+          </div>
         </div>
         <style jsx>{`
           .event-title {
-            position: absolute;
-            transform: translateY(-90%);
             text-align: center;
             width: 100%;
             background-color: white;
-            padding-top: 10px;
             transition: all 0.5s;
           }
           .event-title-animated {
@@ -66,7 +63,7 @@ class Person extends Component {
             left: 0px;
             top: 0px;
             width: 100%;
-            height: 100%;
+            height: 80%;
             background-color: transparent;
           }
           section {
@@ -77,22 +74,14 @@ class Person extends Component {
             text-align: center;
             color: #e91e63;
           }
-          div.container {
-            display: flex;
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-            box-sizing: border-box;
-          }
+
           div.card {
-            width: 260px;
+            width: 200px;
             position: relative;
             background-color: white;
             z-index: 10;
             transition: transform 0.6s;
-            margin: 6px;
+            margin: 20px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
               0 1px 2px rgba(0, 0, 0, 0.24);
             border-radius: 4px;
@@ -104,12 +93,12 @@ class Person extends Component {
           div.event-element {
             width: 100%;
             height: auto;
-            padding: 20px;
             box-sizing: border-box;
           }
           div.img-container {
-            width: 100%;
-            height: auto;
+            width: 200px;
+            height: 180px;
+            overflow: hidden;
           }
           img {
             width: 100%;
@@ -117,12 +106,13 @@ class Person extends Component {
           }
           p {
             text-align: center;
-            margin: 0px 0px 10px 0px;
-            font-size: 15px;
+            font-size: 13px;
+            margin: 5px 0px;
           }
           a {
             text-decoration: none;
             color: black;
+            cursor: pointer;
           }
           @media (max-width: 700px) {
             div.container {
