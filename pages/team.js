@@ -16,6 +16,7 @@ class TeamPage extends Component {
         <h1>Avishkar's Team</h1>
         <Team people={teamData.faculty} heading="Faculty" />
         <Team people={teamData.studentcoreteam} heading="Festival Secretary" />
+        <Team people={teamData.technicalteam} heading="Technical Team" />
         <Team people={teamData.workshopslead} heading="Workshops Lead" />
         <style jsx>
           {`

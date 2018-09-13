@@ -77,6 +77,16 @@ const team = {
       email: "paliwalmanu99@gmail.com",
       img: "/static/team/manu-paliwal.jpeg"
     }
+  ],
+  technicalteam: [
+    {
+      name: "Sumanth",
+      img: "/static/team/sumanth.jpg"
+    },
+    {
+      name: "Poorna Chandu",
+      img: "/static/team/poornachandu.jpg"
+    }
   ]
 };
 export default team;
