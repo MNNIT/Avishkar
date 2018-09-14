@@ -21,19 +21,9 @@ class ParticlesBanner extends Component {
           className="primary-bg-color"
           style={{ fontSize: "0px" }}
         >
-          {/*<div className="view">
-            <div className="plane main">
-              <div className="circle" />
-              <div className="circle" />
-              <div className="circle" />
-              <div className="circle" />
-              <div className="circle" />
-              <div className="circle" />
-    </div>
-    </div>*/}
           <canvas ref={this.bg} id="canvas" data-image={this.random()} />
         </div>
-        <div className="intro" style={{ fontFamily: "rustico" }}>
+        <div className="intro" style={{ fontFamily: "decovar" }}>
           <h1>AVISHKAR</h1>
 
           <div className="downdiv">
@@ -74,9 +64,6 @@ class ParticlesBanner extends Component {
               top: 30%;
               left: 50%;
               transform: translate(-50%, -50%);
-              -webkit-user-select: none; /* Chrome all / Safari all */
-              -moz-user-select: none; /* Firefox all */
-              -ms-user-select: none; /* IE 10+ */
               user-select: none;
             }
             h1 {
@@ -149,12 +136,6 @@ class ParticlesBanner extends Component {
                 rgb(108, 174, 221),
                 rgb(57, 145, 208)
               );
-
-              /*background: linear-gradient(
-                45deg,
-                rgb(173, 120, 220),
-                rgb(142, 68, 207)
-              );*/
               border-radius: 4px;
               text-decoration: none;
               padding: 0.75em 2.5em;
@@ -162,26 +143,14 @@ class ParticlesBanner extends Component {
               font-size: 1.175rem;
               font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
               transition-duration: 0.3s;
-              -webkit-transition-property: -webkit-transform;
-              transition-property: transform;
-              -webkit-transform: translateZ(0);
-              -ms-transform: translateZ(0);
+              transition-property: transform;              -ms-transform: translateZ(0);
               transform: translateZ(0);
-
-              -webkit-transform: translateY(-6px);
-              -ms-transform: translateY(-6px);
               transform: translateY(-6px);
-              -webkit-animation-name: hover;
               animation-name: hover;
-              -webkit-animation-duration: 1.5s;
               animation-duration: 1.5s;
-              -webkit-animation-delay: 0.3s;
               animation-delay: 0.3s;
-              -webkit-animation-timing-function: linear;
               animation-timing-function: linear;
-              -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
-              -webkit-animation-direction: alternate;
               animation-direction: alternate;
             }
             .downdiv button:before {
@@ -194,66 +163,39 @@ class ParticlesBanner extends Component {
               height: 10px;
               width: 90%;
               opacity: 0;
-              background: -webkit-radial-gradient(
-                center,
-                ellipse,
-                rgba(0, 0, 0, 0.35) 0%,
-                rgba(0, 0, 0, 0) 80%
-              );
+             
               background: radial-gradient(
                 ellipse at center,
                 rgba(0, 0, 0, 0.35) 0%,
                 rgba(0, 0, 0, 0) 80%
               );
-              -webkit-transition-duration: 0.3s;
               transition-duration: 0.3s;
-              -webkit-transition-property: -webkit-transform, opacity;
               transition-property: transform, opacity;
               opacity: 0.4;
-              -webkit-transform: translateY(6px);
-              -ms-transform: translateY(6px);
               transform: translateY(6px);
-              -webkit-animation-name: hover-shadow;
               animation-name: hover-shadow;
-              -webkit-animation-duration: 1.5s;
               animation-duration: 1.5s;
-              -webkit-animation-delay: 0.3s;
               animation-delay: 0.3s;
-              -webkit-animation-timing-function: linear;
               animation-timing-function: linear;
-              -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
-              -webkit-animation-direction: alternate;
               animation-direction: alternate;
             }
             @keyframes hover {
               50% {
-                -webkit-transform: translateY(-3px);
-                -ms-transform: translateY(-3px);
                 transform: translateY(-3px);
               }
 
               100% {
-                -webkit-transform: translateY(-6px);
-                -ms-transform: translateY(-6px);
                 transform: translateY(-6px);
               }
-            }
-            @-webkit-keyframes hover-shadow {
-              0% {
-                -webkit-transform: translateY(6px);
-                transform: translateY(6px);
-                opacity: 0.4;
-              }
+            } 
 
               50% {
-                -webkit-transform: translateY(3px);
                 transform: translateY(3px);
                 opacity: 1;
               }
 
               100% {
-                -webkit-transform: translateY(6px);
                 transform: translateY(6px);
                 opacity: 0.4;
               }
@@ -261,58 +203,38 @@ class ParticlesBanner extends Component {
 
             @keyframes hover-shadow {
               0% {
-                -webkit-transform: translateY(6px);
-                -ms-transform: translateY(6px);
                 transform: translateY(6px);
                 opacity: 0.4;
               }
 
               50% {
-                -webkit-transform: translateY(3px);
-                -ms-transform: translateY(3px);
                 transform: translateY(3px);
                 opacity: 1;
               }
 
               100% {
-                -webkit-transform: translateY(6px);
-                -ms-transform: translateY(6px);
                 transform: translateY(6px);
                 opacity: 0.4;
               }
             }
 
-            @-webkit-keyframes hover {
-              50% {
-                -webkit-transform: translateY(-3px);
-                transform: translateY(-3px);
-              }
-
-              100% {
-                -webkit-transform: translateY(-6px);
-                transform: translateY(-6px);
-              }
-            }
+           
 
             @keyframes hover {
               50% {
-                -webkit-transform: translateY(-3px);
-                -ms-transform: translateY(-3px);
                 transform: translateY(-3px);
               }
 
               100% {
-                -webkit-transform: translateY(-6px);
-                -ms-transform: translateY(-6px);
                 transform: translateY(-6px);
               }
             }
-
-            h2,
-            h4 {
+            h2, h4 {
               font-size: 32px;
               color: #2196f3;
               color: white;
+              line-height: 2rem;
+              letter-spacing: 2px;
             }
             @media (max-width: 700px) {
               h1 {
@@ -383,113 +305,6 @@ class ParticlesBanner extends Component {
               perspective: 400;
             }
 
-            .plane {
-              width: 120px;
-              height: 120px;
-              -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-            }
-
-            .plane.main {
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              margin: auto;
-              -webkit-transform: rotateX(60deg) rotateZ(-30deg);
-              transform: rotateX(60deg) rotateZ(-30deg);
-              -webkit-animation: rotate 20s infinite linear;
-              animation: rotate 20s infinite linear;
-            }
-
-            .plane.main .circle {
-              width: 120px;
-              height: 120px;
-              position: absolute;
-              -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-              border-radius: 100%;
-              box-sizing: border-box;
-              box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;
-            }
-
-            .plane.main .circle::before,
-            .plane.main .circle::after {
-              content: "";
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              margin: auto;
-              width: 10%;
-              height: 10%;
-              border-radius: 100%;
-              background: crimson;
-              box-sizing: border-box;
-              box-shadow: 0 0 60px 2px crimson;
-            }
-
-            .plane.main .circle::before {
-              -webkit-transform: translateZ(-90px);
-              transform: translateZ(-90px);
-            }
-
-            .plane.main .circle::after {
-              -webkit-transform: translateZ(90px);
-              transform: translateZ(90px);
-            }
-
-            .plane.main .circle:nth-child(1) {
-              -webkit-transform: rotateZ(72deg) rotateX(63.435deg);
-              transform: rotateZ(72deg) rotateX(63.435deg);
-            }
-
-            .plane.main .circle:nth-child(2) {
-              -webkit-transform: rotateZ(144deg) rotateX(63.435deg);
-              transform: rotateZ(144deg) rotateX(63.435deg);
-            }
-
-            .plane.main .circle:nth-child(3) {
-              -webkit-transform: rotateZ(216deg) rotateX(63.435deg);
-              transform: rotateZ(216deg) rotateX(63.435deg);
-            }
-
-            .plane.main .circle:nth-child(4) {
-              -webkit-transform: rotateZ(288deg) rotateX(63.435deg);
-              transform: rotateZ(288deg) rotateX(63.435deg);
-            }
-
-            .plane.main .circle:nth-child(5) {
-              -webkit-transform: rotateZ(360deg) rotateX(63.435deg);
-              transform: rotateZ(360deg) rotateX(63.435deg);
-            }
-
-            @-webkit-keyframes rotate {
-              0% {
-                -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
-                transform: rotateX(0) rotateY(0) rotateZ(0);
-              }
-              100% {
-                -webkit-transform: rotateX(360deg) rotateY(360deg)
-                  rotateZ(360deg);
-                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-              }
-            }
-
-            @keyframes rotate {
-              0% {
-                -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
-                transform: rotateX(0) rotateY(0) rotateZ(0);
-              }
-              100% {
-                -webkit-transform: rotateX(360deg) rotateY(360deg)
-                  rotateZ(360deg);
-                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-              }
-            }
           `}
         </style>
       </section>
