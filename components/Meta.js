@@ -137,8 +137,8 @@ export default () => (
     </Head>
     <style jsx global>{`
       @font-face {
-        font-family: "rustico";
-        src: url("/static/font/Rustico-Regular.otf");
+        font-family: "decovar";
+        src: url("/static/font/Decovar.ttf");
       }
       body {
         margin: 0;
