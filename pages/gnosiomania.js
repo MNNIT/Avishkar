@@ -141,39 +141,39 @@ const Index = props => {
                   keen mind-reading abilities. Just with the help of a few
                   simple questions, he would be into one's brain.
                   <br />
+                  <br />
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker2.jpg" alt="" />
+                  </div>
+                  <br />A Ramnath Goenka awardee, our speaker is the righteous
+                  example to show how media is indeed a pillar of our democracy.
+                  J. Gopikrishnan, an investigative journalist, has uncovered
+                  the mystery behind the 2G, National Herald and Aircel-Maxis
+                  cases. There is a great chance that the songs that we hum
+                  merrily or melancholically are his creation. With the Guinness
+                  world record for writing the most number of songs, Sameer has
+                  contributed a lot in shaping the music industry. His efforts
+                  have been acknowledged with three filmfare awards
+                  <br />
+                  <br />
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker3.jpeg" alt="" />
+                  </div>
+                  <br />
+                  There is a great chance that the songs that we hum merrily or
+                  melancholically are his creation. With the Guinness world
+                  record for writing the most number of songs, Sameer has
+                  contributed a lot in shaping the music industry. His efforts
+                  have been acknowledged with three filmfare awards
+                  <br />
                 </Typography>
-                <br />
-                <div className="img">
-                  <img src="/static/img/gnosis/speaker2.jpg" alt="" />
-                </div>
-                <br />A Ramnath Goenka awardee, our speaker is the righteous
-                example to show how media is indeed a pillar of our democracy.
-                J. Gopikrishnan, an investigative journalist, has uncovered the
-                mystery behind the 2G, National Herald and Aircel-Maxis cases.
-                There is a great chance that the songs that we hum merrily or
-                melancholically are his creation. With the Guinness world record
-                for writing the most number of songs, Sameer has contributed a
-                lot in shaping the music industry. His efforts have been
-                acknowledged with three filmfare awards
-                <br />
                 <br />
                 <Typography gutterBottom variant="headline">
                   <div className="update">
                     <b>New speakers update everyday. Stay tuned.</b>
                   </div>
                 </Typography>
-                <br />
                 {/*
-                <div className="img">
-                  <img src="/static/img/gnosis/speaker3.jpeg" alt="" />
-                </div>
-                <br />
-                There is a great chance that the songs that we hum merrily or
-                melancholically are his creation. With the Guinness world record
-                for writing the most number of songs, Sameer has contributed a
-                lot in shaping the music industry. His efforts have been
-                acknowledged with three filmfare awards
-                <br />
                 <br />
                 <div className="img">
                   <img src="/static/img/gnosis/speaker4.jpg" alt="" />
