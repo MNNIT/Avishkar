@@ -1,3 +1,6 @@
+const withOffline = require("next-offline");
+
+module.exports = withOffline();
 const events = [
   "cyberquest",
   "electromania",
@@ -41,8 +44,8 @@ tabs.forEach(function(tab) {
   const path = "/dashboard/" + tab;
   routes[path] = { page: "/dashboard", query: { tab: tab } };
 });
-module.exports = {
+module.exports = withOffline({
   exportPathMap() {
     return routes;
   }
-};
+});
