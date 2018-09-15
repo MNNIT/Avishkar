@@ -134,6 +134,12 @@ export default () => (
         name="msapplication-config"
         content="/static/favicon/browserconfig.xml"
       />
+      <meta property="og:title" content="AVISHKAR MNNIT" />
+      <meta
+        property="og:description"
+        content="Avishkar (2018) is the annual techfest of MNNIT, Allahabad.This is the concoction level of Avishkar that inspires every brain out there to ideate ,innovate and create. Step up and get ready for this extravaganza!!"
+      />
+      <meta property="og:image" content="/static/favicon/favicon-310.png" />
     </Head>
     <style jsx global>{`
       @font-face {
