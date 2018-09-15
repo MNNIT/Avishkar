@@ -3,10 +3,11 @@ export default ({ color }) => {
   return (
     <div>
       <Head>
+        <link rel="manifest" href="/static/app-images/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <title>Avishkar 2018 | MNNIT Allahabad </title>
-        <meta name="theme-color" content={color} />
+        <meta name="theme-color" content="black" />
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans"
           rel="stylesheet"
