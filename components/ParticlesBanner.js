@@ -138,6 +138,7 @@ class ParticlesBanner extends Component {
               // top: 40%;
             }
             .downdiv button {
+              outline: none;
               color: whitesmoke;
               text-align: center;
               margin: 0px;
