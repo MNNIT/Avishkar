@@ -208,6 +208,7 @@ class Index extends React.Component {
             </div>
             <div className="col-md-8 content">
               <h1>PLC Scada</h1>
+              <h2> 22 - 23 September, 2018</h2>
               <h3>
                 PLC is a computing system used to control electromechanical
                 processes. SCADA stands for Supervisory Control and Data
