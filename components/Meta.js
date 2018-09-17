@@ -2,6 +2,7 @@ import Head from "next/head";
 export default () => (
   <div>
     <Head>
+      <link rel="manifest" href="/static/app-images/manifest.json" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
       <title>Avishkar 2018 | MNNIT Allahabad </title>

@@ -6,6 +6,7 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const isDev = process.env.NODE_ENV !== "production";
+const { join } = require("path");
 
 app
   .prepare()
@@ -30,7 +31,11 @@ app
       const queryParams = { tab: req.params.tab };
       app.render(req, res, actualPage, queryParams);
     });
-
+    server.get("/service-worker.js", function(req, res) {
+      const pathname = "/service-worker.js";
+      const filePath = join(__dirname, ".next", pathname);
+      app.serveStatic(req, res, filePath);
+    });
     server.get("*", (req, res) => {
       return handle(req, res);
     });
