@@ -9,7 +9,7 @@ export default class extends Component {
             this.props.showForm("signin");
           }}
         >
-          SIGNIN
+          SIGN IN
         </div>
         <div
           className={!this.props.highlightSignin ? "highlight" : ""}
@@ -18,7 +18,7 @@ export default class extends Component {
             this.props.showForm("signup");
           }}
         >
-          SIGNUP
+          SIGN UP
         </div>
         <style jsx>
           {`
@@ -37,7 +37,7 @@ export default class extends Component {
               transition: all 0.5s;
             }
             div.options .highlight {
-              background-color: #ec407a;
+              background-color: #1565c0;
               color: white;
             }
           `}

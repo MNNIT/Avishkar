@@ -156,14 +156,15 @@ export default class extends Component {
           <p>
             {errors.password ? "Password should contain min 6 characters" : " "}
           </p>
-
-          <button
-            type="submit"
-            onClick={this.submitForm}
-            disabled={this.state.loading}
-          >
-            {this.state.loading ? "SUBMITTING" : "SIGN UP"}
-          </button>
+          <div className="btn-wrapper">
+            <button
+              type="submit"
+              onClick={this.submitForm}
+              disabled={this.state.loading}
+            >
+              {this.state.loading ? "SUBMITTING" : "SIGN UP"}
+            </button>
+          </div>
         </form>
         <style jsx>
           {`
@@ -185,21 +186,30 @@ export default class extends Component {
               transition: all 0.5s;
             }
             input:focus {
-              border: 2px solid #f48fb1;
+              border: 2px solid #6caedd;
             }
             label {
               color: #424242;
             }
+            .btn-wrapper {
+              width: 100%;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+            }
             button {
-              background-color: #e91e63;
+              background-color: #1565c0;
               outline: none;
               border: none;
               color: white;
-              padding: 10px 15px;
+              padding: 12px 30px;
               border-radius: 3px;
               font-family: "Source Sans Pro", sans-serif;
-              margin-top: 5px;
+              margin: 10px 0px;
               cursor: pointer;
+              display: block;
+              width: 100%;
             }
           `}
         </style>
