@@ -79,7 +79,7 @@ export default class extends Component {
     const { formData } = this.state;
     return (
       <div className="form-container">
-        <form action="">
+        <form method="POST" action="/api/signin">
           <label>EMAIL</label>
           <input
             type="email"
@@ -102,19 +102,16 @@ export default class extends Component {
             }}
             required
           />
-          <button type="submit" onClick={this.submitForm}>
-            {this.state.loading ? "SUBMITTING" : "SIGN IN"}
-          </button>
+          <div className="btn-wrapper">
+            <button type="submit" onClick={this.submitForm}>
+              {this.state.loading ? "SUBMITTING" : "SIGN IN"}
+            </button>
+            <Link href="/reset-password">
+              <a>Forgot password?</a>
+            </Link>
+          </div>
         </form>
-        <Link href="/reset-password">
-          <a
-            style={{
-              color: "black"
-            }}
-          >
-            Forgot password?
-          </a>
-        </Link>
+
         {/* <Link>
           <a href="/verify-email">verify email</a>
         </Link> */}
@@ -138,21 +135,34 @@ export default class extends Component {
               transition: all 0.5s;
             }
             input:focus {
-              border: 2px solid #f48fb1;
+              border: 2px solid #6caedd;
             }
             label {
               color: #424242;
             }
+            .btn-wrapper {
+              width: 100%;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+            }
             button {
-              background-color: #e91e63;
+              background-color: #1565c0;
               outline: none;
               border: none;
               color: white;
-              padding: 10px 15px;
+              padding: 12px 30px;
               border-radius: 3px;
               font-family: "Source Sans Pro", sans-serif;
-              margin-top: 5px;
+              margin: 10px 0px;
               cursor: pointer;
+              display: block;
+              width: 100%;
+            }
+            form a {
+              color: black;
+              margin-top: 10px;
             }
           `}
         </style>

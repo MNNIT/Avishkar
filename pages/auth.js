@@ -9,7 +9,7 @@ export default class extends Component {
       <>
         <Meta />
         <div className="row ">
-          <div className="col-md-4 col-xs-10 container">
+          <div className="col-md-4 col-xs-12 col-sm-6 container">
             <Forms />
           </div>
         </div>
@@ -23,17 +23,11 @@ export default class extends Component {
               width: 100vw;
               height: 100vh;
               z-index: -1;
-              background-color: #faaca8;
-              background-image: linear-gradient(
-                19deg,
-                #faaca8 0%,
-                #ddd6f3 100%
-              );
+              background-color: #eeeeee;
             }
             div.container {
               margin: 0 auto;
-              margin-top: 50px;
-              // width: 540px;
+              margin-top: 80px;
               box-sizing: border-box;
               border-radius: 4px;
               box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
