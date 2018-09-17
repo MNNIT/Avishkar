@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default () => (
   <section>
     <div className="text-container">
@@ -33,6 +34,15 @@ export default () => (
           style={{ height: "24px", verticalAlign: "middle" }}
         />
       </a>
+      <div className="register-btn">
+        <Link
+          as={`/dashboard/register/Pushpak Vimaan`}
+          href={`/dashboard?tab=register&event=Pushpak Vimaan`}
+        >
+          <button>Register Now</button>
+        </Link>
+      </div>
+      <br />
       <h2>AERIAL VEHICLE DESIGN</h2>
       <p>
         This event is basically aerial robotics. Here, one must design a drone
@@ -53,38 +63,15 @@ export default () => (
           style={{ height: "24px", verticalAlign: "middle" }}
         />
       </a>
-      {/* <ol>
-        <p>
-          <li>
-            Aerial Vehicle Design &nbsp;
-            <a
-              href="../../static/pdf/Aerial_Vehicle_Design.pdf"
-              style={{ height: "18px" }}
-              target="_blank"
-            >
-              <img
-                src="../../static/icon/paperclip.svg"
-                style={{ height: "18px" }}
-              />
-            </a>
-          </li>
-        </p>
-        <p>
-          <li>
-            Pushpak Vimaan &nbsp;
-            <a
-              href="../../static/pdf/Pusphak_Vimaan_Problem_Statement.pdf"
-              style={{ height: "18px" }}
-              target="_blank"
-            >
-              <img
-                src="../../static/icon/paperclip.svg"
-                style={{ height: "18px" }}
-              />
-            </a>
-          </li>
-        </p>
-      </ol> */}
+      <br />
+      <div className="register-btn">
+        <Link
+          as={`/dashboard/register/Aerial Vehicle Design`}
+          href={`/dashboard?tab=register&event=Aerial Vehicle Design`}
+        >
+          <button>Register Now</button>
+        </Link>
+      </div>
     </div>
     <style jsx>{`
       section {
@@ -109,6 +96,25 @@ export default () => (
       }
       p span {
         font-size: 28px;
+      }
+      div.register-btn button {
+        color: whitesmoke;
+        text-align: center;
+        margin: 0px;
+        font-weight: 400;
+        box-shadow: rgba(108, 174, 221, 0.4) 0px 0px 10px;
+        cursor: pointer;
+        background: linear-gradient(
+          45deg,
+          rgb(108, 174, 221),
+          rgb(57, 145, 208)
+        );
+        border-radius: 4px;
+        text-decoration: none;
+        padding: 0.45em 0.6em;
+        border-style: none;
+        font-size: 1.075rem;
+        font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
       }
       @media (max-width: 700px) {
         p {
