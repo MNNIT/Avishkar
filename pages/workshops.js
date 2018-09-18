@@ -174,34 +174,7 @@ class Index extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row new-card">
-            <div className="col-md-4 img-container">
-              <img
-                src="/static/img/workshops/mechatronics.jpg"
-                alt="mechatronics"
-              />
-            </div>
-            <div className="col-md-8 content">
-              <h1>Mechatronics</h1>
-              <h2> 22 - 23 September, 2018</h2>
-              <h3>
-                Mechatronics is an interdisciplinary engineering field that
-                combines principles from mechanics, electronics, computer
-                engineering, robotics and automatic control. It refers to the
-                successful combination of mechanical systems and electronics.
-                Mechatronics systems are all around us, from computer hard
-                drives and robotics to washing machines, coffee makers, medical
-                devices and the list goes on. Main objective of this workshop is
-                to make the students conceptually and practically aware about
-                the Mechatronic Systems with a great deal of emphasis on
-                hands-on programming. The manufacturing industries totally
-                depend on the integration of computer and electronics
-                technologies for better products and processes. Manufacturing
-                Industries want mechanical students who are trained to integrate
-                electronics, controls, computers, and moving parts.
-              </h3>
-            </div>
-          </div>
+          
           <div className="row new-card">
             <div className="col-md-4 img-container">
               <img src="/static/img/workshops/PLCScada.jpeg" alt="PLC Scada" />
