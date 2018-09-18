@@ -97,7 +97,7 @@ const team = {
     },
     {
       name: "Neel Neogi",
-      img: "",
+      img: "/static/team/neel-neogi.jpg",
       email: "neel.neogy@gmail.com",
       phone: 7076091227
     },
