@@ -99,7 +99,7 @@ class Index extends React.Component {
             </div>
             <div className="col-md-8 content">
               <h1>BigData</h1>
-              <h2> 21-22 September, 2018</h2>
+              <h2> 22-23 September, 2018</h2>
               <h3>
                 Big data is an evolving term that describes any voluminous
                 amount of structured, semi-structured and unstructured data that
@@ -150,7 +150,7 @@ class Index extends React.Component {
             </div>
             <div className="col-md-8 content">
               <h1>MATLAB</h1>
-              <h2> 22 - 23 September, 2018</h2>
+              <h2> 21 - 22 September, 2018</h2>
               <h3>
                 This workshop aimed at providing practical methods for
                 incorporating Simulink in the classroom to enhance teaching of
