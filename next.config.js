@@ -34,7 +34,8 @@ const routes = {
   "/reset-password/email": { page: "/reset-password", query: { tab: "email" } },
   "/reset-password/code": { page: "/reset-password", query: { tab: "code" } },
   "/gnosiomania": { page: "/gnosiomania" },
-  "/workshops": { page: "/workshops" }
+  "/workshops": { page: "/workshops" },
+  "/sponsors": { page: "/sponsors" }
 };
 events.forEach(function(event) {
   const path = "/events/" + event;

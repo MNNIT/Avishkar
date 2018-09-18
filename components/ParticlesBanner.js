@@ -34,6 +34,12 @@ class ParticlesBanner extends Component {
                 <button>REGISTER</button>
               </a>
             </Link>
+            &nbsp;&nbsp;&nbsp;
+            <Link as="/sponsors" href="/sponsors">
+              <a>
+                <button id="sponsors-btn">SPONSORS</button>
+              </a>
+            </Link>
           </div>
         </div>
         <style jsx>
@@ -41,9 +47,7 @@ class ParticlesBanner extends Component {
             #particles-banner {
               width: 100vw;
               height: 100vh;
-               {
-                /* background: #222; */
-              }
+
               background-size: 100vw 95vh;
             }
             @font-face {
@@ -122,7 +126,6 @@ class ParticlesBanner extends Component {
             }
             .downdiv {
               position: relative;
-              // top: 40%;
             }
             .downdiv button {
               outline: none;
@@ -144,7 +147,8 @@ class ParticlesBanner extends Component {
               font-size: 1.175rem;
               font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
               transition-duration: 0.3s;
-              transition-property: transform;              -ms-transform: translateZ(0);
+              transition-property: transform;
+              -ms-transform: translateZ(0);
               transform: translateZ(0);
               transform: translateY(-6px);
               animation-name: hover;
@@ -164,7 +168,7 @@ class ParticlesBanner extends Component {
               height: 10px;
               width: 90%;
               opacity: 0;
-             
+
               background: radial-gradient(
                 ellipse at center,
                 rgba(0, 0, 0, 0.35) 0%,
@@ -181,25 +185,12 @@ class ParticlesBanner extends Component {
               animation-iteration-count: infinite;
               animation-direction: alternate;
             }
-            @keyframes hover {
-              50% {
-                transform: translateY(-3px);
-              }
-
-              100% {
-                transform: translateY(-6px);
-              }
-            } 
-
-              50% {
-                transform: translateY(3px);
-                opacity: 1;
-              }
-
-              100% {
-                transform: translateY(6px);
-                opacity: 0.4;
-              }
+            #sponsors-btn {
+              background: linear-gradient(
+                45deg,
+                rgb(65, 184, 131),
+                rgb(52, 147, 104)
+              );
             }
 
             @keyframes hover-shadow {
@@ -219,8 +210,6 @@ class ParticlesBanner extends Component {
               }
             }
 
-           
-
             @keyframes hover {
               50% {
                 transform: translateY(-3px);
@@ -230,7 +219,8 @@ class ParticlesBanner extends Component {
                 transform: translateY(-6px);
               }
             }
-            h2, h4 {
+            h2,
+            h4 {
               font-size: 32px;
               color: #2196f3;
               color: white;
@@ -305,7 +295,11 @@ class ParticlesBanner extends Component {
               -webkit-perspective: 400;
               perspective: 400;
             }
-
+            @media (max-width: 700px) {
+              .downdiv button {
+                padding: 10px;
+              }
+            }
           `}
         </style>
       </section>
