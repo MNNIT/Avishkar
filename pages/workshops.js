@@ -123,7 +123,7 @@ class Index extends React.Component {
               <img src="/static/img/workshops/IoT-connectivity.jpg" alt="IOT" />
             </div>
             <div className="col-md-8 content">
-              <h1>IOT</h1>
+              <h1>IOT with AWS</h1>
               <h2> 21-22 September, 2018</h2>
               <h3>
                 The Internet of things is an ecosystem of connected physical
@@ -174,7 +174,7 @@ class Index extends React.Component {
               </div>
             </div>
           </div>
-          
+
           <div className="row new-card">
             <div className="col-md-4 img-container">
               <img src="/static/img/workshops/PLCScada.jpeg" alt="PLC Scada" />
