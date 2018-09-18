@@ -2,13 +2,6 @@ import Meta from "../components/Meta";
 import Footer from "../components/Footer";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-// import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import { withRouter } from "next/router";
 const styles = {
   card: {
@@ -29,22 +22,14 @@ const Index = props => {
         <h2>GNOSIOMANIA</h2>
         <div className="row">
           <div className="col-md-6 col-xs-12">
-            <Card className={classes.card}>
-              {/* <CardMedia
-                className={classes.media}
-                image="/static/img/gnosis/quiz1.jpg"
-                title="Gnosiomania"
-              /> */}
-
-              <CardContent>
-                <Typography gutterBottom variant="headline" component="h2">
-                  Gnosiomania Quizzing
-                </Typography>
+            <div className="card">
+              <div className="card-content">
+                <h2>Gnosiomania Quizzing</h2>
                 <div className="img">
                   <img src="/static/img/gnosis/gnosiomania.jpeg" alt="" />
                 </div>
-                <br />
-                <Typography component="p">
+
+                <p>
                   Where knowledge seeks the deliberate conduct of putting your
                   best foot forward, there comes quizzing as a platform where
                   one quenches his thirst. With this, MNNIT Allahabad is proud
@@ -97,28 +82,21 @@ const Index = props => {
                       numbers.
                     </li>
                   </ul>
-                  <div className="img">
-                    <img src="/static/img/gnosis/quiz1.jpg" alt="" />
-                  </div>
-                  <div className="img">
-                    <img src="/static/img/gnosis/quiz2.jpg" alt="" />
-                  </div>
-                </Typography>
-              </CardContent>
-            </Card>
+                </p>
+                <div className="img">
+                  <img src="/static/img/gnosis/quiz1.jpg" alt="" />
+                </div>
+                <div className="img">
+                  <img src="/static/img/gnosis/quiz2.jpg" alt="" />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-md-6 col-xs-12">
-            <Card className={classes.card}>
-              {/* <CardMedia
-                className={classes.media}
-                image="/static/img/gnosis/gnosiomania.jpg"
-                title="Gnosiomania"
-              /> */}
-              <CardContent>
-                <Typography gutterBottom variant="headline" component="h2">
-                  GnoTalks
-                </Typography>
-                <Typography component="p">
+            <div className="card">
+              <div className="card-content">
+                <h2>GnoTalks</h2>
+                <p>
                   With the stage being graced by eminent personalities each
                   year, gnoTalks has been enriching the experience that Avishkar
                   brings forth since its inception. gnoTalks presents a panel of
@@ -126,66 +104,102 @@ const Index = props => {
                   exemplifying the notion of inspiration. It showcases unique
                   performances and talks, making the event one of its kind. This
                   year, we are going to take forward the legacy.
-                  <br />
-                  <br />
-                  <Typography gutterBottom variant="headline" component="h2">
-                    Speakers
-                  </Typography>
+                </p>
+                <div>
+                  <h2>Speakers</h2>
                   <div className="img">
                     <img src="/static/img/gnosis/speaker1.jpeg" alt="" />
                   </div>
-                  <br />
-                  Does magic exist? Our speaker has given newer dimensions to
-                  this question. Not a magician but a psychological illusionist,
-                  Karan Singh Magic is going to bowl the audience over with his
-                  keen mind-reading abilities. Just with the help of a few
-                  simple questions, he would be into one's brain.
-                  <br />
-                  <br />
+
+                  <p>
+                    Does magic exist? Our speaker has given newer dimensions to
+                    this question. Not a magician but a psychological
+                    illusionist, Karan Singh Magic is going to bowl the audience
+                    over with his keen mind-reading abilities. Just with the
+                    help of a few simple questions, he would be into one's
+                    brain.
+                  </p>
+                </div>
+
+                <br />
+                <div>
                   <div className="img">
                     <img src="/static/img/gnosis/speaker2.jpg" alt="" />
                   </div>
-                  <br />A Ramnath Goenka awardee, our speaker is the righteous
-                  example to show how media is indeed a pillar of our democracy.
-                  J. Gopikrishnan, an investigative journalist, has uncovered
-                  the mystery behind the 2G, National Herald and Aircel-Maxis
-                  cases. There is a great chance that the songs that we hum
-                  merrily or melancholically are his creation. With the Guinness
-                  world record for writing the most number of songs, Sameer has
-                  contributed a lot in shaping the music industry. His efforts
-                  have been acknowledged with three filmfare awards
-                  <br />
-                  <br />
+
+                  <p>
+                    A Ramnath Goenka awardee, our speaker is the righteous
+                    example to show how media is indeed a pillar of our
+                    democracy. J. Gopikrishnan, an investigative journalist, has
+                    uncovered the mystery behind the 2G, National Herald and
+                    Aircel-Maxis cases. There is a great chance that the songs
+                    that we hum merrily or melancholically are his creation.
+                    With the Guinness world record for writing the most number
+                    of songs, Sameer has contributed a lot in shaping the music
+                    industry. His efforts have been acknowledged with three
+                    filmfare awards
+                  </p>
+                </div>
+                <br />
+                <div>
                   <div className="img">
                     <img src="/static/img/gnosis/speaker3.jpeg" alt="" />
                   </div>
-                  <br />
-                  There is a great chance that the songs that we hum merrily or
-                  melancholically are his creation. With the Guinness world
-                  record for writing the most number of songs, Sameer has
-                  contributed a lot in shaping the music industry. His efforts
-                  have been acknowledged with three filmfare awards
-                  <br />
-                </Typography>
-                <br />
-                <Typography gutterBottom variant="headline">
-                  <div className="update">
-                    <b>New speakers update everyday. Stay tuned.</b>
-                  </div>
-                </Typography>
-                {/*
-                <br />
-                <div className="img">
-                  <img src="/static/img/gnosis/speaker4.jpg" alt="" />
+
+                  <p>
+                    There is a great chance that the songs that we hum merrily
+                    or melancholically are his creation. With the Guinness world
+                    record for writing the most number of songs, Sameer has
+                    contributed a lot in shaping the music industry. His efforts
+                    have been acknowledged with three filmfare awards.
+                  </p>
                 </div>
                 <br />
-                We always ponder over how we can do our bit for the society that
-                we live in. The Robin Hood Army has turned this noble thought to
-                reality. Driving away hunger from the society in a sustainable
-                manner, this organization is making full use of the abilities of
-                the younger force of our nation. */}
-              </CardContent>
-            </Card>
+                <div>
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker4.jpg" alt="" />
+                  </div>
+
+                  <p>
+                    We always ponder over how we can do our bit for the society
+                    that we live in. The Robin Hood Army has turned this noble
+                    thought to reality. Driving away hunger from the society in
+                    a sustainable manner, this organization is making full use
+                    of the abilities of the younger force of our nation.
+                  </p>
+                </div>
+                <br />
+                <div>
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker5.jpg" alt="" />
+                  </div>
+
+                  <p>
+                    The evening of 27th of September will be filled by the
+                    laughter of MNNITians when R.Subramanian, the winner of
+                    ‘YouTube comedy hunt 2015’, will amuse everyone with his wit
+                    and side splitting humour. His gags with AIB and Kumar Varun
+                    are wide known. His life perfectly depicts the self
+                    satisfaction that passion brings with itself.
+                  </p>
+                </div>
+                <div>
+                  <div className="img">
+                    <img src="/static/img/gnosis/speaker6.jpg" alt="" />
+                  </div>
+
+                  <p>
+                    Famous worldwide for scoring one of the fastest
+                    international goals, our speaker is an Arjuna award winner
+                    and the torch bearer of Indian football, I. M. Vijayan.
+                    Known for his extraordinary volleys,lightning-fast pace and
+                    swift movement on the pitch,his illustrious career is an
+                    inspiration for all.
+                  </p>
+                </div>
+                <br />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -195,8 +209,34 @@ const Index = props => {
           .container {
             padding: 10px;
           }
+          .card {
+            padding: 10px;
+            min-height: 400px;
+            text-align: justify;
+            overflow: hidden;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+              0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+              0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+            border-radius: 4px;
+            background-color: #fff;
+            display: block;
+          }
+          .card-content {
+            padding-bottom: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 16px;
+            display: block;
+          }
           a {
             text-decoration: none;
+          }
+          h2 {
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            line-height: 1.35417em;
           }
           .update {
             text-align: center;
@@ -248,6 +288,7 @@ const Index = props => {
           @media (max-width: 700px) {
             .container {
               margin-top: 50px;
+              overflow-x: hidden;
             }
             .container > h2 {
               text-align: center;
