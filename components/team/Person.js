@@ -38,9 +38,9 @@ class Person extends Component {
             <p>
               <a href={`mailto:${person.email}`}>{person.email}</a>
             </p>
-            {/* <p>
+            <p>
               <a href={`tel:${person.phone}`}>{person.phone}</a>
-            </p> */}
+            </p>
           </div>
         </div>
         <style jsx>{`

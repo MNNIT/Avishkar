@@ -18,6 +18,9 @@ class TeamPage extends Component {
         <Team people={teamData.studentcoreteam} heading="Festival Secretary" />
         <Team people={teamData.technicalteam} heading="Technical Team" />
         <Team people={teamData.workshopslead} heading="Workshops Lead" />
+        <Team people={teamData.prteam} heading="Public Relations Team" />
+        <Team people={teamData.gnoTalksLeads} heading="gnoTalks Leads" />
+        <Team people={teamData.gnosiomaniaLeads} heading="Gnosiomania Leads" />
         <style jsx>
           {`
             h1 {
