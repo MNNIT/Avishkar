@@ -132,13 +132,7 @@ const Index = props => {
                     example to show how media is indeed a pillar of our
                     democracy. J. Gopikrishnan, an investigative journalist, has
                     uncovered the mystery behind the 2G, National Herald and
-                    Aircel-Maxis cases. There is a great chance that the songs
-                    that we hum merrily or melancholically are his creation.
-                    With the Guinness world record for writing the most number
-                    of songs, Sameer has contributed a lot in shaping the music
-                    industry. His efforts have been acknowledged with three
-                    filmfare awards
-                  </p>
+                    Aircel-Maxis cases.
                 </div>
                 <br />
                 <div>
