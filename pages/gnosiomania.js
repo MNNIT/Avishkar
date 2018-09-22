@@ -133,6 +133,7 @@ const Index = props => {
                     democracy. J. Gopikrishnan, an investigative journalist, has
                     uncovered the mystery behind the 2G, National Herald and
                     Aircel-Maxis cases.
+                  </p>
                 </div>
                 <br />
                 <div>
