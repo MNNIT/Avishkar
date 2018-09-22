@@ -65,7 +65,7 @@ export default ({ subEventData, show, color, hideModal }) => {
                     </h3>
                     &nbsp;&nbsp;{" "}
                     <a
-                      href="../../static/pdf/Gliese 667 CB.pdf"
+                      href="../../static/pdf/Manual_Robotics_Problem_Statement_new_20_SEP_2018.pdf"
                       style={{ height: "24px", display: "inline" }}
                       target="_blank"
                     >
