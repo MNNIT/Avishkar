@@ -1,4 +1,13 @@
 const team = {
+  SACPresident: [
+    {
+      name: "Dr. Rajesh Gupta",
+      position: "SAC President",
+      department: "EEE",
+      email: "rajeshgupta@mnnit.ac.in",
+      img: "/static/team/rajesh-gupta.jpg"
+    }
+  ],
   faculty: [
     {
       name: "Dr.VR.Komma",
@@ -28,6 +37,13 @@ const team = {
       department: "MED",
       email: "dkshukla@mnnit.ac.in",
       img: "/static/team/dks.jpg"
+    },
+    {
+      name: "Dr. V P Singh",
+      position: "Member",
+      department: "CE",
+      email: "vps15783@mnnit.ac.in",
+      img: "/static/team/vpsingh.jpg"
     }
   ],
   studentcoreteam: [
@@ -85,6 +101,7 @@ const team = {
     },
     {
       name: "Poorna Chandu",
+      email: "gadechandu123@gmail.com",
       img: "/static/team/poornachandu.jpg"
     }
   ],
