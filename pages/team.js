@@ -14,11 +14,12 @@ class TeamPage extends Component {
       <>
         <Meta color="#212121" />
         <h1>Avishkar's Team</h1>
+        <Team people={teamData.SACPresident} heading="SAC President" />
         <Team people={teamData.faculty} heading="Faculty" />
         <Team people={teamData.studentcoreteam} heading="Festival Secretary" />
         <Team people={teamData.technicalteam} heading="Technical Team" />
         <Team people={teamData.workshopslead} heading="Workshops Lead" />
-        <Team people={teamData.prteam} heading="Public Relations Team" />
+        <Team people={teamData.prteam} heading="Public Relations Leads" />
         <Team people={teamData.gnoTalksLeads} heading="gnoTalks Leads" />
         <Team people={teamData.gnosiomaniaLeads} heading="Gnosiomania Leads" />
         <style jsx>
