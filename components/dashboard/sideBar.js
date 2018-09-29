@@ -46,6 +46,10 @@ export default withRouter(
             icon: "event"
           },
           {
+            name: "Bank Account Info",
+            icon: "account_balance_wallet"
+          },
+          {
             name: "FAQ",
             icon: "question_answer"
           }

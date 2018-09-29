@@ -15,6 +15,7 @@ import Dash from "../components/dashboard/Dash";
 import Link from "next/link";
 import RegisterdEvents from "../components/dashboard/RegisteredEvents";
 import TeamEvents from "../components/dashboard/team-events/TeamEvents";
+import BankDetails from "../components/dashboard/BankDetails";
 import axios from "axios";
 import baseURL from "../config";
 import CustomLoader from "../components/CustomLoader";
@@ -63,6 +64,9 @@ export default withRouter(
       }
       if (tab === "faq") {
         return <Faq />;
+      }
+      if (tab === "accountdetails") {
+        return <BankDetails />;
       }
     }
     render() {
