@@ -21,6 +21,7 @@ const tabs = [
   "register",
   "soloevents",
   "teamevents",
+  "bankaccountinfo",
   "faq"
 ];
 const routes = {
