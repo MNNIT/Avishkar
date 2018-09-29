@@ -65,7 +65,7 @@ export default withRouter(
       if (tab === "faq") {
         return <Faq />;
       }
-      if (tab === "accountdetails") {
+      if (tab === "bankaccountinfo") {
         return <BankDetails />;
       }
     }
