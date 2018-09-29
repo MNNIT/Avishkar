@@ -67,8 +67,8 @@ class UpdateProfile extends Component {
   handleSaveClick = () => {};
   saveAccountDetails = () => {
     //TODO validate formdata
-    const { account, ifsc, bank, branch } = this.state;
-    const formData = { account, ifsc, bank, branch };
+    const { account, ifsc, bank, branchCode } = this.state;
+    const formData = { account, ifsc, bank, branchCode };
     axios
       .post("/api/bank-details", formData)
       .then(res => {
