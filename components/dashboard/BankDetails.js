@@ -96,7 +96,7 @@ class UpdateProfile extends Component {
           <b>IFSC</b>: {this.state.ifsc}
         </p>
         <p>
-          <b>Branch</b>: {this.state.branch}
+          <b>Branch</b>: {this.state.branchCode}
         </p>
       </div>
     );
