@@ -1,7 +1,7 @@
 const team = {
   SACPresident: [
     {
-      name: "Dr. Rajesh Gupta",
+      name: "Prof. Rajesh Gupta",
       position: "SAC President",
       department: "EEE",
       email: "rajeshgupta@mnnit.ac.in",
