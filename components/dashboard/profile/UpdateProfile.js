@@ -48,7 +48,9 @@ class UpdateProfile extends Component {
 
   componentDidMount() {
     if (this.props.profile) {
-      this.setState({ ...this.state, ...this.props.profile });
+      const profile = { ...this.props.profile };
+      delete profile.email;
+      this.setState({ ...this.state, ...profile });
     }
     this.fetchAllCities();
   }
