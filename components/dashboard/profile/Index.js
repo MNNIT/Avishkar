@@ -70,7 +70,7 @@ export default class extends Component {
     } else {
       return (
         <>
-          <ToggleDisplay hide={this.state.profileEditable}>
+          <ToggleDisplay hide={profileEditable}>
             <Profile
               profile={profile}
               toggleProfileForm={this.toggleProfileForm}

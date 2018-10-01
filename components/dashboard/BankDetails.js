@@ -126,7 +126,6 @@ class UpdateProfile extends Component {
             </p>
             <form className={classes.container} noValidate autoComplete="off">
               <TextField
-                id="name"
                 label="Bank Account Number"
                 className={classes.textField}
                 value={this.state.account}
@@ -136,7 +135,6 @@ class UpdateProfile extends Component {
                 required
               />
               <TextField
-                id="name"
                 label="Bank's Name"
                 className={classes.textField}
                 value={this.state.bank}
@@ -146,7 +144,6 @@ class UpdateProfile extends Component {
                 required
               />
               <TextField
-                id="name"
                 label="IFSC"
                 className={classes.textField}
                 value={this.state.ifsc}
@@ -156,7 +153,6 @@ class UpdateProfile extends Component {
                 required
               />
               <TextField
-                id="name"
                 label="Branch Code"
                 className={classes.textField}
                 value={this.state.branchCode}

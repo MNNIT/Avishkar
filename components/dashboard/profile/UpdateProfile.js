@@ -46,17 +46,10 @@ class UpdateProfile extends Component {
     colleges: []
   };
 
-  static getDerivedStateFromProps(props, state) {
-    let newState = { ...state };
-    if (props.profile) {
-      newState.name = props.profile.name;
-      if (props.profile.gender) {
-        newState.gender = props.profile.gender;
-      }
-    }
-    return newState;
-  }
   componentDidMount() {
+    if (this.props.profile) {
+      this.setState({ ...this.state, ...this.props.profile });
+    }
     this.fetchAllCities();
   }
   fetchAllCities = () => {
@@ -131,9 +124,9 @@ class UpdateProfile extends Component {
       <div className="row center-md center-xs center-lg">
         <div className="col-md-6">
           <Paper className={classes.root} elevation={1}>
-            <p style={{ textAlign: "center", color: "red" }}>
-              * These fields must be filled and can only be updated once *
-            </p>
+            <h3 style={{ textAlign: "center", color: "#4caf50" }}>
+              UPDATE PROFILE
+            </h3>
             <form className={classes.container} noValidate autoComplete="off">
               <TextField
                 id="name"
@@ -239,16 +232,16 @@ class UpdateProfile extends Component {
                 fullWidth
                 required
               >
-                <MenuItem value={1}>1</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-                <MenuItem value={4}>4</MenuItem>
+                <MenuItem value="1">1</MenuItem>
+                <MenuItem value="2">2</MenuItem>
+                <MenuItem value="3">3</MenuItem>
+                <MenuItem value="4">4</MenuItem>
               </TextField>
-              <div>
+              {/* <div>
                 <p style={{ textAlign: "center", color: "red" }}>
                   * These fields must be filled and can only be updated once *
                 </p>
-              </div>
+              </div> */}
               <Button
                 color="primary"
                 variant="contained"
