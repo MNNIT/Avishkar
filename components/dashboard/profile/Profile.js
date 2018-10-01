@@ -10,6 +10,32 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2
   }
 });
+function renderOtherFields(profile) {
+  if (profile.phone) {
+    return (
+      <>
+        <p>
+          <b>Phone</b> :&nbsp;
+          {profile.phone}
+        </p>
+        <p>
+          <b>College</b> :&nbsp;
+          {profile.college}
+        </p>
+      </>
+    );
+  }
+  return (
+    <>
+      <p>
+        <b>Phone</b> :&nbsp; Not provided
+      </p>
+      <p>
+        <b>College</b> :&nbsp; Not provided
+      </p>
+    </>
+  );
+}
 export default withStyles(styles)(function({
   profile,
   toggleProfileForm,
@@ -63,18 +89,16 @@ export default withStyles(styles)(function({
               <b>Gender</b> :&nbsp;
               {profile.gender}
             </p>
-            <p>
-              <b>College</b> :&nbsp;
-              {profile.college}
-            </p>
-            <ToggleDisplay hide={profile.updatedProfile}>
+
+            {renderOtherFields(profile)}
+            <ToggleDisplay>
               <Button
                 color="primary"
                 variant="contained"
                 onClick={toggleProfileForm}
                 style={{ margin: "auto" }}
               >
-                UPDATE PROFILE
+                {profile.updatedProfile ? "EDIT PROFILE" : "UPDATE PROFILE"}
               </Button>
             </ToggleDisplay>
           </Paper>
