@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Meta from "../components/Meta";
-import PastSponsors from "../components/sponsors/PastSponsors";
+import Sponsors from "../components/sponsors/Sponsors";
 import Footer from "../components/Footer";
 export default class extends Component {
   render() {
     return (
       <div>
         <Meta />
-        <PastSponsors />
+        <Sponsors />
         <Footer />
       </div>
     );
