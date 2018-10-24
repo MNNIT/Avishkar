@@ -7,7 +7,7 @@ export default ({ people, heading }) => {
       <div className="container">
         {people.map(function(sponsor) {
           return (
-            <div className="img-container">
+            <div key={sponsor.name} className="img-container">
               <img src={sponsor.img} alt={sponsor.name} />
             </div>
           );
