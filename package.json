@@ -46,6 +46,7 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.6.3",
     "cross-env": "^5.2.0",
+    "file-loader": "^2.0.0",
     "next-optimized-images": "^1.4.1"
   }
 }
