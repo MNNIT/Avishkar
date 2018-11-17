@@ -1,66 +1,57 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import axios from "axios";
+
 import CustomLoader from "./CustomLoader";
-import baseURL from "../config";
-axios.defaults.baseURL = baseURL;
-axios.defaults.withCredentials = true;
+
 class IconEvents extends Component {
   constructor() {
     super();
     this.state = {
-      categories: [],
-      blocking: true
+      categories: [
+        "cyberquest",
+        "electromania",
+        "genesis",
+        "mechrocosm",
+        "monopoly",
+        "nirmaan",
+        "robomania",
+        "powersurge",
+        "rasayans",
+        "oligopoly",
+        "kreedomania",
+        "aerodynamix"
+      ]
     };
   }
-  componentDidMount() {
-    axios
-      .get("/api/event-categories")
-      .then(res => {
-        if (res.data.success) {
-          this.setState({ categories: res.data.categories, blocking: false });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+
   render() {
     return (
       <section>
-        {this.state.blocking ? (
-          <CustomLoader />
-        ) : (
-          <>
-            <h2>Events at Avishkar</h2>
-            <div className="container">
-              {this.state.categories.map(function(event) {
-                return (
-                  <div className="card" key={event}>
-                    <Link
-                      as={`/events/${event}`}
-                      href={`/events?name=${event}`}
+        <h2>Events at Avishkar</h2>
+        <div className="container">
+          {this.state.categories.map(function(event) {
+            return (
+              <div className="card" key={event}>
+                <Link as={`/events/${event}`} href={`/events?name=${event}`}>
+                  <a>
+                    <div
+                      className="event-element"
+                      style={{ cursor: "pointer" }}
                     >
-                      <a>
-                        <div
-                          className="event-element"
-                          style={{ cursor: "pointer" }}
-                        >
-                          <div className="img-container">
-                            <img src={`/static/icon/${event}.png`} />
-                          </div>
-                        </div>
-                        <div className="event-title">
-                          <p>{event}</p>
-                        </div>
-                      </a>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </>
-        )}
+                      <div className="img-container">
+                        <img src={`/static/icon/${event}.png`} />
+                      </div>
+                    </div>
+                    <div className="event-title">
+                      <p>{event}</p>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+
         <style jsx>{`
           section {
             padding: 20px 0px;

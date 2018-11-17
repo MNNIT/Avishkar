@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev node server.js",
-    "build": "next build",
+    "build": "cross-env BUNDLE_ANALYZE=browser next build",
     "export": "cross-env NODE_ENV=production npm run build && next export && node netlify.js",
     "start": "next start"
   },
@@ -23,6 +23,7 @@
   "dependencies": {
     "@material-ui/core": "^1.5.0",
     "@material-ui/icons": "^2.0.2",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^0.2.0",
     "autosuggest-highlight": "^3.1.1",
     "axios": "^0.18.0",

@@ -1,5 +1,4 @@
 import Meta from "../components/Meta";
-import Footer from "../components/Footer";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { withRouter } from "next/router";
@@ -198,7 +197,6 @@ const Index = props => {
           </div>
         </div>
       </div>
-      <Footer />
       <style jsx>
         {`
           .container {

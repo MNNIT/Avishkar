@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Team from "../components/team/Team";
 import Meta from "../components/events/Meta";
 import teamData from "../data/team";
-import Navbar from "../components/Navbar";
-import MobileNav from "../components/MobileNav";
 import { withRouter } from "next/router";
 class TeamPage extends Component {
   constructor(props) {

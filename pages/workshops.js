@@ -1,98 +1,24 @@
 import React, { Component } from "react";
 import Meta from "../components/Meta";
-import Footer from "../components/Footer";
 import { withRouter } from "next/router";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-const workshopContactInfo = {
-  IOT: [
-    {
-      name: "Arjita Chaurasia",
-      mobile: 9721716833,
-      email: "arjitachaurasia@gmail.com"
-    },
-    {
-      name: "Apurva",
-      mobile: 9621076421,
-      email: "Apurva.sngh8@gmail.com"
-    }
-  ],
-  BigData: [
-    {
-      name: "Shivani Gupta",
-      mobile: 8765496418,
-      email: "shivani.ashi@gmail.com"
-    },
-    {
-      name: "Anisha Kumari",
-      mobile: 9454788294,
-      email: "kinshukri1996@gmail.com"
-    },
-    {
-      name: "Anshuman Sabath",
-      mobile: 8249025894,
-      email: "sabathanshuman@gmail.com"
-    }
-  ],
-  PLC: [
-    {
-      name: "Vikas Kumar",
-      mobile: 9621456356,
-      email: "vikas0985251@gmail.com"
-    },
-    {
-      name: "Shreya Srivastava",
-      mobile: 8545870037,
-      email: "srivastavashreya0108@gmail.com"
-    }
-  ],
-  Matlab: [
-    {
-      name: "Rahul Verma",
-      mobile: 7233019509,
-      email: "rahul239verma@gmail.com"
-    },
-    {
-      name: "Mayank Garg",
-      mobile: 8445546165,
-      email: "mayankgarg4646@gmail.com"
-    }
-  ]
-};
+
 class Index extends React.Component {
   state = {
-    alertDialog: {
-      open: false
-    },
     workshopName: "IOT"
   };
-  handleAlertOpen = name => {
-    let { alertDialog, workshopName } = this.state;
-    alertDialog.open = true;
-    workshopName = name;
-    this.setState({ alertDialog, workshopName });
-  };
-  handleAlertClose = () => {
-    let { alertDialog } = this.state;
-    alertDialog.open = false;
-    this.setState({ alertDialog });
-  };
+
   render() {
     const { workshopName } = this.state;
-    const { open } = this.state.alertDialog;
     return (
       <>
         <Meta />
         <div className="container-new">
-          <h2>WORKSHOPS</h2>
-          <div className="button-div">
-            <a href="https://goo.gl/forms/QjPSaoPLFstJ7lfs1" target="_blank">
-              <button>Register for Workshops</button>
-            </a>
-          </div>
+          <h2 style={{ textAlign: "center" }}>WORKSHOPS</h2>
           <div className="row new-card">
             <div className="col-md-4 img-container">
               <img src="/static/img/workshops/big-data.jpg" alt="big_data" />
@@ -111,11 +37,6 @@ class Index extends React.Component {
                 sharing, transfer, visualization, querying, updating,
                 information privacy and data source.
               </h3>
-              <div className="contact-button">
-                <button onClick={() => this.handleAlertOpen("BigData")}>
-                  Contact
-                </button>
-              </div>
             </div>
           </div>
           <div className="row new-card">
@@ -137,11 +58,6 @@ class Index extends React.Component {
                 data. You can also create applications that enable your users to
                 control these devices from their phones or tablets.
               </h3>
-              <div className="contact-button">
-                <button onClick={() => this.handleAlertOpen("IOT")}>
-                  Contact
-                </button>
-              </div>
             </div>
           </div>
           <div className="row new-card">
@@ -167,11 +83,6 @@ class Index extends React.Component {
                 graphical multi-domain simulation and model-based design for
                 dynamic and embedded systems.
               </h3>
-              <div className="contact-button">
-                <button onClick={() => this.handleAlertOpen("Matlab")}>
-                  Contact
-                </button>
-              </div>
             </div>
           </div>
 
@@ -198,48 +109,10 @@ class Index extends React.Component {
                 fundamentals of automation in the students and provide them with
                 a platform to work on, in the near future.
               </h3>
-              <div className="contact-button">
-                <button onClick={() => this.handleAlertOpen("PLC")}>
-                  Contact
-                </button>
-              </div>
             </div>
           </div>
         </div>
-        <div>
-          <Dialog
-            open={open}
-            onClose={this.handleAlertClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title">
-              Contact Information
-            </DialogTitle>
-            <div>
-              <List>
-                {workshopContactInfo[workshopName] !== undefined ? (
-                  workshopContactInfo[workshopName].map(person => {
-                    return (
-                      <ListItem key={person.mobile}>
-                        <ListItemText primary={person.name} />
-                        <a
-                          href={"tel:" + String(person.mobile)}
-                          style={{ textDecoration: "none" }}
-                        >
-                          <ListItemText primary={person.mobile} />
-                        </a>
-                      </ListItem>
-                    );
-                  })
-                ) : (
-                  <></>
-                )}
-              </List>
-            </div>
-          </Dialog>
-        </div>
-        <Footer />
+        <div />
         <style jsx>
           {`
             .card {
@@ -260,7 +133,7 @@ class Index extends React.Component {
               box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
                 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
                 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-              border-left: 5px solid violet;
+              border-left: 5px solid rgb(65, 184, 131);
             }
             .container-new > h2 {
               margin-left: 100px;
@@ -284,27 +157,7 @@ class Index extends React.Component {
             h3 {
               margin: 0px;
             }
-            .button-div a button {
-              color: whitesmoke;
-              text-align: center;
-              margin: 0px;
-              font-weight: 400;
-              cursor: pointer;
-              background: linear-gradient(
-                45deg,
-                rgb(108, 174, 221),
-                rgb(57, 145, 208)
-              );
-              border-radius: 4px;
-              text-decoration: none;
-              padding: 0.75em 1.2em;
-              border-style: none;
-              font-size: 1.175rem;
-              font-family: Source Sans Pro, Open Sans, Segoe UI, sans-serif;
-              margin-left: 50%;
-              transform: translateX(-50%);
-              outline: none;
-            }
+
             .contact-button button {
               text-align: center;
               margin: 10px 0 0 0;
@@ -331,10 +184,7 @@ class Index extends React.Component {
               .card {
                 margin: 30px 5px;
               }
-              .button-div a button {
-                width: 220px;
-                padding: 8px;
-              }
+
               .contact-button button {
                 width: 30%;
                 padding: 0.35em 0.4em;

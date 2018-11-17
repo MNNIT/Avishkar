@@ -1,14 +1,1 @@
-{
-    "events": [
-        {
-            "name": "netritva",
-            "displayName": "Netritva",
-            "info": "Leadership hunt “A leader is one who knows the way, goes the way and shows the way.”"
-        },
-        {
-            "name": "tradingstrategist",
-            "displayName": "Trading Strategist",
-            "info": "Marketing bonanza event"
-        }
-    ]
-}
+{"success":true,"subEvents":[{"problemStatements":[],"_id":"5b92c6c755218e15dff4aae3","name":"netritvaoligopoly","displayName":"Netritva (Oligopoly)","size":1,"category":"oligopoly","image":"Netritva.jpeg","info":"“A leader is one who knows the way, goes the way and shows the way.” This event is for leadership hunt.","__v":0},{"problemStatements":[],"_id":"5b92c6c755218e15dff4aae4","name":"tradingstrategist","displayName":"Trading Strategist","size":1,"category":"oligopoly","image":"TradingStrategist.jpeg","info":"Marketing bonanza event","__v":0},{"problemStatements":[],"_id":"5b92c6c755218e15dff4aae5","name":"adhole","displayName":"Adhole","size":3,"category":"oligopoly","image":"Adhole.jpg","info":"Advertising event. Do you have it in you to become the next ad guru.","__v":0},{"problemStatements":[],"_id":"5b92c6c755218e15dff4aae6","name":"pitchers","displayName":"Pitchers","size":3,"category":"oligopoly","image":"Pithchers.jpeg","info":"Platform to pitch your best startup idea. Everyone has ideas. They may be too busy or lack the confidence or technical knowledge to carry them out. But we want to carry them out. Its a matter of getting up and doing it.","__v":0}]}
