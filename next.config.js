@@ -1,6 +1,7 @@
 const withOffline = require("next-offline");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
-
+//const withImages = require("next-images");
+const withOptimizedImages = require("next-optimized-images");
 const events = [
   "cyberquest",
   "electromania",
@@ -36,23 +37,23 @@ events.forEach(function(event) {
   const path = "/events/" + event;
   routes[path] = { page: "/events", query: { name: event } };
 });
-
-module.exports = withBundleAnalyzer(
-  withOffline({
-    exportPathMap() {
-      return routes;
+const nextConfig = {
+  exportPathMap() {
+    return routes;
+  },
+  analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+  analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+  bundleAnalyzerConfig: {
+    server: {
+      analyzerMode: "static",
+      reportFilename: "../bundles/server.html"
     },
-    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
-    bundleAnalyzerConfig: {
-      server: {
-        analyzerMode: "static",
-        reportFilename: "../bundles/server.html"
-      },
-      browser: {
-        analyzerMode: "static",
-        reportFilename: "../bundles/client.html"
-      }
+    browser: {
+      analyzerMode: "static",
+      reportFilename: "../bundles/client.html"
     }
-  })
+  }
+};
+module.exports = withBundleAnalyzer(
+  withOffline(withOptimizedImages(nextConfig))
 );
