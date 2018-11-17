@@ -5,7 +5,7 @@ const team = {
       position: "SAC President",
       department: "EEE",
       email: "rajeshgupta@mnnit.ac.in",
-      img: "/static/team/rajesh-gupta.jpg"
+      img: "rajesh-gupta.jpg"
     }
   ],
   faculty: [
@@ -14,21 +14,21 @@ const team = {
       position: "convenor",
       department: "MED",
       email: "kvrao@mnnit.ac.in",
-      img: "/static/team/dr-vr-komma.jpg"
+      img: "dr-vr-komma.jpg"
     },
     {
       name: "Dr.Shashank Srivatsava",
       position: "Treasurer / coordinator",
       department: "CSED",
       email: "shashank12@mnnit.ac.in",
-      img: "/static/team/dr-shashank-srivatsava.jpg"
+      img: "dr-shashank-srivatsava.jpg"
     },
     {
       name: "Dr.Basant Kumar",
       position: "Member",
       department: "ECED",
       email: "singhbasant@mnnit.ac.in",
-      img: "/static/team/dr-basant-kumar.jpg"
+      img: "dr-basant-kumar.jpg"
     },
 
     {
@@ -36,14 +36,14 @@ const team = {
       position: "Member",
       department: "MED",
       email: "dkshukla@mnnit.ac.in",
-      img: "/static/team/dks.jpg"
+      img: "dks.jpg"
     },
     {
       name: "Dr. V P Singh",
       position: "Member",
       department: "CE",
       email: "vps15783@mnnit.ac.in",
-      img: "/static/team/vpsingh.jpg"
+      img: "vpsingh.jpg"
     }
   ],
   studentcoreteam: [
@@ -51,93 +51,93 @@ const team = {
       name: "Abhishek Mohanty",
       email: "abhishekmohanty660@gmail.com",
       phone: "7408580446",
-      img: "/static/team/abhishek-mohanty.jpg"
+      img: "abhishek-mohanty.jpg"
     },
     {
       name: "Varun Goyal",
       email: "goyalvarun21@gmail.com",
       phone: "9149025101",
-      img: "/static/team/varun-goyal.jpeg"
+      img: "varun-goyal.jpg"
     },
     {
       name: "Ritika Bharti",
       email: "ritikabharti434@gmail.com",
-      img: "/static/team/ritika-bharti.jpeg"
+      img: "ritika-bharti.jpg"
     },
     {
       name: "Samita Verma",
       email: "ec155045@mnnit.ac.in",
-      img: "/static/team/samita-verma.jpg"
+      img: "samita-verma.jpg"
     },
     {
       name: "Ayush Kumar",
       email: "Ayush.kum27@gmail.com",
       phone: "7992334802",
-      img: "/static/team/ayush-kumar.jpeg"
+      img: "ayush-kumar.jpg"
     },
     {
       name: "Kartikeya Tiwari",
       email: "me152015@mnnit.ac.in",
       phone: "7706853911",
-      img: "/static/team/kartikeya-tiwari.jpeg"
+      img: "kartikeya-tiwari.jpg"
     },
     {
       name: "Shreya Agarwal",
       email: "shreya12830@gmail.com",
-      img: "/static/team/shreya-agarwal.jpg"
+      img: "shreya-agarwal.jpg"
     }
   ],
   workshopslead: [
     {
       name: "Manu Paliwal",
       email: "paliwalmanu99@gmail.com",
-      img: "/static/team/manu-paliwal.jpeg"
+      img: "manu-paliwal.jpeg"
     }
   ],
   technicalteam: [
     {
       name: "Sumanth",
-      img: "/static/team/sumanth.jpg"
+      img: "sumanth.jpg"
     },
     {
       name: "Poorna Chandu",
       email: "gadechandu123@gmail.com",
-      img: "/static/team/poornachandu.jpg"
+      img: "poornachandu.jpg"
     }
   ],
   prteam: [
     {
       name: "Deepak Kumar Meghwal",
-      img: "/static/team/deepak-kumar-meghwal.jpg",
+      img: "deepak-kumar-meghwal.jpg",
       email: "deepakkumarmeghwal1996@gmail.com",
       phone: 7007915426
     },
     {
       name: "Neel Neogi",
-      img: "/static/team/neel-neogi.jpg",
+      img: "neel-neogi.jpg",
       email: "neel.neogy@gmail.com",
       phone: 7076091227
     },
     {
       name: "Prabhat Kumar",
-      img: "/static/team/prabhat-kumar.jpeg",
+      img: "prabhat-kumar.jpg",
       email: "prabhatk.kumar05@gmail.com",
       phone: 9984930494
     },
     {
       name: "Shivani Gangwani",
-      img: "/static/team/shivani-gangwani.jpeg",
+      img: "shivani-gangwani.jpg",
       email: "shewani9@gmail.com"
     },
     {
       name: "Sumit Saurabh",
-      img: "/static/team/sumit-saurabh.jpeg",
+      img: "sumit-saurabh.jpg",
       email: "sumit2015saurav@gmail.com",
       phone: 6387907248
     },
     {
       name: "Sumit Kumar",
-      img: "/static/team/sumit-kumar.jpg",
+      img: "sumit-kumar.jpg",
       email: "Sumitjchoudhary@gmail.com",
       phone: 8797531050
     }
@@ -145,44 +145,44 @@ const team = {
   gnoTalksLeads: [
     {
       name: "Rashtra Shekhar",
-      img: "/static/team/rashtra-shekhar.jpg",
+      img: "rashtra-shekhar.jpg",
       email: "rashtrashekhar@gmail.com"
     },
     {
       name: "Komal Sethia",
-      img: "/static/team/komal-sethia.jpg",
+      img: "komal-sethia.jpg",
       email: "komalmsethia@gmail.com"
     },
     {
       name: "Aayushi Shanker",
-      img: "/static/team/aayushi-shanker.jpg",
+      img: "aayushi-shanker.jpg",
       email: "shanker.aayushi@gmail.com"
     },
     {
       name: "Syed Jaudat",
-      img: "/static/team/syed-jaudat.jpg",
+      img: "syed-jaudat.jpg",
       email: "syedjaudat@yahoo.com"
     },
     {
       name: "Sidhant Kohli",
-      img: "/static/team/sidhantkohli.jpg",
+      img: "sidhantkohli.jpg",
       email: "sidhant.kohli@gmail.com"
     },
     {
       name: "Vivek Jha",
-      img: "/static/team/vivek-jha.jpg",
+      img: "vivek-jha.jpg",
       email: "vjcool453@gmail.com"
     }
   ],
   gnosiomaniaLeads: [
     {
       name: "Ayushman Singh",
-      img: "/static/team/ayushman-singh.jpg",
+      img: "ayushman-singh.jpg",
       email: "ayushmansingh2029@gmail.com"
     },
     {
       name: "Preetpal Singh",
-      img: "/static/team/preetpal-singh.jpg",
+      img: "preetpal-singh.jpg",
       email: "preetpalsinghsds@gmail.com"
     }
   ]

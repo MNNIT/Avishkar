@@ -1,4 +1,3 @@
-import ToggleDisplay from "react-toggle-display";
 import React, { Component } from "react";
 class Person extends Component {
   state = {
@@ -24,7 +23,7 @@ class Person extends Component {
       >
         <div className="event-element">
           <div className="img-container">
-            <img src={person.img} />
+            <img src={require(`../../static/team/${person.img}`)} />
             <div id="image-layer" />
           </div>
         </div>

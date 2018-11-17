@@ -1,19 +1,9 @@
 import React, { Component } from "react";
 import Meta from "../components/Meta";
 import { withRouter } from "next/router";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 
 class Index extends React.Component {
-  state = {
-    workshopName: "IOT"
-  };
-
   render() {
-    const { workshopName } = this.state;
     return (
       <>
         <Meta />
@@ -88,7 +78,7 @@ class Index extends React.Component {
 
           <div className="row new-card">
             <div className="col-md-4 img-container">
-              <img src="/static/img/workshops/PLCScada.jpeg" alt="PLC Scada" />
+              <img src="/static/img/workshops/PLCScada.jpg" alt="PLC Scada" />
             </div>
             <div className="col-md-8 content">
               <h1>PLC Scada</h1>

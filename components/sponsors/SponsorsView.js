@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-
-export default ({ people, heading }) => {
+export default ({ people, heading, directory }) => {
   return (
     <section>
       <h1>{heading}</h1>
@@ -8,7 +6,10 @@ export default ({ people, heading }) => {
         {people.map(function(sponsor) {
           return (
             <div key={sponsor.name} className="img-container">
-              <img src={sponsor.img} alt={sponsor.name} />
+              <img
+                src={require(`../../static/img/${directory}/${sponsor.img}`)}
+                alt={sponsor.name}
+              />
             </div>
           );
         })}

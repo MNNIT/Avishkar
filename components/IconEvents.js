@@ -39,7 +39,7 @@ class IconEvents extends Component {
                       style={{ cursor: "pointer" }}
                     >
                       <div className="img-container">
-                        <img src={`/static/icon/${event}.png`} />
+                        <img src={require(`../static/icon/${event}.png`)} />
                       </div>
                     </div>
                     <div className="event-title">
