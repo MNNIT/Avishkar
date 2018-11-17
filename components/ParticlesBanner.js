@@ -29,12 +29,6 @@ class ParticlesBanner extends Component {
           <div className="downdiv">
             <h2>The annual techno management fest of MNNIT Allahabad</h2>
             <h4>26 to 29 of September 2018</h4>
-            <Link as="/dashboard/register" href="/dashboard?tab=register">
-              <a>
-                <button>REGISTER</button>
-              </a>
-            </Link>
-            &nbsp;&nbsp;&nbsp;
             <Link as="/sponsors" href="/sponsors">
               <a>
                 <button id="sponsors-btn">SPONSORS</button>
@@ -100,8 +94,6 @@ class ParticlesBanner extends Component {
             }
             section:before {
               content: "";
-              background: #7c50bf
-                url(/static/backgrounds/cheap_diagonal_fabric.png);
               background-blend-mode: multiply;
               mix-blend-mode: multiply;
               position: absolute;

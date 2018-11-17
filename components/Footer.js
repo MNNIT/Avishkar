@@ -3,14 +3,6 @@ export default () => (
     <footer>
       <div className="footer">
         <div>
-          <h2>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdef-jdhL9zvp18KKZvdinwwg-Uig_glljkG3xVMqjLhhuYDw/viewform"
-              target="_blank"
-            >
-              Campus Ambassador
-            </a>
-          </h2>
           <p>
             <a href="https://goo.gl/maps/JQb18a3Go4G2" target="_blank">
               MNNIT, Allahabad, India - 211004
@@ -32,7 +24,7 @@ export default () => (
         }
         footer {
           width: 80%;
-          padding: 50px;
+          padding: 10px;
           height: auto;
           color: white;
           box-sizing: border-box;

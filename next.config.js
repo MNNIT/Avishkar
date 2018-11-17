@@ -1,6 +1,6 @@
 const withOffline = require("next-offline");
+const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 
-module.exports = withOffline();
 const events = [
   "cyberquest",
   "electromania",
@@ -28,12 +28,6 @@ const routes = {
   "/": { page: "/" },
   "/team": { page: "/team" },
   "/events": { page: "/events" },
-  "/auth": { page: "/auth" },
-  "/dashboard": { page: "/dashboard" },
-  "/store": { page: "/store" },
-  "/reset-password": { page: "/reset-password" },
-  "/reset-password/email": { page: "/reset-password", query: { tab: "email" } },
-  "/reset-password/code": { page: "/reset-password", query: { tab: "code" } },
   "/gnosiomania": { page: "/gnosiomania" },
   "/workshops": { page: "/workshops" },
   "/sponsors": { page: "/sponsors" }
@@ -42,12 +36,23 @@ events.forEach(function(event) {
   const path = "/events/" + event;
   routes[path] = { page: "/events", query: { name: event } };
 });
-tabs.forEach(function(tab) {
-  const path = "/dashboard/" + tab;
-  routes[path] = { page: "/dashboard", query: { tab: tab } };
-});
-module.exports = withOffline({
-  exportPathMap() {
-    return routes;
-  }
-});
+
+module.exports = withBundleAnalyzer(
+  withOffline({
+    exportPathMap() {
+      return routes;
+    },
+    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+    bundleAnalyzerConfig: {
+      server: {
+        analyzerMode: "static",
+        reportFilename: "../bundles/server.html"
+      },
+      browser: {
+        analyzerMode: "static",
+        reportFilename: "../bundles/client.html"
+      }
+    }
+  })
+);

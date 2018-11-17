@@ -34,7 +34,7 @@ export default class extends Component {
     const eventName = router.query.name;
     if (eventName !== "aerodynamix") {
       axios
-        .post(`/api/fetch-category-events`, { category: eventName })
+        .get(`/static/data/${eventName}.json`)
         .then(res => {
           if (res.data.success) {
             const subEvents = res.data.subEvents;

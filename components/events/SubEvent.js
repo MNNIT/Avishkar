@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { data2 } from "../../pages/store";
 
 export default ({ subEventData, show, color, hideModal }) => {
   let className = show ? "animate" : "preanimate";
@@ -157,36 +156,14 @@ export default ({ subEventData, show, color, hideModal }) => {
               }
             })()}
 
-            {(function() {
-              let index = data2.findIndex(event => {
-                return event.displayName === data.displayName;
-              });
-              if (index > -1) {
-                if (data2[index].prizeMoney) {
-                  return (
-                    <div>
-                      <h3 style={{ color, display: "inline" }}>
-                        Prize Money :
-                      </h3>
-                      <h3 style={{ display: "inline" }}>
-                        {" "}
-                        {data2[index].prizeMoney}
-                      </h3>
-                    </div>
-                  );
-                }
-              }
-            })()}
-
-            <div className="register-btn">
-              {/* <h3 style={{ color }}>Rounds</h3> */}
+            {/* <div className="register-btn">
               <Link
                 as={`/dashboard/register/${data.displayName}`}
                 href={`/dashboard?tab=register&event=${data.displayName}`}
               >
                 <button>Register for Event</button>
               </Link>
-            </div>
+            </div> */}
           </div>
         );
       })}
