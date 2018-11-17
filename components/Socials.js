@@ -1,21 +1,18 @@
+import fbLogo from "../static/logo/facebook.png";
+import twitterLogo from "../static/logo/twitter.png";
 export default () => (
   <section>
     <div>
       <h3>Follow us on Socials</h3>
       <div className="container">
         <div className="img-container">
-          <a href="https://www.facebook.com/mnnit.avishkar  " target="_blank">
-            <img src="static/logo/facebook.png" alt="" />
+          <a href="https://www.facebook.com/mnnit.avishkar" target="_blank">
+            <img src={fbLogo} alt="facebook logo" />
           </a>
         </div>
         <div className="img-container">
           <a href="https://twitter.com/avishkarMNNIT" target="_blank">
-            <img src="static/logo/twitter.png" alt="" />
-          </a>
-        </div>
-        <div className="img-container">
-          <a href="https://instagram.com" target="_blank">
-            <img src="static/logo/instagram.png" alt="" />
+            <img src={twitterLogo} alt="twitter logo" />
           </a>
         </div>
       </div>
@@ -44,13 +41,13 @@ export default () => (
         .container {
           display: flex;
           justify-content: space-around;
-          width: 300px;
+          width: 200px;
           margin: 0 auto;
           padding: 20px;
         }
         .img-container {
-          width: 46px;
-          height: 46px;
+          width: 40px;
+          height: 40px;
         }
         img {
           width: 100%;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Mask from "../components/Mask";
 import Link from "next/link";
-
+import MenuIcon from "../static/icon/menu.png";
 class MobileNav extends Component {
   state = {
     showMenu: false
@@ -21,7 +21,7 @@ class MobileNav extends Component {
       >
         <nav>
           <div id="icon-container" onClick={this.toggleMenu}>
-            <img src="/static/icon/menu.png" alt="Menu" />
+            <img src={MenuIcon} alt="Menu" />
           </div>
           <div
             id="menu"
